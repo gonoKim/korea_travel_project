@@ -17,5 +17,8 @@ public class QnADAO {
 	public List<QnAVO> getQnAList() {
 		return sqlSession.selectList("getQnAList");
 	}
+	public int QnAWrite(QnAVO qnavo) {
+		return sqlSession.insert("QnAWrite",qnavo);
+		}
 
 }

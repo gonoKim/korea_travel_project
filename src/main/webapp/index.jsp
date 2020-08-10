@@ -8,6 +8,6 @@
 </head>
 <body>
 <p>환영합니다  커뮤니티입니다.(index page)</p>
-<a href="/view/QnABoard">대시보드 보러가기</a>
+<a href="/qna/QnABoard">대시보드 보러가기</a>
 </body>
 </html>

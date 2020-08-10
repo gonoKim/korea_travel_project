@@ -11,4 +11,9 @@
 	QnA_Num DESC;
 <!-- ]]> -->
 </select>
+<!-- insert 쿼리문  -->
+<insert id="QnAWrite">
+insert into QnA_Border (QnA_Num,QnA_Subject,QnA_Content,QnA_Views,QnA_Date) 
+values(#{QnA_Num},#{QnA_Subject},#{QnA_Content},#{QnA_Views},now());
+</insert>
 </mapper>
