@@ -24,8 +24,8 @@ function boardWrite(sub,con){
 		url : "/jquery/QnAwrite",
 		type:'POST',
 		data : {
-			subject : sub,
-			context : con
+			QnA_Subject : sub,
+			QnA_Content : con
 		},
 		success:function(data){
 			if(data == 1){
