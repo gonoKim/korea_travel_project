@@ -67,7 +67,7 @@ function QnAwrite() {
 			<tr>
 				<td>${b.qnA_Num }</td>
 				<td>${b.qnA_Write }</td>
-				<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num }">${b.qnA_Subject }</td>
+				<td><a href="/qna/QnAView?QnA_Num=${b.qnA_Num }">${b.qnA_Subject }</a></td>
 				<td>${b.qnA_Views }</td>
 				<td>${dateFormat_cr }</td>
 			</tr>

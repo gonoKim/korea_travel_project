@@ -22,11 +22,11 @@ public class QnAServiceImpl implements QnAService {
 	return qnaDAO.QnAWrite(qnavo);
 	}
 	@Override
-	public QnAVO getQnAView(int qnA_Num) {
-	return qnaDAO.getQnAView(qnA_Num);
+	public QnAVO getQnAView(int QnA_Num) {
+	return qnaDAO.getQnAView(QnA_Num);
 	}
 	@Override
-	public void viewsUpdate(int qnA_Num) {
-		qnaDAO.viewUpdate(qnA_Num);
+	public void viewsUpdate(int QnA_Num) {
+		qnaDAO.viewUpdate(QnA_Num);
 	}
 }

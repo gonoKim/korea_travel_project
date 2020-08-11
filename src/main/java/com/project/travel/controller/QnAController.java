@@ -14,10 +14,10 @@ import com.project.travel.vo.QnAVO;
 @Controller
 @RequestMapping("qna/*")
 public class QnAController {
-	
+	/* QnA 컨트롤러 */
 	@Autowired
 	QnAService qnaService;
-	
+//		QnA 리스트 맵핑, 컨트롤러
 		@RequestMapping("qna/QnABoard")
 		public ModelAndView QnAboard() {
 			List result = qnaService.getQnAList();
@@ -25,15 +25,18 @@ public class QnAController {
 			mav.addObject("result", result);
 			return mav;
 		}
+		
+//		QnA 쓰키 컨트롤러
 		@RequestMapping(value="qna/QnAWrite",method = RequestMethod.GET)
 		public ModelAndView QnAWrite() {
 			ModelAndView mav = new ModelAndView();
 			return mav; 
 			}
+//		QnA 내용물 보여주는 컨트롤러
 		@RequestMapping(value="qna/QnAView",method = RequestMethod.GET)
-		public ModelAndView QnAView(int qnA_Num) {
-			qnaService.viewsUpdate(qnA_Num);
-			QnAVO result = qnaService.getQnAView(qnA_Num);
+		public ModelAndView QnAView(int QnA_Num) {
+			qnaService.viewsUpdate(QnA_Num);
+			QnAVO result = qnaService.getQnAView(QnA_Num);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("result",result);
 			return mav;

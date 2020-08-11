@@ -12,7 +12,9 @@ import com.project.travel.vo.QnAVO;
 @Controller
 @RequestMapping("jquery/*")
 public class JqueryController {
-
+	/* json을 통한 데이터 통신
+	 *  jQuery ajax를 이용한 POST
+	 *  */
 	@Autowired
 	QnAService qnaService;
 	

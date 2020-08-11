@@ -21,15 +21,15 @@ public class QnADAO {
 	public int QnAWrite(QnAVO qnavo) {
 		return sqlSession.insert("QnAWrite",qnavo);
 		}
-	public QnAVO getQnAView(int qnA_Num) {
+	public QnAVO getQnAView(int QnA_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("qnA_Num",qnA_Num);
+		map.put("QnA_Num",QnA_Num);
 		return sqlSession.selectOne("getQnAView",map);
 	}
 
-public void viewUpdate(int qnA_Num) {
+public void viewUpdate(int QnA_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("qnA_Num",qnA_Num);
+		map.put("QnA_Num",QnA_Num);
 		sqlSession.update("viewUpdate", map);
 	}
 }
