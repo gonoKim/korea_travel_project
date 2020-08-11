@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.service.QnAService;
+import com.project.travel.vo.QnAVO;
 
 @Controller
 @RequestMapping("qna/*")
@@ -27,5 +28,14 @@ public class QnAController {
 		@RequestMapping(value="qna/QnAWrite",method = RequestMethod.GET)
 		public ModelAndView QnAWrite() {
 			ModelAndView mav = new ModelAndView();
-			return mav; }
+			return mav; 
+			}
+		@RequestMapping(value="qna/QnAView",method = RequestMethod.GET)
+		public ModelAndView QnAView(int qnA_Num) {
+			qnaService.viewsUpdate(qnA_Num);
+			QnAVO result = qnaService.getQnAView(qnA_Num);
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("result",result);
+			return mav;
+		}
 }

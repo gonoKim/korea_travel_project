@@ -14,12 +14,15 @@
 <script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/jquery-1.11.3.min.js"></script>
+
+
 <!--QnA 커스텀 css, js  -->
 <link rel="stylesheet" href="../../../resources/QnA/css/broad.css">
-    <!-- <script src="../../../resources/QnA/js/jquery.min.js"></script> -->
-<!-- <script src="../../../resources/QnA/js/QnAwrite.js"></script> -->
+<!--로컬 js 오류남  -->
+<!--  <script src="../../../resources/QnA/js/jquery.min.js"></script> -->
+<script src="../../../resources/QnA/js/QnAwrite.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 function boardValidation(){
 	
@@ -72,7 +75,7 @@ function QnAWrite(sub,wir,con){
 }
 
 
-</script>
+</script> -->
 </head>    
 <body class="container-md vh-100 ">
     <article class="container row justify-content-center align-items-center" >
@@ -99,7 +102,7 @@ function QnAWrite(sub,wir,con){
 					
 					 
                 
-                <div class="row justify-content-center my-3">
+                <div class="row justify-content-center my-4">
                     <button type="reset" id="join-submit" class="btn">
                         Reset<i class="fa fa-check spaceLeft"></i>
                     </button>
@@ -110,5 +113,14 @@ function QnAWrite(sub,wir,con){
         </div>
 
     </article>
+    	<footer class="blog-footer ">
+		<p>
+			Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>
+			by <a href="https://twitter.com/mdo">@mdo</a>.
+		</p>
+		<p>
+			<a href="#">Back to top</a>
+		</p>
+	</footer>
 </body>
 </html>

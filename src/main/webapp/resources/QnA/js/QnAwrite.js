@@ -2,29 +2,35 @@ function boardValidation(){
 	
 	var subject = $("#subject").val();
 	var content = $("#content").val();
+	var writer 	= $("#writer").val();
 	
 	if(!subject){
 		alert("제목 입력은 필수입니다.");
 		$("#subject").focus();
+		return false;
+	}else if(!writer){
+		alert("작성자 입력은 필수 입니다.");
+		$("#writer").focus();
 		return false;
 	}else if(!content){
 		alert("내용 입력은 필수 입니다.");
 		$("#content").focus();
 		return false;
 	}else {
-		QnAwrite(subject,content);
+		QnAWrite(subject,writer,content);
 	}
 	
 }
 
-function boardWrite(sub,con){
+function QnAWrite(sub,wir,con){
 	
 	$.ajax({
 		
-		url : "/jquery/QnAwrite",
+		url : "/jquery/QnAWrite",
 		type:'POST',
 		data : {
 			QnA_Subject : sub,
+			QnA_Write 	: wir,
 			QnA_Content : con
 		},
 		success:function(data){
@@ -41,3 +47,4 @@ function boardWrite(sub,con){
 	})
 	
 }
+

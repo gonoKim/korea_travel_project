@@ -16,4 +16,13 @@
 insert into QnA_Border (QnA_Num,QnA_Write,QnA_Subject,QnA_Content,QnA_Views,QnA_Date) 
 values(#{QnA_Num},#{QnA_Write},#{QnA_Subject},#{QnA_Content},#{QnA_Views},now());
 </insert>
+
+<select id="getQnAView" resultType="com.project.travel.vo.QnAVO">
+SELECT * FROM QnA_Border where QnA_Num = #{QnA_Num};
+</select>
+
+<!-- update -->
+<update id="viewUpdate">
+UPDATE QnA_Border SET QnA_Views = QnA_Views+1 WHERE QnA_Num = #{QnA_Num};
+</update>
 </mapper>
