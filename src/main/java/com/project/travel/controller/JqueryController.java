@@ -18,6 +18,7 @@ public class JqueryController {
 	@Autowired
 	QnAService qnaService;
 	
+	//QnA쓰기 컨트롤러
 	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnAWrite(QnAVO qnavo) {
