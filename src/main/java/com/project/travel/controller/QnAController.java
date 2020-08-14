@@ -32,7 +32,8 @@ public class QnAController {
 			ModelAndView mav = new ModelAndView();
 			return mav; 
 			}
-//		QnA 내용물 보여주는 컨트롤러
+		
+//		QnA 내용물 보여주는 컨트롤러 & 조회수 
 		@RequestMapping(value="qna/QnAView",method = RequestMethod.GET)
 		public ModelAndView QnAView(int QnA_Num) {
 			qnaService.viewsUpdate(QnA_Num);
@@ -40,5 +41,15 @@ public class QnAController {
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("result",result);
 			return mav;
+		}	
+//		QnA 내용물 보여주는 컨트롤러 뷰 데이터 끌어다씀
+		@RequestMapping(value="qna/QnAUpdate",method = RequestMethod.GET)
+		public ModelAndView QnAUpdate(int QnA_Num) {
+			QnAVO result = qnaService.getQnAView(QnA_Num);
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("result",result);
+			return mav;
 		}
+//		QnA 삭제 
+
 }

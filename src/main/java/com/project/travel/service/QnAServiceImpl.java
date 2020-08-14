@@ -29,4 +29,13 @@ public class QnAServiceImpl implements QnAService {
 	public void viewsUpdate(int QnA_Num) {
 		qnaDAO.viewUpdate(QnA_Num);
 	}
+
+	@Override
+	public int QnAUpdate(QnAVO qnavo) {
+		return qnaDAO.QnAUpdate(qnavo);
+	}
+	@Override
+	public int  QnADelete(int QnA_Num) {
+		return qnaDAO.QnADelete(QnA_Num);
+	}
 }

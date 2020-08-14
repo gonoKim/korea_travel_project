@@ -45,7 +45,7 @@ public class QnADAO {
 	}
 	
 	/* QnA 삭제 */
-	public int QnADelete(QnAVO qnavo) {
-		return sqlSession.delete("QnADelete", qnavo);
+	public int QnADelete(int QnA_Num) {
+		return sqlSession.delete("QnADelete", QnA_Num);
 	}
 }

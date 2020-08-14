@@ -18,7 +18,7 @@ public class JqueryController {
 	@Autowired
 	QnAService qnaService;
 	
-	//QnA쓰기 컨트롤러
+	//QnA쓰기 데이터 받 컨트롤러
 	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnAWrite(QnAVO qnavo) {
@@ -26,5 +26,12 @@ public class JqueryController {
 		result = qnaService.QnAWrite(qnavo); 
 		return result;
 	}
-	
+//	QnA업데이트 데이터 받는컨트롤러
+	@RequestMapping(value="jquery/QnAUpdate",method = RequestMethod.POST)
+	@ResponseBody
+	public int QnAUpdate(QnAVO qnavo) {
+		int result = 0; 
+		result = qnaService.QnAUpdate(qnavo); 
+		return result;
+	}
 }

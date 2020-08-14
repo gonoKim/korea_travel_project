@@ -19,13 +19,12 @@
 
 <script type="text/javascript">
 function boardDelete(){
-	
-	
+			
 }
 
 function QnAUpdate(){
 	
-	
+	location.href = "/qna/QnAUpdate?QnA_Num=${result.qnA_Num }";
 }
 </script>
 </head>

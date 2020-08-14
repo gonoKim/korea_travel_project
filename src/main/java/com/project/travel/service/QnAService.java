@@ -9,4 +9,6 @@ public interface QnAService {
 	int QnAWrite(QnAVO qnavo);
 	QnAVO getQnAView(int QnA_Num);
 	void viewsUpdate(int QnA_Num);
+	int QnAUpdate(QnAVO qnavo); 
+	int QnADelete(int QnA_Num);
 }

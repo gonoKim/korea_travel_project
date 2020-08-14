@@ -26,16 +26,16 @@
 
 function updateValidation(){
 	
-	var subject = $("#subject").val();
-	var content = $("#content").val();
+	var subject = $("#u_subject").val();
+	var content = $("#u_content").val();
 	
-	if(!subject){
+	if(!u_subject){
 		alert("제목 입력은 필수입니다.");
-		$("#subject").focus();
+		$("#u_subject").focus();
 		return false;
-	}else if(!content){
+	}else if(!u_content){
 		alert("내용 입력은 필수 입니다.");
-		$("#content").focus();
+		$("#u_content").focus();
 		return false;
 	}else {
 		QnAUpdate(subject,content);
@@ -46,7 +46,6 @@ function updateValidation(){
 function QnAUpdate(sub,con){
 	
 	$.ajax({
-		
 		url : "/jquery/QnAUpdate",
 		type:'POST',
 		data : {
@@ -56,9 +55,9 @@ function QnAUpdate(sub,con){
 		success:function(data){
 			if(data == 1){
 				alert("글 수정이 완료되었습니다.");
-				location.href="/qna/QnAView";
+				location.href="/qna/QnAView?QnA_Num=${result.qnA_Num }";
 			}else {
-				alert("글 등록 실패");
+				alert("글 수정 실패");
 			}
 		},error:function(){
 			console.log("error");
@@ -82,8 +81,7 @@ function QnAUpdate(sub,con){
                     </div>
            	
                     <h4 class="my-3"> Subject</h4>
-                    <input type="text" class="form-control text-dark" id="subject" placeholder="${result.qnA_Subject }">
-           
+                    <input type="text" class="form-control text-dark" id="u_subject" value="${result.qnA_Subject }">
                       
                     <h4 class="my-3">Writer</h4>
                     <input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.qnA_Write }">
@@ -91,17 +89,14 @@ function QnAUpdate(sub,con){
                 
            
                     <h4 class="my-3">Content</h4>
-                    <textarea rows="10" cols="20" class="form-control text-dark" id="content"  placeholder="${result.qnA_Content }"></textarea>
+                    <textarea rows="10" cols="20" class="form-control text-dark" id="u_content"  placeholder="">${result.qnA_Content }</textarea>
            
 					
 					 
                 
                 <div class="row justify-content-center my-4">
-                    <button type="reset" id="join-submit" class="btn">
-                        Reset<i class="fa fa-check spaceLeft"></i>
-                    </button>
-                     <input type="button" value="Write" class="btn" onclick="updateValidation()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='QnAView'"/>
+                     <input type="button" value="Update" class="btn" onclick="updateValidation()"/>
+                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?QnA_Num=${result.qnA_Num }'"/>
                 </div>
 </form>
         </div>
