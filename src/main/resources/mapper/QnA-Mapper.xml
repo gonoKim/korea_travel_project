@@ -34,7 +34,6 @@ WHERE 	QnA_Num   = #{QnA_Num};
 <update id="QnAUpdate">
 UPDATE QnA_Border 
 SET QnA_Subject  = #{QnA_Subject}
-,	QnA_Write	 = #{QnA_Write}
 ,	QnA_Content  = #{QnA_Content}
 ,	QnA_Date	 = now()
 WHERE QnA_Num 	 = #{QnA_Num};
