@@ -18,14 +18,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="../../assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/css/bootstrap.css" rel="stylesheet">
     
     <!-- js -->
-    <script src="../../assets/dist/js/jquery.js"></script>
-    <script src="ID_Save.js"></script>
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/ID_Save.js"></script>
     
     <!-- Custom styles for this template -->
-    <link href="floating-labels.css" rel="stylesheet">
+    <link href="resources/css/floating-labels.css" rel="stylesheet">
   </head>
 
   <body>
@@ -53,10 +53,10 @@
       <div class="btn-group btn-group-lg" role="group" aria-label="..."></div>     
        
       <div class="modal-footer">
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='../Find_Id/index.jsp'" id="FI_btn">Find ID</button>
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='../Find_Pw/index.jsp'" id="FP_btn">Find Password</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='user/Find_Id/index'" id="FI_btn">Find ID</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='user/Find_Pw/index'" id="FP_btn">Find Password</button>
       </div>
-      <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='../Sign_Up/index.jsp'" id="sign_up_btn">Sign Up</button>
+      <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='user/Sign_Up/index'" id="sign_up_btn">Sign Up</button>
 
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </form>
