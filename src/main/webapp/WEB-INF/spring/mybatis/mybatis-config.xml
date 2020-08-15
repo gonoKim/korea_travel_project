@@ -4,6 +4,6 @@
 <configuration>
 
 <mappers>
-<mapper resource="mapper/QnA-Mapper.xml"/>
+<mapper resource="mapper/PhotoBoard-Mapper.xml"/>
 </mappers>
 </configuration>
