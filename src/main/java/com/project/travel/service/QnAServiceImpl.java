@@ -17,5 +17,16 @@ public class QnAServiceImpl implements QnAService {
 	public List<QnAVO> getQnAList() {
 		return qnaDAO.getQnAList();
 	}
-
+	@Override
+	public int QnAWrite(QnAVO qnavo) {
+	return qnaDAO.QnAWrite(qnavo);
+	}
+	@Override
+	public QnAVO getQnAView(int QnA_Num) {
+	return qnaDAO.getQnAView(QnA_Num);
+	}
+	@Override
+	public void viewsUpdate(int QnA_Num) {
+		qnaDAO.viewUpdate(QnA_Num);
+	}
 }
