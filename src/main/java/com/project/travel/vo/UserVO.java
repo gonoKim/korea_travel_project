@@ -85,10 +85,10 @@ public class UserVO {
 		this.M_Grade = M_Grade;
 	}
 	
-//	@Override
-//	public String toString() {		
-//		return "UserVO [M_Id=" + M_Id + ", M_Pw=" + M_Pw + ", M_Fname=" + M_Fname + ", M_Lname=" + M_Lname +
-//				", M_Phone=" + M_Phone + ", M_Year=" + M_Year + ", M_Month" + M_Month + ", M_Day" + M_Day +
-//				", M_Date" + M_Date + ", M_Grade" + M_Grade + "]";
-//	}
+	@Override
+	public String toString() {		
+		return "UserVO [M_Id=" + M_Id + ", M_Pw=" + M_Pw + ", M_Fname=" + M_Fname + ", M_Lname=" + M_Lname +
+				", M_Phone=" + M_Phone + ", M_Year=" + M_Year + ", M_Month" + M_Month + ", M_Day" + M_Day +
+				", M_Date" + M_Date + ", M_Grade" + M_Grade + "]";
+	}
 }

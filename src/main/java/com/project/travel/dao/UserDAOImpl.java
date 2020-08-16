@@ -11,10 +11,11 @@ import com.project.travel.vo.UserVO;
 public class UserDAOImpl implements UserDAO {
 	
 	@Inject SqlSession sqlSession;
-	// 회원가입
 
 	@Override
 	public void register(UserVO vo) throws Exception {
+		System.out.println("111111");
 		sqlSession.insert("UserMapper.register", vo);
+		System.out.println("222222");
 	}
 }
