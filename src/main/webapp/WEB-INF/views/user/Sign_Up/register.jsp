@@ -20,10 +20,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/resources/css/floating-labels.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/User/css/register.css" rel="stylesheet">
   </head>
 
   <body>
