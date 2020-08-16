@@ -21,24 +21,6 @@ public class UserController {
 	@Inject
 	UserService service;
 	
-//	@RequestMapping(value="Find_Id/index",method = RequestMethod.GET)
-//	public ModelAndView findId() {
-//		ModelAndView mav = new ModelAndView();
-//		return mav;
-//	}
-//	
-//	@RequestMapping(value="Find_Pw/index",method = RequestMethod.GET)
-//	public ModelAndView findPw() {
-//		ModelAndView mav = new ModelAndView();
-//		return mav;
-//	}
-//		
-//	@RequestMapping(value="Sign_In/index",method = RequestMethod.GET)
-//	public ModelAndView login() {
-//		ModelAndView mav = new ModelAndView();
-//		return mav;
-//	}
-	
 	// 회원가입 get
 	@RequestMapping(value="Sign_Up/register", method = RequestMethod.GET)
 	public void getRegister() throws Exception {

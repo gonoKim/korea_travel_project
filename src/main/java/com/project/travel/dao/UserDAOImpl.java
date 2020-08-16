@@ -14,8 +14,6 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public void register(UserVO vo) throws Exception {
-		System.out.println("111111");
 		sqlSession.insert("UserMapper.register", vo);
-		System.out.println("222222");
 	}
 }

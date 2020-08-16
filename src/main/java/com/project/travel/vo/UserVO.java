@@ -15,80 +15,64 @@ public class UserVO {
 	private Date M_Date;
 	private int M_Grade;
 	
-	public String getUserId() {
+	public String getM_Id() {
 		return M_Id;
 	}
-	public void setUserId(String M_Id) {
-		this.M_Id = M_Id;
+	public void setM_Id(String m_Id) {
+		M_Id = m_Id;
 	}
-	
-	public String getUserPw() {
+	public String getM_Pw() {
 		return M_Pw;
 	}
-	public void setUserPw(String M_Pw) {
-		this.M_Pw = M_Pw;
+	public void setM_Pw(String m_Pw) {
+		M_Pw = m_Pw;
 	}
-	
-	public String getUserFName() {
+	public String getM_Fname() {
 		return M_Fname;
 	}
-	public void setUserFName(String M_Fname) {
-		this.M_Fname = M_Fname;
+	public void setM_Fname(String m_Fname) {
+		M_Fname = m_Fname;
 	}
-	
-	public String getUserLName() {
+	public String getM_Lname() {
 		return M_Lname;
 	}
-	public void setUserLName(String M_Lname) {
-		this.M_Lname = M_Lname;
+	public void setM_Lname(String m_Lname) {
+		M_Lname = m_Lname;
 	}
-	
-	public String getUserPhone() {
+	public String getM_Phone() {
 		return M_Phone;
 	}
-	public void setUserPhone(String M_Phone) {
-		this.M_Phone = M_Phone;
+	public void setM_Phone(String m_Phone) {
+		M_Phone = m_Phone;
 	}
-	
-	public int getUserYear() {
+	public int getM_Year() {
 		return M_Year;
 	}
-	public void setUserYear(int M_Year) {
-		this.M_Year = M_Year;
+	public void setM_Year(int m_Year) {
+		M_Year = m_Year;
 	}
-	
-	public int getUserMonth() {
+	public int getM_Month() {
 		return M_Month;
 	}
-	public void setUserMonth(int M_Month) {
-		this.M_Month = M_Month;
+	public void setM_Month(int m_Month) {
+		M_Month = m_Month;
 	}
-	
-	public int getUserDay() {
+	public int getM_Day() {
 		return M_Day;
 	}
-	public void setUserDay(int M_Day) {
-		this.M_Day = M_Day;
+	public void setM_Day(int m_Day) {
+		M_Day = m_Day;
 	}
-	
-	public Date getUserDate() {
+	public Date getM_Date() {
 		return M_Date;
 	}
-	public void setUserDate(Date M_Date) {
-		this.M_Date = M_Date;
+	public void setM_Date(Date m_Date) {
+		M_Date = m_Date;
 	}
-	
-	public int getUserGrade() {
+	public int getM_Grade() {
 		return M_Grade;
 	}
-	public void setUserGrade(int M_Grade) {
-		this.M_Grade = M_Grade;
-	}
-	
-	@Override
-	public String toString() {		
-		return "UserVO [M_Id=" + M_Id + ", M_Pw=" + M_Pw + ", M_Fname=" + M_Fname + ", M_Lname=" + M_Lname +
-				", M_Phone=" + M_Phone + ", M_Year=" + M_Year + ", M_Month" + M_Month + ", M_Day" + M_Day +
-				", M_Date" + M_Date + ", M_Grade" + M_Grade + "]";
+	public void setM_Grade(int m_Grade) {
+		M_Grade = m_Grade;
 	}
 }

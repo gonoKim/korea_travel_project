@@ -3,7 +3,9 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-<mappers>
-<mapper resource="mapper/QnA-Mapper.xml"/>
-</mappers>
+	<mappers>
+		<mapper resource="mapper/QnA-Mapper.xml"/>
+		<mapper resource="mapper/UserMapper.xml"/>
+	</mappers>
+
 </configuration>
