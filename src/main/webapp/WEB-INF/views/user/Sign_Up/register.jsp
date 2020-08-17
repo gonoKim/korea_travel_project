@@ -21,6 +21,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap.css" rel="stylesheet">
+    
+    <!-- js -->
+    <script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.5.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/user/js/register.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/user/css/register.css" rel="stylesheet">
