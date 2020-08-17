@@ -31,7 +31,7 @@
   </head>
 
   <body>
-    <form class="form-signin" action="user/Sign_Up/register" method="POST">
+    <form class="form-signin" action="register" method="POST">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
       </div>
@@ -84,7 +84,7 @@
           </select>
         </div>
         <div class="col">
-          <input type="number" class="form-control btn btn-dark" id="inputDay" name="M_Day" placeholder="Day" min="1" max="30" required>
+          <input type="number" class="form-control btn btn-dark" id="inputDay" name="M_Day" placeholder="Day" min="1" max="31" required>
         </div>
       </div>
  
