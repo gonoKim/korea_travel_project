@@ -37,12 +37,14 @@
 
   <body>
     <div class="container">
-
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-            <!-- <a class="text-muted" href="#">Subscribe</a> -->
-          </div>
+	      <div class="col-4 pt-1">
+	      	<c:if test="${user == null}">
+	            <a class="btn btn-sm btn-outline-secondary" href="../Sign/Sign_In/index.html" id="sign_in_btn_left">Sign in</a>
+           	</c:if>
+	      </div>
+	      
           <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="/main/main">Main</a>
           </div>
