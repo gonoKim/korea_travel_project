@@ -33,7 +33,7 @@ public class UserController {
 	public String postRegister(UserVO vo) throws Exception {
 		logger.info("post register");
 		service.register(vo);
-		return "redirect:/main/main";
+		return "redirect:/user/Sign_In/login";
 	}
 	
 	// 로그인 get

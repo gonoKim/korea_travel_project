@@ -125,3 +125,13 @@ body {
 #form_YMD{
   margin-bottom: 35px;
 }
+#inputEmail{
+  width: 78.8%;
+}
+#idcheck{
+  width: 20%;
+  padding: 3px;
+}
+#idArray button{
+  display: inline;
+}

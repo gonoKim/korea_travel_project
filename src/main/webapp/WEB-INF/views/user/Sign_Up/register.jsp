@@ -38,7 +38,10 @@
 
       <div class="form-group">
         <label for="inputEmail">Email address</label>
-        <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" required autofocus>
+          <div class="form-group" id="idArray">
+            <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" maxlength="30" required autofocus>
+            <button class="btn btn-lg btn-outline-secondary btn-block" id="idcheck">Check</button>
+          </div>
       </div>
 
       <div class="form-group">
@@ -54,11 +57,11 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputFirstName">First name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname" required>
+          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname" maxlength="15" required>
         </div>
         <div class="col-md-6 mb-3">
           <label for="inputLastName">Last name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname" required>
+          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname" maxlength="15" required>
         </div>
       </div>
       
@@ -70,7 +73,8 @@
       <label for="inputBirth">Birth</label>
       <div class="form-row" id="form_YMD">
         <div class="col">
-          <input type="number" class="form-control btn btn-dark" id="inputYear" name="M_Year" placeholder="Year (4)" min="1900" max="2021"required>
+          <input type="number" class="form-control btn btn-dark" id="inputYear" name="M_Year" placeholder="Year (4)"
+          	min="1900" max="2021" maxlength="4" oninput="maxLengthCheck(this)"  required>
         </div>
         <div class="col">
           <select class="form-control btn btn-dark" id="inputMonth" name="M_Month" required>
@@ -84,7 +88,8 @@
           </select>
         </div>
         <div class="col">
-          <input type="number" class="form-control btn btn-dark" id="inputDay" name="M_Day" placeholder="Day" min="1" max="31" required>
+          <input type="number" class="form-control btn btn-dark" id="inputDay" name="M_Day" placeholder="Day"
+           	min="1" max="31" maxlength="2" oninput="maxLengthCheck(this)" required>
         </div>
       </div>
  

@@ -53,7 +53,7 @@
 	        </c:if>
 			<c:if test="${user != null }">
 				<div>
-					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">로그아웃</button>
+					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">Logout</button>
 				</div>
 			</c:if>
           </div>
