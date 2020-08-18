@@ -116,6 +116,10 @@ body {
 }
 
 /* etc */
+#signUpIcon{
+	width: 40%;
+	margin-bottom: 15px;
+}
 #inputEmail, #inputPassword, #inputRepassword, #inputFirstName,
 #inputLastName, #inputYear, #inputMonth, #inputDay, #inputTel{
   text-align: left;
@@ -134,4 +138,13 @@ body {
 }
 #idArray button{
   display: inline;
+}
+
+/* media */
+@media screen and (max-width:392px){
+	#idChk{
+		width: 19%;
+		height: 38px;
+		font-size: 15px;
+	}
 }

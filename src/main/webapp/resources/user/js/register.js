@@ -10,15 +10,27 @@ $(function(){
 	    }
 	})
 	
-	// 중복확인 버튼 확인 후 submit 가능
+	// 중복확인 버튼 확인, 비밀번호 제약 확인
 	$("#submit").on("click", function(){
 		var idChkVal = $("#idChk").val();
+		var pw = $("#inputPassword").val();
+		var num = pw.search(/[0-9]/g);
+	    var eng = pw.search(/[a-z]/ig);
+	    var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+	
 		if(idChkVal == "N"){
 			alert("Please press the check button.");
 			return false;
-		}else if(idChkVal == "Y"){
-			$("#regForm").submit();
-		}
+		} else if(pw.length < 8 || pw.length > 20){
+        	alert("The password must be a minimum of 8 characters.");
+        	return false;
+	    } else if(pw.search(/\s/) != -1){
+	        alert("Please enter your password without spaces.");
+	        return false;
+    	} else if(num < 0 || eng < 0 || spe < 0){
+	        alert("You must have at least one number and a special character within the first 8 characters of your password.");
+	        return false;
+    	}
 	})
 });
 

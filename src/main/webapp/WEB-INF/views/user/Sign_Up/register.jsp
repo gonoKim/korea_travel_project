@@ -33,25 +33,26 @@
   <body>
     <form class="form-signin" action="register" method="POST" id="regForm">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+        <img src="${pageContext.request.contextPath}/resources/user/Images/Sign_Up.png" id="signUpIcon">
       </div>
 
       <div class="form-group">
         <label for="inputEmail">Email address</label>
           <div class="form-group" id="idArray">
-            <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" maxlength="30" required autofocus>
+            <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com"
+            	 maxlength="30" onFocus="this.value=''; return true;" required autofocus>
             <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">Check</button>
           </div>
       </div>
 
       <div class="form-group">
         <label for="inputPassword">Password</label>
-        <input type="password" class="form-control btn btn-dark" id="inputPassword" name="M_Pw" required>
+        <input type="password" class="form-control btn btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
       </div>
 
       <div class="form-group">
         <label for="inputRepassword">Re-enter password</label>
-        <input type="password" class="form-control btn btn-dark" id="inputRepassword" name="M_Pw2" required>
+        <input type="password" class="form-control btn btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 
       <div class="form-row">
@@ -67,7 +68,8 @@
       
       <div class="form-group">
         <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="000-0000-0000" required>
+        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+        	 placeholder="000-0000-0000" maxlength="13" onFocus="this.value=''; return true;" required>
       </div>
       
       <label for="inputBirth">Birth</label>
