@@ -118,7 +118,7 @@ body {
 
 
 /* checkbox css */
-input[id="remember"] + label {
+input[id="remember"] + label[id="remember_label"] {
   display: inline-block;
   margin: 0;
   margin-left: 5px;
@@ -126,9 +126,8 @@ input[id="remember"] + label {
   height: 12px;
   border: 2px solid #bcbcbc;
   cursor: pointer;
-
 }
-input[id="remember"]:checked + label {
+input[id="remember"]:checked + label[id="remember_label"]  {
   background-color: #8f8c8c;
 }
 input[id="remember"] {

@@ -10,7 +10,7 @@
 	
     <!-- 로그인 -->
 	<select id="login" resultType="com.project.travel.vo.UserVO">
-		SELECT M_Id, M_Pw FROM UserTBL WHERE M_Id = #{M_Id} AND M_Pw = #{M_Pw}   
+		SELECT M_Id, M_Pw, M_Fname, M_Lname FROM UserTBL WHERE M_Id = #{M_Id} AND M_Pw = #{M_Pw}   
 	</select>
 	
 </mapper>

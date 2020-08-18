@@ -48,7 +48,7 @@
 
       <div class="checkbox mb-3">
         <input type="checkbox" id="remember" value="remember-me"> 
-        <label for="remember"></label> Remember Email
+        <label id="remember_label"></label> <label for="remember">Remember Email</label>
       </div>
 
       <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Sign in</button>

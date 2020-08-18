@@ -133,7 +133,6 @@ h1, h2, h3, h4, h5, h6 {
 #sign_in_btn{
   margin-right: 10px;
 }
-
 #Banner_carousel{
   margin-bottom: 40px;
 }
@@ -148,4 +147,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 #A1, #A2{
   height: 300px;
+}
+
+/* media */
+@media screen and (max-width:767px){
+	#nickname{display: none;}
 }

@@ -21,7 +21,6 @@ public class UserDAOImpl implements UserDAO {
 	// 로그인
 	@Override
 	public UserVO login(UserVO vo) throws Exception {
-		
 		return sqlSession.selectOne("UserMapper.login", vo);
 	}
 }
