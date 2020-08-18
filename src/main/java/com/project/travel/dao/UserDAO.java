@@ -8,4 +8,7 @@ public interface UserDAO{
 	
 	// 로그인
 	public UserVO login(UserVO vo) throws Exception;
+	
+	// 아이디 중복체크
+	public int idChk(UserVO vo) throws Exception;
 }

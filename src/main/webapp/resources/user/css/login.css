@@ -135,6 +135,10 @@ input[id="remember"] {
 }
 
 /* etc */
+#logo{
+  width: 80%;
+  margin-bottom: 30px;
+}
 #inputEmail, #inputPassword{
   text-align: left;
   background-color: white;

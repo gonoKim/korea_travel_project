@@ -23,4 +23,11 @@ public class UserServiceImpl implements UserService {
 	public UserVO login(UserVO vo) throws Exception {
 		return dao.login(vo);
 	}
+	
+	// 아이디 중복 체크
+	@Override
+	public int idChk(UserVO vo) throws Exception {
+		int result = dao.idChk(vo);
+		return result;
+	}
 }

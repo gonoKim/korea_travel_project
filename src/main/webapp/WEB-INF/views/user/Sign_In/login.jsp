@@ -33,7 +33,7 @@
   <body>
     <form class="form-signin" method="POST" action="login">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+        <a href="/main/main"><img src="${pageContext.request.contextPath}/resources/user/Images/logo.png" id="logo"></a>
       </div>
 
       <div class="form-label-group">
@@ -55,7 +55,7 @@
       <div class="btn-group btn-group-lg" role="group" aria-label="..."></div>   
       
 	  <c:if test="${msg == false}">
-		<p style="color: red;" class="text-center">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
+		<p style="color: red;" class="text-center">Login failed! Please check your ID and password.</p>
 	  </c:if>  
        
       <div class="modal-footer">

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.travel.service.UserService;
@@ -28,11 +29,28 @@ public class UserController {
 		logger.info("get register");
 	}
 	
+	// 아이디 중복 체크
+	@ResponseBody
+	@RequestMapping(value="/idChk", method = RequestMethod.POST)
+	public int idChk(UserVO vo) throws Exception {
+		int result = service.idChk(vo);
+		return result;
+	}
+	
 	// 회원가입 post
 	@RequestMapping(value="/Sign_Up/register", method = RequestMethod.POST)
 	public String postRegister(UserVO vo) throws Exception {
 		logger.info("post register");
-		service.register(vo);
+		int result = service.idChk(vo);
+		try {
+			if(result == 1) {
+				return "redirect:/user/Sign_Up/register";
+			}else if(result == 0) {
+				service.register(vo);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException();
+		}
 		return "redirect:/user/Sign_In/login";
 	}
 	

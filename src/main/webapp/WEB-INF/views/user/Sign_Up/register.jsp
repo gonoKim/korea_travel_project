@@ -31,7 +31,7 @@
   </head>
 
   <body>
-    <form class="form-signin" action="register" method="POST">
+    <form class="form-signin" action="register" method="POST" id="regForm">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
       </div>
@@ -40,7 +40,7 @@
         <label for="inputEmail">Email address</label>
           <div class="form-group" id="idArray">
             <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" maxlength="30" required autofocus>
-            <button class="btn btn-lg btn-outline-secondary btn-block" id="idcheck">Check</button>
+            <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">Check</button>
           </div>
       </div>
 
@@ -93,7 +93,7 @@
         </div>
       </div>
  
-      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Sign Up</button>
+      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit" id="submit">Sign Up</button>
       
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </form>

@@ -23,4 +23,11 @@ public class UserDAOImpl implements UserDAO {
 	public UserVO login(UserVO vo) throws Exception {
 		return sqlSession.selectOne("UserMapper.login", vo);
 	}
+	
+	// 아이디 중복 체크
+	@Override
+	public int idChk(UserVO vo) throws Exception {
+		int result = sqlSession.selectOne("UserMapper.idChk", vo);
+		return result;
+	}
 }
