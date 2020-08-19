@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/jstlHeader.jsp" %>
+	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>NoticeBoard</title>
 <link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >
@@ -11,24 +13,13 @@
 <script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/jquery-1.11.3.min.js"></script>
-   
-   <!--QnA 커스텀 css, js  -->
-<link rel="stylesheet" href="../../../resources/QnA/css/broad_view.css">
-<meta charset="UTF-8">
-<title>글 내용</title>
-
 <script type="text/javascript">
-function boardDelete(){
-			
-}
-
-function QnAUpdate(){
-	
-	location.href = "/qna/QnAUpdate?QnA_Num=${result.qnA_Num }";
-}
+function NoticeWrite() { 
+    location.href = "/notice/NoticeWrite"; 
+} 
 </script>
 </head>
-<body>
+<body >
 <div class="container">
 
       <header class="blog-header py-3">
@@ -61,34 +52,39 @@ function QnAUpdate(){
 			<a class="p-2 text-muted nav-link" href="../Mypage/mypage.html">MyPage</a>
 		</div>
 	</nav>
-<form>
-<table class="my-5 table table-bordered">
-            <tr>
-                <th class="text-center w-25 p-3">Subject: </th>
-                <td scope="row">${result.qnA_Subject }</td>
-            </tr>
-             <tr>
-                <th class="text-center">Writer: </th>
-                <td scope="row">${result.qnA_Write }</td>
-            </tr>
-            <tr>
-                <th class="text-center">Content: </th>
-                <td scope="row">${result.qnA_Content }</td>
-            </tr>
-            
-            <tr>
-                <th class="text-center">Views: </th>
-                <td scope="row">${result.qnA_Views }</td>
-            </tr>
-         	
-</table>
-<div class="row justify-content-center my-4">
-                    <input type="button" value="Update" class="btn" onclick="QnAUpdate()"/>
-                     <input type="button" value="Delete" class="btn" onclick="boardDelete()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='QnABoard'"/>
-                </div>
-</form>
-</div> 
+	<!-- //공통 헤더&네비-->
+	
+	 <div class="row justify-content-center mt-4">
+	<table class="table col-11 text-center">
+		<tr>
+			<td scope="col">No</td>
+			<td scope="col">Subject</td>
+			<td scope="col">Views</td>
+			<td scope="col">Date</td>
+		</tr>
+		<c:forEach var="n" items="${result }">
+			<fmt:formatDate value="${n.NB_Date}" pattern="yyyy-MM-dd "
+				var="dateFormat_n" />
+			<tr>
+				<td>${n.NB_Num }</td>
+				<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num }">${n.NB_Subject }</a></td>
+				<td>${n.NB_Views }</td>
+				<td>${dateFormat_n }</td>
+			</tr>
+		</c:forEach>
+	</table>
+	</div>
+	<div>
+
+
+		      <div class="row justify-content-center my-3 ">
+            <button type="submit" onclick="NoticeWrite();"  class="btn">
+                Write<i class="fa fa-times spaceLeft"></i>
+            </button>
+        </div>
+	</div>
+	</div>
+	
 	<footer class="blog-footer ">
 		<p>
 			Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>

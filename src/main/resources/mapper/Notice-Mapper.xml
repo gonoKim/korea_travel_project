@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.Notice-Mapper">
+
+<select id="getNoticeList" resultType="com.project.travel.vo.NoticeVO">
+<!-- <![CDATA[[ -->
+	SELECT 
+	*
+	FROM Notice_Border
+	order BY 
+	NB_Num DESC;
+<!-- ]]> -->
+</select>
+
+<insert id="NoticeWrite">
+insert into Notice_Border(NB_Subject, NB_Content, NB_Views, NB_Date) 
+values(#{NB_Subject},#{NB_Content},1,now());
+</insert>
+</mapper>
