@@ -24,7 +24,7 @@ $(function(){
 			alert("Please press the check button.");
 			return false;
 		} else if(id.search(/\s/) != -1){
-	        alert("Please enter your email without spaces.");
+	        alert("Please enter your password without spaces.");
 	        return false;
     	} else if(pw.length < 8 || pw.length > 20){
         	alert("The password must be a minimum of 8 characters.");
@@ -39,6 +39,18 @@ $(function(){
 			alert("Passwords do not match.");
 			return false;
 		}
+		
+		$.ajax({
+			url : "/user/idChk",
+			type : "POST",
+			dataType : "json",
+			data : {"m_Id" : $("#inputEmail").val()},
+			success : function(data){
+				if(data == 1){
+					alert("Duplicate ID, please re-enter.");
+				}
+			}
+		})
 	})
 });
 
@@ -51,6 +63,17 @@ function maxLengthCheck(object){
 
 // 아이디 중복 확인 체크
 function fn_idChk(){
+	var id = $("#inputEmail").val();
+	var spe = id.search(/[@]/gi);
+	
+	if(id.length<6){
+		alert("The email must be a minimum of 6 characters.");
+    	return false;
+	} else if(spe < 0){
+		alert("Email must include @");
+        return false;
+	}
+		
 	$.ajax({
 		url : "/user/idChk",
 		type : "POST",
@@ -76,5 +99,4 @@ function noSpaceForm(obj) {
         obj.value = obj.value.replace(' ','');
         return false;
     }
- // onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"
 }
