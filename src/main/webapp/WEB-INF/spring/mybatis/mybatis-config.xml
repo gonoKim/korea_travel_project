@@ -6,5 +6,6 @@
 <mappers>
 <mapper resource="mapper/QnA-Mapper.xml"/>
 <mapper resource="mapper/Notice-Mapper.xml"/>
+		<mapper resource="mapper/UserMapper.xml"/>
 </mappers>
 </configuration>

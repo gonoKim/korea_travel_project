@@ -30,8 +30,16 @@
           <a class="blog-header-logo text-dark" href="../../Main/index.html">Main</a>
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
-          <a class="btn btn-sm btn-outline-secondary" href="../../Sign/Sign_In/index.html" id="sign_in_btn">Sign in</a>
-          <a class="btn btn-sm btn-outline-secondary" href="../../Sign/Sign_Up/index.html">Sign up</a>
+          <c:if test="${user == null}">
+	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn">Sign in</a>
+	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_Up/register">Sign up</a>
+	        </c:if>
+			<c:if test="${user != null }">
+				<div>
+					<button id="nickname" class="btn" disabled>${user.m_Fname} ${user.m_Lname}</button>
+					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">Logout</button>
+				</div>
+			</c:if>
         </div>
       </div>
     </header>
@@ -87,28 +95,28 @@
                                 <tbody>
                                     <tr>
                                         <th>아이디<span class="text-danger">*</span></th>
-                                        <td colspan="3">honggildong@gmail.com</td>
+                                        <td colspan="3">${user.m_Id}</td>
                                     </tr>
                                     <tr>
                                         <th>이름</th>
-                                        <td>gildong</td>
+                                        <td>${user.m_Fname}</td>
                                         <th id="thlname">성</th>
-                                        <td>hong</td>
+                                        <td>${user.m_Lname}</td>
                                     </tr>
                                     <tr>
                                         
                                     </tr>
                                     <tr>
                                         <th>생년월일</th>
-                                        <td colspan="3">2020.07.29.</td>
+                                        <td colspan="3">${user.m_Year}.${user.m_Month}.${user.m_Day}.</td>
                                     </tr>
                                     <tr>
                                         <th>휴대전화</th>
-                                        <td colspan="3">010-1234-5678</td>
+                                        <td colspan="3">${user.m_Phone}</td>
                                     </tr>
                                     <tr>
-                                      <th>주소</th>
-                                      <td colspan="3">대구광역시 블라블라 블라블라 블라블라 123</td>
+                                      <th>가입일</th>
+                                      <td colspan="3">${user.m_Date}</td>
                                   </tr>
                                 </tbody>
                             </table>
@@ -122,16 +130,16 @@
                                 <fieldset disabled>
                                     <div class="form-group">
                                     <label for="userid">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userid" placeholder="honggildong@gmail.com">
+                                    <input type="text" class="form-control" id="userid" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
                                   <label for="mPhone">휴대전화</label>
-                                  <input type="text" class="form-control" id="mPhone" value="010-1234-5678">
+                                  <input type="text" class="form-control" id="mPhone" value="${user.m_Phone}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="mAddress">주소</label>
-                                    <input type="text" class="form-control" id="mAddress" value="대구시 블라블라 블라블라 블라블라 123">
+                                    <label for="userpwd">비밀번호</label>
+                                    <input type="password" class="form-control" id="userpwd">
                                   </div>
                                   <button type="submit" class="btn btn-primary float-right">수정</button>
                               </form>
@@ -145,7 +153,7 @@
                                 <fieldset disabled>
                                     <div class="form-group">
                                     <label for="userid">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userid" placeholder="honggildong@gmail.com">
+                                    <input type="text" class="form-control" id="userid" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
@@ -158,7 +166,7 @@
                                     비밀번호는 8자리 이상이여야 합니다.
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="mAddress" placeholder="새 비밀번호 확인">
+                                    <input type="password" class="form-control" id="newPwd2" placeholder="새 비밀번호 확인">
                                   </div>
                                   <button type="submit" class="btn btn-primary float-right">변경</button>
                               </form>
@@ -176,7 +184,7 @@
                                 <fieldset disabled>
                                     <div class="form-group">
                                     <label for="userid">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userid" placeholder="honggildong@gmail.com">
+                                    <input type="text" class="form-control" id="userid" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">

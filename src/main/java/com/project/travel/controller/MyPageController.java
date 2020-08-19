@@ -1,24 +1,45 @@
 package com.project.travel.controller;
 
-import java.util.List;
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.project.travel.service.QnAService;
-import com.project.travel.vo.QnAVO;
+import com.project.travel.service.UserService;
+import com.project.travel.vo.UserVO;
 
 @Controller
 @RequestMapping("mypage/*")
 public class MyPageController {
+	private static final Logger logger = LoggerFactory.getLogger(MyPageController.class);
 	/* MyPage 컨트롤러 */
 	
-		@RequestMapping(value="mypage/MyPage",method = RequestMethod.GET)
-		public ModelAndView MyPage() {
-			ModelAndView mav = new ModelAndView();
-			return mav;
-		}
+		@Inject
+		UserService service;
+	
+		/*
+		 * @RequestMapping(value="mypage/MyPage",method = RequestMethod.GET) public
+		 * ModelAndView MyPage() { ModelAndView mav = new ModelAndView(); return mav; }
+		 */
+		 
+		  @RequestMapping(value="mypage/MyPage", method = RequestMethod.GET)
+		  public String registerUpdateView() throws Exception{
+		  	
+		  	return "mypage/MyPage";
+		  }
+
+		  @RequestMapping(value="mypage/MyPage", method = RequestMethod.POST)
+		  public String registerUpdate(UserVO vo, HttpSession session) throws Exception{
+		  	
+		  	service.memberUpdate(vo);
+		  	
+		  	session.invalidate();
+		  	
+		  	return "redirect:/";
+		  }
 }

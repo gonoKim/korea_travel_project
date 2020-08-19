@@ -9,7 +9,7 @@
 <body>
 <p>환영합니다  커뮤니티입니다.(index page)</p>
 <a href="/qna/QnABoard">대시보드 보러가기</a><br>
-<a href="/mypage/MyPage">MyPage 보러가기</a><br>
-<a href="/notice/NoticeBoard">Notice 보러가기</a>
+<a href="/notice/NoticeBoard">Notice 보러가기</a><br>
+<a href="/main/main">Main 보러가기</a>
 </body>
 </html>
