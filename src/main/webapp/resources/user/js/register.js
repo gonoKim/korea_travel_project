@@ -13,7 +13,9 @@ $(function(){
 	// 중복확인 버튼 확인, 비밀번호 제약 확인
 	$("#submit").on("click", function(){
 		var idChkVal = $("#idChk").val();
+		var id = $("#inputEmail").val();
 		var pw = $("#inputPassword").val();
+		var pw2 = $("#inputRepassword").val();
 		var num = pw.search(/[0-9]/g);
 	    var eng = pw.search(/[a-z]/ig);
 	    var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
@@ -21,7 +23,10 @@ $(function(){
 		if(idChkVal == "N"){
 			alert("Please press the check button.");
 			return false;
-		} else if(pw.length < 8 || pw.length > 20){
+		} else if(id.search(/\s/) != -1){
+	        alert("Please enter your email without spaces.");
+	        return false;
+    	} else if(pw.length < 8 || pw.length > 20){
         	alert("The password must be a minimum of 8 characters.");
         	return false;
 	    } else if(pw.search(/\s/) != -1){
@@ -30,7 +35,10 @@ $(function(){
     	} else if(num < 0 || eng < 0 || spe < 0){
 	        alert("You must have at least one number and a special character within the first 8 characters of your password.");
 	        return false;
-    	}
+    	} else if(pw != pw2){
+			alert("Passwords do not match.");
+			return false;
+		}
 	})
 });
 
@@ -57,4 +65,16 @@ function fn_idChk(){
 			}
 		}
 	})
+}
+
+// 아이디 공백 방지
+function noSpaceForm(obj) {
+    var str_space = /\s/;
+    if(str_space.exec(obj.value)) {
+        alert("This entry cannot contain spaces.");
+        obj.focus();
+        obj.value = obj.value.replace(' ','');
+        return false;
+    }
+ // onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"
 }

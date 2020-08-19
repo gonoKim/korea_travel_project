@@ -40,7 +40,7 @@
         <label for="inputEmail">Email address</label>
           <div class="form-group" id="idArray">
             <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com"
-            	 maxlength="30" onFocus="this.value=''; return true;" required autofocus>
+            	 maxlength="30" onFocus="this.value=''; return true;" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);" required autofocus>
             <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">Check</button>
           </div>
       </div>
