@@ -24,4 +24,15 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDAO.NoticeWrite(noticevo);
 	}
 
+	@Override
+	public NoticeVO getNoticeView(int NB_Num) {
+		return noticeDAO.getNoticeView(NB_Num);
+	}
+
+	@Override
+	public void NoticeviewsUpdate(int NB_Num) {
+		noticeDAO.NoticeviewUpdate(NB_Num);
+		
+	}
+
 }

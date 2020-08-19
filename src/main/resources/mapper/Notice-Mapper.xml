@@ -14,6 +14,16 @@
 
 <insert id="NoticeWrite">
 insert into Notice_Border(NB_Subject, NB_Content, NB_Views, NB_Date) 
-values(#{NB_Subject},#{NB_Content},1,now());
+values(#{NB_Subject},#{NB_Content},0,now());
 </insert>
+
+<select id="getNoticeView" resultType="com.project.travel.vo.NoticeVO">
+SELECT * FROM Notice_Border where NB_Num = #{NB_Num};
+</select>
+
+<!-- update -->
+<update id="NoticeviewUpdate">
+UPDATE Notice_Border SET NB_Views = NB_Views+1 WHERE NB_Num = #{NB_Num};
+</update>
+
 </mapper>
