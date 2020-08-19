@@ -13,7 +13,6 @@ $(function(){
 	// 중복확인 버튼 확인, 비밀번호 제약 확인
 	$("#submit").on("click", function(){
 		var idChkVal = $("#idChk").val();
-		var id = $("#inputEmail").val();
 		var pw = $("#inputPassword").val();
 		var pw2 = $("#inputRepassword").val();
 		var num = pw.search(/[0-9]/g);
@@ -23,10 +22,7 @@ $(function(){
 		if(idChkVal == "N"){
 			alert("Please press the check button.");
 			return false;
-		} else if(id.search(/\s/) != -1){
-	        alert("Please enter your password without spaces.");
-	        return false;
-    	} else if(pw.length < 8 || pw.length > 20){
+		} else if(pw.length < 8 || pw.length > 20){
         	alert("The password must be a minimum of 8 characters.");
         	return false;
 	    } else if(pw.search(/\s/) != -1){
@@ -63,17 +59,15 @@ function maxLengthCheck(object){
 
 // 아이디 중복 확인 체크
 function fn_idChk(){
+	var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 	var id = $("#inputEmail").val();
-	var spe = id.search(/[@]/gi);
 	
-	if(id.length<6){
-		alert("The email must be a minimum of 6 characters.");
-    	return false;
-	} else if(spe < 0){
-		alert("Email must include @");
-        return false;
-	}
-		
+	// 이메일 주소 형식 확인
+ 	if(!reg_email.test(id)) {
+		alert("Please fill out the correct email.");
+  		return false;
+    } else 
+
 	$.ajax({
 		url : "/user/idChk",
 		type : "POST",
