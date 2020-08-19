@@ -51,5 +51,9 @@ public class QnAController {
 			return mav;
 		}
 //		QnA 삭제 
-
+		@RequestMapping(value="qna/QnADelete",method = RequestMethod.GET)
+		public String QnADelete(int QnA_Num) {
+			qnaService.QnADelete(QnA_Num);
+			return "redirect: QnABoard";
+		}
 }

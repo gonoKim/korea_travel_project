@@ -13,11 +13,14 @@
 <script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
+<!-- 커스텀 Css/JS -->
+<script src="../../../resources/QnA/js/QnABoard.js"></script>
+
+<!-- <script type="text/javascript">
 function QnAwrite() { 
     location.href = "/qna/QnAWrite"; 
 } 
-</script>
+</script> -->
 </head>
 <body >
 <div class="container">

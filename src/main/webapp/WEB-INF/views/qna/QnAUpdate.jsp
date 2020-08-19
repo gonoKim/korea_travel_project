@@ -20,8 +20,10 @@
 <link rel="stylesheet" href="../../../resources/QnA/css/broad.css">
 <!--로컬 js 오류남  -->
 <!--  <script src="../../../resources/QnA/js/jquery.min.js"></script> -->
-<!-- <script src="../../../resources/QnA/js/QnAwrite.js"></script> -->
+<!-- <script src="../../../resources/QnA/js/QnAUpdate.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- 삭제할부분 -->
 <script type="text/javascript">
 
 function updateValidation(){

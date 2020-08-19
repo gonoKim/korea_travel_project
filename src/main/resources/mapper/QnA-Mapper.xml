@@ -41,7 +41,8 @@ WHERE QnA_Num 	 = #{QnA_Num};
 
 <!-- QnA 삭제 쿼리문 -->
 <delete id="QnADelete">
-DELETE 	QnA_Border
-WHERE = QnA_Num = #{QnA_Num};
+DELETE 	
+FROM 	QnA_Border
+WHERE   QnA_Num = #{QnA_Num};
 </delete>
 </mapper>
