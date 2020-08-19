@@ -41,7 +41,7 @@
         <div class="row flex-nowrap justify-content-between align-items-center">
 	      <div class="col-4 pt-1">
 	      	<c:if test="${user == null}">
-	            <a class="btn btn-sm btn-outline-secondary" href="../Sign/Sign_In/index.html" id="sign_in_btn_left">Sign in</a>
+	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn_left">Sign in</a>
            	</c:if>
 	      </div>
 	      
