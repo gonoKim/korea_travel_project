@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.service.UserService;
+import com.project.travel.vo.NoticeVO;
 import com.project.travel.vo.UserVO;
 
 @Controller
@@ -27,19 +28,20 @@ public class MyPageController {
 		 * ModelAndView MyPage() { ModelAndView mav = new ModelAndView(); return mav; }
 		 */
 		 
+		/*
+		 * @RequestMapping(value="mypage/MyPage", method = RequestMethod.GET) public
+		 * String registerUpdateView() throws Exception{
+		 * 
+		 * return "mypage/MyPage"; }
+		 */
+		  
 		  @RequestMapping(value="mypage/MyPage", method = RequestMethod.GET)
-		  public String registerUpdateView() throws Exception{
-		  	
-		  	return "mypage/MyPage";
+		  public ModelAndView MyPageView(String M_Id) {
+			  UserVO result = service.getMyPageView(M_Id);
+			  ModelAndView mav = new ModelAndView();
+			  mav.addObject("user", result);
+			  return mav;
 		  }
-
-		  @RequestMapping(value="mypage/MyPage", method = RequestMethod.POST)
-		  public String registerUpdate(UserVO vo, HttpSession session) throws Exception{
-		  	
-		  	service.memberUpdate(vo);
-		  	
-		  	session.invalidate();
-		  	
-		  	return "redirect:/";
-		  }
+		  
+		  
 }

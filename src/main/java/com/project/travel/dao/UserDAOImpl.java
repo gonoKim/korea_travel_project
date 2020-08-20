@@ -1,5 +1,7 @@
 package com.project.travel.dao;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -33,7 +35,14 @@ public class UserDAOImpl implements UserDAO {
 
 	// 회원정보 수정
 	@Override
-	public void memberUpdate(UserVO vo) throws Exception {
-		sqlSession.update("UserMapper.memberUpdate", vo);
+	public int UserUpdate(UserVO vo) throws Exception {
+		return sqlSession.update("UserUpdate", vo);
+	}
+
+	@Override
+	public UserVO getMyPageView(String M_Id)  {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("M_Id", M_Id);
+		return sqlSession.selectOne("getMyPageView", map);
 	}
 }

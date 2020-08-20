@@ -82,7 +82,7 @@
           <a class="p-2 text-muted nav-link" href="/user/Sign_In/login">My Page</a>
           </c:if>
           <c:if test="${user != null }">
-          <a class="p-2 text-muted nav-link" href="/mypage/MyPage">My Page</a>
+          <a class="p-2 text-muted nav-link" href="/mypage/MyPage?M_Id=${user.m_Id }">My Page</a>
           </c:if>
         </div>
       </nav>

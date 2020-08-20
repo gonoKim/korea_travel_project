@@ -32,7 +32,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void memberUpdate(UserVO vo) throws Exception {
-		dao.memberUpdate(vo);
+	public int UserUpdate(UserVO vo) throws Exception {
+		return dao.UserUpdate(vo);
 	}
+
+	@Override
+	public UserVO getMyPageView(String M_Id) {
+		return dao.getMyPageView(M_Id);
+	}
+
 }

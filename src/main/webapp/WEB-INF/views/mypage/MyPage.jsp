@@ -5,63 +5,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyPage</title>
 <link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >
-<script src="../../../../resources/assets/dist/js/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/assets/dist/js/jquery-3.5.1.min.js"></script>
 <script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/jquery-1.11.3.min.js"></script>
 
 <link rel="stylesheet" href="../../../resources/MyPage/css/blog.css" >
 <link rel="stylesheet" href="../../../resources/MyPage/css/mypage.css" >
+
 <script src="../../../resources/MyPage/mypage.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function updateValidation(){
+	var M_Id = $("#M_Id").val();
+	var M_Phone = $("#M_Phone").val();
+	var M_Pw = $("#M_Pw").val();
+	if(!M_Phone){
+		alert("전화번호를 입력하세요.");
+		$("#M_Phone").focus();
+		return false;
+	}else if(!M_Pw){
+		alert("비밀번호를 입력하세요.");
+		$("#M_Pw").focus();
+		return false;
+	}else {
+		UserUpdate(M_Id, M_Phone, M_Pw);
+	}
+}
+
+function UserUpdate(M_Id, M_Phone, M_Pw){
+	
+	$.ajax({
+		url : "/user/UserUpdate",
+		type:'POST',
+		data : {
+			M_Id 	: M_Id,
+			M_Phone : M_Phone,
+			M_Pw : M_Pw
+		},
+		success:function(data){
+			if(data == 1){
+				alert("수정이 완료되었습니다.");
+				location.href="/mypage/MyPage?M_Id=${user.m_Id }";
+			}else {
+				alert("수정 실패");
+			}
+		},error:function(){
+			console.log("error");
+		}
+	})
+}
+
+</script>
 </head>
 <body>
   <div class="container">
 
-    <header class="blog-header py-3">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
-          <!-- <a class="text-muted" href="#">Subscribe</a> -->
-        </div>
-        <div class="col-4 text-center">
-          <a class="blog-header-logo text-dark" href="../../Main/index.html">Main</a>
-        </div>
-        <div class="col-4 d-flex justify-content-end align-items-center">
-          <c:if test="${user == null}">
-	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn">Sign in</a>
-	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_Up/register">Sign up</a>
-	        </c:if>
-			<c:if test="${user != null }">
-				<div>
-					<button id="nickname" class="btn" disabled>${user.m_Fname} ${user.m_Lname}</button>
-					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">Logout</button>
-				</div>
-			</c:if>
-        </div>
-      </div>
-    </header>
-    
-    <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
-      <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
-        <a class="p-2 text-muted nav-link" href="../../Main/index.html">Home</a>
-        <a class="p-2 text-muted nav-link" href="../Gallery/gallery.html">Gallery</a>
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link p-2 text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Support
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Notice</a>
-              <a class="dropdown-item" href="../Support/QnA/QnA.html">QnA</a>
-            </div>
-          </li>
-        </ul>
-        <a class="p-2 text-muted nav-link" href="../Mypage/my_page.html">MyPage</a>
-      </div>
-    </nav>
+    <jsp:include page="../inc/top.jsp"/>
     <!-- //공통 헤더&네비-->
 	
     <div class="row mpwrap">
@@ -129,19 +136,19 @@
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-                                    <label for="userid">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userid" value="${user.m_Id}" readonly>
+                                    <label for="M_Id">아이디<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="M_Id" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                  <label for="mPhone">휴대전화</label>
-                                  <input type="text" class="form-control" id="mPhone" value="${user.m_Phone}">
+                                  <label for="M_Phone">휴대전화</label>
+                                  <input type="text" class="form-control" id="M_Phone" value="${user.m_Phone}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="userpwd">비밀번호</label>
-                                    <input type="password" class="form-control" id="userpwd">
+                                    <label for="M_Pw">비밀번호</label>
+                                    <input type="password" class="form-control" id="M_Pw">
                                   </div>
-                                  <button type="submit" class="btn btn-primary float-right">수정</button>
+                                  <button type="button" class="btn btn-primary float-right" onclick="updateValidation()">수정</button>
                               </form>
                         </div>
                         <!-- //회원정보 수정 -->
@@ -310,11 +317,6 @@
   </div>
   <!-- //container(body_wrap) -->
 
-  <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
-  </footer>
+  <jsp:include page="../inc/bottom.jsp"/>
 </body>
 </html>

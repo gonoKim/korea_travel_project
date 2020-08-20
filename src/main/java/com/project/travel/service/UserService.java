@@ -1,5 +1,6 @@
 package com.project.travel.service;
 
+import com.project.travel.vo.NoticeVO;
 import com.project.travel.vo.UserVO;
 
 public interface UserService {
@@ -11,6 +12,9 @@ public interface UserService {
 	
 	// 아이디 중복 체크
 	public int idChk(UserVO vo) throws Exception;
+
+	int UserUpdate(UserVO vo) throws Exception; 
 	
-	public void memberUpdate(UserVO vo) throws Exception;
+	UserVO getMyPageView(String M_Id);
+	
 }

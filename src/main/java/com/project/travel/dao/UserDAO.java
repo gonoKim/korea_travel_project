@@ -1,5 +1,8 @@
 package com.project.travel.dao;
 
+import java.util.HashMap;
+
+import com.project.travel.vo.NoticeVO;
 import com.project.travel.vo.UserVO;
 
 public interface UserDAO{
@@ -13,5 +16,8 @@ public interface UserDAO{
 	public int idChk(UserVO vo) throws Exception;
 	
 	// 회원정보 수정
-	public void memberUpdate(UserVO vo) throws Exception;
+	public int UserUpdate(UserVO vo) throws Exception;
+	
+	public UserVO getMyPageView(String M_Id);
+
 }
