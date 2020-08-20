@@ -14,12 +14,12 @@
    
    <!--QnA 커스텀 css, js  -->
 <link rel="stylesheet" href="../../../resources/QnA/css/broad_view.css">
-<script src="../../../resources/QnA/js/QnAView.js"></script>
+<!-- <script src="../../../resources/QnA/js/QnAView.js"></script> -->
 <meta charset="UTF-8">
 <title>글 내용</title>
 
 <!-- 삭제할 부분 -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 function boardDelete(){	
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if (chk) {
@@ -30,7 +30,7 @@ function QnAUpdate(){
 	
 	location.href = "/qna/QnAUpdate?QnA_Num=${result.qnA_Num }";
 }
-</script> -->
+</script>
 </head>
 <body>
 <div class="container">
