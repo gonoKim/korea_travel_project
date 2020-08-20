@@ -10,4 +10,7 @@ public interface NoticeService {
 	
 	NoticeVO getNoticeView(int NB_Num);
 	void NoticeviewsUpdate(int NB_Num);
+	
+
+	int NoticeUpdate(NoticeVO noticevo); 
 }

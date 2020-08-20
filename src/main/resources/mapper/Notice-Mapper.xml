@@ -26,4 +26,11 @@ SELECT * FROM Notice_Border where NB_Num = #{NB_Num};
 UPDATE Notice_Border SET NB_Views = NB_Views+1 WHERE NB_Num = #{NB_Num};
 </update>
 
+<update id="NoticeUpdate">
+UPDATE Notice_Border 
+SET NB_Subject  = #{NB_Subject}
+,	NB_Content  = #{NB_Content}
+WHERE NB_Num 	 = #{NB_Num};
+</update>
+
 </mapper>

@@ -37,7 +37,7 @@ function NoticeUpdate(){
             <!-- <a class="text-muted" href="#">Subscribe</a> -->
           </div>
           <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="index.html">QnA</a>
+            <a class="blog-header-logo text-dark" href="index.html">Notice</a>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <a class="btn btn-sm btn-outline-secondary" href="../Sign/Sign_In/index.html" id="sign_in_btn">Sign in</a>

@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.mysql.cj.protocol.x.Notice;
 import com.project.travel.service.NoticeService;
 import com.project.travel.vo.NoticeVO;
+import com.project.travel.vo.QnAVO;
 
 @Controller
 @RequestMapping("notice/*")
@@ -40,6 +41,14 @@ public class NoticeController {
 		NoticeVO result = noticeService.getNoticeView(NB_Num);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("result", result);
+		return mav;
+	}
+	
+	@RequestMapping(value="notice/NoticeUpdate",method = RequestMethod.GET)
+	public ModelAndView NoticeUpdate(int NB_Num) {
+		NoticeVO result = noticeService.getNoticeView(NB_Num);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("result",result);
 		return mav;
 	}
 }

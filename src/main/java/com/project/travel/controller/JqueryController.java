@@ -47,4 +47,12 @@ public class JqueryController {
 		result = noticeService.NoticeWrite(noticevo); 
 		return result;
 	}
+	
+	@RequestMapping(value="jquery/NoticeUpdate",method = RequestMethod.POST)
+	@ResponseBody
+	public int NoticeUpdate(NoticeVO noticevo) {
+		int result = 0; 
+		result = noticeService.NoticeUpdate(noticevo); 
+		return result;
+	}
 }

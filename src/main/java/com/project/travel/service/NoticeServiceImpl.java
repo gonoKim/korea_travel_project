@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.travel.dao.NoticeDAO;
 import com.project.travel.vo.NoticeVO;
+import com.project.travel.vo.QnAVO;
 
 @Service
 public class NoticeServiceImpl implements NoticeService {
@@ -34,5 +35,12 @@ public class NoticeServiceImpl implements NoticeService {
 		noticeDAO.NoticeviewUpdate(NB_Num);
 		
 	}
+
+	@Override
+	public int NoticeUpdate(NoticeVO noticevo) {
+		return noticeDAO.NoticeUpdate(noticevo);
+	}
+	
+	
 
 }

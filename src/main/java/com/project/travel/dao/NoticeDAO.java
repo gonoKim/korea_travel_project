@@ -37,4 +37,9 @@ public class NoticeDAO {
 		map.put("NB_Num", NB_Num);
 		sqlSession.update("NoticeviewUpdate", map);
 	}
+
+	/* 수정 */
+	public int NoticeUpdate(NoticeVO noticevo) {
+		return sqlSession.update("NoticeUpdate", noticevo);
+	}
 }
