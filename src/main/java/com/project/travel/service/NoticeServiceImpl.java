@@ -40,6 +40,11 @@ public class NoticeServiceImpl implements NoticeService {
 	public int NoticeUpdate(NoticeVO noticevo) {
 		return noticeDAO.NoticeUpdate(noticevo);
 	}
+
+	@Override
+	public int NoticeDelete(int NB_Num) {
+		return noticeDAO.NoticeDelete(NB_Num);
+	}
 	
 	
 

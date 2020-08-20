@@ -42,4 +42,8 @@ public class NoticeDAO {
 	public int NoticeUpdate(NoticeVO noticevo) {
 		return sqlSession.update("NoticeUpdate", noticevo);
 	}
+	
+	public int NoticeDelete(int NB_Num) {
+		return sqlSession.delete("NoticeDelete", NB_Num);
+	}
 }

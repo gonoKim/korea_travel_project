@@ -33,4 +33,9 @@ SET NB_Subject  = #{NB_Subject}
 WHERE NB_Num 	 = #{NB_Num};
 </update>
 
+<delete id="NoticeDelete">
+DELETE FROM Notice_Border
+WHERE NB_Num = #{NB_Num};
+</delete>
+
 </mapper>

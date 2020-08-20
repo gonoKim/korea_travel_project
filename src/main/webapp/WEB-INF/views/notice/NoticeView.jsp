@@ -18,8 +18,11 @@
 <title>글 내용</title>
 
 <script type="text/javascript">
-function boardDelete(){
-			
+function NoticeDelete(){
+	var chk = confirm("정말 삭제하시겠습니까?");
+	if (chk) {
+		location.href="/notice/NoticeDelete?NB_Num=${result.NB_Num }";
+			}
 }
 
 function NoticeUpdate(){
@@ -80,7 +83,7 @@ function NoticeUpdate(){
 </table>
 <div class="row justify-content-center my-4">
                     <input type="button" value="Update" class="btn" onclick="NoticeUpdate()"/>
-                     <input type="button" value="Delete" class="btn" onclick="boardDelete()"/>
+                     <input type="button" value="Delete" class="btn" onclick="NoticeDelete()"/>
                      <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='NoticeBoard'"/>
                 </div>
 </form>

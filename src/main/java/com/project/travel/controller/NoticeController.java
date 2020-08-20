@@ -51,4 +51,10 @@ public class NoticeController {
 		mav.addObject("result",result);
 		return mav;
 	}
+	
+	@RequestMapping(value="notice/NoticeDelete",method = RequestMethod.GET)
+	public String NoticeDelete(int NB_Num) {
+		noticeService.NoticeDelete(NB_Num);
+		return "redirect: NoticeBoard";
+	}
 }
