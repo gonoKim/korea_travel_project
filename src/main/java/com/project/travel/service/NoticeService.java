@@ -6,14 +6,14 @@ import com.project.travel.vo.QnAVO;
 
 public interface NoticeService {
 	List<NoticeVO> getNoticeList();
-	int NoticeWrite(NoticeVO noticevo);
-	
-	NoticeVO getNoticeView(int NB_Num);
-	void NoticeviewsUpdate(int NB_Num);
-	
 
-	int NoticeUpdate(NoticeVO noticevo); 
-	
-	 
-		int NoticeDelete(int NB_Num);
+	int NoticeWrite(NoticeVO noticevo);
+
+	NoticeVO getNoticeView(int NB_Num);
+
+	void NoticeviewsUpdate(int NB_Num);
+
+	int NoticeUpdate(NoticeVO noticevo);
+
+	int NoticeDelete(int NB_Num);
 }

@@ -12,37 +12,40 @@ import com.project.travel.vo.QnAVO;
 
 @Repository
 public class NoticeDAO {
-	
+
 	@Autowired
 	public SqlSession sqlSession;
-	
-	public List<NoticeVO> getNoticeList(){
+
+	/* Notice 리스트 */
+	public List<NoticeVO> getNoticeList() {
 		return sqlSession.selectList("getNoticeList");
 	}
-	
+
+	/* Notice 작성 */
 	public int NoticeWrite(NoticeVO noticevo) {
 		return sqlSession.insert("NoticeWrite", noticevo);
 	}
-	
-	/* 내용 뷰 */
+
+	/* Notice 내용 뷰 */
 	public NoticeVO getNoticeView(int NB_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("NB_Num", NB_Num);
 		return sqlSession.selectOne("getNoticeView", map);
 	}
 
-	/* 조회수 업데이트 */
+	/* Notice 조회수 업데이트 */
 	public void NoticeviewUpdate(int NB_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("NB_Num", NB_Num);
 		sqlSession.update("NoticeviewUpdate", map);
 	}
 
-	/* 수정 */
+	/* Notice 수정 */
 	public int NoticeUpdate(NoticeVO noticevo) {
 		return sqlSession.update("NoticeUpdate", noticevo);
 	}
-	
+
+	/* Notice 삭제 */
 	public int NoticeDelete(int NB_Num) {
 		return sqlSession.delete("NoticeDelete", NB_Num);
 	}

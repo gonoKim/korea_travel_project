@@ -39,6 +39,7 @@ public class UserDAOImpl implements UserDAO {
 		return sqlSession.update("UserUpdate", vo);
 	}
 
+	// 마이페이지 뷰
 	@Override
 	public UserVO getMyPageView(String M_Id)  {
 		HashMap<String, Object> map = new HashMap<String, Object>();

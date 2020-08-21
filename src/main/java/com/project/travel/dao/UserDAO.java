@@ -18,6 +18,7 @@ public interface UserDAO{
 	// 회원정보 수정
 	public int UserUpdate(UserVO vo) throws Exception;
 	
+	// 마이페이지 뷰
 	public UserVO getMyPageView(String M_Id);
 
 }

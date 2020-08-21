@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 커뮤니티</title>
+<title>커뮤니티</title>
 </head>
 <body>
 <p>환영합니다  커뮤니티입니다.(index page)</p>

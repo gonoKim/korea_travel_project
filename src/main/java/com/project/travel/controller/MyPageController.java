@@ -19,29 +19,16 @@ import com.project.travel.vo.UserVO;
 public class MyPageController {
 	private static final Logger logger = LoggerFactory.getLogger(MyPageController.class);
 	/* MyPage 컨트롤러 */
-	
-		@Inject
-		UserService service;
-	
-		/*
-		 * @RequestMapping(value="mypage/MyPage",method = RequestMethod.GET) public
-		 * ModelAndView MyPage() { ModelAndView mav = new ModelAndView(); return mav; }
-		 */
-		 
-		/*
-		 * @RequestMapping(value="mypage/MyPage", method = RequestMethod.GET) public
-		 * String registerUpdateView() throws Exception{
-		 * 
-		 * return "mypage/MyPage"; }
-		 */
-		  
-		  @RequestMapping(value="mypage/MyPage", method = RequestMethod.GET)
-		  public ModelAndView MyPageView(String M_Id) {
-			  UserVO result = service.getMyPageView(M_Id);
-			  ModelAndView mav = new ModelAndView();
-			  mav.addObject("user", result);
-			  return mav;
-		  }
-		  
-		  
+
+	@Inject
+	UserService service;
+
+	@RequestMapping(value = "mypage/MyPage", method = RequestMethod.GET)
+	public ModelAndView MyPageView(String M_Id) {
+		UserVO result = service.getMyPageView(M_Id);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("user", result);
+		return mav;
+	}
+
 }

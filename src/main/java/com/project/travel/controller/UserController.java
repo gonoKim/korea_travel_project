@@ -88,7 +88,7 @@ public class UserController {
 		return "redirect:/main/main";
 	}
 	
-	
+	// 회원정보 수정
 	@RequestMapping(value="user/UserUpdate",method = RequestMethod.POST)
 	@ResponseBody
 	public int User(UserVO vo) throws Exception {

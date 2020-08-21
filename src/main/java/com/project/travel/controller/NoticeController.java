@@ -16,26 +16,28 @@ import com.project.travel.vo.QnAVO;
 @Controller
 @RequestMapping("notice/*")
 public class NoticeController {
-	
+
 	@Autowired
 	NoticeService noticeService;
 
+	// Notice 리스트
 	@RequestMapping("notice/NoticeBoard")
 	public ModelAndView NoticeBoard() {
 		List<NoticeVO> result = noticeService.getNoticeList();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("result", result);
-		
 		return mav;
 	}
-	
-	@RequestMapping(value="notice/NoticeWrite", method=RequestMethod.GET)
+
+	// Notice 작성
+	@RequestMapping(value = "notice/NoticeWrite", method = RequestMethod.GET)
 	public ModelAndView NoticeWrite() {
 		ModelAndView mav = new ModelAndView();
 		return mav;
 	}
-	
-	@RequestMapping(value="notice/NoticeView", method=RequestMethod.GET)
+
+	// Notice 뷰(조회수증가&뷰)
+	@RequestMapping(value = "notice/NoticeView", method = RequestMethod.GET)
 	public ModelAndView NoticeView(int NB_Num) {
 		noticeService.NoticeviewsUpdate(NB_Num);
 		NoticeVO result = noticeService.getNoticeView(NB_Num);
@@ -44,15 +46,17 @@ public class NoticeController {
 		return mav;
 	}
 	
-	@RequestMapping(value="notice/NoticeUpdate",method = RequestMethod.GET)
+	// Notice 글 수정
+	@RequestMapping(value = "notice/NoticeUpdate", method = RequestMethod.GET)
 	public ModelAndView NoticeUpdate(int NB_Num) {
 		NoticeVO result = noticeService.getNoticeView(NB_Num);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("result",result);
+		mav.addObject("result", result);
 		return mav;
 	}
-	
-	@RequestMapping(value="notice/NoticeDelete",method = RequestMethod.GET)
+
+	// Notice 글 삭제
+	@RequestMapping(value = "notice/NoticeDelete", method = RequestMethod.GET)
 	public String NoticeDelete(int NB_Num) {
 		noticeService.NoticeDelete(NB_Num);
 		return "redirect: NoticeBoard";

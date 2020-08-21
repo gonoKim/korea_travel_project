@@ -44,6 +44,7 @@ public class JqueryController {
 	@Autowired
 	NoticeService noticeService;
 	
+	// Notice 글 작성
 	@RequestMapping(value="jquery/NoticeWrite",method = RequestMethod.POST)
 	@ResponseBody
 	public int NoticeWrite(NoticeVO noticevo) {
@@ -52,6 +53,7 @@ public class JqueryController {
 		return result;
 	}
 	
+	// Notice 글 수정
 	@RequestMapping(value="jquery/NoticeUpdate",method = RequestMethod.POST)
 	@ResponseBody
 	public int NoticeUpdate(NoticeVO noticevo) {

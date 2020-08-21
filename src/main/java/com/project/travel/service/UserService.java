@@ -13,8 +13,10 @@ public interface UserService {
 	// 아이디 중복 체크
 	public int idChk(UserVO vo) throws Exception;
 
+	// 회원정보 수정
 	int UserUpdate(UserVO vo) throws Exception; 
 	
+	// 마이페이지 뷰
 	UserVO getMyPageView(String M_Id);
 	
 }

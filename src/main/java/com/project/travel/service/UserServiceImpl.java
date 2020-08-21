@@ -31,11 +31,13 @@ public class UserServiceImpl implements UserService {
 		return result;
 	}
 
+	// 회원정보 수정
 	@Override
 	public int UserUpdate(UserVO vo) throws Exception {
 		return dao.UserUpdate(vo);
 	}
-
+	
+	// 마이페이지 뷰
 	@Override
 	public UserVO getMyPageView(String M_Id) {
 		return dao.getMyPageView(M_Id);

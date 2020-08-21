@@ -14,7 +14,7 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Autowired
 	NoticeDAO noticeDAO;
-	
+
 	@Override
 	public List<NoticeVO> getNoticeList() {
 		return noticeDAO.getNoticeList();
@@ -33,7 +33,6 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public void NoticeviewsUpdate(int NB_Num) {
 		noticeDAO.NoticeviewUpdate(NB_Num);
-		
 	}
 
 	@Override
@@ -45,7 +44,5 @@ public class NoticeServiceImpl implements NoticeService {
 	public int NoticeDelete(int NB_Num) {
 		return noticeDAO.NoticeDelete(NB_Num);
 	}
-	
-	
 
 }

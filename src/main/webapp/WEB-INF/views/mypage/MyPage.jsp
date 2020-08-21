@@ -41,7 +41,6 @@ function updateValidation(){
 }
 
 function UserUpdate(M_Id, M_Phone, M_Pw){
-	
 	$.ajax({
 		url : "/user/UserUpdate",
 		type:'POST',
@@ -318,5 +317,6 @@ function UserUpdate(M_Id, M_Phone, M_Pw){
   <!-- //container(body_wrap) -->
 
   <jsp:include page="../inc/bottom.jsp"/>
+  <!-- //공통 푸터 -->
 </body>
 </html>
