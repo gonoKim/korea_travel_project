@@ -38,4 +38,8 @@ public class QnAServiceImpl implements QnAService {
 	public int  QnADelete(int QnA_Num) {
 		return qnaDAO.QnADelete(QnA_Num);
 	}
+	@Override
+	public int getQnAListCnt() {
+		return qnaDAO.getQnAListCnt();
+	}
 }

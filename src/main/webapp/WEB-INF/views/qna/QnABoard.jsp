@@ -16,11 +16,42 @@
 <!-- 커스텀 Css/JS -->
 <script src="../../../resources/QnA/js/QnABoard.js"></script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 function QnAwrite() { 
     location.href = "/qna/QnAWrite"; 
 } 
-</script> -->
+
+
+//이전 버튼 이벤트
+function fn_prev(qnapage, qnarange, qnarangeSize) {
+		var qnapage = ((qnarange - 2) * qnarangeSize) + 1;
+		var qnarange = qnarange - 1;
+		var url = "${pageContext.request.contextPath}/qna/QnABoard";
+		url = url + "?page=" + page;
+		url = url + "&range=" + range;
+		location.href = url;
+	}
+
+
+
+  //페이지 번호 클릭
+	function fn_pagination(qnapage, qnarange, qnarangeSize) {
+		var url = "${pageContext.request.contextPath}/qna/QnABoard";
+		url = url + "?qnapage=" + qnapage;
+		url = url + "&qnarange=" + qnarange;
+		location.href = url;	
+	}
+
+	//다음 버튼 이벤트
+	function fn_next(qnapage, qnarange, qnarangeSize) {
+		var qnapage = parseInt((qnarange * qnarangeSize)) + 1;
+		var qnarange = parseInt(qnarange) + 1;
+		var url = "${pageContext.request.contextPath}/qna/QnABoard";
+		url = url + "?qnapage=" + qnapage;
+		url = url + "&qnarange=" + qnarange;
+		location.href = url;
+	}
+</script>
 </head>
 <body >
 <div class="container">
@@ -76,10 +107,37 @@ function QnAwrite() {
 			</tr>
 		</c:forEach>
 	</table>
-	</div>
+
+
+		</div>
+			<!-- pagination{s} -->
+			<div id="paginationBox">
+				<ul class="pagination">
+					<c:if test="${pagination.qnaprev}">
+						<li class="page-item"><a class="page-link" href="#"
+							onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a></li>
+					</c:if>
+
+					<c:forEach begin="${pagination.qnastartPage}"
+						end="${pagination.qnaendPage}" var="idx">
+						<li
+							class="page-item <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> "><a
+							class="page-link" href="#"
+							onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">
+								${idx} </a></li>
+					</c:forEach>
+
+					<c:if test="${pagination.qnanext}">
+						<li class="page-item"><a class="page-link" href="#"
+							onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a></li>
+
+					</c:if>
+				</ul>
+			</div>
+
+			<!-- pagination{e} -->
+	
 	<div>
-
-
 		      <div class="row justify-content-center my-3 ">
             <button type="submit" onclick="QnAwrite();"  class="btn">
                 Write<i class="fa fa-times spaceLeft"></i>
@@ -96,5 +154,6 @@ function QnAwrite() {
 			<a href="#">Back to top</a>
 		</p>
 	</footer>
+	
 </body>
 </html>

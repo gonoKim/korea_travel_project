@@ -11,4 +11,5 @@ public interface QnAService {
 	void viewsUpdate(int QnA_Num);
 	int QnAUpdate(QnAVO qnavo); 
 	int QnADelete(int QnA_Num);
+	int getQnAListCnt();
 }

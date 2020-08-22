@@ -8,9 +8,20 @@
 	*
 	from QnA_Border
 	order by 
-	QnA_Num DESC;
+	QnA_Num DESC
+	LIMIT 
+	1
+, 	10;
+
 <!-- ]]> -->
 </select>
+	<select id="getQnAListCnt" resultType="int">
+	SELECT
+	count(*) as qnalistCnt
+	FROM
+	QnA_Border
+	</select>
+	
 <!-- insert 쿼리문  -->
 <insert id="QnAWrite">
 insert into QnA_Border (QnA_Num,QnA_Write,QnA_Subject,QnA_Content,QnA_Views,QnA_Date) 

@@ -1,13 +1,16 @@
 package com.project.travel.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.travel.common.Pagination;
 import com.project.travel.service.QnAService;
 import com.project.travel.vo.QnAVO;
 
@@ -19,9 +22,16 @@ public class QnAController {
 	QnAService qnaService;
 //		QnA 리스트 맵핑, 컨트롤러
 		@RequestMapping("qna/QnABoard")
-		public ModelAndView QnAboard() {
+		public ModelAndView QnAboard(
+				@RequestParam(required = false, defaultValue = "1") int qnapage
+			,   @RequestParam(required = false, defaultValue = "1") int qnarange
+				) {
 			List result = qnaService.getQnAList();
+			int qnalistCnt = qnaService.getQnAListCnt();
+			Pagination pagination =new Pagination();
+			pagination.pageInfo(qnapage, qnarange, qnalistCnt);
 			ModelAndView mav = new ModelAndView();
+			mav.addObject("pagination",pagination);
 			mav.addObject("result", result);
 			return mav;
 		}

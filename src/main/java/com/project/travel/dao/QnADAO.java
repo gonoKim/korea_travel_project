@@ -19,7 +19,11 @@ public class QnADAO {
 	public List<QnAVO> getQnAList() {
 		return sqlSession.selectList("getQnAList");
 	}
-
+	/* 총 게시글 개수 확인 */
+	public int getQnAListCnt() {
+	return sqlSession.selectOne("getQnAListCnt");
+	}
+	
 	/* QnA 작성 */
 	public int QnAWrite(QnAVO qnavo) {
 		return sqlSession.insert("QnAWrite", qnavo);
