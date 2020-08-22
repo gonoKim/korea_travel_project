@@ -2,17 +2,19 @@ package com.project.travel.common;
 
 public class Pagination {
 
-	private int qnalistSize = 10; // �ʱⰪ���� ��ϰ����� 10���� ����
-	private int qnarangeSize = 10; // �ʱⰪ���� ������������ 10���� ����
-	private int qnapage;
-	private int qnarange;
-	private int qnalistCnt;
-	private int qnapageCnt;
-	private int qnastartPage;
-	private int qnastartList;
-	private int qnaendPage;
-	private boolean qnaprev;
-	private boolean qnanext;
+	private int qnalistSize = 10; // 한 페이지당 보여질 리스트의 개수 
+	//초기값으로 목록개수를 10으로 셋팅
+	private int qnarangeSize = 10; // 	한 페이지 범위에 보여질 페이지의 개수
+	 //초기값으로 페이지범위를 10으로 셋팅
+	private int qnapage;	//현재 목록의 페이지 번호 
+	private int qnarange;	//각 페이지 범위 시작 번호 
+	private int qnalistCnt;	//전체 개시물의 개수 
+	private int qnapageCnt;	// 전체 페이지 범위의 개수 
+	private int qnastartPage;	//각 페이지 범위 시작 번호 
+	private int qnastartList;	//각 페이지 범위 
+	private int qnaendPage;		//각 페이지 범위 끝 번호
+	private boolean qnaprev;	//이전 페이지 여부 
+	private boolean qnanext;	//다음 페이지 여부 
 
 	public int getQnalistSize() {
 		return qnalistSize;
@@ -108,22 +110,22 @@ public class Pagination {
 		this.qnarange = qnarange;
 		this.qnalistCnt = qnalistCnt;
 
-		// ��ü ��������
+		//전체 페이지수 
 		this.qnapageCnt = (int) Math.ceil((double)qnalistCnt / qnalistSize);
 
-		// ���� ������
+		// 시작 페이지
 		this.qnastartPage = (qnarange - 1) * qnarangeSize + 1;
 
-		// �� ������
+		//끝 페이지
 		this.qnaendPage = qnarange * qnarangeSize;
 
-		// �Խ��� ���۹�ȣ
+		// 게시판 시작번호
 		this.qnastartList = (qnapage - 1) * qnalistSize;
 		
-		// ���� ��ư ����
+		//이전 버튼 상태
 		this.qnaprev = qnarange == 1 ? false : true;
 
-		// ���� ��ư ����
+		//다음 버튼 상태
 		this.qnanext = qnapageCnt > qnaendPage ? true : false;
 		if (this.qnaendPage > this.qnapageCnt) {
 			this.qnaendPage = this.qnapageCnt;
