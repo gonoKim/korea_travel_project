@@ -2,8 +2,8 @@ package com.project.travel.common;
 
 public class Pagination {
 
-	private int qnalistSize = 10; // ÃÊ±â°ªÀ¸·Î ¸ñ·Ï°³¼ö¸¦ 10À¸·Î ¼ÂÆÃ
-	private int qnarangeSize = 10; // ÃÊ±â°ªÀ¸·Î ÆäÀÌÁö¹üÀ§¸¦ 10À¸·Î ¼ÂÆÃ
+	private int qnalistSize = 10; // ï¿½Ê±â°ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private int qnarangeSize = 10; // ï¿½Ê±â°ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	private int qnapage;
 	private int qnarange;
 	private int qnalistCnt;
@@ -108,23 +108,23 @@ public class Pagination {
 		this.qnarange = qnarange;
 		this.qnalistCnt = qnalistCnt;
 
-		// ÀüÃ¼ ÆäÀÌÁö¼ö
-		this.qnapageCnt = (int) Math.ceil(qnalistCnt / qnalistSize);
+		// ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		this.qnapageCnt = (int) Math.ceil((double)qnalistCnt / qnalistSize);
 
-		// ½ÃÀÛ ÆäÀÌÁö
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		this.qnastartPage = (qnarange - 1) * qnarangeSize + 1;
 
-		// ³¡ ÆäÀÌÁö
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		this.qnaendPage = qnarange * qnarangeSize;
 
-		// °Ô½ÃÆÇ ½ÃÀÛ¹øÈ£
+		// ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¹ï¿½È£
 		this.qnastartList = (qnapage - 1) * qnalistSize;
 		
-		// ÀÌÀü ¹öÆ° »óÅÂ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½
 		this.qnaprev = qnarange == 1 ? false : true;
 
-		// ´ÙÀ½ ¹öÆ° »óÅÂ
-		this.qnanext = qnaendPage > qnapageCnt ? false : true;
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½
+		this.qnanext = qnapageCnt > qnaendPage ? true : false;
 		if (this.qnaendPage > this.qnapageCnt) {
 			this.qnaendPage = this.qnapageCnt;
 			this.qnanext = false;
