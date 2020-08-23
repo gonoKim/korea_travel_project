@@ -10,6 +10,7 @@
 	order by 
 	QnA_Num DESC
 LIMIT #{qnastartList}, 10;
+<!--limit 부분 스타트리스트 가0부터 시작하고 10개씩 끊어라 는 말임-->
 <!-- ]]> -->
 </select>
 	<select id="getQnAListCnt" resultType="int">

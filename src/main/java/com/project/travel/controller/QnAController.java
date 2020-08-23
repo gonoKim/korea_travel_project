@@ -33,7 +33,7 @@ public class QnAController {
 			Pagination pagination =new Pagination();
 			pagination.pageInfo(qnapage, qnarange, qnalistCnt);
 			
-			//DB 접속
+			//DB 접속, qna스타트 리스트 부부을 가져옴
 			List result = qnaService.getQnAList(pagination.getQnastartList());
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("pagination",pagination);

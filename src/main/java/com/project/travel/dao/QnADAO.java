@@ -17,7 +17,7 @@ public class QnADAO {
 
 	/* QnA 리스트 */
 	public List<QnAVO> getQnAList(int qnastartList) {
-		
+		//해쉬맵으로 스타트 리스트를 만들어서 디비에 넣어줌
 		HashMap<String, Object> map =new HashMap<String, Object>();
 			map.put("qnastartList", qnastartList);
 
