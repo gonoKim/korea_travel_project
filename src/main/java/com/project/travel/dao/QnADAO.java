@@ -16,14 +16,14 @@ public class QnADAO {
 	public SqlSession sqlSession;
 
 	/* QnA 리스트 */
-	public List<QnAVO> getQnAList(int qnastartList, int qnaEndList) {
+	public List<QnAVO> getQnAList(int qnastartList) {
 		
 		HashMap<String, Object> map =new HashMap<String, Object>();
 			map.put("qnastartList", qnastartList);
-			map.put("qnaEndList", qnaEndList);
 
 		return sqlSession.selectList("getQnAList", map);
 	}
+	
 	/* 총 게시글 개수 확인 */
 	public int getQnAListCnt() {
 	return sqlSession.selectOne("getQnAListCnt");

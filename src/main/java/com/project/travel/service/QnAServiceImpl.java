@@ -15,8 +15,7 @@ public class QnAServiceImpl implements QnAService {
 	QnADAO qnaDAO;
 	
 	public List<QnAVO> getQnAList(int qnastartList) {
-		int qnaEndList = qnastartList + 9;
-		return qnaDAO.getQnAList(qnastartList, qnaEndList);
+		return qnaDAO.getQnAList(qnastartList);
 	}
 	
 	@Override

@@ -32,9 +32,9 @@ public class QnAController {
 			// 페이지 계산
 			Pagination pagination =new Pagination();
 			pagination.pageInfo(qnapage, qnarange, qnalistCnt);
-			pagination.getQnastartList();
+			
 			//DB 접속
-			List result = qnaService.getQnAList(qnarange);
+			List result = qnaService.getQnAList(pagination.getQnastartList());
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("pagination",pagination);
 			mav.addObject("result", result);
