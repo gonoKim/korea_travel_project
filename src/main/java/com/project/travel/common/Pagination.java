@@ -125,6 +125,8 @@ public class Pagination {
 		//이전 버튼 상태
 		this.qnaprev = qnarange == 1 ? false : true;
 
+		//
+		
 		//다음 버튼 상태
 		this.qnanext = qnapageCnt > qnaendPage ? true : false;
 		if (this.qnaendPage > this.qnapageCnt) {

@@ -21,14 +21,13 @@ function QnAwrite() {
     location.href = "/qna/QnAWrite"; 
 } 
 
-
 //이전 버튼 이벤트
 function fn_prev(qnapage, qnarange, qnarangeSize) {
 		var qnapage = ((qnarange - 2) * qnarangeSize) + 1;
 		var qnarange = qnarange - 1;
 		var url = "${pageContext.request.contextPath}/qna/QnABoard";
-		url = url + "?page=" + page;
-		url = url + "&range=" + range;
+		url = url + "?qnapage=" + qnapage;
+		url = url + "&qnarange=" + qnarange;
 		location.href = url;
 	}
 
@@ -120,17 +119,16 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 
 					<c:forEach begin="${pagination.qnastartPage}"
 						end="${pagination.qnaendPage}" var="idx">
-						<li
-							class="page-item <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> "><a
-							class="page-link" href="#"
-							onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">
-								${idx} </a></li>
+						<li class="page-item <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> ">
+						<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">
+								${idx} </a>
+						</li>
 					</c:forEach>
 
 					<c:if test="${pagination.qnanext}">
-						<li class="page-item"><a class="page-link" href="#"
-							onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a></li>
-
+						<li class="page-item">
+						<a class="page-link" href="#" onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a>
+						</li>
 					</c:if>
 				</ul>
 			</div>

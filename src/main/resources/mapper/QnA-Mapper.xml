@@ -9,10 +9,7 @@
 	from QnA_Border
 	order by 
 	QnA_Num DESC
-	LIMIT 
-	1
-, 	10;
-
+LIMIT #{qnastartList}, 10;
 <!-- ]]> -->
 </select>
 	<select id="getQnAListCnt" resultType="int">

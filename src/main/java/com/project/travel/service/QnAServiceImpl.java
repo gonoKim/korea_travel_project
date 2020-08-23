@@ -14,17 +14,21 @@ public class QnAServiceImpl implements QnAService {
 	@Autowired
 	QnADAO qnaDAO;
 	
-	public List<QnAVO> getQnAList() {
-		return qnaDAO.getQnAList();
+	public List<QnAVO> getQnAList(int qnastartList) {
+		int qnaEndList = qnastartList + 9;
+		return qnaDAO.getQnAList(qnastartList, qnaEndList);
 	}
+	
 	@Override
 	public int QnAWrite(QnAVO qnavo) {
 	return qnaDAO.QnAWrite(qnavo);
 	}
+	
 	@Override
 	public QnAVO getQnAView(int QnA_Num) {
 	return qnaDAO.getQnAView(QnA_Num);
 	}
+	
 	@Override
 	public void viewsUpdate(int QnA_Num) {
 		qnaDAO.viewUpdate(QnA_Num);
@@ -34,10 +38,12 @@ public class QnAServiceImpl implements QnAService {
 	public int QnAUpdate(QnAVO qnavo) {
 		return qnaDAO.QnAUpdate(qnavo);
 	}
+	
 	@Override
-	public int  QnADelete(int QnA_Num) {
+	public int QnADelete(int QnA_Num) {
 		return qnaDAO.QnADelete(QnA_Num);
 	}
+	
 	@Override
 	public int getQnAListCnt() {
 		return qnaDAO.getQnAListCnt();

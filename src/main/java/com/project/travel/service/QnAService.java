@@ -4,8 +4,9 @@ import java.util.List;
 
 import com.project.travel.vo.QnAVO;
 
+/*비즈니스 로직*/
 public interface QnAService {
-	List getQnAList();
+	List getQnAList(int qnastartList);
 	int QnAWrite(QnAVO qnavo);
 	QnAVO getQnAView(int QnA_Num);
 	void viewsUpdate(int QnA_Num);

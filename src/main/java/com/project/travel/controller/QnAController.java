@@ -14,6 +14,7 @@ import com.project.travel.common.Pagination;
 import com.project.travel.service.QnAService;
 import com.project.travel.vo.QnAVO;
 
+/*클라이언트와 서버를 연결해주는 모듈 */
 @Controller
 @RequestMapping("qna/*")
 public class QnAController {
@@ -26,10 +27,14 @@ public class QnAController {
 				@RequestParam(required = false, defaultValue = "1") int qnapage
 			,   @RequestParam(required = false, defaultValue = "1") int qnarange
 				) {
-			List result = qnaService.getQnAList();
+
 			int qnalistCnt = qnaService.getQnAListCnt();
+			// 페이지 계산
 			Pagination pagination =new Pagination();
 			pagination.pageInfo(qnapage, qnarange, qnalistCnt);
+			pagination.getQnastartList();
+			//DB 접속
+			List result = qnaService.getQnAList(qnarange);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("pagination",pagination);
 			mav.addObject("result", result);
