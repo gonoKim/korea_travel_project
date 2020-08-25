@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,9 @@ public class UserController {
 	@Inject
 	UserService service;
 	
+	@Inject
+	BCryptPasswordEncoder pwdEncoder;
+	
 	// 회원가입 get
 	@RequestMapping(value="/Sign_Up/register", method = RequestMethod.GET)
 	public void getRegister() throws Exception {
@@ -36,7 +40,7 @@ public class UserController {
 		int result = service.idChk(vo);
 		return result;
 	}
-	
+
 	// 회원가입 post
 	@RequestMapping(value="/Sign_Up/register", method = RequestMethod.POST)
 	public String postRegister(UserVO vo) throws Exception {
@@ -46,6 +50,10 @@ public class UserController {
 			if(result == 1) {
 				return "redirect:/user/Sign_Up/register";
 			}else if(result == 0) {
+				String inputPass = vo.getM_Pw();
+				String pwd = pwdEncoder.encode(inputPass);
+				vo.setM_Pw(pwd);
+				
 				service.register(vo);
 			}
 		} catch (Exception e) {
@@ -67,15 +75,23 @@ public class UserController {
 		
 		HttpSession session = req.getSession();
 		UserVO login = service.login(vo);
+		boolean pwdMatch;
 		
-		if(login == null) {
+		if(login != null) {
+			pwdMatch = pwdEncoder.matches(vo.getM_Pw(), login.getM_Pw());
+		} else {
+			pwdMatch = false;
+		}
+				
+		if(login != null && pwdMatch == true) {
+			session.setAttribute("user", login);
+			return "redirect:/main/main";
+		} else {
 			session.setAttribute("user", null);
 			rttr.addFlashAttribute("msg", false);
 			return "redirect:/user/Sign_In/login";	
-		}else {
-			session.setAttribute("user", login);
-			return "redirect:/main/main";
 		}
+		
 	}
 	
 	// 로그아웃
