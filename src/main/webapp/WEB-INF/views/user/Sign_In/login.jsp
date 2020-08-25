@@ -59,8 +59,8 @@
 	  </c:if>  
        
       <div class="modal-footer">
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Id/index'" id="FI_btn">Find ID</button>
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Pw/index'" id="FP_btn">Find Password</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Id/findId'" id="FI_btn">Find ID</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Pw/findPw'" id="FP_btn">Find Password</button>
       </div>
       <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Sign_Up/register'" id="sign_up_btn">Sign Up</button>
       

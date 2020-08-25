@@ -100,4 +100,16 @@ public class UserController {
 		session.invalidate();
 		return "redirect:/main/main";
 	}
+	
+	// 아이디 찾기
+	@RequestMapping(value="/Find_Id/findId", method = RequestMethod.GET)
+	public void getFindId() throws Exception {
+		logger.info("get findId");
+	}
+	
+	// 비밀번호 찾기
+	@RequestMapping(value="/Find_Pw/findPw", method = RequestMethod.GET)
+	public void getFindPw() throws Exception {
+		logger.info("get findPw");
+	}
 }
