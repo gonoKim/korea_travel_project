@@ -58,11 +58,11 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputFirstName">First name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname" maxlength="15" required>
+          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname" maxlength="10" required>
         </div>
         <div class="col-md-6 mb-3">
           <label for="inputLastName">Last name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname" maxlength="15" required>
+          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname" maxlength="10" required>
         </div>
       </div>
       
