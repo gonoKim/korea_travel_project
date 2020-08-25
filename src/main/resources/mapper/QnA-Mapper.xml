@@ -54,4 +54,38 @@ DELETE
 FROM 	QnA_Border
 WHERE   QnA_Num = #{QnA_Num};
 </delete>
+	<!-- QnA 댓글 쿼리문 -->
+	
+	<!-- 댓글 갯수 세기 -->
+  <select id="qnaCommentCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM QnA_Comment
+    </select>
+    <!-- 댓글 조회 -->
+    <select id="qnaCommentList" resultType="com.project.travel.vo.QnACommentVO">
+        SELECT
+            *
+        FROM QnA_Comment
+    </select>
+    
+   	<!-- 댓글 작성 -->
+    <insert id="qnaCommentInsert" parameterType="com.project.travel.vo.QnACommentVO">
+        INSERT INTO
+        QnA_Comment (QnA_C_Num, QnA_Num, QnA_C_Content, QnA_C_Date)
+        VALUES(#{QnA_C_Num},#{QnA_Num},#{QnA_C_Content},now()) 
+    </insert>
+    
+    <!-- 댓글 업데이트 -->
+    <update id="qnaCommentUpdate" parameterType="com.project.travel.vo.QnACommentVO">
+        UPDATE QnA_Comment
+            SET
+            QnA_C_Content = #{QnA_C_Content}
+        WHERE QnA_C_Num = #{QnA_C_Num}
+    </update>
+    
+    <!-- 댓글 삭제 -->
+    <delete id="qnaCommentDelete" parameterType="int">
+        DELETE FROM QnA_Comment WHERE QnA_C_Num = #{QnA_C_Num}
+    </delete>
 </mapper>

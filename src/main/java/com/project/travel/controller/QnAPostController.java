@@ -6,17 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.project.travel.service.QnACommentService;
 import com.project.travel.service.QnAService;
+import com.project.travel.vo.QnACommentVO;
 import com.project.travel.vo.QnAVO;
 
 @Controller
 @RequestMapping("jquery/*")
-public class JqueryController {
+public class QnAPostController {
 	/* json을 통한 데이터 통신
 	 *  jQuery ajax를 이용한 POST
 	 *  */
 	@Autowired
 	QnAService qnaService;
+	QnACommentService qnaCService;
+	
 	
 	//QnA쓰기 데이터 받 컨트롤러
 	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
@@ -32,6 +36,24 @@ public class JqueryController {
 	public int QnAUpdate(QnAVO qnavo) {
 		int result = 0; 
 		result = qnaService.QnAUpdate(qnavo); 
+		return result;
+	}
+
+	/* qna댓글 받는 컨트롤러 */
+	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
+	@ResponseBody
+	public int QnACWrite(QnACommentVO qnaCvo) {
+		int result = 0; 
+		result = qnaCService.qnaCommentWrite(qnaCvo); 
+		return result;
+	}
+
+	/* QnA수정 받는 컨트롤러 */
+	@RequestMapping(value="jquery/QnAUpdate",method = RequestMethod.POST)
+	@ResponseBody
+	public int QnACUpdate(QnACommentVO qnaCvo) {
+		int result = 0; 
+		result = qnaCService.qnaCommentUpdate(qnaCvo); 
 		return result;
 	}
 }

@@ -6,11 +6,11 @@ import com.project.travel.vo.QnAVO;
 
 /*비즈니스 로직*/
 public interface QnAService {
-	List getQnAList(int qnastartList);
-	int QnAWrite(QnAVO qnavo);
-	QnAVO getQnAView(int QnA_Num);
-	void viewsUpdate(int QnA_Num);
-	int QnAUpdate(QnAVO qnavo); 
-	int QnADelete(int QnA_Num);
-	int getQnAListCnt();
+	List getQnAList(int qnastartList); 	//qna보더 리스트
+	int QnAWrite(QnAVO qnavo);			//qna보더 쓰기	
+	QnAVO getQnAView(int QnA_Num);		//qna보더 내용 뷰
+	void viewsUpdate(int QnA_Num);		//qna보더 조회수 업데이트
+	int QnAUpdate(QnAVO qnavo); 		//qna보더 업데이트
+	int QnADelete(int QnA_Num);			//qna보더 삭제
+	int getQnAListCnt();				//qna보더 갯수
 }

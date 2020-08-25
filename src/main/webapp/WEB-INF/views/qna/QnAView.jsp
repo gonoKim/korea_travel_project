@@ -91,8 +91,24 @@ function QnAUpdate(){
                      <input type="button" value="Delete" class="btn" onclick="boardDelete()"/>
                      <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='QnABoard'"/>
                 </div>
+                
 </form>
 </div> 
+  <div class="container">
+        <label for="content">comment</label>
+        <form name="commentInsertForm">
+            <div class="input-group">
+               <input type="hidden" name="bno" value="${result.qnA_Num}"/>
+               <input type="text" class="form-control" id="content" name="content" placeholder="내용을 입력하세요.">
+               <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" name="commentInsertBtn">등록</button>
+               </span>
+              </div>
+        </form>
+    </div>
+<%@ include file="QnAComment.jsp" %>
+
+
 	<footer class="blog-footer ">
 		<p>
 			Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>
