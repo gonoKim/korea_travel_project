@@ -29,7 +29,7 @@
   </head>
 
   <body>
-    <form class="form-signin" method="POST" action="findId">
+    <form class="form-signin" action="findId" method="POST">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Find ID</h1>
       </div>
@@ -67,7 +67,6 @@
 			</p>
 		 </c:if>
 	  </c:if>  
-	  
 	  
   	  <c:if test="${msg == false}">
 		<p style="color: red;" class="text-center">Failed to find! Please check your Name and phone.</p>

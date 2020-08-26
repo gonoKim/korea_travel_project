@@ -27,22 +27,30 @@
   </head>
 
   <body>
-    <form class="form-signin">
+    <form class="form-signin" action="findPw" method="POST">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Find Password</h1>
       </div>
 
       <div class="form-group">
         <label for="inputEmail">Email address</label>
-        <input type="email" class="form-control btn btn-dark" id="inputEmail" placeholder="name@example.com" required autofocus>
+        <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" required autofocus>
       </div>
       
       <div class="form-group" id="form_inputTel">
         <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="000-0000-0000"required>
+        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
 
-      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+      <div class="form-row">
+      	<div class="col-md-6 mb-3">
+		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
+		</div>
+		<div class="col-md-6 mb-3">
+	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+	    </div>
+	  </div>
+	  
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </form>
   </body>
