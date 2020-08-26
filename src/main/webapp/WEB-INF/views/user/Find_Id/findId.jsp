@@ -50,15 +50,25 @@
         <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
       
-      
    	  <c:if test="${msg == true}">
-		<p class="text-center">
-			Email = 
-			${fn:substring(user.m_Id,0,4)}
-			<c:forEach begin="1" end="${fn:length(user.m_Id)-4}">*</c:forEach>
-		</p>
+  	  	 <c:if test="${fn:length(user.m_Id) <= value}">
+			<p class="text-center" style="font-size: 22px;">
+				Email = 
+				${fn:substring(user.m_Id,0,2)}
+				<c:forEach begin="1" end="${fn:length(user.m_Id)-2}">*</c:forEach>
+			</p>
+		 </c:if>
+   	  
+   	  	 <c:if test="${value < fn:length(user.m_Id)}">
+			<p class="text-center" style="font-size: 22px;">
+				Email = 
+				${fn:substring(user.m_Id,0,4)}
+				<c:forEach begin="1" end="${fn:length(user.m_Id)-4}">*</c:forEach>
+			</p>
+		 </c:if>
 	  </c:if>  
-      
+	  
+	  
   	  <c:if test="${msg == false}">
 		<p style="color: red;" class="text-center">Failed to find! Please check your Name and phone.</p>
 	  </c:if>

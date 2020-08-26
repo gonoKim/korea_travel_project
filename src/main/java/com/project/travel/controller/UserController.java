@@ -40,17 +40,27 @@ public class UserController {
 		int result = service.idChk(vo);
 		return result;
 	}
+	
+	// 전화번호 중복 체크
+	@ResponseBody
+	@RequestMapping(value="/phoneChk", method = RequestMethod.POST)
+	public int phoneChk(UserVO vo) throws Exception {
+		int result = service.phoneChk(vo);
+		return result;
+	}
 
 	// 회원가입 post
 	@RequestMapping(value="/Sign_Up/register", method = RequestMethod.POST)
 	public String postRegister(UserVO vo) throws Exception {
 		logger.info("post register");
 		int result = service.idChk(vo);
+		int result2 = service.phoneChk(vo);
+		
 		try {
-			if(result == 1) {
+			if(result == 1 || result2 == 1) {
 				return "redirect:/user/Sign_Up/register";
-			}else if(result == 0) {
-				String inputPass = vo.getM_Pw();
+			}else if(result == 0 && result2 == 0) {
+				String inputPass = vo.getM_Pw();							// 비밀번호 암호화
 				String pwd = pwdEncoder.encode(inputPass);
 				vo.setM_Pw(pwd);
 				
@@ -67,7 +77,7 @@ public class UserController {
 	public void getLogin() throws Exception {
 		logger.info("get login");
 	}
-	
+
 	// 로그인 post
 	@RequestMapping(value="/Sign_In/login", method = RequestMethod.POST)
 	public String login(UserVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
@@ -106,7 +116,7 @@ public class UserController {
 	public void getFindId() throws Exception {
 		logger.info("get findId");
 	}
-	
+
 	// 아이디 찾기 post
 	@RequestMapping(value="/Find_Id/findId", method = RequestMethod.POST)
 	public String findId(UserVO vo, RedirectAttributes rttr) throws Exception{
@@ -117,6 +127,7 @@ public class UserController {
 		if(findId != null) {
 			rttr.addFlashAttribute("user", findId);
 			rttr.addFlashAttribute("msg", true);
+			rttr.addFlashAttribute("value", 7);
 			return "redirect:/user/Find_Id/findId";
 		} else {
 			rttr.addFlashAttribute("msg", false);

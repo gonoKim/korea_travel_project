@@ -12,6 +12,9 @@ public interface UserService {
 	// 아이디 중복 체크
 	public int idChk(UserVO vo) throws Exception;
 	
+	// 전화번호 중복 체크
+	public int phoneChk(UserVO vo) throws Exception;
+	
 	// 아이디 찾기
 	public UserVO findId(UserVO vo) throws Exception;
 }

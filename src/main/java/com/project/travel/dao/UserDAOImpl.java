@@ -31,6 +31,13 @@ public class UserDAOImpl implements UserDAO {
 		return result;
 	}
 	
+	// 전화번호 중복 체크
+	@Override
+	public int phoneChk(UserVO vo) throws Exception {
+		int result = sqlSession.selectOne("UserMapper.phoneChk", vo);
+		return result;
+	}
+	
 	// 아이디 찾기
 	@Override
 	public UserVO findId(UserVO vo) throws Exception {

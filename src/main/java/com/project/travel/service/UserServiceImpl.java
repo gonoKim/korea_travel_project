@@ -31,6 +31,13 @@ public class UserServiceImpl implements UserService {
 		return result;
 	}
 	
+	// 전화번호 중복 체크
+	@Override
+	public int phoneChk(UserVO vo) throws Exception {
+		int result = dao.phoneChk(vo);
+		return result;
+	}
+	
 	// 아이디 찾기
 	@Override
 	public UserVO findId(UserVO vo) throws Exception {

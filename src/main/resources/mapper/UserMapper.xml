@@ -18,6 +18,11 @@
 	<select id="idChk" resultType="int">
 		SELECT COUNT(*) FROM UserTBL WHERE M_Id = #{M_Id}
 	</select>
+	
+	<!-- 전화번호 중복 체크 -->
+	<select id="phoneChk" resultType="int">
+		SELECT COUNT(*) FROM UserTBL WHERE M_Phone = #{M_Phone}
+	</select>
 
 	<!-- 아이디 찾기 -->
 	<select id="findId" resultType="com.project.travel.vo.UserVO">
