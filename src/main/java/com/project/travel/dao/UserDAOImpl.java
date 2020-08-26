@@ -30,4 +30,10 @@ public class UserDAOImpl implements UserDAO {
 		int result = sqlSession.selectOne("UserMapper.idChk", vo);
 		return result;
 	}
+	
+	// 아이디 찾기
+	@Override
+	public UserVO findId(UserVO vo) throws Exception {
+		return sqlSession.selectOne("UserMapper.findId", vo);
+	}
 }

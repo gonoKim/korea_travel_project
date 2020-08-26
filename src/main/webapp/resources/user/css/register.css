@@ -129,20 +129,18 @@ body {
 #form_YMD{
   margin-bottom: 35px;
 }
-#inputEmail{
+#inputEmail, #inputTel{
   width: 78.8%;
 }
-#idChk{
+#idChk, #phoneChk{
   width: 20%;
   padding: 3px;
-}
-#idArray button{
   display: inline;
 }
 
 /* media */
 @media screen and (max-width:392px){
-	#idChk{
+	#idChk, #phoneChk{
 		width: 19%;
 		height: 38px;
 		font-size: 15px;

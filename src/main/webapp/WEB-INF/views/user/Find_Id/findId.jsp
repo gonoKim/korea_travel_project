@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!doctype html>
 <html lang="en">
@@ -28,7 +29,7 @@
   </head>
 
   <body>
-    <form class="form-signin">
+    <form class="form-signin" method="POST" action="findId">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Find ID</h1>
       </div>
@@ -36,20 +37,41 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputFirstName">First name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputFirstName" required>
+          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname"  maxlength="10" required>
         </div>
         <div class="col-md-6 mb-3">
           <label for="inputLastName">Last name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputLastName" required>
+          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname"  maxlength="10" required>
         </div>
       </div>
       
       <div class="form-group" id="form_inputTel">
         <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="000-0000-0000"required>
+        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
-
-      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+      
+      
+   	  <c:if test="${msg == true}">
+		<p class="text-center">
+			Email = 
+			${fn:substring(user.m_Id,0,4)}
+			<c:forEach begin="1" end="${fn:length(user.m_Id)-4}">*</c:forEach>
+		</p>
+	  </c:if>  
+      
+  	  <c:if test="${msg == false}">
+		<p style="color: red;" class="text-center">Failed to find! Please check your Name and phone.</p>
+	  </c:if>
+	    
+      <div class="form-row">
+      	<div class="col-md-6 mb-3">
+		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
+		</div>
+		<div class="col-md-6 mb-3">
+	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+	    </div>
+	  </div>
+	  
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </form>
   </body>

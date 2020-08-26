@@ -38,7 +38,7 @@
 
       <div class="form-group">
         <label for="inputEmail">Email address</label>
-          <div class="form-group" id="idArray">
+          <div class="form-group" class="btnArray">
             <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com"
             	 maxlength="30" onFocus="this.value=''; return true;" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);" required autofocus>
             <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">Check</button>
@@ -68,8 +68,11 @@
       
       <div class="form-group">
         <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
-        	 placeholder="000-0000-0000" maxlength="13" onFocus="this.value=''; return true;" required>
+          <div class="form-group" class="btnArray">
+	        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+	        	 placeholder="000-0000-0000" maxlength="13" onFocus="this.value=''; return true;" required>
+        	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">Check</button>
+       	  </div>
       </div>
       
       <label for="inputBirth">Birth</label>

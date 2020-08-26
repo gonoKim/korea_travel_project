@@ -101,10 +101,27 @@ public class UserController {
 		return "redirect:/main/main";
 	}
 	
-	// 아이디 찾기
+	// 아이디 찾기 get
 	@RequestMapping(value="/Find_Id/findId", method = RequestMethod.GET)
 	public void getFindId() throws Exception {
 		logger.info("get findId");
+	}
+	
+	// 아이디 찾기 post
+	@RequestMapping(value="/Find_Id/findId", method = RequestMethod.POST)
+	public String findId(UserVO vo, RedirectAttributes rttr) throws Exception{
+		logger.info("post findId");
+		
+		UserVO findId = service.findId(vo);
+		
+		if(findId != null) {
+			rttr.addFlashAttribute("user", findId);
+			rttr.addFlashAttribute("msg", true);
+			return "redirect:/user/Find_Id/findId";
+		} else {
+			rttr.addFlashAttribute("msg", false);
+			return "redirect:/user/Find_Id/findId";	
+		}
 	}
 	
 	// 비밀번호 찾기

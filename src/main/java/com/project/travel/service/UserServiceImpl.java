@@ -30,4 +30,10 @@ public class UserServiceImpl implements UserService {
 		int result = dao.idChk(vo);
 		return result;
 	}
+	
+	// 아이디 찾기
+	@Override
+	public UserVO findId(UserVO vo) throws Exception {
+		return dao.findId(vo);
+	}
 }

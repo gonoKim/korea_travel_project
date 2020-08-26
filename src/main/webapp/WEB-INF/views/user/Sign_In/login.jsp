@@ -37,12 +37,12 @@
       </div>
 
       <div class="form-label-group">
-        <input type="email" id="inputEmail" name="M_Id" class="form-control btn btn-dark" placeholder="Email address" required autofocus>
+        <input type="email" id="inputEmail" name="M_Id" class="form-control btn btn-dark" placeholder="Email address" maxlength="30" required autofocus>
         <label for="inputEmail">Email address</label>
       </div>
 
       <div class="form-label-group">
-        <input type="password" id="inputPassword" name="M_Pw" class="form-control btn btn-dark" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="M_Pw" class="form-control btn btn-dark" placeholder="Password" maxlength="20" required>
         <label for="inputPassword">Password</label>
       </div>
 
