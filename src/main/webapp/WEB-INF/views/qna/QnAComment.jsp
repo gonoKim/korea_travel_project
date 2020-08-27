@@ -35,27 +35,29 @@ function commentList(){
 
 function commentInsert(){
 	var c_Content = $("#c_Content").val();
-
+	var c_Num	  = "${result.qnA_Num}";
 	if(!c_Content){
 		alert("내용 입력은 필수 입니다..");
 		$("#c_Content").focus();
 		return false;
 	}else{
-	insertData(c_Content)
+	insertData(c_Content, c_Num)
 		}
 }
 
 //댓글 등록
-function insertData(c_Con){
+function insertData(c_Con, c_Num){
     $.ajax({
         url : '/jquery/QnACWrite',
         type : 'post',
         data :{ 
         	qnaCContent : c_Con,
+        	qnaNum		: c_Num
         },
         success : function(data){
             if(data == 1) {
             	alert("댓글 등록이 완료되었습니다.");
+            	
                 commentList(); //댓글 작성 후 댓글 목록 reload
             }else {
 				alert("글 등록 실패");
