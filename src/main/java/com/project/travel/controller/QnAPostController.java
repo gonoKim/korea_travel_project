@@ -19,6 +19,8 @@ public class QnAPostController {
 	 *  */
 	@Autowired
 	QnAService qnaService;
+	
+	@Autowired
 	QnACommentService qnaCService;
 	
 	
@@ -40,7 +42,7 @@ public class QnAPostController {
 	}
 
 	/* qna댓글 받는 컨트롤러 */
-	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
+	@RequestMapping(value="jquery/QnACWrite",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnACWrite(QnACommentVO qnaCvo) {
 		int result = 0; 
@@ -49,7 +51,7 @@ public class QnAPostController {
 	}
 
 	/* QnA수정 받는 컨트롤러 */
-	@RequestMapping(value="jquery/QnAUpdate",method = RequestMethod.POST)
+	@RequestMapping(value="jquery/QnACUpdate",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnACUpdate(QnACommentVO qnaCvo) {
 		int result = 0; 

@@ -7,6 +7,7 @@ public class QnACommentVO {
 	private int qnaNum;	//qna 넘버
 	private String qnaCContent;	//qna댓글 내용
 	private	Date qnaCDate;	//qna 날짜
+	
 	public int getQnaCNum() {
 		return qnaCNum;
 	}

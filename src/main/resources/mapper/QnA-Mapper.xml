@@ -62,6 +62,7 @@ WHERE   QnA_Num = #{QnA_Num};
             COUNT(*)
         FROM QnA_Comment
     </select>
+    
     <!-- 댓글 조회 -->
     <select id="qnaCommentList" resultType="com.project.travel.vo.QnACommentVO">
         SELECT
@@ -73,7 +74,7 @@ WHERE   QnA_Num = #{QnA_Num};
     <insert id="qnaCommentInsert" parameterType="com.project.travel.vo.QnACommentVO">
         INSERT INTO
         QnA_Comment (QnA_C_Num, QnA_Num, QnA_C_Content, QnA_C_Date)
-        VALUES(#{QnA_C_Num},#{QnA_Num},#{QnA_C_Content},now()) 
+        VALUES(#{qnaCNum},#{qnaNum},#{qnaCContent},now()) 
     </insert>
     
     <!-- 댓글 업데이트 -->

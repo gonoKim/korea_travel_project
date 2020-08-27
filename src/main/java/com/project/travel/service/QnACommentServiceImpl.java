@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.travel.dao.QnACommentDAO;
 import com.project.travel.vo.QnACommentVO;
+
 @Service
 public class QnACommentServiceImpl implements QnACommentService {
 

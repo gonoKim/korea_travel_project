@@ -99,13 +99,15 @@ function QnAUpdate(){
         <form name="commentInsertForm">
             <div class="input-group">
                <input type="hidden" name="bno" value="${result.qnA_Num}"/>
-               <input type="text" class="form-control" id="content" name="content" placeholder="내용을 입력하세요.">
+               <input type="text" class="form-control" id="c_Content" name="content" placeholder="내용을 입력하세요.">
                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" name="commentInsertBtn">등록</button>
+                    <input class="btn btn-default" type="button" value="등록" onclick="commentInsert()"/>
                </span>
               </div>
         </form>
     </div>
+     <div class="commentList"></div>
+
 <%@ include file="QnAComment.jsp" %>
 
 

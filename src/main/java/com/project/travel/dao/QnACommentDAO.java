@@ -10,6 +10,7 @@ import com.project.travel.vo.QnACommentVO;
 
 @Repository
 public class QnACommentDAO {
+	
 	@Autowired
 	public SqlSession sqlSession;
     // 댓글 개수
