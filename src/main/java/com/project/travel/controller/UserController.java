@@ -101,7 +101,6 @@ public class UserController {
 			rttr.addFlashAttribute("msg", false);
 			return "redirect:/user/Sign_In/login";	
 		}
-		
 	}
 	
 	// 로그아웃
