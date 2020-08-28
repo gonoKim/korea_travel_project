@@ -29,7 +29,7 @@
   <body>
     <form class="form-signin" action="findPw" method="POST">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Find Password</h1>
+        <img src="${pageContext.request.contextPath}/resources/user/Images/Find_Pwd.png" id="Find_Pwd">
       </div>
 
       <div class="form-group">

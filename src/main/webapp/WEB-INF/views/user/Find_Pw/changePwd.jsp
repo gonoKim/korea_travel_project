@@ -33,7 +33,7 @@
   <body>
     <form class="form-signin" action="changePwd" method="POST">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Change Password</h1>
+        <img src="${pageContext.request.contextPath}/resources/user/Images/Change_Pwd.png" id="Change_Pwd">
       </div>
 
       <div class="form-group">

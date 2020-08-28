@@ -108,33 +108,80 @@ body{
   height: 100vh;
   background: url('/resources/main/Images/bg_01.png') no-repeat center/cover;
 }
-#sign_in_btn_left{
-  display: none;
-}
-#sign_in_btn{
-  margin-right: 10px;
-}
-#Banner_carousel{
-  margin-bottom: 40px;
-}
-#Banner_carousel .carousel-inner > .carousel-item >img{
-  /* height: 550px; */
-}
-#Photo_carousel .carousel-inner > .carousel-item >img{
-  height: 300px;
-}
-#Area_page{
-  margin-bottom: 50px;
-}
-#A1, #A2{
-  height: 300px;
-}
+#Main{width: 80px;}
+
+#sign_in_btn_left{display: none;}
+#sign_in_btn{margin-right: 10px;}
+#myPage_btn2{display:none;}
+
+#Banner_carousel{margin-bottom: 40px;}
+#Banner_carousel .carousel-inner > .carousel-item >img{height: 624px;}
+#Photo_carousel .carousel-inner > .carousel-item >img{height: 302px;}
+#Photo_BannerBox{height: 302px;}
+
+#Area_page{margin-bottom: 50px;}
+#A1, #A2{height: 300px;}
 
 /* media */
 @media screen and (max-width:1199px){
   #nickname{display: none;}
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 523px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 252px;}
+  #Photo_BannerBox{height: 252px;}
+}
+@media screen and (max-width:991px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 388px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 184px;}
+  #Photo_BannerBox{height: 184px;}
 }
 @media screen and (max-width:767px){
   #sign_in_btn{display: none;}
   #sign_in_btn_left{display:inline;}
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 286px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 285px;}
+  #Photo_BannerBox{height: 285px;}
+}
+@media screen and (max-width:575px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 306px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 305px;}
+  #Photo_BannerBox{height: 305px;}
+}
+@media screen and (max-width:540px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 286px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 285px;}
+  #Photo_BannerBox{height: 285px;}
+}
+@media screen and (max-width:510px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 270px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 268px;}
+  #Photo_BannerBox{height: 268px;}
+}
+@media screen and (max-width:470px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 247px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 246px;}
+  #Photo_BannerBox{height: 246px;}
+}
+@media screen and (max-width:440px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 230px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 229px;}
+  #Photo_BannerBox{height: 229px;}
+}
+@media screen and (max-width:414px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 216px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 214px;}
+  #Photo_BannerBox{height: 214px;}
+}
+@media screen and (max-width:375px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 194px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 192px;}
+  #Photo_BannerBox{height: 192px;}
+}
+@media screen and (max-width:334px){
+  #myPage_btn1{display: none;}
+  #myPage_btn2{display: inline;}
+}
+@media screen and (max-width:320px){
+  #Banner_carousel .carousel-inner > .carousel-item >img{height: 163px;}
+  #Photo_carousel .carousel-inner > .carousel-item >img{height: 162px;}
+  #Photo_BannerBox{height: 162px;}
 }

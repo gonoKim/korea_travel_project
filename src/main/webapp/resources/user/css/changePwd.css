@@ -117,6 +117,10 @@ body {
 }
 
 /* etc */
+#Change_Pwd{
+  width: 80%;
+  margin-bottom: 10px;
+}
 #inputPassword, #inputRepassword{
   text-align: left;
   background-color: white;

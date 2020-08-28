@@ -31,7 +31,7 @@
   <body>
     <form class="form-signin" action="findId" method="POST">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Find ID</h1>
+        <img src="${pageContext.request.contextPath}/resources/user/Images/Find_Id.png" id="Find_Id">
       </div>
 
       <div class="form-row">

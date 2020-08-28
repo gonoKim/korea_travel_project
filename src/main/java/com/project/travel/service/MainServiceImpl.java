@@ -14,9 +14,15 @@ public class MainServiceImpl implements MainService {
 	
 	@Inject MainDAO dao;
 	
-	// 배너에 넣을 이미지 찾기
+	// 메인 배너에 넣을 이미지 찾기
 	@Override
 	public List<MainVO> imgBanner() throws Exception {
 		return dao.imgBanner();
+	}
+	
+	// 포토갤러리 배너에 넣을 이미지 찾기
+	@Override
+	public List<MainVO> photoBanner() throws Exception {
+		return dao.photoBanner();
 	}
 }

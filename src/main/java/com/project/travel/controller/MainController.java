@@ -24,7 +24,8 @@ public class MainController {
 	public String Main(Model model) throws Exception {
 		logger.info("get main");
 		
-		model.addAttribute("imgBanner", service.imgBanner());			// 배너에 넣을 이미지 찾기
+		model.addAttribute("imgBanner", service.imgBanner());				// 메인 배너에 넣을 이미지 찾기
+		model.addAttribute("photoBanner", service.photoBanner());			// 포토갤러리 배너에 넣을 이미지 찾기
 		
 		return "/main/main";
 	}

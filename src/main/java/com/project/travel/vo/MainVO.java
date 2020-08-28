@@ -1,7 +1,5 @@
 package com.project.travel.vo;
 
-import java.util.Date;
-
 public class MainVO {
 	private int Photo_Num;
 	private	int Photo_Views;

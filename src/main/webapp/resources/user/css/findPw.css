@@ -117,6 +117,10 @@ body {
 }
 
 /* etc */
+#Find_Pwd{
+  width: 80%;
+  margin-bottom: 10px;
+}
 #inputEmail, #inputTel{
   text-align: left;
   background-color: white;
