@@ -74,7 +74,12 @@
 	    
       <div class="form-row">
       	<div class="col-md-6 mb-3">
-		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
+      	  <c:if test="${user == null}">
+		  	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
+		  </c:if>
+		  <c:if test="${user != null}">
+		    <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/user/Sign_In/login'">Sign in</button>
+		  </c:if>
 		</div>
 		<div class="col-md-6 mb-3">
 	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>

@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Find Password</title>
+    <title>Change Password</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/floating-labels/">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -21,37 +21,37 @@
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap.css" rel="stylesheet">
+    
+    <!-- js -->
+    <script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.5.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/user/js/changePwd.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/resources/user/css/findPw.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/user/css/changePwd.css" rel="stylesheet">
   </head>
 
   <body>
-    <form class="form-signin" action="findPw" method="POST">
+    <form class="form-signin" action="changePwd" method="POST">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Find Password</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Change Password</h1>
       </div>
 
       <div class="form-group">
-        <label for="inputEmail">Email address</label>
-        <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control btn btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
       </div>
-      
-      <div class="form-group" id="form_inputTel">
-        <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
+
+      <div class="form-group">
+        <label for="inputRepassword">Re-enter password</label>
+        <input type="password" class="form-control btn btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
-      
-   	  <c:if test="${msg == false}">
-		<p style="color: red;" class="text-center">Failed to find! Please check your ID and phone.</p>
-	  </c:if>
 
       <div class="form-row">
       	<div class="col-md-6 mb-3">
-		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/user/Sign_In/login'">Sign in</button>
+		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
 		</div>
 		<div class="col-md-6 mb-3">
-	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit" id="submit">Confirm</button>
 	    </div>
 	  </div>
 	  

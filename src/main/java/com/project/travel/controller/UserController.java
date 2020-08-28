@@ -135,9 +135,45 @@ public class UserController {
 		}
 	}
 	
-	// 비밀번호 찾기
+	// 비밀번호 찾기 get
 	@RequestMapping(value="/Find_Pw/findPw", method = RequestMethod.GET)
 	public void getFindPw() throws Exception {
 		logger.info("get findPw");
 	}
+	
+	@RequestMapping(value="/Find_Pw/findPw", method = RequestMethod.POST)
+	public String findPw(UserVO vo, RedirectAttributes rttr) throws Exception{
+		logger.info("post findId");
+		
+		UserVO findPw = service.findPw(vo);
+		
+		if(findPw != null) {
+			return "redirect:/user/Find_Pw/changePwd";
+		} else {
+			rttr.addFlashAttribute("msg", false);
+			return "redirect:/user/Find_Pw/findPw";	
+		}
+	}
+	
+	// 비밀번호 찾기 후 변경 get
+	@RequestMapping(value="/Find_Pw/changePwd", method = RequestMethod.GET)
+	public void getChangePwd() throws Exception {
+		logger.info("get changePwd");
+	}
+	
+	// 비밀번호 찾기 후 변경 post
+	@RequestMapping(value="/Find_Pw/changePwd", method = RequestMethod.POST)
+	public String postChangePwd(UserVO vo, HttpSession session) throws Exception{
+		logger.info("post changePwd");
+		
+		String inputPass = vo.getM_Pw();							// 비밀번호 암호화
+		String pwd = pwdEncoder.encode(inputPass);
+		vo.setM_Pw(pwd);
+		
+		service.changePwd(vo);
+		session.invalidate();
+		
+		return "redirect:/user/Sign_In/login";	
+	}
+
 }

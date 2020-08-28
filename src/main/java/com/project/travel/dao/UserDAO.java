@@ -17,4 +17,10 @@ public interface UserDAO{
 	
 	// 아이디 찾기
 	public UserVO findId(UserVO vo) throws Exception;
+	
+	// 비밀번호 찾기
+	public UserVO findPw(UserVO vo) throws Exception;
+	
+	// 비밀번호 찾기 후 변경
+	public void changePwd(UserVO vo) throws Exception;
 }

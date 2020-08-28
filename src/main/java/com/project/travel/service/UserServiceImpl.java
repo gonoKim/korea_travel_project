@@ -43,4 +43,16 @@ public class UserServiceImpl implements UserService {
 	public UserVO findId(UserVO vo) throws Exception {
 		return dao.findId(vo);
 	}
+	
+	// 비밀번호 찾기
+	@Override
+	public UserVO findPw(UserVO vo) throws Exception {
+		return dao.findPw(vo);
+	}
+	
+	// 비밀번호 찾기 후 변경
+	@Override
+	public void changePwd(UserVO vo) throws Exception {
+		dao.changePwd(vo);
+	}
 }

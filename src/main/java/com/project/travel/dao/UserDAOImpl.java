@@ -43,4 +43,16 @@ public class UserDAOImpl implements UserDAO {
 	public UserVO findId(UserVO vo) throws Exception {
 		return sqlSession.selectOne("UserMapper.findId", vo);
 	}
+	
+	// 비밀번호 찾기
+	@Override
+	public UserVO findPw(UserVO vo) throws Exception {
+		return sqlSession.selectOne("UserMapper.findPw", vo);
+	}
+	
+	// 비밀번호 찾기 후 변경
+	@Override
+	public void changePwd(UserVO vo) throws Exception {
+		sqlSession.update("UserMapper.changePwd", vo);
+	}
 }
