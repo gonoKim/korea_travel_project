@@ -23,6 +23,7 @@ body {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
+  padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
@@ -116,33 +117,16 @@ body {
 }
 
 /* etc */
-#signUpIcon{
-	width: 40%;
-	margin-bottom: 15px;
+#Change_Pwd{
+  width: 80%;
+  margin-bottom: 10px;
 }
-#inputEmail, #inputPassword, #inputRepassword, #inputFirstName,
-#inputLastName, #inputYear, #inputMonth, #inputDay, #inputTel{
+#inputPassword, #inputRepassword{
   text-align: left;
   background-color: white;
   color: black;
 }
-#form_YMD{
-  margin-bottom: 35px;
-}
-#inputEmail, #inputTel{
-  width: 78.8%;
-}
-#idChk, #phoneChk{
-  width: 20%;
-  padding: 3px;
-  display: inline;
-}
-
-/* media */
-@media screen and (max-width:392px){
-	#idChk, #phoneChk{
-		width: 19%;
-		height: 38px;
-		font-size: 15px;
-	}
+#inputRepassword{
+  margin-top: -5px;
+  margin-bottom: 25px;
 }

@@ -1,7 +1,5 @@
 package com.project.travel.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.travel.service.NoticeService;
 import com.project.travel.service.QnAService;
-import com.project.travel.service.UserService;
 import com.project.travel.vo.NoticeVO;
 import com.project.travel.vo.QnAVO;
-import com.project.travel.vo.UserVO;
 
 @Controller
 @RequestMapping("jquery/*")
@@ -61,7 +57,4 @@ public class JqueryController {
 		result = noticeService.NoticeUpdate(noticevo); 
 		return result;
 	}
-	
-	
-	
 }

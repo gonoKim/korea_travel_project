@@ -37,12 +37,12 @@
       </div>
 
       <div class="form-label-group">
-        <input type="email" id="inputEmail" name="M_Id" class="form-control btn btn-dark" placeholder="Email address" required autofocus>
+        <input type="email" id="inputEmail" name="M_Id" class="form-control btn btn-dark" placeholder="Email address" maxlength="30" required autofocus>
         <label for="inputEmail">Email address</label>
       </div>
 
       <div class="form-label-group">
-        <input type="password" id="inputPassword" name="M_Pw" class="form-control btn btn-dark" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="M_Pw" class="form-control btn btn-dark" placeholder="Password" maxlength="20" required>
         <label for="inputPassword">Password</label>
       </div>
 
@@ -59,8 +59,8 @@
 	  </c:if>  
        
       <div class="modal-footer">
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Id/index'" id="FI_btn">Find ID</button>
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Pw/index'" id="FP_btn">Find Password</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Id/findId'" id="FI_btn">Find ID</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Pw/findPw'" id="FP_btn">Find Password</button>
       </div>
       <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Sign_Up/register'" id="sign_up_btn">Sign Up</button>
       

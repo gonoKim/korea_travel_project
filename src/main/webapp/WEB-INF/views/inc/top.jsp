@@ -40,6 +40,6 @@
             </div>
           </li>
         </ul>
-        <a class="p-2 text-muted nav-link" href="../Mypage/my_page.html">MyPage</a>
+        <a class="p-2 text-muted nav-link" href="../mypage/MyPage">MyPage</a>
       </div>
     </nav>

@@ -46,7 +46,7 @@
 	      </div>
 	      
           <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="/main/main">Main</a>
+            <a href="/main/main"><img src="${pageContext.request.contextPath}/resources/main/Images/Main.png" id="Main"></a>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
           	<c:if test="${user == null}">
@@ -78,12 +78,8 @@
               </div>
             </li>
           </ul>
-	      <c:if test="${user == null}">
-          <a class="p-2 text-muted nav-link" href="/user/Sign_In/login">My Page</a>
-          </c:if>
-          <c:if test="${user != null }">
-          <a class="p-2 text-muted nav-link" href="/mypage/MyPage?M_Id=${user.m_Id }">My Page</a>
-          </c:if>
+          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="../mypage/MyPage">My Page</a>
+          <a id="myPage_btn2" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">Profile</a>
         </div>
       </nav>
 
@@ -97,18 +93,19 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/1.jpg" alt="First slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[0].photo_Num}.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[1].photo_Num}.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[2].photo_Num}.jpg" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/4.jpg" alt="fourth slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[3].photo_Num}.jpg" alt="fourth slide">
           </div>
         </div>
+		        
         <a class="carousel-control-prev" href="#Banner_carousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -156,21 +153,32 @@
       <div class="row mb-4">
         <div class="col-md-6">
           <h5>Photo Gallery</h5>
-          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="A1">
+          <div id="Photo_BannerBox" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="A1">
             <div id="Photo_carousel" class="carousel slide" data-ride="carousel" data-interval="2000" pause="hover">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/5.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[0].photo_Num}.jpg" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/6.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[1].photo_Num}.jpg" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/7.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[2].photo_Num}.jpg" class="d-block w-100">
                 </div>
-  
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/8.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[3].photo_Num}.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[4].photo_Num}.jpg" class="d-block w-100">
+                </div>
+				<div class="carousel-item">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[5].photo_Num}.jpg" class="d-block w-100">
+                </div>                
+                <div class="carousel-item">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[6].photo_Num}.jpg" class="d-block w-100">
+                </div>
+				<div class="carousel-item">
+                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[7].photo_Num}.jpg" class="d-block w-100">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#Photo_carousel" role="button" data-slide="prev">

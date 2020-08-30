@@ -30,17 +30,47 @@ public class UserServiceImpl implements UserService {
 		int result = dao.idChk(vo);
 		return result;
 	}
-
-	// 회원정보 수정
+	
+	// 전화번호 중복 체크
 	@Override
-	public int UserUpdate(UserVO vo) throws Exception {
-		return dao.UserUpdate(vo);
+	public int phoneChk(UserVO vo) throws Exception {
+		int result = dao.phoneChk(vo);
+		return result;
 	}
 	
-	// 마이페이지 뷰
+	// 아이디 찾기
 	@Override
-	public UserVO getMyPageView(String M_Id) {
-		return dao.getMyPageView(M_Id);
+	public UserVO findId(UserVO vo) throws Exception {
+		return dao.findId(vo);
 	}
+	
+	// 비밀번호 찾기
+	@Override
+	public UserVO findPw(UserVO vo) throws Exception {
+		return dao.findPw(vo);
+	}
+	
+	// 비밀번호 찾기 후 변경
+	@Override
+	public int changePwd(UserVO vo) throws Exception {
+		return dao.changePwd(vo);
+	}
+	
+	// 회원정보 수정
+		@Override
+		public int UserUpdate(UserVO vo) throws Exception {
+			return dao.UserUpdate(vo);
+		}
+		
+		// 마이페이지 뷰
+		@Override
+		public UserVO getMyPageView(String M_Id) {
+			return dao.getMyPageView(M_Id);
+		}
+
+		@Override
+		public int delUser(UserVO vo) throws Exception {
+			return dao.delUser(vo);
+		}
 
 }

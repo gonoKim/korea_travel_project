@@ -32,18 +32,48 @@ public class UserDAOImpl implements UserDAO {
 		int result = sqlSession.selectOne("UserMapper.idChk", vo);
 		return result;
 	}
-
+	
+	// 전화번호 중복 체크
+	@Override
+	public int phoneChk(UserVO vo) throws Exception {
+		int result = sqlSession.selectOne("UserMapper.phoneChk", vo);
+		return result;
+	}
+	
+	// 아이디 찾기
+	@Override
+	public UserVO findId(UserVO vo) throws Exception {
+		return sqlSession.selectOne("UserMapper.findId", vo);
+	}
+	
+	// 비밀번호 찾기
+	@Override
+	public UserVO findPw(UserVO vo) throws Exception {
+		return sqlSession.selectOne("UserMapper.findPw", vo);
+	}
+	
+	// 비밀번호 찾기 후 변경
+	@Override
+	public int changePwd(UserVO vo) throws Exception {
+		return sqlSession.update("UserMapper.changePwd", vo);
+	}
+	
 	// 회원정보 수정
-	@Override
-	public int UserUpdate(UserVO vo) throws Exception {
-		return sqlSession.update("UserUpdate", vo);
-	}
+		@Override
+		public int UserUpdate(UserVO vo) throws Exception {
+			return sqlSession.update("UserUpdate", vo);
+		}
 
-	// 마이페이지 뷰
-	@Override
-	public UserVO getMyPageView(String M_Id)  {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("M_Id", M_Id);
-		return sqlSession.selectOne("getMyPageView", map);
-	}
+		// 마이페이지 뷰
+		@Override
+		public UserVO getMyPageView(String M_Id)  {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("M_Id", M_Id);
+			return sqlSession.selectOne("getMyPageView", map);
+		}
+
+		@Override
+		public int delUser(UserVO vo) {
+			return sqlSession.update("delUser", vo);
+		}
 }

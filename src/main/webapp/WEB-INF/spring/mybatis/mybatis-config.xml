@@ -2,9 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
 	<mappers>
-		<mapper resource="mapper/QnA-Mapper.xml" />
-		<mapper resource="mapper/Notice-Mapper.xml" />
-		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/QnA-Mapper.xml"/>
+		<mapper resource="mapper/UserMapper.xml"/>
+		<mapper resource="mapper/MainMapper.xml"/>
 	</mappers>
+	
 </configuration>

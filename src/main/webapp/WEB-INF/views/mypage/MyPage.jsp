@@ -42,7 +42,7 @@ function updateValidation(){
 
 function UserUpdate(M_Id, M_Phone, M_Pw){
 	$.ajax({
-		url : "/user/UserUpdate",
+		url : "../user/UserUpdate",
 		type:'POST',
 		data : {
 			M_Id 	: M_Id,
@@ -52,9 +52,84 @@ function UserUpdate(M_Id, M_Phone, M_Pw){
 		success:function(data){
 			if(data == 1){
 				alert("수정이 완료되었습니다.");
-				location.href="/mypage/MyPage?M_Id=${user.m_Id }";
+				location.href="/mypage/MyPage";
 			}else {
 				alert("수정 실패");
+			}
+		},error:function(){
+			console.log("error");
+		}
+	})
+}
+
+function modPwdValidation(){
+	var M_Id = $("#M_Id2").val();
+	var M_Pw = $("#M_Pw2").val();
+	var newPwd = $("#newPwd").val();
+	var newPwd2 = $("#newPwd2").val();
+	if(!M_Pw||!newPwd||!newPwd2){
+		alert("입력하지 않은 항목이 있습니다.");
+		$("#M_Pw2").focus();
+		return false;
+	}else {
+		modPwd(M_Id, M_Pw, newPwd, newPwd2);
+	}
+}
+
+function modPwd(M_Id, M_Pw, newPwd, newPwd2){
+	$.ajax({
+		url : "../user/modPwd",
+		type:'POST',
+		data : {
+			M_Id    : M_Id,
+			M_Pw 	: M_Pw,
+			newPwd : newPwd,
+			newPwd2 : newPwd2
+		},
+		success:function(data){
+			if(data == 1){
+				alert("변경이 완료되었습니다.");
+				location.href="/mypage/MyPage";
+			}else {
+				alert("변경 실패");
+			}
+		},error:function(){
+			console.log("error");
+		}
+	})
+}
+
+function delUserValidation(){
+	var M_Id = $("#M_Id3").val();
+	var M_Pw = $("#M_Pw3").val();
+	if(!M_Pw){
+		alert("비밀번호를 입력하세요.");
+		$("#M_Pw3").focus();
+		return false;
+	}else {
+		chk=confirm("정말 탈퇴하시겠습니까?");
+		if(chk==true){
+			delUser(M_Id, M_Pw);
+		}else{
+			location.href="/mypage/MyPage";
+		}
+	}
+}
+
+function delUser(M_Id, M_Pw){
+	$.ajax({
+		url : "../user/delUser",
+		type:'POST',
+		data : {
+			M_Id    : M_Id,
+			M_Pw 	: M_Pw
+		},
+		success:function(data){
+			if(data == 1){
+				alert("탈퇴가 완료되었습니다.");
+				location.href="../main/main";
+			}else {
+				alert("탈퇴 실패");
 			}
 		},error:function(){
 			console.log("error");
@@ -158,12 +233,12 @@ function UserUpdate(M_Id, M_Phone, M_Pw){
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-                                    <label for="userid">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userid" value="${user.m_Id}" readonly>
+                                    <label for="M_Id2">아이디<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="M_Id2" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                  <input type="password" class="form-control" id="password" placeholder="현재 비밀번호">
+                                  <input type="password" class="form-control" id="M_Pw2" placeholder="현재 비밀번호">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" id="newPwd" placeholder="새 비밀번호">
@@ -174,7 +249,7 @@ function UserUpdate(M_Id, M_Phone, M_Pw){
                                   <div class="form-group">
                                     <input type="password" class="form-control" id="newPwd2" placeholder="새 비밀번호 확인">
                                   </div>
-                                  <button type="submit" class="btn btn-primary float-right">변경</button>
+                                  <button type="button" class="btn btn-primary float-right" onclick="modPwdValidation()">변경</button>
                               </form>
                         </div>
                         <!-- //비밀번호 변경 -->
@@ -189,14 +264,14 @@ function UserUpdate(M_Id, M_Phone, M_Pw){
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-                                    <label for="userid">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="userid" value="${user.m_Id}" readonly>
+                                    <label for="M_Id3">아이디<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="M_Id3" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                  <input type="password" class="form-control" id="password" placeholder="비밀번호">
+                                  <input type="password" class="form-control" id="M_Pw3" placeholder="비밀번호">
                                 </div>
-                                  <button type="submit" class="btn btn-primary float-right">탈퇴</button>
+                                  <button type="button" class="btn btn-primary float-right" onclick="delUserValidation()">탈퇴</button>
                               </form>
                         </div>
                         <!-- //회원 탈퇴 -->

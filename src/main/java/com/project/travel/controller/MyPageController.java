@@ -1,6 +1,7 @@
 package com.project.travel.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -23,12 +24,32 @@ public class MyPageController {
 	@Inject
 	UserService service;
 
-	@RequestMapping(value = "mypage/MyPage", method = RequestMethod.GET)
+	/*@RequestMapping(value = "mypage/MyPage", method = RequestMethod.GET)
 	public ModelAndView MyPageView(String M_Id) {
 		UserVO result = service.getMyPageView(M_Id);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("user", result);
 		return mav;
+	}*/
+	
+	@RequestMapping(value = "mypage/MyPage", method = RequestMethod.GET)
+	public ModelAndView MyPageView(HttpServletRequest req) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		
+		HttpSession session = req.getSession();
+		UserVO vo=(UserVO) session.getAttribute("user");
+		
+		UserVO result = service.login(vo);
+		mav.addObject("user", result);
+		return mav;
 	}
+	
+	/*@RequestMapping(value = "mypage/MyPage", method = RequestMethod.GET)
+	public ModelAndView MyPageView(UserVO vo) throws Exception {
+		UserVO login = service.login(vo);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("user", login);
+		return mav;
+	}*/
 
 }
