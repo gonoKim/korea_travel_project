@@ -116,9 +116,12 @@ body {
 }
 
 /* etc */
+body{
+  background: url('/resources/user/Images/Sign_InBg.png') no-repeat center/cover;
+  background-size: 900px;
+}
 #signUpIcon{
-	width: 40%;
-	margin-bottom: 15px;
+	width: 60%;
 }
 #inputEmail, #inputPassword, #inputRepassword, #inputFirstName,
 #inputLastName, #inputYear, #inputMonth, #inputDay, #inputTel{
@@ -139,6 +142,9 @@ body {
 }
 
 /* media */
+@media screen and (max-width:500px){
+	body{background: none;}
+}
 @media screen and (max-width:392px){
 	#idChk, #phoneChk{
 		width: 19%;

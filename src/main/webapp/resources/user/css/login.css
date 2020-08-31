@@ -137,7 +137,7 @@ input[id="remember"] {
 /* etc */
 body{
   background: url('/resources/user/Images/Sign_UpBg.png') no-repeat center/cover;
-  background-size: 45%;
+  background-size: 850px;
 }
 #logo{
   width: 80%;
