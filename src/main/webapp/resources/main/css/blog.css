@@ -135,6 +135,7 @@ body{
   #Photo_BannerBox{height: 184px;}
 }
 @media screen and (max-width:767px){
+  #Main{width: 90%}
   #sign_in_btn{display: none;}
   #sign_in_btn_left{display:inline;}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 286px;}
@@ -167,6 +168,7 @@ body{
   #Photo_BannerBox{height: 229px;}
 }
 @media screen and (max-width:414px){
+  #Main{width: 100%}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 216px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 214px;}
   #Photo_BannerBox{height: 214px;}

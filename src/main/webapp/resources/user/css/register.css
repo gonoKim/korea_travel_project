@@ -142,9 +142,6 @@ body{
 }
 
 /* media */
-@media screen and (max-width:500px){
-	body{background: none;}
-}
 @media screen and (max-width:392px){
 	#idChk, #phoneChk{
 		width: 19%;
