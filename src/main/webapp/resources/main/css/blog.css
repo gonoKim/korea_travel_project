@@ -108,7 +108,7 @@ body{
   height: 100vh;
   background: url('/resources/main/Images/bg_01.png') no-repeat center/cover;
 }
-#Main{width: 80px;}
+#Main{width: 220px;}
 
 #sign_in_btn_left{display: none;}
 #sign_in_btn{margin-right: 10px;}

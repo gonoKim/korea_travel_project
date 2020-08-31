@@ -141,12 +141,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/Find_Pw/findPw", method = RequestMethod.POST)
-	public String findPw(UserVO vo, RedirectAttributes rttr) throws Exception{
+	public String findPw(UserVO vo, HttpSession session ,RedirectAttributes rttr) throws Exception{
 		logger.info("post findId");
 		
 		UserVO findPw = service.findPw(vo);
 		
 		if(findPw != null) {
+			session.setAttribute("M_Id", findPw.getM_Id());
 			return "redirect:/user/Find_Pw/changePwd";
 		} else {
 			rttr.addFlashAttribute("msg", false);
@@ -165,6 +166,7 @@ public class UserController {
 	public String postChangePwd(UserVO vo, HttpSession session) throws Exception{
 		logger.info("post changePwd");
 		
+		vo.setM_Id((String) session.getAttribute("M_Id"));
 		String inputPass = vo.getM_Pw();							// 비밀번호 암호화
 		String pwd = pwdEncoder.encode(inputPass);
 		vo.setM_Pw(pwd);

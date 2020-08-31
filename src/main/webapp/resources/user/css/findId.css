@@ -118,8 +118,8 @@ body {
 
 /* etc */
 #Find_Id{
-  width: 40%;
-  margin-bottom: 10px;
+  width: 60%;
+  margin-bottom: 0px;
 }
 #inputFirstName, #inputLastName, #inputTel{
   text-align: left;

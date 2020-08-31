@@ -135,9 +135,14 @@ input[id="remember"] {
 }
 
 /* etc */
+body{
+  background: url('/resources/user/Images/Sign_UpBg.png') no-repeat center/cover;
+  background-size: 45%;
+}
 #logo{
   width: 80%;
-  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 #inputEmail, #inputPassword{
   text-align: left;
