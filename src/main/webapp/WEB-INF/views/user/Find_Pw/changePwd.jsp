@@ -38,12 +38,12 @@
 
       <div class="form-group">
         <label for="inputPassword">Password</label>
-        <input type="password" class="form-control btn btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
+        <input type="password" class="form-control btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
       </div>
 
       <div class="form-group">
         <label for="inputRepassword">Re-enter password</label>
-        <input type="password" class="form-control btn btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
+        <input type="password" class="form-control btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 
       <div class="form-row">

@@ -39,7 +39,7 @@
       <div class="form-group">
         <label for="inputEmail">Email address</label>
           <div class="form-group" class="btnArray">
-            <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com"
+            <input type="email" class="form-control btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com"
             	 maxlength="30" onFocus="this.value=''; return true;" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);" required autofocus>
             <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">Check</button>
           </div>
@@ -47,29 +47,29 @@
 
       <div class="form-group">
         <label for="inputPassword">Password</label>
-        <input type="password" class="form-control btn btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
+        <input type="password" class="form-control btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
       </div>
 
       <div class="form-group">
         <label for="inputRepassword">Re-enter password</label>
-        <input type="password" class="form-control btn btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
+        <input type="password" class="form-control btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputFirstName">First name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname" maxlength="10" required>
+          <input type="text" class="form-control btn-dark" id="inputFirstName" name="M_Fname" maxlength="10" required>
         </div>
         <div class="col-md-6 mb-3">
           <label for="inputLastName">Last name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname" maxlength="10" required>
+          <input type="text" class="form-control btn-dark" id="inputLastName" name="M_Lname" maxlength="10" required>
         </div>
       </div>
       
       <div class="form-group">
         <label for="inputTel">Phone number</label>
           <div class="form-group" class="btnArray">
-	        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+	        <input type="tel" class="form-control btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
 	        	 placeholder="000-0000-0000" maxlength="13" onFocus="this.value=''; return true;" required>
         	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">Check</button>
        	  </div>
@@ -78,7 +78,7 @@
       <label for="inputBirth">Birth</label>
       <div class="form-row" id="form_YMD">
         <div class="col">
-          <input type="number" class="form-control btn btn-dark" id="inputYear" name="M_Year" placeholder="Year (4)"
+          <input type="number" class="form-control btn-dark" id="inputYear" name="M_Year" placeholder="Year (4)"
           	min="1900" max="2021" maxlength="4" oninput="maxLengthCheck(this)"  required>
         </div>
         <div class="col">
@@ -93,7 +93,7 @@
           </select>
         </div>
         <div class="col">
-          <input type="number" class="form-control btn btn-dark" id="inputDay" name="M_Day" placeholder="Day"
+          <input type="number" class="form-control btn-dark" id="inputDay" name="M_Day" placeholder="Day"
            	min="1" max="31" maxlength="2" oninput="maxLengthCheck(this)" required>
         </div>
       </div>

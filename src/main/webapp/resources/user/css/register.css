@@ -133,19 +133,21 @@ body{
   margin-bottom: 35px;
 }
 #inputEmail, #inputTel{
+  display: inline-block;
   width: 78.8%;
 }
 #idChk, #phoneChk{
+  display: inline-block;
   width: 20%;
-  padding: 3px;
-  display: inline;
+  height: 38px;
+  padding: 0px;
+  margin-bottom: 5px;
 }
 
 /* media */
 @media screen and (max-width:392px){
 	#idChk, #phoneChk{
 		width: 19%;
-		height: 38px;
 		font-size: 15px;
 	}
 }

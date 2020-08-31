@@ -37,17 +37,17 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="inputFirstName">First name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputFirstName" name="M_Fname"  maxlength="10" required>
+          <input type="text" class="form-control btn-dark" id="inputFirstName" name="M_Fname"  maxlength="10" required>
         </div>
         <div class="col-md-6 mb-3">
           <label for="inputLastName">Last name</label>
-          <input type="text" class="form-control btn btn-dark" id="inputLastName" name="M_Lname"  maxlength="10" required>
+          <input type="text" class="form-control btn-dark" id="inputLastName" name="M_Lname"  maxlength="10" required>
         </div>
       </div>
       
       <div class="form-group" id="form_inputTel">
         <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
+        <input type="tel" class="form-control btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
       
    	  <c:if test="${msg == true}">

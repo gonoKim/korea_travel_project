@@ -34,12 +34,12 @@
 
       <div class="form-group">
         <label for="inputEmail">Email address</label>
-        <input type="email" class="form-control btn btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" required autofocus>
+        <input type="email" class="form-control btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" required autofocus>
       </div>
       
       <div class="form-group" id="form_inputTel">
         <label for="inputTel">Phone number</label>
-        <input type="tel" class="form-control btn btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
+        <input type="tel" class="form-control btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
       
    	  <c:if test="${msg == false}">

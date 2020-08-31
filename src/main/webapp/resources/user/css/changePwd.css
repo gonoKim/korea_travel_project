@@ -117,6 +117,10 @@ body {
 }
 
 /* etc */
+body{
+  background: url('/resources/user/Images/Find_Bg.png') no-repeat center/cover;
+  background-size: 700px;
+}
 #Change_Pwd{
   width: 80%;
   margin-bottom: 10px;
