@@ -106,7 +106,11 @@ function QnAUpdate(){
               </div>
         </form>
     </div>
-     <div class="commentList"></div>
+  <div class="container">
+        <div class="commentList"></div>
+    </div>
+
+
 
 <%@ include file="QnAComment.jsp" %>
 

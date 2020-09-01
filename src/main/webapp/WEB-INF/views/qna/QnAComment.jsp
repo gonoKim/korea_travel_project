@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
  
 <script>
-var bno = '${result.qnaNum}'; //게시글 번호
+var qnaNum = '${result.qnaNum}'; //게시글 번호
  
 /* $('[name=commentInsertBtn]').click(function(){ //댓글 등록 버튼 클릭시 
     var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
@@ -16,7 +16,7 @@ function commentList(){
     $.ajax({
         url : '/qnacomment/clist',
         type : 'get',
-        data : {'bno':bno},
+        data : {'qnaNum':qnaNum},
         success : function(data){
             var a =''; 
             $.each(data, function(key, value){ 
@@ -26,9 +26,12 @@ function commentList(){
                 a += '<a onclick="commentDelete('+value.qnaCNum+');"> 삭제 </a> </div>';
                 a += '<div class="commentContent'+value.qnaCNum+'"> <p> 내용 : '+value.qnaCContent +'</p>';
                 a += '</div></div>';
-            });
+            
+                });
             
             $(".commentList").html(a);
+        },error:function(){
+			console.log("error");
         }
     });
 }
@@ -57,8 +60,8 @@ function insertData(c_Con, c_Num){
         success : function(data){
             if(data == 1) {
             	alert("댓글 등록이 완료되었습니다.");
-            	
                 commentList(); //댓글 작성 후 댓글 목록 reload
+                $('[name=content]').val('');
             }else {
 				alert("글 등록 실패");
 			}
