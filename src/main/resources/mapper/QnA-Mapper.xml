@@ -61,6 +61,7 @@ WHERE   QnA_Num = #{QnA_Num};
         SELECT
             COUNT(*)
         FROM QnA_Comment
+        
     </select>
     
     <!-- 댓글 조회 -->
@@ -68,6 +69,7 @@ WHERE   QnA_Num = #{QnA_Num};
         SELECT
             *
         FROM QnA_Comment
+        where 	QnA_Num = #{qnaNum};
     </select>
     
    	<!-- 댓글 작성 -->
