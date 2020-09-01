@@ -50,25 +50,25 @@ public class QnAController {
 		
 //		QnA 내용물 보여주는 컨트롤러 & 조회수 
 		@RequestMapping(value="qna/QnAView",method = RequestMethod.GET)
-		public ModelAndView QnAView(int QnA_Num) {
-			qnaService.viewsUpdate(QnA_Num);
-			QnAVO result = qnaService.getQnAView(QnA_Num);
+		public ModelAndView QnAView(int qnaNum) {
+			QnAVO result = qnaService.getQnAView(qnaNum);
+			qnaService.viewsUpdate(qnaNum);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("result",result);
 			return mav;
 		}	
 //		QnA 내용물 보여주는 컨트롤러 뷰 데이터 끌어다씀
 		@RequestMapping(value="qna/QnAUpdate",method = RequestMethod.GET)
-		public ModelAndView QnAUpdate(int QnA_Num) {
-			QnAVO result = qnaService.getQnAView(QnA_Num);
+		public ModelAndView QnAUpdate(int qnaNum) {
+			QnAVO result = qnaService.getQnAView(qnaNum);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("result",result);
 			return mav;
 		}
 //		QnA 삭제 
 		@RequestMapping(value="qna/QnADelete",method = RequestMethod.GET)
-		public String QnADelete(int QnA_Num) {
-			qnaService.QnADelete(QnA_Num);
+		public String QnADelete(int qnaNum) {
+			qnaService.QnADelete(qnaNum);
 			return "redirect: QnABoard";
 		}
 }

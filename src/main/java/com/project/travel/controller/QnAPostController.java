@@ -25,7 +25,7 @@ public class QnAPostController {
 	
 	
 	//QnA쓰기 데이터 받 컨트롤러
-	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
+	@RequestMapping(value="jquery/QnAWrite",method =  RequestMethod.POST)
 	@ResponseBody
 	public int QnAWrite(QnAVO qnavo) {
 		int result = 0; 

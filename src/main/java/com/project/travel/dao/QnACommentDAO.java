@@ -13,6 +13,7 @@ public class QnACommentDAO {
 	
 	@Autowired
 	public SqlSession sqlSession;
+	
     // 댓글 개수
 	public int qnaCommentCount() {
 	return sqlSession.selectOne("qnaCommentCount");
@@ -31,8 +32,8 @@ public class QnACommentDAO {
 		return sqlSession.update("qnaCommentUpdate", qnaCvo);
 	}
 	  // 댓글 삭제
-	public int qnaCommentDelete(int qnA_C_Num) {
-		return sqlSession.delete("qnaCommentDelete", qnA_C_Num);
+	public int qnaCommentDelete(int qnaCNum) {
+		return sqlSession.delete("qnaCommentDelete", qnaCNum);
 	}
 
 }

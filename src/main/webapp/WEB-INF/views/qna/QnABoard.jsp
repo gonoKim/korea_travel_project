@@ -94,14 +94,14 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 			<td scope="col">Views</td>
 			<td scope="col">Date</td>
 		</tr>
-		<c:forEach var="b" items="${result }">
-			<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd "
+		<c:forEach var="b" items="${result}">
+			<fmt:formatDate value="${b.qnaDate}" pattern="yyyy-MM-dd "
 				var="dateFormat_cr" />
 			<tr>
-				<td>${b.qnA_Num }</td>
-				<td>${b.qnA_Write }</td>
-				<td><a href="/qna/QnAView?QnA_Num=${b.qnA_Num }">${b.qnA_Subject }</a></td>
-				<td>${b.qnA_Views }</td>
+				<td>${b.qnaNum }</td>
+				<td>${b.qnaWrite }</td>
+				<td><a href="/qna/QnAView?qnaNum=${b.qnaNum }">${b.qnaSubject }</a></td>
+				<td>${b.qnaViews }</td>
 				<td>${dateFormat_cr }</td>
 			</tr>
 		</c:forEach>

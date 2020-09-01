@@ -23,12 +23,12 @@
 function boardDelete(){	
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if (chk) {
-		location.href="/qna/QnADelete?QnA_Num=${result.qnA_Num }";
+		location.href="/qna/QnADelete?qnaNum=${result.qnaNum }";
 			}
 						}	
 function QnAUpdate(){
 	
-	location.href = "/qna/QnAUpdate?QnA_Num=${result.qnA_Num }";
+	location.href = "/qna/QnAUpdate?qnaNum=${result.qnaNum }";
 }
 </script>
 </head>
@@ -69,20 +69,20 @@ function QnAUpdate(){
 <table class="my-5 table table-bordered">
             <tr>
                 <th class="text-center w-25 p-3">Subject: </th>
-                <td scope="row">${result.qnA_Subject }</td>
+                <td scope="row">${result.qnaSubject }</td>
             </tr>
              <tr>
                 <th class="text-center">Writer: </th>
-                <td scope="row">${result.qnA_Write }</td>
+                <td scope="row">${result.qnaWrite }</td>
             </tr>
             <tr>
                 <th class="text-center">Content: </th>
-                <td scope="row">${result.qnA_Content }</td>
+                <td scope="row">${result.qnaContent }</td>
             </tr>
             
             <tr>
                 <th class="text-center">Views: </th>
-                <td scope="row">${result.qnA_Views }</td>
+                <td scope="row">${result.qnaViews }</td>
             </tr>
          	
 </table>
@@ -98,7 +98,7 @@ function QnAUpdate(){
         <label for="content">comment</label>
         <form name="commentInsertForm">
             <div class="input-group">
-               <input type="hidden" name="bno" value="${result.qnA_Num}"/>
+               <input type="hidden" name="bno" value="${result.qnaNum}"/>
                <input type="text" class="form-control" id="c_Content" name="content" placeholder="내용을 입력하세요.">
                <span class="input-group-btn">
                     <input class="btn btn-default" type="button" value="등록" onclick="commentInsert()"/>

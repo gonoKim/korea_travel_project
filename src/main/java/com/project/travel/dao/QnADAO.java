@@ -35,16 +35,16 @@ public class QnADAO {
 	}
 
 	/* QnA 내용 뷰 */
-	public QnAVO getQnAView(int QnA_Num) {
+	public QnAVO getQnAView(int qnaNum) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("QnA_Num", QnA_Num);
+		map.put("qnaNum", qnaNum);
 		return sqlSession.selectOne("getQnAView", map);
 	}
 
 	/* QnA 조회수 업데이트 */
-	public void viewUpdate(int QnA_Num) {
+	public void viewUpdate(int qnaNum) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("QnA_Num", QnA_Num);
+		map.put("qnaNum", qnaNum);
 		sqlSession.update("viewUpdate", map);
 	}
 
@@ -54,7 +54,7 @@ public class QnADAO {
 	}
 	
 	/* QnA 삭제 */
-	public int QnADelete(int QnA_Num) {
-		return sqlSession.delete("QnADelete", QnA_Num);
+	public int QnADelete(int qnaNum) {
+		return sqlSession.delete("QnADelete", qnaNum);
 	}
 }

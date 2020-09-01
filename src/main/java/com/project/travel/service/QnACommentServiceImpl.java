@@ -30,7 +30,7 @@ public class QnACommentServiceImpl implements QnACommentService {
 	}
 
 	@Override
-	public int qnaCommentDelete(int QnA_C_Num) {
-		return CommentDAO.qnaCommentDelete(QnA_C_Num);
+	public int qnaCommentDelete(int qnaCNum) {
+		return CommentDAO.qnaCommentDelete(qnaCNum);
 	}
 }

@@ -29,7 +29,7 @@
 function updateValidation(){
 	var u_subject = $("#u_subject").val();
 	var u_content = $("#u_content").val();
-	var u_num	  = ${result.qnA_Num};
+	var u_num	  = ${result.qnaNum};
 	if(!u_subject){
 		alert("제목 입력은 필수입니다.");
 		$("#u_subject").focus();
@@ -50,14 +50,14 @@ function QnAUpdate(u_num,u_sub,u_con){
 		url : "/jquery/QnAUpdate",
 		type:'POST',
 		data : {
-			QnA_Num 	: u_num,
-			QnA_Subject : u_sub,
-			QnA_Content : u_con
+			qnaNum 	: u_num,
+			qnaSubject : u_sub,
+			qnaContent : u_con
 		},
 		success:function(data){
 			if(data == 1){
 				alert("글 수정이 완료되었습니다.");
-				location.href="/qna/QnAView?QnA_Num=${result.qnA_Num }";
+				location.href="/qna/QnAView?qnaNum=${result.qnaNum }";
 			}else {
 				alert("글 수정 실패");
 			}
@@ -81,22 +81,22 @@ function QnAUpdate(u_num,u_sub,u_con){
                     </div>
            	
                     <h4 class="my-3"> Subject</h4>
-                    <input type="text" class="form-control text-dark" id="u_subject" value="${result.qnA_Subject }">
+                    <input type="text" class="form-control text-dark" id="u_subject" value="${result.qnaSubject }">
                       
                     <h4 class="my-3">Writer</h4>
-                    <input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.qnA_Write }">
+                    <input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.qnaWrite }">
    
                 
            
                     <h4 class="my-3">Content</h4>
-                    <textarea rows="10" cols="20" class="form-control text-dark" id="u_content"  placeholder="">${result.qnA_Content }</textarea>
+                    <textarea rows="10" cols="20" class="form-control text-dark" id="u_content"  placeholder="">${result.qnaContent }</textarea>
            
 					
 					 
                 
                 <div class="row justify-content-center my-4">
                      <input type="button" value="Update" class="btn" onclick="updateValidation()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?QnA_Num=${result.qnA_Num }'"/>
+                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?qnaNum=${result.qnaNum }'"/>
                 </div>
 </form>
         </div>

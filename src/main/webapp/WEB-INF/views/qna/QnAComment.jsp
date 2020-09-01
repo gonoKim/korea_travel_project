@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
  
 <script>
-var bno = '${result.qnA_Num}'; //게시글 번호
+var bno = '${result.qnaNum}'; //게시글 번호
  
 /* $('[name=commentInsertBtn]').click(function(){ //댓글 등록 버튼 클릭시 
     var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
@@ -35,7 +35,7 @@ function commentList(){
 
 function commentInsert(){
 	var c_Content = $("#c_Content").val();
-	var c_Num	  = "${result.qnA_Num}";
+	var c_Num	  = "${result.qnaNum}";
 	if(!c_Content){
 		alert("내용 입력은 필수 입니다..");
 		$("#c_Content").focus();

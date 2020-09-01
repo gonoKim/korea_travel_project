@@ -29,9 +29,9 @@ function QnAWrite(sub,wir,con){
 		url : "/jquery/QnAWrite",
 		type:'POST',
 		data : {
-			QnA_Subject : sub,
-			QnA_Write 	: wir,
-			QnA_Content : con
+			qnaSubject : sub,
+			qnaWrite 	: wir,
+			qnaContent : con
 		},
 		success:function(data){
 			if(data == 1){
