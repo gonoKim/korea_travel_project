@@ -25,4 +25,10 @@ public class MainServiceImpl implements MainService {
 	public List<MainVO> photoBanner() throws Exception {
 		return dao.photoBanner();
 	}
+	
+	// 공지사항 목록 조회
+	@Override
+	public List<MainVO> qnaList() throws Exception {
+		return dao.qnaList();
+	}
 }

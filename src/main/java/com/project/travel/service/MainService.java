@@ -10,4 +10,7 @@ public interface MainService {
 	
 	// 포토갤러리 배너에 넣을 이미지 찾기
 	public List<MainVO> photoBanner() throws Exception;
+	
+	// 공지사항 목록 조회
+	public List<MainVO> qnaList() throws Exception;
 }

@@ -153,7 +153,7 @@
       <div class="row mb-4">
         <div class="col-md-6">
           <h5>Photo Gallery</h5>
-          <div id="Photo_BannerBox" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="A1">
+          <div id="Photo_BannerBox" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div id="Photo_carousel" class="carousel slide" data-ride="carousel" data-interval="2000" pause="hover">
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -195,10 +195,16 @@
         
         <div class="col-md-6">
           <h5>Notice</h5>
-          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="A2">
-              <h1>공지사항</h1>
+          <div id="QnA_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <table class="table table-sm">
+				<tr><td id="border_Delete"><h3><font class="title_color">[공지]</font> ${qnaList[0].qnA_Subject}</h3></td></tr>
+				<c:forEach items="${qnaList}" var="qnaList" begin="1">
+					<tr><td><font class="title_color">[공지]</font> ${qnaList.qnA_Subject}</td></tr>
+				</c:forEach>
+			</table>
           </div>
         </div>
+        
       </div>
     </div>
 
