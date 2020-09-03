@@ -6,14 +6,16 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.travel.service.UserService;
+import com.project.travel.utility.Utilities;
 import com.project.travel.vo.UserVO;
 
 @Controller
@@ -23,10 +25,7 @@ public class UserController {
 	
 	@Inject
 	UserService service;
-	
-	@Inject
-	BCryptPasswordEncoder pwdEncoder;
-	
+		
 	// 회원가입 get
 	@RequestMapping(value="/Sign_Up/register", method = RequestMethod.GET)
 	public void getRegister() throws Exception {
@@ -53,15 +52,17 @@ public class UserController {
 	@RequestMapping(value="/Sign_Up/register", method = RequestMethod.POST)
 	public String postRegister(UserVO vo) throws Exception {
 		logger.info("post register");
+		
 		int result = service.idChk(vo);
 		int result2 = service.phoneChk(vo);
+		Utilities util = Utilities.getInstance();
 		
 		try {
 			if(result == 1 || result2 == 1) {
 				return "redirect:/user/Sign_Up/register";
 			}else if(result == 0 && result2 == 0) {
 				String inputPass = vo.getM_Pw();							// 비밀번호 암호화
-				String pwd = pwdEncoder.encode(inputPass);
+				String pwd = util.makeSha256BCrypt(inputPass);
 				vo.setM_Pw(pwd);
 				
 				service.register(vo);
@@ -80,15 +81,17 @@ public class UserController {
 
 	// 로그인 post
 	@RequestMapping(value="/Sign_In/login", method = RequestMethod.POST)
-	public String login(UserVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
+	public String login(UserVO vo, HttpServletRequest req, RedirectAttributes rttr, @RequestParam("M_Pw") String pw) throws Exception{
 		logger.info("post login");
 		
 		HttpSession session = req.getSession();
+		Utilities util = Utilities.getInstance();
 		UserVO login = service.login(vo);
+		
 		boolean pwdMatch;
 		
 		if(login != null) {
-			pwdMatch = pwdEncoder.matches(vo.getM_Pw(), login.getM_Pw());
+			pwdMatch = util.checkSha256BCrypt(pw, login.getM_Pw());
 		} else {
 			pwdMatch = false;
 		}
@@ -166,9 +169,11 @@ public class UserController {
 	public String postChangePwd(UserVO vo, HttpSession session) throws Exception{
 		logger.info("post changePwd");
 		
+		Utilities util = Utilities.getInstance();
+		
 		vo.setM_Id((String) session.getAttribute("M_Id"));
 		String inputPass = vo.getM_Pw();							// 비밀번호 암호화
-		String pwd = pwdEncoder.encode(inputPass);
+		String pwd = util.makeSha256BCrypt(inputPass);
 		vo.setM_Pw(pwd);
 		
 		service.changePwd(vo);
