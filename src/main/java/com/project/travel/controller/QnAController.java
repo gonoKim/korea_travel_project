@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.common.Pagination;
 import com.project.travel.service.QnAService;
+import com.project.travel.vo.QnACommentVO;
 import com.project.travel.vo.QnAVO;
 
 /*클라이언트와 서버를 연결해주는 모듈 */
@@ -55,9 +56,10 @@ public class QnAController {
 			qnaService.viewsUpdate(qnaNum);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("result",result);
+			mav.addObject("cResult", new QnACommentVO());
 			return mav;
 		}	
-//		QnA 내용물 보여주는 컨트롤러 뷰 데이터 끌어다씀
+//		QnA 업데이트 내용물 보여주는 컨트롤러 뷰 데이터 끌어다씀
 		@RequestMapping(value="qna/QnAUpdate",method = RequestMethod.GET)
 		public ModelAndView QnAUpdate(int qnaNum) {
 			QnAVO result = qnaService.getQnAView(qnaNum);

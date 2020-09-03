@@ -19,8 +19,8 @@ public class QnACommentDAO {
 	return sqlSession.selectOne("qnaCommentCount");
 	}
     // 댓글 목록
-    public List<QnACommentVO> qnaCommentList(){
-    	return sqlSession.selectList("qnaCommentList");
+    public List<QnACommentVO> qnaCommentList(int qnaNum){
+    	return sqlSession.selectList("qnaCommentList", qnaNum);
     }
   
     // 댓글 작성

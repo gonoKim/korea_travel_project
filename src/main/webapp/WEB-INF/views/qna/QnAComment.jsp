@@ -14,7 +14,7 @@ var qnaNum = '${result.qnaNum}'; //게시글 번호
 //댓글 목록 
 function commentList(){
     $.ajax({
-        url : '/qnacomment/clist',
+        url : '/qnacomment/clist?qnaNum=${result.qnaNum}',
         type : 'get',
         data : {'qnaNum':qnaNum},
         success : function(data){
@@ -26,7 +26,6 @@ function commentList(){
                 a += '<a onclick="commentDelete('+value.qnaCNum+');"> 삭제 </a> </div>';
                 a += '<div class="commentContent'+value.qnaCNum+'"> <p> 내용 : '+value.qnaCContent +'</p>';
                 a += '</div></div>';
-            
                 });
             
             $(".commentList").html(a);
@@ -93,7 +92,8 @@ function commentUpdateProc(qnaCNum){
         type : 'post',
         data : {'qnaCContent' : updateContent, 'qnaCNum' : qnaCNum},
         success : function(data){
-            if(data == 1) commentList(bno); //댓글 수정후 목록 출력 
+            if(data == 1) 
+                commentList(qnaNum); //댓글 수정후 목록 출력 
         }
     });
 }
@@ -101,10 +101,10 @@ function commentUpdateProc(qnaCNum){
 //댓글 삭제 
 function commentDelete(qnaCNum){
     $.ajax({
-        url : '/qnacomment/QnACDelete/'+qnaCNum,
+        url : '/qnacomment/QnACDelete'+qnaCNum,
         type : 'get',
         success : function(data){
-            if(data == 1) commentList(bno); //댓글 삭제후 목록 출력 
+            if(data == 1) commentList(qnaNum); //댓글 삭제후 목록 출력 
         }
     });
 }

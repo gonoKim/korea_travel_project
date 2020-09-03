@@ -3,6 +3,7 @@ package com.project.travel.vo;
 import java.util.Date;
 
 public class QnACommentVO {
+	
 	private int	qnaCNum; //qna댓글 번호
 	private int qnaNum;	//qna 넘버
 	private String qnaCContent;	//qna댓글 내용
@@ -32,4 +33,7 @@ public class QnACommentVO {
 	public void setQnaCDate(Date qnaCDate) {
 		this.qnaCDate = qnaCDate;
 	}
+	
+
+	
 }

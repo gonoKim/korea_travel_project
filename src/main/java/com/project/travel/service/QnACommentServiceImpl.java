@@ -12,25 +12,25 @@ import com.project.travel.vo.QnACommentVO;
 public class QnACommentServiceImpl implements QnACommentService {
 
 	@Autowired
-	QnACommentDAO CommentDAO;
+	QnACommentDAO commentDAO;
 	
 	@Override
-	public List<QnACommentVO> qnaCommentList() {
-		return CommentDAO.qnaCommentList();
+	public List<QnACommentVO> qnaCommentList(int qnaNum) {
+		return commentDAO.qnaCommentList(qnaNum);
 	}
 
 	@Override
 	public int qnaCommentWrite(QnACommentVO qnaCvo) {
-		return CommentDAO.qnaCommentWrite(qnaCvo);
+		return commentDAO.qnaCommentWrite(qnaCvo);
 	}
 
 	@Override
 	public int qnaCommentUpdate(QnACommentVO qnaCvo) {
-		return CommentDAO.qnaCommentUpdate(qnaCvo);
+		return commentDAO.qnaCommentUpdate(qnaCvo);
 	}
 
 	@Override
 	public int qnaCommentDelete(int qnaCNum) {
-		return CommentDAO.qnaCommentDelete(qnaCNum);
+		return commentDAO.qnaCommentDelete(qnaCNum);
 	}
 }
