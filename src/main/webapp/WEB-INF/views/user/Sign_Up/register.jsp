@@ -51,7 +51,7 @@
       </div>
 
       <div class="form-group">
-        <label for="inputRepassword">Re-enter password</label>
+        <label for="inputRepassword">Retype password</label>
         <input type="password" class="form-control btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 
