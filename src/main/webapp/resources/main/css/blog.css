@@ -123,6 +123,10 @@ body{
 #Photo_carousel .carousel-inner > .carousel-item >img{height: 302px;}
 
 #QnA_Box{height: 302px;}
+#QnA_Box a{
+  text-decoration:none;
+  color: black;
+}
 #QnA_Box table{
   margin-left: 4%;
   margin-right: 4%;

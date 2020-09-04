@@ -197,9 +197,9 @@
           <h5>Notice</h5>
           <div id="QnA_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <table class="table table-sm">
-				<tr><td id="border_Delete"><h3><font class="title_color">[공지]</font> ${qnaList[0].qnA_Subject}</h3></td></tr>
+				<tr><td id="border_Delete"><a href="/qna/QnAView?qnaNum=${qnaList[0].qnA_Num}"><h3><font class="title_color">[공지]</font> ${qnaList[0].qnA_Subject}</h3></a></td></tr>
 				<c:forEach items="${qnaList}" var="qnaList" begin="1">
-					<tr><td><font class="title_color">[공지]</font> ${qnaList.qnA_Subject}</td></tr>
+					<tr><td><a href="/qna/QnAView?qnaNum=${qnaList.qnA_Num}"><font class="title_color">[공지]</font> ${qnaList.qnA_Subject}</a></td></tr>
 				</c:forEach>
 			</table>
           </div>

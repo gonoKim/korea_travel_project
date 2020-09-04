@@ -5,8 +5,10 @@ public class MainVO {
 	private int Photo_Num;
 	private	int Photo_Views;
 	// QnA 게시판
+	private int QnA_Num;
 	private String QnA_Subject;
 	private	int QnA_Views;
+	
 	
 	// 포토 갤러리
 	public int getPhoto_Num() {
@@ -24,6 +26,12 @@ public class MainVO {
 	}
 	
 	// QnA 게시판
+	public int getQnA_Num() {
+		return QnA_Num;
+	}
+	public void setQnA_Num(int qnA_Num) {
+		QnA_Num = qnA_Num;
+	}
 	public String getQnA_Subject() {
 		return QnA_Subject;
 	}
