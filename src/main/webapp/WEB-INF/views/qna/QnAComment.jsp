@@ -88,7 +88,7 @@ function commentUpdateProc(qnaCNum){
     var updateContent = $('[name=content_'+qnaCNum+']').val();
     
     $.ajax({
-        url : 'jquery/QnACUpdate',
+        url : '/jquery/QnACUpdate',
         type : 'post',
         data : {'qnaCContent' : updateContent, 'qnaCNum' : qnaCNum},
         success : function(data){
@@ -100,13 +100,17 @@ function commentUpdateProc(qnaCNum){
  
 //댓글 삭제 
 function commentDelete(qnaCNum){
-    $.ajax({
-        url : '/qnacomment/QnACDelete'+qnaCNum,
+	 var chk = confirm("정말 삭제하시겠습니까?");
+	if (chk) {
+		location.href="/qnacomment/QnACDelete?qnaCNum=${value.qnaCNum}";
+	}	 
+    /* $.ajax({
+        url : '/qnacomment/QnACDelete?qnaCNum=${qnaCNum}',
         type : 'get',
         success : function(data){
             if(data == 1) commentList(qnaNum); //댓글 삭제후 목록 출력 
         }
-    });
+    }); */
 }
  
  

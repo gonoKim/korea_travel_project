@@ -55,10 +55,10 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 <body >
 <div class="container">
 
-      <header class="blog-header py-3">
+ <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
-            <!-- <a class="text-muted" href="#">Subscribe</a> -->
+            <a class="text-muted" href="#">Subscribe</a>
           </div>
           <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="index.html">QnA</a>
@@ -85,6 +85,8 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 			<a class="p-2 text-muted nav-link" href="../Mypage/mypage.html">MyPage</a>
 		</div>
 	</nav>
+<%-- 	<%@ include file="nav.jsp" %> --%>
+	
 	 <div class="row justify-content-center mt-4">
 	<table class="table col-11 text-center">
 		<tr>
