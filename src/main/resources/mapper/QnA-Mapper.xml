@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.QnA-Mapper">
+
+<select id="getQnAList" resultType="com.project.travel.vo.QnAVO">
+<!-- <![CDATA[[ -->
+	select 
+	*
+	from QnA_Border
+	order by 
+	QnA_Num DESC
+LIMIT #{qnastartList}, 10;
+<!--limit 부분 스타트리스트 가0부터 시작하고 10개씩 끊어라 는 말임-->
+<!-- ]]> -->
+</select>
+	<select id="getQnAListCnt" resultType="int">
+	SELECT
+	count(*) as qnalistCnt
+	FROM
+	QnA_Border
+	</select>
+	
+<!-- insert 쿼리문  -->
+<insert id="QnAWrite">
+insert into QnA_Border (QnA_Num,QnA_Write,QnA_Subject,QnA_Content,QnA_Views,QnA_Date) 
+values(#{qnaNum},#{qnaWrite},#{qnaSubject},#{qnaContent},#{qnaViews},now());
+</insert>
+<!-- QnA 내용물 보여주는 쿼리문 -->
+<select id="getQnAView" resultType="com.project.travel.vo.QnAVO">
+SELECT 	* 
+FROM 	QnA_Border 
+where 	QnA_Num = #{qnaNum};
+</select>
+
+<!-- QnA조회수 update -->
+<update id="viewUpdate">
+UPDATE  QnA_Border
+SET 	QnA_Views = QnA_Views+1 
+WHERE 	QnA_Num   = #{qnaNum};
+</update>
+
+<!-- QnA 수정 쿼리문 -->
+<update id="QnAUpdate">
+UPDATE QnA_Border 
+SET QnA_Subject  = #{qnaSubject}
+,	QnA_Content  = #{qnaContent}
+,	QnA_Date	 = now()
+WHERE QnA_Num 	 = #{qnaNum};
+</update>
+
+<!-- QnA 삭제 쿼리문 -->
+<delete id="QnADelete">
+DELETE 	
+FROM 	QnA_Border
+WHERE   QnA_Num = #{qnaNum};
+</delete>
+	<!-- QnA 댓글 쿼리문 -->
+	
+	<!-- 댓글 갯수 세기 -->
+  <select id="qnaCommentCount" resultType="int">
+        SELECT
+        COUNT(*)
+        FROM QnA_Comment
+        
+    </select>
+    
+    <!-- 댓글 조회 -->
+    <select id="qnaCommentList" resultType="com.project.travel.vo.QnACommentVO">
+        SELECT
+        *
+        FROM 	QnA_Comment
+        WHERE 	QnA_Num = #{qnaNum};
+    </select>
+    
+   	<!-- 댓글 작성 -->
+    <insert id="qnaCommentInsert" parameterType="com.project.travel.vo.QnACommentVO">
+        INSERT INTO
+        QnA_Comment (QnA_C_Num, QnA_Num, QnA_C_Content, QnA_C_Date)
+        VALUES(#{qnaCNum},#{qnaNum},#{qnaCContent},now()) 
+    </insert>
+    
+    <!-- 댓글 업데이트 -->
+    <update id="qnaCommentUpdate" parameterType="com.project.travel.vo.QnACommentVO">
+        UPDATE QnA_Comment
+            SET
+            QnA_C_Content = #{qnaCContent}
+        WHERE QnA_C_Num = #{qnaCNum}
+    </update>
+    
+    <!-- 댓글 삭제 -->
+    <delete id="qnaCommentDelete" parameterType="int">
+        DELETE FROM QnA_Comment WHERE QnA_C_Num = #{qnaCNum}
+    </delete>
+</mapper>

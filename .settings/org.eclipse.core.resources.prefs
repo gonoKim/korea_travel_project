@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/main/main.jsp=UTF-8
+encoding//src/main/java/com/project/travel/controller/QnAController.java=UTF-8
+encoding//src/main/java/com/project/travel/dao/QnADAO.java=UTF-8
+encoding/<project>=UTF-8
