@@ -45,7 +45,7 @@
 
 	function NoticeWrite(sub, con) {
 		$.ajax({
-			url : "/jquery/NoticeWrite",
+			url : "/jquery2/NoticeWrite",
 			type : 'POST',
 			data : {
 				NB_Subject : sub,

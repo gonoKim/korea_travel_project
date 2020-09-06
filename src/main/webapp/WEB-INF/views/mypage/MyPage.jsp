@@ -42,7 +42,7 @@ function updateValidation(){
 
 function UserUpdate(M_Id, M_Phone, M_Pw){
 	$.ajax({
-		url : "../user/UserUpdate",
+		url : "../user2/UserUpdate",
 		type:'POST',
 		data : {
 			M_Id 	: M_Id,
@@ -78,7 +78,7 @@ function modPwdValidation(){
 
 function modPwd(M_Id, M_Pw, newPwd, newPwd2){
 	$.ajax({
-		url : "../user/modPwd",
+		url : "../user2/modPwd",
 		type:'POST',
 		data : {
 			M_Id    : M_Id,
@@ -118,7 +118,7 @@ function delUserValidation(){
 
 function delUser(M_Id, M_Pw){
 	$.ajax({
-		url : "../user/delUser",
+		url : "../user2/delUser",
 		type:'POST',
 		data : {
 			M_Id    : M_Id,

@@ -55,22 +55,5 @@ public class UserServiceImpl implements UserService {
 	public int changePwd(UserVO vo) throws Exception {
 		return dao.changePwd(vo);
 	}
-	
-	// 회원정보 수정
-		@Override
-		public int UserUpdate(UserVO vo) throws Exception {
-			return dao.UserUpdate(vo);
-		}
-		
-		// 마이페이지 뷰
-		@Override
-		public UserVO getMyPageView(String M_Id) {
-			return dao.getMyPageView(M_Id);
-		}
-
-		@Override
-		public int delUser(UserVO vo) throws Exception {
-			return dao.delUser(vo);
-		}
 
 }

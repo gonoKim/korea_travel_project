@@ -57,23 +57,4 @@ public class UserDAOImpl implements UserDAO {
 	public int changePwd(UserVO vo) throws Exception {
 		return sqlSession.update("UserMapper.changePwd", vo);
 	}
-	
-	// 회원정보 수정
-		@Override
-		public int UserUpdate(UserVO vo) throws Exception {
-			return sqlSession.update("UserUpdate", vo);
-		}
-
-		// 마이페이지 뷰
-		@Override
-		public UserVO getMyPageView(String M_Id)  {
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("M_Id", M_Id);
-			return sqlSession.selectOne("getMyPageView", map);
-		}
-
-		@Override
-		public int delUser(UserVO vo) {
-			return sqlSession.update("delUser", vo);
-		}
 }

@@ -46,7 +46,7 @@
 
 	function NoticeUpdate(u_num, u_sub, u_con) {
 		$.ajax({
-				url : "/jquery/NoticeUpdate",
+				url : "/jquery2/NoticeUpdate",
 				type : 'POST',
 				data : {
 					NB_Num : u_num,

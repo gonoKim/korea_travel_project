@@ -6,7 +6,9 @@
 	<mappers>
 		<mapper resource="mapper/QnA-Mapper.xml"/>
 		<mapper resource="mapper/UserMapper.xml"/>
+		<mapper resource="mapper/UserMapper2.xml"/>
 		<mapper resource="mapper/MainMapper.xml"/>
+		<mapper resource="mapper/Notice-Mapper.xml"/>
 	</mappers>
 	
 </configuration>

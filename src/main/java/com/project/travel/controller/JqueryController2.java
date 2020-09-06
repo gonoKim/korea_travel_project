@@ -12,28 +12,29 @@ import com.project.travel.vo.NoticeVO;
 import com.project.travel.vo.QnAVO;
 
 @Controller
-@RequestMapping("jquery/*")
-public class JqueryController {
+@RequestMapping("jquery2/*")
+public class JqueryController2 {
 	/* json을 통한 데이터 통신
 	 *  jQuery ajax를 이용한 POST
 	 *  */
 	@Autowired
-	QnAService qnaService;
+	NoticeService noticeService;
 	
-	//QnA쓰기 데이터 받 컨트롤러
-	@RequestMapping(value="jquery/QnAWrite",method = RequestMethod.POST)
+	// Notice 글 작성
+	@RequestMapping(value="jquery2/NoticeWrite",method = RequestMethod.POST)
 	@ResponseBody
-	public int QnAWrite(QnAVO qnavo) {
+	public int NoticeWrite(NoticeVO noticevo) {
 		int result = 0; 
-		result = qnaService.QnAWrite(qnavo); 
+		result = noticeService.NoticeWrite(noticevo); 
 		return result;
 	}
-//	QnA업데이트 데이터 받는컨트롤러
-	@RequestMapping(value="jquery/QnAUpdate",method = RequestMethod.POST)
+	
+	// Notice 글 수정
+	@RequestMapping(value="jquery2/NoticeUpdate",method = RequestMethod.POST)
 	@ResponseBody
-	public int QnAUpdate(QnAVO qnavo) {
+	public int NoticeUpdate(NoticeVO noticevo) {
 		int result = 0; 
-		result = qnaService.QnAUpdate(qnavo); 
+		result = noticeService.NoticeUpdate(noticevo); 
 		return result;
 	}
 }
