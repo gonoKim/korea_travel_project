@@ -26,14 +26,14 @@
 	border-right:1px solid #cfcfcf;
 	height:55px;
 	text-align:center;
-	width:12%;
+	width:13%;
 	font-weight:bold;
 	color:#555555;
 }
 
 .travel_a_city{
 	display:block;
-	width:11%;
+	width:12.4%;
 	float:left;
 	height:55px;
 	font-size:14px;
@@ -50,8 +50,12 @@
 	cursor:pointer;
 	display:block;
 }
-#travel_section_01 .travel_city{width:20%;}
-#travel_section_02 .travel_city{width:25%;}
+
+#travel_section_01 .travel_city{width:25%;}
+#travel_section_02 .travel_city{width:20%;}
+#travel_section_03 .travel_city{width:25%;}
+#travel_section_04 .travel_city{width:20%;}
+#travel_section_03, #travel_section_04{display:none;}
 
 .travel_city div{
 	display:inline-block;
@@ -93,4 +97,14 @@
 #Area_page a, #Area_page a:hover {
     text-decoration: none;
     color : black;
+}
+
+/* media */
+@media screen and (max-width:767px){
+	#travel_section_00 .travel_left{display: none;}
+	#travel_section_00 .travel_a_city{width:14%;}
+}
+@media screen and (max-width:400px){
+	#travel_section_01, #travel_section_02{display:none;}
+	#travel_section_03, #travel_section_04{display:flex;}
 }
