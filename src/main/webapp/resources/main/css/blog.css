@@ -188,6 +188,7 @@ body{
 }
 @media screen and (max-width:520px){#QnA_Box td{width: 450px;}}
 @media screen and (max-width:510px){
+  body{height: 160vh;}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 270px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 268px;}
   #Photo_BannerBox{height: 268px;}
@@ -236,6 +237,7 @@ body{
 }
 @media screen and (max-width:340px){#QnA_Box td{width: 270px;}}
 @media screen and (max-width:320px){
+  body{height: 140vh;}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 163px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 162px;}
   #Photo_BannerBox{height: 162px;}
