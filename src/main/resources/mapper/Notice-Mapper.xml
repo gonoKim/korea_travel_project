@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.Notice-Mapper">
+
+	<!-- Notice 글 목록 보기 -->
+	<select id="getNoticeList"
+		resultType="com.project.travel.vo.NoticeVO">
+		<!-- <![CDATA[[ -->
+		SELECT
+		*
+		FROM Notice_Border
+		order BY
+		NB_Num DESC;
+		<!-- ]]> -->
+	</select>
+
+	<!-- Notice 글 작성(Insert) -->
+	<insert id="NoticeWrite">
+		insert into Notice_Border(NB_Subject, NB_Content, NB_Views, NB_Date)
+		values(#{NB_Subject},#{NB_Content},0,now());
+	</insert>
+
+	<!-- Notice 글 보기(view) -->
+	<select id="getNoticeView"
+		resultType="com.project.travel.vo.NoticeVO">
+		SELECT * FROM Notice_Border where NB_Num = #{NB_Num};
+	</select>
+
+	<!-- Notice 뷰 증가(+1) -->
+	<update id="NoticeviewUpdate">
+		UPDATE Notice_Border SET NB_Views = NB_Views+1 WHERE NB_Num = #{NB_Num};
+	</update>
+
+	<!-- Notice 글 수정(Update) -->
+	<update id="NoticeUpdate">
+		UPDATE Notice_Border
+		SET NB_Subject = #{NB_Subject}
+		, NB_Content = #{NB_Content}
+		WHERE NB_Num = #{NB_Num};
+	</update>
+
+	<!-- Notice 글 삭제(Delete) -->
+	<delete id="NoticeDelete">
+		DELETE FROM Notice_Border
+		WHERE NB_Num = #{NB_Num};
+	</delete>
+
+</mapper>

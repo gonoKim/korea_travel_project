@@ -5,10 +5,11 @@
 <settings>
      <setting name="mapUnderscoreToCamelCase" value="true"/>
 </settings>
-
 	<mappers>
+		<mapper resource="mapper/QnA-Mapper.xml"/>
 		<mapper resource="mapper/UserMapper.xml"/>
 		<mapper resource="mapper/MainMapper.xml"/>
+		<mapper resource="mapper/PhotoBoard-Mapper.xml"/>
 	</mappers>
 	
 </configuration>
