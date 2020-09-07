@@ -33,7 +33,7 @@ where 	QnA_Num = #{qnaNum};
 </select>
 
 <!-- QnA조회수 update -->
-<update id="viewUpdate">
+<update id="qnaViewUpdate">
 UPDATE  QnA_Border
 SET 	QnA_Views = QnA_Views+1 
 WHERE 	QnA_Num   = #{qnaNum};

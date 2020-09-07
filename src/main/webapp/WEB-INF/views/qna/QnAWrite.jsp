@@ -113,7 +113,8 @@ function QnAWrite(sub,wir,con){
         </div>
 
     </article>
-    	<footer class="blog-footer ">
+ 	<jsp:include page="../inc/bottom.jsp" />
+<!--     	<footer class="blog-footer ">
 		<p>
 			Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>
 			by <a href="https://twitter.com/mdo">@mdo</a>.
@@ -121,6 +122,6 @@ function QnAWrite(sub,wir,con){
 		<p>
 			<a href="#">Back to top</a>
 		</p>
-	</footer>
+	</footer> -->
 </body>
 </html>

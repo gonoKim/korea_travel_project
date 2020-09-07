@@ -55,7 +55,7 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 <body >
 <div class="container">
 
- <header class="blog-header py-3">
+<!--  <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
             <a class="text-muted" href="#">Subscribe</a>
@@ -84,8 +84,8 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 			</ul>
 			<a class="p-2 text-muted nav-link" href="../Mypage/mypage.html">MyPage</a>
 		</div>
-	</nav>
-<%-- 	<%@ include file="nav.jsp" %> --%>
+	</nav> -->
+ 	<jsp:include page="../inc/top.jsp" />
 	
 	 <div class="row justify-content-center mt-4">
 	<table class="table col-11 text-center">
@@ -113,7 +113,7 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 		</div>
 			<!-- pagination{s} -->
 			<div id="paginationBox">
-				<ul class="pagination">
+				<ul class="pagination row justify-content-center my-4">
 					<c:if test="${pagination.qnaprev}">
 						<li class="page-item"><a class="page-link" href="#"
 							onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a></li>
@@ -145,7 +145,8 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
         </div>
 	</div>
 	</div>
-	<footer class="blog-footer ">
+ 	<jsp:include page="../inc/bottom.jsp" />
+<!-- 	<footer class="blog-footer ">
 		<p>
 			Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>
 			by <a href="https://twitter.com/mdo">@mdo</a>.
@@ -153,7 +154,7 @@ function fn_prev(qnapage, qnarange, qnarangeSize) {
 		<p>
 			<a href="#">Back to top</a>
 		</p>
-	</footer>
+	</footer> -->
 	
 </body>
 </html>

@@ -92,7 +92,7 @@
 		</div>
 		
 	</article>
-	<jsp:include page="../inc/bottom.jsp" />
+ 	<jsp:include page="../inc/bottom.jsp" />
 	<!-- //공통 푸터 -->
 </body>
 </html>

@@ -142,7 +142,7 @@ function delUser(M_Id, M_Pw){
 <body>
   <div class="container">
 
-    <jsp:include page="../inc/top.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/nav/top"/>
     <!-- //공통 헤더&네비-->
 	
     <div class="row mpwrap">
@@ -391,7 +391,7 @@ function delUser(M_Id, M_Pw){
   </div>
   <!-- //container(body_wrap) -->
 
-  <jsp:include page="../inc/bottom.jsp"/>
+  <jsp:include page="${pageContext.request.contextPath}/nav/bottom"/>
   <!-- //공통 푸터 -->
 </body>
 </html>

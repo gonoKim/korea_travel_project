@@ -45,7 +45,7 @@ public class QnADAO {
 	public void viewUpdate(int qnaNum) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("qnaNum", qnaNum);
-		sqlSession.update("viewUpdate", map);
+		sqlSession.update("qnaViewUpdate", map);
 	}
 
 	/* QnA 수정 */

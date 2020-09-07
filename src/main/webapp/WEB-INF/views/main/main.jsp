@@ -37,7 +37,7 @@
 
   <body>
     <div class="container">
-      <header class="blog-header py-3">
+     <%--  <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
 	      <div class="col-4 pt-1">
 	      	<c:if test="${user == null}">
@@ -65,24 +65,26 @@
       
       <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
         <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
-          <a class="p-2 text-muted nav-link" href="../Main/index.html">Home</a>
-          <a class="p-2 text-muted nav-link" href="../Menu/Gallery/gallery.html">Gallery</a>
+          <a class="p-2 text-muted nav-link" href="/main/main">Home</a>
+          <a class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/gallery/PhotoBoard">Gallery</a>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link p-2 text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Support
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Notice</a>
-                <a class="dropdown-item" href="../Menu/Support/QnA/QnA.html">QnA</a>
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/notice/NoticeBoard">Notice</a>
+                <a class="dropdown-item" href="${pageContext.request.contextPath}/qna/QnABoard">QnA</a>
               </div>
             </li>
           </ul>
           <a id="myPage_btn1" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">My Page</a>
           <a id="myPage_btn2" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">Profile</a>
         </div>
-      </nav>
-
+      </nav> --%>
+      
+    <!-- 네비게이션  -->  
+	<jsp:include page="../inc/top.jsp" />
 
       <div id="Banner_carousel" class="carousel slide" data-ride="carousel" data-interval="3000" pause="hover">
         <ol class="carousel-indicators">
@@ -211,22 +213,18 @@
           <h5>Notice</h5>
           <div id="QnA_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <table class="table table-sm">
-				<tr><td id="border_Delete"><a href="/qna/QnAView?qnaNum=${qnaList[0].qnA_Num}"><h3><font class="title_color">[공지]</font> ${qnaList[0].qnA_Subject}</h3></a></td></tr>
+				<tr><td id="border_Delete"><a href="/qna/QnAView?qnaNum=${qnaList[0].qnANum}"><h3><font class="title_color">[공지]</font> ${qnaList[0].qnaSubject}</h3></a></td></tr>
 				<c:forEach items="${qnaList}" var="qnaList" begin="1">
-					<tr><td><a href="/qna/QnAView?qnaNum=${qnaList.qnA_Num}"><font class="title_color">[공지]</font> ${qnaList.qnA_Subject}</a></td></tr>
+					<tr><td><a href="/qna/QnAView?qnaNum=${qnaList.qnANum}"><font class="title_color">[공지]</font> ${qnaList.qnaSubject}</a></td></tr>
 				</c:forEach>
 			</table>
           </div>
         </div>
         
       </div>
+      	
+      	<jsp:include page="../inc/bottom.jsp" />
+    
     </div>
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
   </body>
 </html>

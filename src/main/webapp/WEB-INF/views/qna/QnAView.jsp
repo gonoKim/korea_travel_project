@@ -35,10 +35,10 @@ function QnAUpdate(){
 <body>
 <div class="container">
 
-      <header class="blog-header py-3">
+<!--       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
-            <!-- <a class="text-muted" href="#">Subscribe</a> -->
+            <a class="text-muted" href="#">Subscribe</a>
           </div>
           <div class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="index.html">QnA</a>
@@ -64,7 +64,8 @@ function QnAUpdate(){
 			</ul>
 			<a class="p-2 text-muted nav-link" href="../Mypage/mypage.html">MyPage</a>
 		</div>
-	</nav>
+	</nav> -->
+	 	<jsp:include page="../inc/top.jsp" />
 <form>
 <table class="my-5 table table-bordered">
             <tr>
@@ -114,8 +115,8 @@ function QnAUpdate(){
 
 <%@ include file="QnAComment.jsp" %>
 
-
-	<footer class="blog-footer ">
+ 	<jsp:include page="../inc/bottom.jsp" />
+<!-- 	<footer class="blog-footer ">
 		<p>
 			Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>
 			by <a href="https://twitter.com/mdo">@mdo</a>.
@@ -123,6 +124,6 @@ function QnAUpdate(){
 		<p>
 			<a href="#">Back to top</a>
 		</p>
-	</footer>
+	</footer> -->
 </body>
 </html>
