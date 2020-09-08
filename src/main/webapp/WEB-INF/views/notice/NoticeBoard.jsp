@@ -22,6 +22,36 @@
 	function NoticeWrite() {
 		location.href = "/notice/NoticeWrite";
 	}
+
+	//이전 버튼 이벤트
+	function fn_prev(noticepage, noticerange, noticerangeSize) {
+			var noticepage = ((noticerange - 2) * noticerangeSize) + 1;
+			var noticerange = noticerange - 1;
+			var url = "${pageContext.request.contextPath}/notice/NoticeBoard";
+			url = url + "?noticepage=" + noticepage;
+			url = url + "&noticerange=" + noticerange;
+			location.href = url;
+		}
+
+
+
+	  //페이지 번호 클릭
+		function fn_pagination(noticepage, noticerange, noticerangeSize) {
+			var url = "${pageContext.request.contextPath}/notice/NoticeBoard";
+			url = url + "?noticepage=" + noticepage;
+			url = url + "&noticerange=" + noticerange;
+			location.href = url;	
+		}
+
+		//다음 버튼 이벤트
+		function fn_next(noticepage, noticerange, noticerangeSize) {
+			var noticepage = parseInt((noticerange * noticerangeSize)) + 1;
+			var noticerange = parseInt(noticerange) + 1;
+			var url = "${pageContext.request.contextPath}/notice/NoticeBoard";
+			url = url + "?noticepage=" + noticepage;
+			url = url + "&noticerange=" + noticerange;
+			location.href = url;
+		}
 </script>
 </head>
 <body>
@@ -50,7 +80,34 @@
 			</table>
 			
 		</div>
-		<div>
+		
+	<!-- pagination{s} -->
+			<div id="paginationBox">
+				<ul class="pagination">
+					<c:if test="${pagination.noticeprev}">
+						<li class="page-item"><a class="page-link" href="#"
+							onClick="fn_prev('${pagination.noticepage}', '${pagination.noticerange}', '${pagination.noticerangeSize}')">Previous</a></li>
+					</c:if>
+
+					<c:forEach begin="${pagination.noticestartPage}"
+						end="${pagination.noticeendPage}" var="idx">
+						<li class="page-item <c:out value="${pagination.noticepage == idx ? 'active' : ''}"/> ">
+						<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.noticerange}', '${pagination.noticerangeSize}')">
+								${idx} </a>
+						</li>
+					</c:forEach>
+
+					<c:if test="${pagination.noticenext}">
+						<li class="page-item">
+						<a class="page-link" href="#" onClick="fn_next('${pagination.noticerange}', '${pagination.noticerange}', '${pagination.noticerangeSize}')">Next</a>
+						</li>
+					</c:if>
+				</ul>
+			</div>
+
+			<!-- pagination{e} -->
+
+	<div>
 			<div class="row justify-content-center my-3 ">
 				<button type="submit" onclick="NoticeWrite();" class="btn">
 					Write<i class="fa fa-times spaceLeft"></i>
@@ -58,8 +115,9 @@
 			</div>
 		</div>
 	</div>
-
- 	<jsp:include page="../inc/bottom.jsp" />
+	
+	
+	<jsp:include page="../inc/bottom.jsp" />
 	<!-- //공통 푸터 -->
 </body>
 </html>

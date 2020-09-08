@@ -10,8 +10,16 @@
 		*
 		FROM Notice_Border
 		order BY
-		NB_Num DESC;
+		NB_Num DESC
+		LIMIT #{noticestartList}, 10;
 		<!-- ]]> -->
+	</select>
+	
+	<select id="getNoticeListCnt" resultType="int">
+	SELECT
+	count(*) as noticelistCnt
+	FROM
+	Notice_Border
 	</select>
 
 	<!-- Notice 글 작성(Insert) -->

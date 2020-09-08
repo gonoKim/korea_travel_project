@@ -2,10 +2,9 @@ package com.project.travel.service;
 
 import java.util.List;
 import com.project.travel.vo.NoticeVO;
-import com.project.travel.vo.QnAVO;
 
 public interface NoticeService {
-	List<NoticeVO> getNoticeList();
+	List getNoticeList(int noticestartList);
 
 	int NoticeWrite(NoticeVO noticevo);
 
@@ -16,4 +15,6 @@ public interface NoticeService {
 	int NoticeUpdate(NoticeVO noticevo);
 
 	int NoticeDelete(int NB_Num);
+
+	int getNoticeListCnt();
 }

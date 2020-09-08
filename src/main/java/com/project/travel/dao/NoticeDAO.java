@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project.travel.vo.NoticeVO;
-import com.project.travel.vo.QnAVO;
 
 @Repository
 public class NoticeDAO {
@@ -17,8 +16,21 @@ public class NoticeDAO {
 	public SqlSession sqlSession;
 
 	/* Notice 리스트 */
-	public List<NoticeVO> getNoticeList() {
+	/*public List<NoticeVO> getNoticeList() {
 		return sqlSession.selectList("getNoticeList");
+	}*/
+	
+	public List<NoticeVO> getNoticeList(int noticestartList) {
+		
+		HashMap<String, Object> map =new HashMap<String, Object>();
+			map.put("noticestartList", noticestartList);
+
+		return sqlSession.selectList("getNoticeList", map);
+	}
+	
+	/* 총 게시글 개수 확인 */
+	public int getNoticeListCnt() {
+	return sqlSession.selectOne("getNoticeListCnt");
 	}
 
 	/* Notice 작성 */

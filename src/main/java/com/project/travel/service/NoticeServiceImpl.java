@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.project.travel.dao.NoticeDAO;
 import com.project.travel.vo.NoticeVO;
-import com.project.travel.vo.QnAVO;
 
 @Service
 public class NoticeServiceImpl implements NoticeService {
@@ -16,8 +15,8 @@ public class NoticeServiceImpl implements NoticeService {
 	NoticeDAO noticeDAO;
 
 	@Override
-	public List<NoticeVO> getNoticeList() {
-		return noticeDAO.getNoticeList();
+	public List<NoticeVO> getNoticeList(int noticestartList) {
+		return noticeDAO.getNoticeList(noticestartList);
 	}
 
 	@Override
@@ -43,6 +42,11 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public int NoticeDelete(int NB_Num) {
 		return noticeDAO.NoticeDelete(NB_Num);
+	}
+	
+	@Override
+	public int getNoticeListCnt() {
+		return noticeDAO.getNoticeListCnt();
 	}
 
 }
