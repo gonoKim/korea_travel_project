@@ -1,5 +1,7 @@
 package com.project.travel.dao;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -52,7 +54,27 @@ public class UserDAOImpl implements UserDAO {
 	
 	// 비밀번호 찾기 후 변경
 	@Override
-	public void changePwd(UserVO vo) throws Exception {
-		sqlSession.update("UserMapper.changePwd", vo);
+	public int changePwd(UserVO vo) throws Exception {
+		return sqlSession.update("UserMapper.changePwd", vo);
+	}
+	
+	// 마이페이지 뷰
+	@Override
+	public UserVO getMyPageView(String M_Id)  {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("M_Id", M_Id);
+		return sqlSession.selectOne("getMyPageView", map);
+	}
+	
+	// 회원정보 수정
+	@Override
+	public int userUpdate(UserVO vo) throws Exception {
+		return sqlSession.update("userUpdate", vo);
+	}
+
+	// 회원 탈퇴
+	@Override
+	public int delUser(UserVO vo) {
+		return sqlSession.update("delUser", vo);
 	}
 }

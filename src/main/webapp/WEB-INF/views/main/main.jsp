@@ -29,8 +29,6 @@
     
     <!-- Custom styles for this template -->
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/font-css.css">
-
-    <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/main/css/area.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/main/css/blog.css" rel="stylesheet">
   </head>
@@ -78,7 +76,7 @@
               </div>
             </li>
           </ul>
-          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">My Page</a>
+          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="/mypage/myPage">My Page</a>
           <a id="myPage_btn2" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">Profile</a>
         </div>
       </nav>

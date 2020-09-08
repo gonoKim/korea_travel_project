@@ -52,7 +52,25 @@ public class UserServiceImpl implements UserService {
 	
 	// 비밀번호 찾기 후 변경
 	@Override
-	public void changePwd(UserVO vo) throws Exception {
-		dao.changePwd(vo);
+	public int changePwd(UserVO vo) throws Exception {
+		return dao.changePwd(vo);
+	}
+	
+	// 마이페이지 뷰
+	@Override
+	public UserVO getMyPageView(String M_Id) throws Exception {
+		return dao.getMyPageView(M_Id);
+	}
+	
+	// 회원정보 수정
+	@Override
+	public int userUpdate(UserVO vo) throws Exception {
+		return dao.userUpdate(vo);
+	}
+
+	// 회원 탈퇴
+	@Override
+	public int delUser(UserVO vo) throws Exception {
+		return dao.delUser(vo);
 	}
 }
