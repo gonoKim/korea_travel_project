@@ -25,14 +25,14 @@ public class QnACommentController {
 //		mav.addObject("cResult", cResult);
 //		return  "redirect: ../qna/QnAView";
 //		}
-	
+//		댓글 리스트
 		@RequestMapping(value="/clist", method = RequestMethod.GET)
-		public List<QnACommentVO> qnaCList(int qnaNum){ 
-		return  qnaCService.qnaCommentList(qnaNum);
+		public List<QnACommentVO> qnaCList(int qnA_Num){ 
+		return  qnaCService.qnaCommentList(qnA_Num);
 		}
 		//댓글 삭제
 		@RequestMapping(value="/QnACDelete",method = RequestMethod.GET)
-		public void qnaCDelete(int qnaCNum) {
-			qnaCService.qnaCommentDelete(qnaCNum);
+		public void qnaCDelete(int qnA_C_Num) {
+			qnaCService.qnaCommentDelete(qnA_C_Num);
 		}
 	}

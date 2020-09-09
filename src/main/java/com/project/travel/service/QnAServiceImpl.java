@@ -24,13 +24,13 @@ public class QnAServiceImpl implements QnAService {
 	}
 	
 	@Override
-	public QnAVO getQnAView(int qnaNum) {
-	return qnaDAO.getQnAView(qnaNum);
+	public QnAVO getQnAView(int qnA_Num) {
+	return qnaDAO.getQnAView(qnA_Num);
 	}
 	
 	@Override
-	public void viewsUpdate(int qnaNum) {
-		qnaDAO.viewUpdate(qnaNum);
+	public void viewsUpdate(int qnA_Num) {
+		qnaDAO.viewUpdate(qnA_Num);
 	}
 
 	@Override
@@ -39,8 +39,8 @@ public class QnAServiceImpl implements QnAService {
 	}
 	
 	@Override
-	public int QnADelete(int qnaNum) {
-		return qnaDAO.QnADelete(qnaNum);
+	public int QnADelete(int qnA_Num) {
+		return qnaDAO.QnADelete(qnA_Num);
 	}
 	
 	@Override

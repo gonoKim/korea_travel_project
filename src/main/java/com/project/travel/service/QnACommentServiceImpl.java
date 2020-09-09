@@ -15,8 +15,8 @@ public class QnACommentServiceImpl implements QnACommentService {
 	QnACommentDAO commentDAO;
 	
 	@Override
-	public List<QnACommentVO> qnaCommentList(int qnaNum) {
-		return commentDAO.qnaCommentList(qnaNum);
+	public List<QnACommentVO> qnaCommentList(int qnA_Num) {
+		return commentDAO.qnaCommentList(qnA_Num);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class QnACommentServiceImpl implements QnACommentService {
 	}
 
 	@Override
-	public int qnaCommentDelete(int qnaCNum) {
-		return commentDAO.qnaCommentDelete(qnaCNum);
+	public int qnaCommentDelete(int qnA_C_Num) {
+		return commentDAO.qnaCommentDelete(qnA_C_Num);
 	}
 }

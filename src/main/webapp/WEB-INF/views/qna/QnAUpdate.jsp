@@ -50,14 +50,14 @@ function QnAUpdate(u_num,u_sub,u_con){
 		url : "/jquery/QnAUpdate",
 		type:'POST',
 		data : {
-			qnaNum 	: u_num,
-			qnaSubject : u_sub,
-			qnaContent : u_con
+			qnA_Num 	: u_num,
+			qnA_Subject : u_sub,
+			qnA_Content : u_con
 		},
 		success:function(data){
 			if(data == 1){
 				alert("글 수정이 완료되었습니다.");
-				location.href="/qna/QnAView?qnaNum=${result.qnaNum }";
+				location.href="/qna/QnAView?qnA_Num=${result.qnA_Num }";
 			}else {
 				alert("글 수정 실패");
 			}
@@ -81,22 +81,22 @@ function QnAUpdate(u_num,u_sub,u_con){
                     </div>
            	
                     <h4 class="my-3"> Subject</h4>
-                    <input type="text" class="form-control text-dark" id="u_subject" value="${result.qnaSubject }">
+                    <input type="text" class="form-control text-dark" id="u_subject" value="${result.qnA_Subject }">
                       
                     <h4 class="my-3">Writer</h4>
-                    <input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.qnaWrite }">
+                    <input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.qnA_Write }">
    
                 
            
                     <h4 class="my-3">Content</h4>
-                    <textarea rows="10" cols="20" class="form-control text-dark" id="u_content"  placeholder="">${result.qnaContent }</textarea>
+                    <textarea rows="10" cols="20" class="form-control text-dark" id="u_content"  placeholder="">${result.qnA_Content }</textarea>
            
 					
 					 
                 
                 <div class="row justify-content-center my-4">
                      <input type="button" value="Update" class="btn" onclick="updateValidation()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?qnaNum=${result.qnaNum }'"/>
+                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?qnA_Num=${result.qnA_Num }'"/>
                 </div>
 </form>
         </div>

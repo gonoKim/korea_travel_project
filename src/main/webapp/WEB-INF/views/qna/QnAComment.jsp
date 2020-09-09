@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
  
 <script>
-var qnaNum = '${result.qnaNum}'; //게시글 번호
+var qnA_Num = '${result.qnA_Num}'; //게시글 번호
  
 /* $('[name=commentInsertBtn]').click(function(){ //댓글 등록 버튼 클릭시 
     var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
@@ -14,17 +14,17 @@ var qnaNum = '${result.qnaNum}'; //게시글 번호
 //댓글 목록 
 function commentList(){
     $.ajax({
-        url : '/qnacomment/clist?qnaNum=${result.qnaNum}',
+        url : '/qnacomment/clist?qnA_Num=${result.qnA_Num}',
         type : 'get',
-        data : {'qnaNum':qnaNum},
+        data : {'qnA_Num':qnA_Num},
         success : function(data){
             var a =''; 
             $.each(data, function(key, value){ 
                 a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
-                a += '<div class="commentInfo'+value.qnaCNum+'">'+'댓글번호 : '+value.qnaCNum;
-                a += '<a onclick="commentUpdate('+value.qnaCNum+',\''+value.qnaCContent+'\');"> 수정 </a>';
-                a += '<a onclick="commentDelete('+value.qnaCNum+');"> 삭제 </a> </div>';
-                a += '<div class="commentContent'+value.qnaCNum+'"> <p> 내용 : '+value.qnaCContent +'</p>';
+                a += '<div class="commentInfo'+value.qnA_C_Num+'">'+'댓글번호 : '+value.qnA_C_Num;
+                a += '<a onclick="commentUpdate('+value.qnA_C_Num+',\''+value.qnA_C_Content+'\');"> 수정 </a>';
+                a += '<a onclick="commentDelete('+value.qnA_C_Num+');"> 삭제 </a> </div>';
+                a += '<div class="commentContent'+value.qnA_C_Num+'"> <p> 내용 : '+value.qnA_C_Content +'</p>';
                 a += '</div></div>';
                 });
             
@@ -37,7 +37,7 @@ function commentList(){
 
 function commentInsert(){
 	var c_Content = $("#c_Content").val();
-	var c_Num	  = "${result.qnaNum}";
+	var c_Num	  = "${result.qnA_Num}";
 	if(!c_Content){
 		alert("내용 입력은 필수 입니다..");
 		$("#c_Content").focus();
@@ -53,8 +53,8 @@ function insertData(c_Con, c_Num){
         url : '/jquery/QnACWrite',
         type : 'post',
         data :{ 
-        	qnaCContent : c_Con,
-        	qnaNum		: c_Num
+        	qnA_C_Content : c_Con,
+        	qnA_Num		: c_Num
         },
         success : function(data){
             if(data == 1) {
@@ -71,29 +71,29 @@ function insertData(c_Con, c_Num){
 }
  
 //댓글 수정 - 댓글 내용 출력을 input 폼으로 변경 
-function commentUpdate(qnaCNum, qnaCContent){
+function commentUpdate(qnA_C_Num, qnA_C_Content){
     var a ='';
     
     a += '<div class="input-group">';
-    a += '<input type="text" class="form-control" name="content_'+qnaCNum+'" value="'+qnaCContent+'"/>';
-    a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('+qnaCNum+');">수정</button> </span>';
+    a += '<input type="text" class="form-control" name="content_'+qnA_C_Num+'" value="'+qnA_C_Content+'"/>';
+    a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('+qnA_C_Num+');">수정</button> </span>';
     a += '</div>';
     
-    $('.commentContent'+qnaCNum).html(a);
+    $('.commentContent'+qnA_C_Num).html(a);
     
 }
  
 //댓글 수정
-function commentUpdateProc(qnaCNum){
-    var updateContent = $('[name=content_'+qnaCNum+']').val();
+function commentUpdateProc(qnA_C_Num){
+    var updateContent = $('[name=content_'+qnA_C_Num+']').val();
     
     $.ajax({
         url : '/jquery/QnACUpdate',
         type : 'post',
-        data : {'qnaCContent' : updateContent, 'qnaCNum' : qnaCNum},
+        data : {'qnA_C_Content' : updateContent, 'qnA_C_Num' : qnA_C_Num},
         success : function(data){
             if(data == 1) 
-                commentList(qnaNum); //댓글 수정후 목록 출력 
+                commentList(qnA_Num); //댓글 수정후 목록 출력 
         }
     });
 }

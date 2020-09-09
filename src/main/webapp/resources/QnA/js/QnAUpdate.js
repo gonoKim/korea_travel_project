@@ -1,7 +1,7 @@
 function updateValidation(){
 	var u_subject = $("#u_subject").val();
 	var u_content = $("#u_content").val();
-	var u_num	  = "${result.qnaNum}";
+	var u_num	  = "${result.qnA_Num}";
 	if(!u_subject){
 		alert("제목 입력은 필수입니다.");
 		$("#u_subject").focus();
@@ -22,14 +22,14 @@ function QnAUpdate(u_num,u_sub,u_con){
 		url : "/jquery/QnAUpdate",
 		type:'POST',
 		data : {
-			qnaNum 	: u_num,
-			qnaSubject : u_sub,
-			qnaContent : u_con
+			qnA_Num 	: u_num,
+			qna_Subject : u_sub,
+			qnA_Content : u_con
 		},
 		success:function(data){
 			if(data == 1){
 				alert("글 수정이 완료되었습니다.");
-				location.href="/qna/QnAView?qnaNum=${result.qnaNum }";
+				location.href="/qna/QnAView?qnA_Num=${result.qnA_Num }";
 			}else {
 				alert("글 수정 실패");
 			}

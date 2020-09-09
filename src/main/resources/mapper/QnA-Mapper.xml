@@ -23,36 +23,36 @@ LIMIT #{qnastartList}, 10;
 <!-- insert 쿼리문  -->
 <insert id="QnAWrite">
 insert into QnA_Border (QnA_Num,QnA_Write,QnA_Subject,QnA_Content,QnA_Views,QnA_Date) 
-values(#{qnaNum},#{qnaWrite},#{qnaSubject},#{qnaContent},#{qnaViews},now());
+values(#{qnA_Num},#{qnA_Write},#{qnA_Subject},#{qnA_Content},#{qnA_Views},now());
 </insert>
 <!-- QnA 내용물 보여주는 쿼리문 -->
 <select id="getQnAView" resultType="com.project.travel.vo.QnAVO">
 SELECT 	* 
 FROM 	QnA_Border 
-where 	QnA_Num = #{qnaNum};
+where 	QnA_Num = #{qnA_Num};
 </select>
 
 <!-- QnA조회수 update -->
 <update id="qnaViewUpdate">
 UPDATE  QnA_Border
 SET 	QnA_Views = QnA_Views+1 
-WHERE 	QnA_Num   = #{qnaNum};
+WHERE 	QnA_Num   = #{qnA_Num};
 </update>
 
 <!-- QnA 수정 쿼리문 -->
 <update id="QnAUpdate">
 UPDATE QnA_Border 
-SET QnA_Subject  = #{qnaSubject}
-,	QnA_Content  = #{qnaContent}
+SET QnA_Subject  = #{qnA_Subject}
+,	QnA_Content  = #{qnA_Content}
 ,	QnA_Date	 = now()
-WHERE QnA_Num 	 = #{qnaNum};
+WHERE QnA_Num 	 = #{qnA_Num};
 </update>
 
 <!-- QnA 삭제 쿼리문 -->
 <delete id="QnADelete">
 DELETE 	
 FROM 	QnA_Border
-WHERE   QnA_Num = #{qnaNum};
+WHERE   QnA_Num = #{qnA_Num};
 </delete>
 	<!-- QnA 댓글 쿼리문 -->
 	
@@ -69,26 +69,26 @@ WHERE   QnA_Num = #{qnaNum};
         SELECT
         *
         FROM 	QnA_Comment
-        WHERE 	QnA_Num = #{qnaNum};
+        WHERE 	QnA_Num = #{qnA_Num};
     </select>
     
    	<!-- 댓글 작성 -->
     <insert id="qnaCommentInsert" parameterType="com.project.travel.vo.QnACommentVO">
         INSERT INTO
         QnA_Comment (QnA_C_Num, QnA_Num, QnA_C_Content, QnA_C_Date)
-        VALUES(#{qnaCNum},#{qnaNum},#{qnaCContent},now()) 
+        VALUES(#{qnA_C_Num},#{qnA_Num},#{qnA_C_Content},now()) 
     </insert>
     
     <!-- 댓글 업데이트 -->
     <update id="qnaCommentUpdate" parameterType="com.project.travel.vo.QnACommentVO">
         UPDATE QnA_Comment
             SET
-            QnA_C_Content = #{qnaCContent}
-        WHERE QnA_C_Num = #{qnaCNum}
+            QnA_C_Content = #{qnA_C_Content}
+        WHERE QnA_C_Num = #{qnA_C_Num}
     </update>
     
     <!-- 댓글 삭제 -->
     <delete id="qnaCommentDelete" parameterType="int">
-        DELETE FROM QnA_Comment WHERE QnA_C_Num = #{qnaCNum}
+        DELETE FROM QnA_Comment WHERE QnA_C_Num = #{qnA_C_Num}
     </delete>
 </mapper>

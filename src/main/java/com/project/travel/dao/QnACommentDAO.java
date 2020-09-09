@@ -19,8 +19,8 @@ public class QnACommentDAO {
 	return sqlSession.selectOne("qnaCommentCount");
 	}
     // 댓글 목록
-    public List<QnACommentVO> qnaCommentList(int qnaNum){
-    	return sqlSession.selectList("qnaCommentList", qnaNum);
+    public List<QnACommentVO> qnaCommentList(int qnA_Num){
+    	return sqlSession.selectList("qnaCommentList", qnA_Num);
     }
   
     // 댓글 작성
@@ -32,8 +32,8 @@ public class QnACommentDAO {
 		return sqlSession.update("qnaCommentUpdate", qnaCvo);
 	}
 	  // 댓글 삭제
-	public int qnaCommentDelete(int qnaCNum) {
-		return sqlSession.delete("qnaCommentDelete", qnaCNum);
+	public int qnaCommentDelete(int qnA_C_Num) {
+		return sqlSession.delete("qnaCommentDelete", qnA_C_Num);
 	}
 
 }
