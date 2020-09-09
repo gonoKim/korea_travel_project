@@ -66,10 +66,17 @@ public class UserDAOImpl implements UserDAO {
 		return sqlSession.selectOne("getMyPageView", map);
 	}
 	
+	// 전화번호 중복 체크 (마이페이지)
+	@Override
+	public int myPagePhoneChk(UserVO vo) throws Exception {
+		int result = sqlSession.selectOne("UserMapper.myPagePhoneChk", vo);
+		return result;
+	}
+	
 	// 회원정보 수정
 	@Override
-	public int userUpdate(UserVO vo) throws Exception {
-		return sqlSession.update("userUpdate", vo);
+	public void userUpdate(UserVO vo) throws Exception {
+		sqlSession.update("UserMapper.userUpdate", vo);
 	}
 
 	// 회원 탈퇴

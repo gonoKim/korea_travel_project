@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
 
 <!doctype html>
 <html lang="en">
@@ -42,7 +41,7 @@
       </div>
 
       <div class="form-group">
-        <label for="inputRepassword">Re-enter password</label>
+        <label for="inputRepassword">Retype password</label>
         <input type="password" class="form-control btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 

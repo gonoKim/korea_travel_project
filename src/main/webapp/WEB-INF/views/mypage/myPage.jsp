@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +20,6 @@
     <!-- Custom styles for this template -->
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/font-css.css">
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/myPage/css/blog.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/myPage/css/mypage.css" rel="stylesheet">
     
     <!-- js -->
@@ -29,6 +27,16 @@
     <script src="${pageContext.request.contextPath}/resources/myPage/js/myPage.js"></script>
 </head>
 
+<script type="text/javascript">
+	<c:if test="${msg == true}">
+		alert("Modification Completed");
+	</c:if>
+	
+	<c:if test="${msg == false}">
+		alert("Wrong password Or Phone number.");
+	</c:if> 
+</script>
+ 
 <body>
   <div class="container">
 
@@ -41,13 +49,13 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#mInfo">회원정보</a>
+            <a class="nav-link active" data-toggle="tab" href="#mInfo">Info</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#myPost">작성글</a>
+            <a class="nav-link" data-toggle="tab" href="#myPost">Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#myComment">작성댓글</a>
+            <a class="nav-link" data-toggle="tab" href="#myComment">Comment</a>
           </li>
         </ul>
       
@@ -58,11 +66,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
-
                       <div class="tab-content" id="nav-tabContent">
-
-                        <div class="tab-pane fade show active" id="list-mInfo" role="tabpanel" aria-labelledby="list-mInfo-list"><br>
-                            <table class="table table-bordered mInfotbl">
+                        <div class="tab-pane fade show active" id="list-mInfo" role="tabpanel" aria-labelledby="list-mInfo-list">
+                            <h3>회원정보 보기</h3> <hr>
+                            <table class="table table-bordered mInfotbl" id="infoTable">
                                 <tbody>
                                     <tr>
                                         <th>아이디<span class="text-danger">*</span></th>
@@ -75,94 +82,126 @@
                                         <td>${user.m_Lname}</td>
                                     </tr>
                                     <tr>
-                                        
-                                    </tr>
-                                    <tr>
                                         <th>생년월일</th>
-                                        <td colspan="3">${user.m_Year}.${user.m_Month}.${user.m_Day}.</td>
+                                        <td colspan="3">${user.m_Year}. ${user.m_Month}. ${user.m_Day}</td>
                                     </tr>
                                     <tr>
                                         <th>휴대전화</th>
                                         <td colspan="3">${user.m_Phone}</td>
                                     </tr>
                                     <tr>
-                                      <th>가입일</th>
-                                      <td colspan="3">${user.m_Date}</td>
-                                  </tr>
+	                                    <th>가입일</th>
+	                                    <td colspan="3">
+	                                    	<fmt:formatDate pattern="yyyy-MM-dd" value="${user.m_Date}" />
+	                                    </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <!-- //회원정보 보기 -->
 
                         <div class="tab-pane fade" id="list-modifyInfo" role="tabpanel" aria-labelledby="list-modifyInfo-list">
-                            <h3>회원정보 수정</h3>
-                            <hr>
-                            <form>
-                                <fieldset disabled>
-                                    <div class="form-group">
-                                    <label for="M_Id">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="M_Id" value="${user.m_Id}" readonly>
-                                    </div>
-                                </fieldset>
+                            <h3>회원정보 수정</h3> <hr>
+                            <form action="userUpdate" method="POST">
                                 <div class="form-group">
-                                  <label for="M_Phone">휴대전화</label>
-                                  <input type="text" class="form-control" id="M_Phone" value="${user.m_Phone}">
+                                	<label>Email address<span class="text-danger">*</span></label>
+                                	<input type="text" class="form-control" id="inputEmail" name="M_Id" value="${user.m_Id}" readonly>
                                 </div>
+                                
+                                <div class="form-row">
+							        <div class="col-md-6 mb-3">
+							          <label for="inputFirstName">First name</label>
+							          <input type="text" class="form-control" id="inputFirstName" name="M_Fname" maxlength="10"
+							          	value="${user.m_Fname}" onFocus="this.value='${user.m_Fname}'; return true;" required>
+							        </div>
+							        <div class="col-md-6 mb-3">
+							          <label for="inputLastName">Last name</label>
+							          <input type="text" class="form-control" id="inputLastName" name="M_Lname" maxlength="10"
+							          	value="${user.m_Lname}" onFocus="this.value='${user.m_Lname}'; return true;" required>
+							        </div>
+						        </div>
+      
                                 <div class="form-group">
-                                    <label for="M_Pw">비밀번호</label>
-                                    <input type="password" class="form-control" id="M_Pw">
-                                  </div>
-                                  <button type="button" class="btn btn-primary float-right" onclick="updateValidation()">수정</button>
-                              </form>
+                                  <label for="inputTel">Phone number</label>
+                                  	<div class="form-group">
+	                                  	<input type="tel" class="form-control" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+		        	 						maxlength="13" value="${user.m_Phone}" onFocus="this.value='${user.m_Phone}'; return true;" required>
+		        	 					<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">Check</button>
+		        	 				</div>
+                                </div>
+                                
+	                  			<label for="inputBirth">Birth</label>
+								<div class="form-row" id="form_YMD">
+								  <div class="col">
+								    <input type="number" class="form-control" id="inputYear" name="M_Year" placeholder="Year (4)"
+								    	min="1900" max="2021" maxlength="4" oninput="maxLengthCheck(this)"
+								    	value="${user.m_Year}" required>
+								  </div>
+								  <div class="col">
+								    <input type="number" class="form-control" id="inputMonth" name="M_Month" placeholder="Month"
+								     	min="1" max="12" maxlength="2" oninput="maxLengthCheck(this)"
+								     	value="${user.m_Month}" required>
+								  </div>
+								  <div class="col">
+								    <input type="number" class="form-control" id="inputDay" name="M_Day" placeholder="Day"
+								     	min="1" max="31" maxlength="2" oninput="maxLengthCheck(this)"
+								     	value="${user.m_Day}" required>
+								  </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="inputPassword">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword" name="M_Pw" maxlength="20">
+                                </div>
+                                <button class="btn btn-primary float-right" type="submit" id="submit">modify</button>
+                            </form>
                         </div>
                         <!-- //회원정보 수정 -->
 
                         <div class="tab-pane fade" id="list-modifyPwd" role="tabpanel" aria-labelledby="list-modifyPwd-list">
-                            <h3>비밀번호 변경</h3>
-                            <hr>
+                            <h3>비밀번호 변경</h3> <hr>
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-                                    <label for="M_Id2">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="M_Id2" value="${user.m_Id}" readonly>
+	                                    <label>Email address<span class="text-danger">*</span></label>
+	                                    <input type="text" class="form-control" id="inputEmail2" name="M_Id" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                  <input type="password" class="form-control" id="M_Pw2" placeholder="현재 비밀번호">
+                                	<input type="password" class="form-control" id="inputPassword2" name="M_Pw" placeholder="Current Password"  maxlength="20">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="newPwd" placeholder="새 비밀번호">
-                                  </div>
-                                  <div class="alert alert-warning" role="alert">
-                                    	비밀번호는 8자리 이상이여야 합니다.
-                                  </div>
-                                  <div class="form-group">
-                                    <input type="password" class="form-control" id="newPwd2" placeholder="새 비밀번호 확인">
-                                  </div>
-                                  <button type="button" class="btn btn-primary float-right" onclick="modPwdValidation()">변경</button>
-                              </form>
+                                    <input type="password" class="form-control" id="newPwd" placeholder="New Password" maxlength="20" onFocus="this.value=''; return true;" required>
+                                </div>
+                                <div class="alert alert-warning" role="alert">
+                                   	You must have at least one number and a special character within the first 8 characters of your password.
+                                </div>
+                                <div class="form-group">
+                                	<input type="password" class="form-control" id="newRePwd" placeholder="Confirm new password" maxlength="20">
+                                </div>
+                                <button type="button" class="btn btn-primary float-right" onclick="modPwdValidation()">Change</button>
+                            </form>
                         </div>
                         <!-- //비밀번호 변경 -->
 
                         <div class="tab-pane fade" id="list-delInfo" role="tabpanel" aria-labelledby="list-delInfo-list">
-                            <h3>회원 탈퇴</h3>
-                            <hr>
+                            <h3>회원 탈퇴</h3> <hr>
                             <div class="alert alert-danger" role="alert">
-                                탈퇴할 경우 복구가 불가 하오니 신중하게 결정해주시기 바랍니다.
-                              </div>
-                              <hr>
+                             	If you leave the membership, you will not be able to restore it, so please make a careful decision.
+                            </div>
+                            <hr>
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-                                    <label for="M_Id3">아이디<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="M_Id3" value="${user.m_Id}" readonly>
+	                                    <label>Email address<span class="text-danger">*</span></label>
+	                                    <input type="text" class="form-control" id="inputEmail3" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                  <input type="password" class="form-control" id="M_Pw3" placeholder="비밀번호">
+                                	<input type="password" class="form-control" id="inputPassword3" placeholder="Password" maxlength="20">
                                 </div>
-                                  <button type="button" class="btn btn-primary float-right" onclick="delUserValidation()">탈퇴</button>
-                              </form>
+                                <button type="button" class="btn btn-primary float-right" onclick="delUserValidation()">Delete</button>
+                            </form>
                         </div>
                         <!-- //회원 탈퇴 -->
 
@@ -176,16 +215,8 @@
                         <hr>
                         <div class="list-group" id="list-tab" role="tablist">
                           <a class="list-group-item list-group-item-action active" id="list-mInfo-list" data-toggle="list" href="#list-mInfo" role="tab" aria-controls="mInfo">회원정보 보기</a>
-
-
                           <a class="list-group-item list-group-item-action" id="list-modifyInfo-list" data-toggle="list" href="#list-modifyInfo" role="tab" aria-controls="modifyInfo">회원정보 수정</a>
-
-
-
                           <a class="list-group-item list-group-item-action" id="list-modifyPwd-list" data-toggle="list" href="#list-modifyPwd" role="tab" aria-controls="modifyPwd">비밀번호 변경</a>
-
-
-
                           <a class="list-group-item list-group-item-action" id="list-delInfo-list" data-toggle="list" href="#list-delInfo" role="tab" aria-controls="delInfo">탈퇴</a>
                         </div>
                         <!-- //list-group -->
@@ -251,7 +282,7 @@
                       <tr class="d-flex">
                         <td class="col-9"><a href="#">작성한 댓글. 작성한 댓글.</a></td>
                         <td class="col-3 text-center">2020.07.29.</td>
-                    </tr>
+                      </tr>
                       <tr class="d-flex">
                           <td class="col-9"><a href="#">작성한 댓글.</a></td>
                           <td class="col-3 text-center">2020.07.29.</td>

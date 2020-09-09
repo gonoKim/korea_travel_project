@@ -26,7 +26,7 @@ public class MainController {
 		
 		model.addAttribute("imgBanner", service.imgBanner());				// 메인 배너에 넣을 이미지 찾기
 		model.addAttribute("photoBanner", service.photoBanner());			// 포토갤러리 배너에 넣을 이미지 찾기
-		model.addAttribute("qnaList", service.qnaList());					// 공지사항 목록 조회
+		model.addAttribute("nbList", service.nbList());					// 공지사항 목록 조회
 		
 		return "/main/main";
 	}

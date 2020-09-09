@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
     
 	   <header class="blog-header py-3">
@@ -30,7 +29,7 @@
       
       <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
         <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
-          <a class="p-2 text-muted nav-link" href="../Main/index.html">Home</a>
+          <a class="p-2 text-muted nav-link" href="/main/main">Home</a>
           <a class="p-2 text-muted nav-link" href="../Menu/Gallery/gallery.html">Gallery</a>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -43,7 +42,9 @@
               </div>
             </li>
           </ul>
-          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="/mypage/myPage">My Page</a>
-          <a id="myPage_btn2" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">Profile</a>
+          <c:if test="${user != null }">
+	          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="/mypage/myPage">My Page</a>
+	          <a id="myPage_btn2" class="p-2 text-muted nav-link" href="/mypage/myPage">Profile</a>
+	      </c:if>
         </div>
       </nav>

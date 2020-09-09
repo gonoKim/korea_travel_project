@@ -11,7 +11,6 @@
     <!-- 로그인 -->
 	<select id="login" resultType="com.project.travel.vo.UserVO">
 		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date FROM UserTBL WHERE M_Id = #{M_Id}
-		<!-- AND M_Pw = #{M_Pw} -->   
 	</select>
 	
 	<!-- 아이디 중복 체크 -->
@@ -41,13 +40,18 @@
 	
 	<!-- 마이페이지 뷰 -->
 	<select id="getMyPageView" resultType="com.project.travel.vo.UserVO">
-		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date
-		FROM UserTBL where M_Id = #{M_Id};
+		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date FROM UserTBL where M_Id = #{M_Id}
+	</select>
+	
+	<!-- 전화번호 중복 체크 (마이페이지) -->
+	<select id="myPagePhoneChk" resultType="int">
+		SELECT COUNT(*) FROM UserTBL WHERE M_Id =  #{M_Id} AND M_Phone = #{M_Phone}
 	</select>
 	
 	<!-- 회원정보 수정 -->
 	<update id="userUpdate" parameterType="com.project.travel.vo.UserVO">
-		UPDATE UserTBL SET M_Phone = #{M_Phone} WHERE M_Id = #{M_Id}
+		UPDATE UserTBL SET M_Fname = #{M_Fname}, M_Lname = #{M_Lname}, M_Phone = #{M_Phone},
+			M_Year = #{M_Year}, M_Month = #{M_Month}, M_Day = #{M_Day} WHERE M_Id = #{M_Id}
 	</update>
 	
 	<!-- 회원 탈퇴 -->

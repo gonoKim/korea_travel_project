@@ -27,8 +27,11 @@ public interface UserDAO{
 	// 마이페이지 뷰
 	public UserVO getMyPageView(String M_Id);
 	
+	// 전화번호 중복 체크 (마이페이지)
+	public int myPagePhoneChk(UserVO vo) throws Exception;
+	
 	// 회원정보 수정
-	public int userUpdate(UserVO vo) throws Exception;
+	public void userUpdate(UserVO vo) throws Exception;
 	
 	// 회원 탈퇴
 	public int delUser(UserVO vo);

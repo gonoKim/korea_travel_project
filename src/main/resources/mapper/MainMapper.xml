@@ -13,8 +13,8 @@
 	</select>
 	
 	<!-- 공지사항 목록 조회 -->
-	<select id="qnaList" resultType="com.project.travel.vo.MainVO">
-		SELECT QnA_Num, QnA_Subject FROM QnA_Border_test ORDER BY QnA_Num DESC limit 5
+	<select id="nbList" resultType="com.project.travel.vo.MainVO">
+		SELECT NB_Num, NB_Subject FROM Notice_Border ORDER BY NB_Num DESC limit 5
 	</select>
 	
 </mapper>

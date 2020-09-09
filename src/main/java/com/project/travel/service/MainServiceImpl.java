@@ -28,7 +28,7 @@ public class MainServiceImpl implements MainService {
 	
 	// 공지사항 목록 조회
 	@Override
-	public List<MainVO> qnaList() throws Exception {
-		return dao.qnaList();
+	public List<MainVO> nbList() throws Exception {
+		return dao.nbList();
 	}
 }

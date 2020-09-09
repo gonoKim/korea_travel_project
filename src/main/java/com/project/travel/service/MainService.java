@@ -12,5 +12,5 @@ public interface MainService {
 	public List<MainVO> photoBanner() throws Exception;
 	
 	// 공지사항 목록 조회
-	public List<MainVO> qnaList() throws Exception;
+	public List<MainVO> nbList() throws Exception;
 }

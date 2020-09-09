@@ -28,7 +28,7 @@ public class MainDAOImpl implements MainDAO {
 	
 	// 공지사항 목록 조회
 	@Override
-	public List<MainVO> qnaList() throws Exception {
-		return sqlSession.selectList("MainMapper.qnaList");
+	public List<MainVO> nbList() throws Exception {
+		return sqlSession.selectList("MainMapper.nbList");
 	}
 }

@@ -62,10 +62,17 @@ public class UserServiceImpl implements UserService {
 		return dao.getMyPageView(M_Id);
 	}
 	
+	// 전화번호 중복 체크 (마이페이지)
+	@Override
+	public int myPagePhoneChk(UserVO vo) throws Exception {
+		int result = dao.myPagePhoneChk(vo);
+		return result;
+	}
+	
 	// 회원정보 수정
 	@Override
-	public int userUpdate(UserVO vo) throws Exception {
-		return dao.userUpdate(vo);
+	public void userUpdate(UserVO vo) throws Exception {
+		dao.userUpdate(vo);
 	}
 
 	// 회원 탈퇴
