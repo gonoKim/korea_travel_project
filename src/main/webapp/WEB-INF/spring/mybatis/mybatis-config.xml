@@ -11,5 +11,6 @@
 		<mapper resource="mapper/MainMapper.xml"/>
 		<mapper resource="mapper/Notice-Mapper.xml"/>
 		<mapper resource="mapper/PhotoBoard-Mapper.xml"/>
+		<mapper resource="mapper/FestivalMapper.xml"/>
 	</mappers>
 </configuration>

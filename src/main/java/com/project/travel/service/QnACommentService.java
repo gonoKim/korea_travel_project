@@ -9,4 +9,5 @@ public interface QnACommentService {
 	int qnaCommentWrite(QnACommentVO qnaCvo);
 	int qnaCommentUpdate(QnACommentVO qnaCvo); 
 	int qnaCommentDelete(int qnA_C_Num);
+
 }

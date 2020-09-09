@@ -44,8 +44,8 @@
               </div>
             </li>
           </ul>
-          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/mypage/MyPage">My Page</a>
           <a id="myPage_btn2" class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/setup/setupBoard">setUp</a>
+          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/mypage/MyPage">My Page</a>
           <a id="myPage_btn2" class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/setup/setupBoard">Profile</a>
         </div>
       </nav>
