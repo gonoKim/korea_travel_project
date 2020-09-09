@@ -73,12 +73,10 @@ $(function(){
 						},
 						success : function(data){
 							if(data == 0){
-								alert("The phone number is already in use.");
+								alert("Failed! The phone number is already in use.");
 							}
 						}
 					})
-				} else if(data == 0){
-					alert("This phone numbers is available.");
 				}
 			}
 		})

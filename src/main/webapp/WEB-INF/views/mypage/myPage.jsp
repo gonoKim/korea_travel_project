@@ -33,7 +33,7 @@
 	</c:if>
 	
 	<c:if test="${msg == false}">
-		alert("Wrong password Or Phone number.");
+		alert("Wrong password");
 	</c:if> 
 </script>
  
