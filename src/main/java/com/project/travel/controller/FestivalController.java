@@ -10,12 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.project.travel.service.FestivalService;
 
 @Controller
-@RequestMapping("setUp/*")
+@RequestMapping("Festival/*")
 public class FestivalController {
+	
 	@Autowired
 	FestivalService festivalService;
 
-	@RequestMapping("/setupBoard")
+	@RequestMapping("/FestivalBoard")
 	public ModelAndView QnAboard() {
 		//DB 접속, qna스타트 리스트 부부을 가져옴
 		List fResult = festivalService.festivalList();
