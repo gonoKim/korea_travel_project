@@ -38,7 +38,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Notice</a>
-                <a class="dropdown-item" href="../Menu/Support/QnA/QnA.html">QnA</a>
+                <a class="dropdown-item" href="/qna/QnABoard">QnA</a>
               </div>
             </li>
           </ul>
