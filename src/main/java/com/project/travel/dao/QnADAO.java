@@ -15,45 +15,45 @@ public class QnADAO {
 	@Autowired
 	public SqlSession sqlSession;
 
-	/* QnA 리스트 */
+	// QnA 리스트 
 	public List<QnAVO> getQnAList(int qnastartList) {
 		//해쉬맵으로 스타트 리스트를 만들어서 디비에 넣어줌
 		HashMap<String, Object> map =new HashMap<String, Object>();
-			map.put("qnastartList", qnastartList);
+		map.put("qnastartList", qnastartList);
 
 		return sqlSession.selectList("getQnAList", map);
 	}
 	
-	/* 총 게시글 개수 확인 */
+	// 총 게시글 개수 확인 
 	public int getQnAListCnt() {
-	return sqlSession.selectOne("getQnAListCnt");
+		return sqlSession.selectOne("getQnAListCnt");
 	}
 	
-	/* QnA 작성 */
+	// QnA 작성
 	public int QnAWrite(QnAVO qnavo) {
 		return sqlSession.insert("QnAWrite", qnavo);
 	}
 
-	/* QnA 내용 뷰 */
+	// QnA 내용 뷰 
 	public QnAVO getQnAView(int qnA_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("qnA_Num", qnA_Num);
 		return sqlSession.selectOne("getQnAView", map);
 	}
 
-	/* QnA 조회수 업데이트 */
+	// QnA 조회수 업데이트
 	public void viewUpdate(int qnA_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("qnA_Num", qnA_Num);
 		sqlSession.update("qnaViewUpdate", map);
 	}
 
-	/* QnA 수정 */
+	// QnA 수정 
 	public int QnAUpdate(QnAVO qnavo) {
 		return sqlSession.update("QnAUpdate", qnavo);
 	}
 	
-	/* QnA 삭제 */
+	// QnA 삭제 
 	public int QnADelete(int qnA_Num) {
 		return sqlSession.delete("QnADelete", qnA_Num);
 	}

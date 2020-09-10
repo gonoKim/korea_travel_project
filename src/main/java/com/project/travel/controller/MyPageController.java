@@ -71,6 +71,7 @@ public class MyPageController {
 		UserVO login = service.login(vo);
 		
 		int result = service.phoneChk(vo);
+		int result2 = service.myPagePhoneChk(vo);
 		boolean pwdMatch;
 		
 		if(login != null) {
@@ -80,7 +81,7 @@ public class MyPageController {
 		}
 				
 		if(login != null && pwdMatch == true) {
-			if(result == 1) {} 
+			if(result == 1 && result2 == 0) {} 
 			else {
 				service.userUpdate(vo);
 				session.setAttribute("user", login);

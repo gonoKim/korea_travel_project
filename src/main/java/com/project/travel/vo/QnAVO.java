@@ -52,17 +52,12 @@ public class QnAVO {
 				+ ", QnA_Content=" + QnA_Content + ", QnA_Views=" + QnA_Views + ", QnA_Date=" + QnA_Date + "]";
 	}
 	
-	
-	
-	
-	
-	
-	/* 카멜 형식 Vo
-	 * private int qnaNum; // QnA테이블 넘버 
-	 * private String qnaSubject; //QnA테이블 제목
-	 * private String qnaContent; // QnA테이블 내용 
-	 * private String qnaWrite; //QnA테이블 작성자
-	 * private int qnaViews; // QnA테이블 조회수 
-	 * private Date qnaDate; //QnA테이블 작성일
-	 */
+/* 카멜 형식 Vo
+	private int qnaNum; // QnA테이블 넘버 
+	private String qnaSubject; //QnA테이블 제목
+	private String qnaContent; // QnA테이블 내용 
+	private String qnaWrite; //QnA테이블 작성자
+	private int qnaViews; // QnA테이블 조회수 
+	private Date qnaDate; //QnA테이블 작성일
+*/
 }

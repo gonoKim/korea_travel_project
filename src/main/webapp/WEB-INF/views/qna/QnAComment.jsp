@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <script>
-	var qnA_Num = '${result.qnA_Num}'; //게시글 번호
+	var qnA_Num = '${result.qnA_Num}'; // 게시글 번호
 	
-	//댓글 목록 
+	// 댓글 목록 
 	function commentList() {
 		$.ajax({
 			url : '/qnacomment/clist?qnA_Num=${result.qnA_Num}',
@@ -54,7 +54,7 @@
 		}
 	}
 
-	//댓글 등록
+	// 댓글 등록
 	function insertData(c_Con, c_Num) {
 		$.ajax({
 			url : '/jquery/QnACWrite',
@@ -78,7 +78,7 @@
 		});
 	}
 
-	//댓글 수정 - 댓글 내용 출력을 input 폼으로 변경 
+	// 댓글 수정 - 댓글 내용 출력을 input 폼으로 변경 
 	function commentUpdate(qnA_C_Num, qnA_C_Content) {
 		var a = '';
 
@@ -91,7 +91,7 @@
 		$('.commentContent' + qnA_C_Num).html(a);
 	}
 
-	//댓글 수정
+	// 댓글 수정
 	function commentUpdateProc(qnA_C_Num) {
 		var updateContent = $('[name=content_' + qnA_C_Num + ']').val();
 
@@ -109,7 +109,7 @@
 		});
 	}
 
-	//댓글 삭제 
+	// 댓글 삭제 
 	function commentDelete(qnA_C_Num) {
 		var chk = confirm("정말 삭제하시겠습니까?");
 		if (chk) {

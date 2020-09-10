@@ -22,7 +22,7 @@
 	<link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
 	
 	<!-- js -->
-	<script src="${pageContext.request.contextPath}/resources/QnA/js/QnABoard.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
 
 	<script type="text/javascript">
 	function QnAwrite() { 
@@ -39,7 +39,7 @@
 			location.href = url;
 		}
 	
-	 //페이지 번호 클릭
+	//페이지 번호 클릭
 	function fn_pagination(qnapage, qnarange, qnarangeSize) {
 		var url = "${pageContext.request.contextPath}/qna/QnABoard";
 		url = url + "?qnapage=" + qnapage;

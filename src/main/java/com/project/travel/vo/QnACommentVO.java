@@ -38,12 +38,10 @@ public class QnACommentVO {
 				+ ", QnA_C_Date=" + QnA_C_Date + "]";
 	}
 	
-	/* 코멘트 VO 카멜 형식
-	 * private int qnaCNum; //qna댓글 번호 
-	 * private int qnaNum; //qna 넘버 
-	 * private String qnaCContent; //qna댓글 내용 
-	 * private Date qnaCDate; //qna 날짜
-	 */
-
-	
+/* 코멘트 VO 카멜 형식
+	private int qnaCNum; //qna댓글 번호 
+	private int qnaNum; //qna 넘버 
+	private String qnaCContent; //qna댓글 내용 
+	private Date qnaCDate; //qna 날짜
+*/
 }
