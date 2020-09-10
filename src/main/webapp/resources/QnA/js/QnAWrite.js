@@ -1,5 +1,4 @@
 function boardValidation(){
-	
 	var subject = $("#subject").val();
 	var content = $("#content").val();
 	var writer 	= $("#writer").val();
@@ -19,13 +18,10 @@ function boardValidation(){
 	}else {
 		QnAWrite(subject,writer,content);
 	}
-	
 }
 
 function QnAWrite(sub,wir,con){
-	
 	$.ajax({
-		
 		url : "/jquery/QnAWrite",
 		type:'POST',
 		data : {
@@ -43,8 +39,6 @@ function QnAWrite(sub,wir,con){
 		},error:function(){
 			console.log("error");
 		}
-		
 	})
-	
 }
 

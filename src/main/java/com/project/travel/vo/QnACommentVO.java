@@ -7,6 +7,7 @@ public class QnACommentVO {
 	private int QnA_Num;
 	private String QnA_C_Content;
 	private Date QnA_C_Date;
+	
 	public int getQnA_C_Num() {
 		return QnA_C_Num;
 	}

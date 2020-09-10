@@ -9,7 +9,6 @@ public class MainVO {
 	private String NB_Subject;
 	private	int NB_Views;
 	
-	
 	// 포토 갤러리
 	public int getPhoto_Num() {
 		return Photo_Num;

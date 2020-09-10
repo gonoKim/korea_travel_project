@@ -3,12 +3,13 @@ package com.project.travel.vo;
 import java.util.Date;
 
 public class QnAVO {
-	private int QnA_Num; //QnA테이블 넘버 
-	private String QnA_Write;//QnA테이블 작성자
-	private String QnA_Subject;//QnA테이블 제목
-	private String QnA_Content;// QnA테이블 내용
-	private int QnA_Views;		// QnA테이블 조회수 
-	private Date QnA_Date;		 //QnA테이블 작성일
+	private int QnA_Num; 				//QnA테이블 넘버 
+	private String QnA_Write;			//QnA테이블 작성자
+	private String QnA_Subject;			//QnA테이블 제목
+	private String QnA_Content;			// QnA테이블 내용
+	private int QnA_Views;				// QnA테이블 조회수 
+	private Date QnA_Date;		 		//QnA테이블 작성일
+	
 	public int getQnA_Num() {
 		return QnA_Num;
 	}

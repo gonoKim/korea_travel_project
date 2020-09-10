@@ -2,12 +2,7 @@
 
 <script>
 	var qnA_Num = '${result.qnA_Num}'; //게시글 번호
-
-	/* $('[name=commentInsertBtn]').click(function(){ //댓글 등록 버튼 클릭시 
-	 var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
-	 commentInsert(insertData); //Insert 함수호출(아래)
-	 }); */
-
+	
 	//댓글 목록 
 	function commentList() {
 		$.ajax({
@@ -115,18 +110,19 @@
 	}
 
 	//댓글 삭제 
-	function commentDelete(qnaCNum) {
+	function commentDelete(qnA_C_Num) {
 		var chk = confirm("정말 삭제하시겠습니까?");
 		if (chk) {
 			$.ajax({
 				url : '/qnacomment/QnACDelete',
 				type : 'get',
 				data : {
-					'qnaCNum' : qnaCNum
+					'qnA_C_Num' : qnA_C_Num
 				},
 				success : function(data) {
 					if (data == 1)
-						commentList(qnaNum); //댓글 삭제후 목록 출력 
+						commentList(qnA_Num); //댓글 삭제후 목록 출력 
+						location.reload();
 				}
 			});
 		}

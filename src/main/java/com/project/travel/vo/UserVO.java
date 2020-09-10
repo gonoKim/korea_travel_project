@@ -3,7 +3,6 @@ package com.project.travel.vo;
 import java.util.Date;
 
 public class UserVO {
-
 	private String M_Id;
 	private String M_Pw;
 	private String M_Fname;

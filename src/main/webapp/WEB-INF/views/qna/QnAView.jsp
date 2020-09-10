@@ -21,20 +21,17 @@
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/QnA/css/broad_view.css" rel="stylesheet">
-	
-	<!-- js -->
-	<!-- <script src="${pageContext.request.contextPath}/resources/QnA/js/QnAView.js"></script> -->
-	
-	<!-- 삭제할부분 -->
+
 	<script type="text/javascript">
 	function boardDelete(){	
 		var chk = confirm("정말 삭제하시겠습니까?");
 		if (chk) {
 			location.href="/qna/QnADelete?qnA_Num=${result.qnA_Num}";
-				}
-							}	
+		}
+	}	
+	
 	function QnAUpdate(){
-		location.href = "/qna/QnAUpdate?qnA_Num=${result.qnA_Num }";
+		location.href = "/qna/QnAUpdate?qnA_Num=${result.qnA_Num}";
 	}
 	</script>
 </head>
