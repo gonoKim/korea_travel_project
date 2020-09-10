@@ -19,4 +19,9 @@ public class FestivalServiceImpl implements FestivalService {
 		return festivalDAO.festivalList();
 	}
 
+	@Override
+	public int festivalwrite(FestivalVO festivalvo) {
+		return festivalDAO.festivalwrite(festivalvo);
+	}
+
 }

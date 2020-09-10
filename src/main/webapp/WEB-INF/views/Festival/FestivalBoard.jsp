@@ -17,8 +17,8 @@
 <script src="../../../resources/QnA/js/QnABoard.js"></script>
 
 <script type="text/javascript">
-function QnAwrite() { 
-    location.href = "/qna/QnAWrite"; 
+function FestivalWrite() { 
+    location.href = "/Festival/FestivalWrite"; 
 }
 </script>
 </head>
@@ -41,7 +41,7 @@ function QnAwrite() {
 			<tr>
 				<td>${b.f_Num }</td>
 				<td>${b.f_Place }</td>
-				<td><a href="/qna/QnAView?qnaNum=${b.qnaNum}">${b.f_Subject }</a></td>
+				<td><a href="/Festival/Festival?f_Num=${b.f_Num}">${b.f_Subject }</a></td>
 				<td>${dateFormat_cr }</td>
 			</tr>
 		</c:forEach>
@@ -51,7 +51,7 @@ function QnAwrite() {
 		</div>
 	<div>
 		      <div class="row justify-content-center my-3 ">
-            <button type="submit" onclick="QnAwrite();"  class="btn">
+            <button type="submit" onclick="FestivalWrite();"  class="btn">
                 Write<i class="fa fa-times spaceLeft"></i>
             </button>
         </div>

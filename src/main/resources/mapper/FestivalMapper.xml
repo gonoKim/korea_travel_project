@@ -6,4 +6,8 @@ select
 *
 from Festival;
 </select>
+<insert id="festivalwrite">
+insert into Festival (F_Num,F_Subject,F_Content,F_Place,F_Address,F_Date) 
+values(#{f_Num},#{f_Subject},#{f_Content},#{f_Place},#{f_Address},now());
+</insert>
 </mapper>

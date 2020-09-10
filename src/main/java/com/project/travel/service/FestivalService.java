@@ -6,5 +6,5 @@ import com.project.travel.vo.FestivalVO;
 
 public interface FestivalService {
 	List <FestivalVO> festivalList();
-	
+	int festivalwrite(FestivalVO festivalvo);
 }
