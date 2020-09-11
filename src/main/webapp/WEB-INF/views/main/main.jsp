@@ -164,9 +164,9 @@
           <h5>Notice</h5>
           <div id="NB_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <table class="table table-sm">
-				<tr><td id="border_Delete"><a href="/nb/nbView?nbNum=${nbList[0].NB_Num}"><h3><font class="title_color">[공지]</font> ${nbList[0].NB_Subject}</h3></a></td></tr>
+				<tr><td id="border_Delete"><a href="/notice/NoticeView?NB_Num=${nbList[0].NB_Num}"><h3><font class="title_color">[공지]</font> ${nbList[0].NB_Subject}</h3></a></td></tr>
 				<c:forEach items="${nbList}" var="nbList" begin="1">
-					<tr><td><a href="/nb/nbView?nbNum=${nbList.NB_Num}"><font class="title_color">[공지]</font> ${nbList.NB_Subject}</a></td></tr>
+					<tr><td><a href="/notice/NoticeView?NB_Num=${nbList.NB_Num}"><font class="title_color">[공지]</font> ${nbList.NB_Subject}</a></td></tr>
 				</c:forEach>
 			</table>
           </div>

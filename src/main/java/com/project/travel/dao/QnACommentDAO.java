@@ -33,9 +33,4 @@ public class QnACommentDAO {
 	public int qnaCommentDelete(int qnA_C_Num) {
 		return sqlSession.delete("qnaCommentDelete", qnA_C_Num);
 	}
-	
-    // 댓글 개수
-	public int qnaCommentCount() {
-		return sqlSession.selectOne("qnaCommentCount");
-	}
 }

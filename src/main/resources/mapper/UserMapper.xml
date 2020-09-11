@@ -5,12 +5,12 @@
 	<!--회원가입 -->
 	<insert id="register" parameterType="com.project.travel.vo.UserVO">
 		INSERT INTO UserTBL(M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date, M_Grade) 
-		VALUES(#{M_Id}, #{M_Pw}, #{M_Fname}, #{M_Lname}, #{M_Phone}, #{M_Year}, #{M_Month}, #{M_Day}, now(), 'user')
+			VALUES(#{M_Id}, #{M_Pw}, #{M_Fname}, #{M_Lname}, #{M_Phone}, #{M_Year}, #{M_Month}, #{M_Day}, now(), 'user')
 	</insert>
 	
     <!-- 로그인 -->
 	<select id="login" resultType="com.project.travel.vo.UserVO">
-		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date FROM UserTBL WHERE M_Id = #{M_Id}
+		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date, M_Grade FROM UserTBL WHERE M_Id = #{M_Id}
 	</select>
 	
 	<!-- 아이디 중복 체크 -->
@@ -40,7 +40,7 @@
 	
 	<!-- 마이페이지 뷰 -->
 	<select id="getMyPageView" resultType="com.project.travel.vo.UserVO">
-		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date FROM UserTBL where M_Id = #{M_Id}
+		SELECT M_Id, M_Pw, M_Fname, M_Lname, M_Phone, M_Year, M_Month, M_Day, M_Date FROM UserTBL WHERE M_Id = #{M_Id}
 	</select>
 	
 	<!-- 전화번호 중복 체크 (마이페이지) -->
@@ -56,7 +56,7 @@
 	
 	<!-- 회원 탈퇴 -->
 	<delete id="delUser" parameterType="com.project.travel.vo.UserVO">
-		delete from UserTBL where M_Id = #{M_Id}
+		DELETE FROM UserTBL WHERE M_Id = #{M_Id}
 	</delete>
 	
 </mapper>

@@ -25,37 +25,40 @@
 	<script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
 
 	<script type="text/javascript">
-	function QnAwrite() { 
-	    location.href = "/qna/QnAWrite"; 
-	}
-	
-	//이전 버튼 이벤트
-	function fn_prev(qnapage, qnarange, qnarangeSize) {
+		function QnAwrite() { 
+		    location.href = "/qna/QnAWrite"; 
+		}
+		
+		//이전 버튼 이벤트
+		function fn_prev(qnapage, qnarange, qnarangeSize) {
 			var qnapage = ((qnarange - 2) * qnarangeSize) + 1;
 			var qnarange = qnarange - 1;
 			var url = "${pageContext.request.contextPath}/qna/QnABoard";
+			
 			url = url + "?qnapage=" + qnapage;
 			url = url + "&qnarange=" + qnarange;
 			location.href = url;
 		}
-	
-	//페이지 번호 클릭
-	function fn_pagination(qnapage, qnarange, qnarangeSize) {
-		var url = "${pageContext.request.contextPath}/qna/QnABoard";
-		url = url + "?qnapage=" + qnapage;
-		url = url + "&qnarange=" + qnarange;
-		location.href = url;	
-	}
-	
-	//다음 버튼 이벤트
-	function fn_next(qnapage, qnarange, qnarangeSize) {
-		var qnapage = parseInt((qnarange * qnarangeSize)) + 1;
-		var qnarange = parseInt(qnarange) + 1;
-		var url = "${pageContext.request.contextPath}/qna/QnABoard";
-		url = url + "?qnapage=" + qnapage;
-		url = url + "&qnarange=" + qnarange;
-		location.href = url;
-	}
+		
+		//페이지 번호 클릭
+		function fn_pagination(qnapage, qnarange, qnarangeSize) {
+			var url = "${pageContext.request.contextPath}/qna/QnABoard";
+			
+			url = url + "?qnapage=" + qnapage;
+			url = url + "&qnarange=" + qnarange;
+			location.href = url;	
+		}
+		
+		//다음 버튼 이벤트
+		function fn_next(qnapage, qnarange, qnarangeSize) {
+			var qnapage = parseInt((qnarange * qnarangeSize)) + 1;
+			var qnarange = parseInt(qnarange) + 1;
+			var url = "${pageContext.request.contextPath}/qna/QnABoard";
+			
+			url = url + "?qnapage=" + qnapage;
+			url = url + "&qnarange=" + qnarange;
+			location.href = url;
+		}
 	</script>
 </head>
 
@@ -74,8 +77,7 @@
 					<td scope="col">Date</td>
 				</tr>
 				<c:forEach var="b" items="${result}">
-					<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd "
-						var="dateFormat_cr" />
+					<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd " var="dateFormat_cr" />
 					<tr>
 						<td>${b.qnA_Num}</td>
 						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}">${b.qnA_Subject}</a></td>
@@ -86,35 +88,34 @@
 				</c:forEach>
 			</table>
 		</div>
-		<!-- pagination{s} -->
 		
+		<!-- pagination{s} -->
 		<div id="paginationBox">
-			<div class="row justify-content-center my-3 "></div>
 			<ul class="pagination row justify-content-center my-4">
 				<c:if test="${pagination.qnaprev}">
-					<li class="page-item"><a class="page-link" href="#"
-						onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a>
+					</li>
 				</c:if>
 
-				<c:forEach begin="${pagination.qnastartPage}"
-					end="${pagination.qnaendPage}" var="idx">
-					<li
-						class="page-item <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> ">
-						<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">
-							${idx} </a>
+				<c:forEach begin="${pagination.qnastartPage}" end="${pagination.qnaendPage}" var="idx">
+					<li class="page-item <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> ">
+						<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">${idx}</a>
 					</li>
 				</c:forEach>
 
 				<c:if test="${pagination.qnanext}">
-					<li class="page-item"><a class="page-link" href="#"
-						onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a>
+					<li class="page-item">
+						<a class="page-link" href="#" onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a>
 					</li>
 				</c:if>
 			</ul>
 		</div>
 		<!-- pagination{e} -->
+		
 		<c:if test="${user != null}">
-			<div class="row justify-content-end my-4" id="write_btn">
+			<div class="row justify-content-end my-4">
+				<a></a><a></a><a></a><a></a><a></a> 										<!-- 칸채우기용 -->
 				<button type="submit" onclick="QnAwrite();" class="btn btn-outline-secondary">Write</button>
 			</div>
 		</c:if>

@@ -39,6 +39,7 @@ public class QnACommentVO {
 	public void setQnA_C_Date(Date qnA_C_Date) {
 		QnA_C_Date = qnA_C_Date;
 	}
+	
 	@Override
 	public String toString() {
 		return "QnACommentVO [QnA_C_Num=" + QnA_C_Num + ", M_Id=" + M_Id + ", QnA_Num=" + QnA_Num + ", QnA_C_Content=" + QnA_C_Content

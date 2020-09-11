@@ -41,7 +41,6 @@
   <div class="container">
 
     <jsp:include page="../inc/top.jsp"/>
-    <!-- //공통 헤더&네비-->
 	
     <div class="row mpwrap">
     <div class="container p-3">
@@ -313,6 +312,6 @@
   <!-- //container(body_wrap) -->
 
   <jsp:include page="../inc/bottom.jsp"/>
-  <!-- //공통 푸터 -->
+  
 </body>
 </html>

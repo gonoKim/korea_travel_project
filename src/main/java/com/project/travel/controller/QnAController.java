@@ -50,6 +50,7 @@ public class QnAController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("pagination",pagination);
 		mav.addObject("result", result);
+		
 		return mav;
 	}
 	
@@ -65,6 +66,7 @@ public class QnAController {
 		
 		UserVO result = service.login(vo);
 		mav.addObject("user", result);
+		
 		return mav; 
 	}
 	
@@ -85,21 +87,27 @@ public class QnAController {
 		mav.addObject("result", result);
 		mav.addObject("user", result2);
 		mav.addObject("cResult", new QnACommentVO());
+		
 		return mav;
 	}
 	
 	// QnA 업데이트 내용물 보여주는 컨트롤러 뷰 데이터 끌어다씀
 	@RequestMapping(value="qna/QnAUpdate",method = RequestMethod.GET)
 	public ModelAndView QnAUpdate(int qnA_Num) {
+		logger.info("get QnAUpdate");
+		
 		QnAVO result = qnaService.getQnAView(qnA_Num);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("result",result);
+		
 		return mav;
 	}
 	
 	// QnA 삭제 
 	@RequestMapping(value="qna/QnADelete",method = RequestMethod.GET)
 	public String QnADelete(int qnA_Num) {
+		logger.info("get QnADelete");
+		
 		qnaService.QnADelete(qnA_Num);
 		return "redirect: QnABoard";
 	}

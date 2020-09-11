@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.project.travel.vo.QnAVO;
 
-/*비즈니스 로직*/
 public interface QnAService {
 	// QnA 리스트 
 	List getQnAList(int qnastartList);

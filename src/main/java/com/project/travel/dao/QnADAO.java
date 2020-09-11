@@ -38,6 +38,7 @@ public class QnADAO {
 	public QnAVO getQnAView(int qnA_Num) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("qnA_Num", qnA_Num);
+		
 		return sqlSession.selectOne("getQnAView", map);
 	}
 
