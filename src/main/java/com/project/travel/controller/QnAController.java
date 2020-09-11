@@ -2,6 +2,12 @@ package com.project.travel.controller;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,16 +17,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.common.Pagination;
 import com.project.travel.service.QnAService;
+import com.project.travel.service.UserService;
 import com.project.travel.vo.QnACommentVO;
 import com.project.travel.vo.QnAVO;
+import com.project.travel.vo.UserVO;
 
 /*클라이언트와 서버를 연결해주는 모듈 */
 @Controller
 @RequestMapping("qna/*")
 public class QnAController {
+	private static final Logger logger = LoggerFactory.getLogger(QnAController.class);
 	
 	@Autowired
 	QnAService qnaService;
+	
+	@Inject
+	UserService service;
 	
 	//	QnA 리스트 맵핑, 컨트롤러
 	@RequestMapping("qna/QnABoard")
@@ -41,20 +53,37 @@ public class QnAController {
 		return mav;
 	}
 	
-	// QnA 쓰키 컨트롤러
+	// QnA 쓰기 컨트롤러
 	@RequestMapping(value="qna/QnAWrite",method = RequestMethod.GET)
-	public ModelAndView QnAWrite() {
+	public ModelAndView QnAWrite(HttpServletRequest req) throws Exception{
+		logger.info("get QnAWrite");
+		
 		ModelAndView mav = new ModelAndView();
+		
+		HttpSession session = req.getSession();
+		UserVO vo=(UserVO) session.getAttribute("user");
+		
+		UserVO result = service.login(vo);
+		mav.addObject("user", result);
 		return mav; 
 	}
 	
 	// QnA 내용물 보여주는 컨트롤러 & 조회수 
 	@RequestMapping(value="qna/QnAView",method = RequestMethod.GET)
-	public ModelAndView QnAView(int qnA_Num) {
-		QnAVO result = qnaService.getQnAView(qnA_Num);
-		qnaService.viewsUpdate(qnA_Num);
+	public ModelAndView QnAView(int qnA_Num, HttpServletRequest req) throws Exception{
+		logger.info("get QnAView");
+		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("result",result);
+		
+		HttpSession session = req.getSession();
+		UserVO vo=(UserVO) session.getAttribute("user");
+		
+		QnAVO result = qnaService.getQnAView(qnA_Num);
+		UserVO result2 = service.login(vo);
+		qnaService.viewsUpdate(qnA_Num);
+		
+		mav.addObject("result", result);
+		mav.addObject("user", result2);
 		mav.addObject("cResult", new QnACommentVO());
 		return mav;
 	}

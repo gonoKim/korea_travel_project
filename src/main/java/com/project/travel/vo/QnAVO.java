@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class QnAVO {
 	private int QnA_Num; 				//QnA테이블 넘버 
-	private String QnA_Write;			//QnA테이블 작성자
+	private String M_Id;				// QnA테이블 작성자
 	private String QnA_Subject;			//QnA테이블 제목
 	private String QnA_Content;			// QnA테이블 내용
 	private int QnA_Views;				// QnA테이블 조회수 
@@ -16,11 +16,11 @@ public class QnAVO {
 	public void setQnA_Num(int qnA_Num) {
 		QnA_Num = qnA_Num;
 	}
-	public String getQnA_Write() {
-		return QnA_Write;
+	public String getM_Id() {
+		return M_Id;
 	}
-	public void setQnA_Write(String qnA_Write) {
-		QnA_Write = qnA_Write;
+	public void setM_Id(String m_Id) {
+		M_Id = m_Id;
 	}
 	public String getQnA_Subject() {
 		return QnA_Subject;
@@ -48,16 +48,7 @@ public class QnAVO {
 	}
 	@Override
 	public String toString() {
-		return "QnAVO [QnA_Num=" + QnA_Num + ", QnA_Write=" + QnA_Write + ", QnA_Subject=" + QnA_Subject
+		return "QnAVO [QnA_Num=" + QnA_Num + ", M_Id=" + M_Id + ", QnA_Subject=" + QnA_Subject
 				+ ", QnA_Content=" + QnA_Content + ", QnA_Views=" + QnA_Views + ", QnA_Date=" + QnA_Date + "]";
 	}
-	
-/* 카멜 형식 Vo
-	private int qnaNum; // QnA테이블 넘버 
-	private String qnaSubject; //QnA테이블 제목
-	private String qnaContent; // QnA테이블 내용 
-	private String qnaWrite; //QnA테이블 작성자
-	private int qnaViews; // QnA테이블 조회수 
-	private Date qnaDate; //QnA테이블 작성일
-*/
 }

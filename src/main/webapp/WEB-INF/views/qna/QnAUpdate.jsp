@@ -77,17 +77,17 @@
 				</div>
 
 				<h4 class="my-3">Subject</h4>
-				<input type="text" class="form-control text-dark" id="u_subject" value="${result.qnA_Subject }">
+				<input type="text" class="form-control text-dark" id="u_subject" value="${result.qnA_Subject}">
 
 				<h4 class="my-3">Writer</h4>
-				<input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.qnA_Write }">
+				<input type="text" class="form-control text-dark" id="writer" readonly placeholder="${result.m_Id}">
 
 				<h4 class="my-3">Content</h4>
-				<textarea rows="10" cols="20" class="form-control text-dark" id="u_content" placeholder="">${result.qnA_Content }</textarea>
+				<textarea rows="10" cols="20" class="form-control text-dark" id="u_content" placeholder="">${result.qnA_Content}</textarea>
 
 				<div class="row justify-content-center my-4">
 					<input type="button" value="Update" class="btn" onclick="updateValidation()" />
-					<input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?qnA_Num=${result.qnA_Num }'" />
+					<input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/QnAView?qnA_Num=${result.qnA_Num}'" />
 				</div>
 			</form>
 		</div>

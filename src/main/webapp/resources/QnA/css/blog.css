@@ -130,22 +130,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* etc */
-#sign_in_btn{
-  margin-right: 10px;
-}
-
-#Banner_carousel{
-  margin-bottom: 40px;
-}
-#Banner_carousel .carousel-inner > .carousel-item >img{
-  /* height: 550px; */
-}
-#Photo_carousel .carousel-inner > .carousel-item >img{
-  height: 300px;
-}
-#Area_page{
-  margin-bottom: 50px;
-}
-#A1, #A2{
-  height: 300px;
+#paginationBox{margin-top: -30px;}
+#write_btn{margin-right: 40px;}
+/* media */
+@media screen and (max-width:500px){
 }

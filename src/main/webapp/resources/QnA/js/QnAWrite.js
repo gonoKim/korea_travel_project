@@ -26,7 +26,7 @@ function QnAWrite(sub,wir,con){
 		type:'POST',
 		data : {
 			qnA_Subject : sub,
-			qnA_Write 	: wir,
+			m_Id 		: wir,
 			qnA_Content : con
 		},
 		success:function(data){

@@ -27,33 +27,31 @@
 	<script src="${pageContext.request.contextPath}/resources/QnA/js/QnAWrite.js"></script>
 </head>
 
-<body class="container-md vh-100 ">
-	<article class="container row justify-content-center align-items-center">
-		<div class="col-sm-6 col-md-offset-3 ">
-			<form>
-				<div class=" text-center text-dark pt-5 ">
-					<h2 class="my-3">QnA-write</h2>
-				</div>
+<body>
+	<div class="container">
+		<form class="form-signin" id="a">
+			<div class=" text-center text-dark pt-5 ">
+				<h2 class="my-3">QnA-write</h2>
+			</div>
+						
+			<h4 class="my-3">Subject</h4>
+			<input type="text" class="form-control text-dark" id="subject" maxlength="30" placeholder="제목을 입력해 주세요">
 
-				<h4 class="my-3">Subject</h4>
-				<input type="text" class="form-control text-dark" id="subject" placeholder="제목을 입력해 주세요">
+			<h4 class="my-3">Writer</h4>
+			<input type="text" class="form-control text-dark" id="writer" maxlength="12" value="${user.m_Id}" readonly>
 
-				<h4 class="my-3">Writer</h4>
-				<input type="text" class="form-control text-dark" id="writer" placeholder="작성자를 입력해 주세요">
+			<h4 class="my-3">Content</h4>
+			<textarea rows="10" cols="20" class="form-control text-dark" id="content" maxlength="200" placeholder="내용를 입력해 주세요"></textarea>
 
-				<h4 class="my-3">Content</h4>
-				<textarea rows="10" cols="20" class="form-control text-dark" id="content" placeholder="내용를 입력해 주세요"></textarea>
-
-				<div class="row justify-content-center my-4">
-					<button type="reset" id="join-submit" class="btn">
-						Reset<i class="fa fa-check spaceLeft"></i>
-					</button>
-					<input type="button" value="Write" class="btn" onclick="boardValidation()" /> <input type="button" value="Cancel"
-						class="btn" onclick="javascript:location.href='QnABoard'" />
-				</div>
-			</form>
-		</div>
-	</article>
+			<div class="row justify-content-center my-4">
+				<button type="reset" id="join-submit" class="btn">
+					Reset
+				</button>
+				<input type="button" value="Write" class="btn" onclick="boardValidation()" /> <input type="button" value="Cancel"
+					class="btn" onclick="javascript:location.href='QnABoard'" />
+			</div>
+		</form>
+	</div>
 	
 	<jsp:include page="../inc/bottom.jsp" />
 	

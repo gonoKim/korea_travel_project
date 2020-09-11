@@ -5,6 +5,9 @@
 	
 	// 댓글 목록 
 	function commentList() {
+		var m_Id = "${user.m_Id}";				// 로그인 이용자
+		var m_Id2 = "${result.m_Id}";			// 작성자
+
 		$.ajax({
 			url : '/qnacomment/clist?qnA_Num=${result.qnA_Num}',
 			type : 'get',
@@ -17,19 +20,16 @@
 					data,
 					function(key, value) {
 						a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
-						a += '<div class="commentInfo'+value.qnA_C_Num+'">'
-								+ '댓글번호 : '
-								+ value.qnA_C_Num;
-						a += '<a onclick="commentUpdate('
-								+ value.qnA_C_Num + ',\''
-								+ value.qnA_C_Content
-								+ '\');"> 수정 </a>';
-						a += '<a onclick="commentDelete('
-								+ value.qnA_C_Num
-								+ ');"> 삭제 </a> </div>';
-						a += '<div class="commentContent'+value.qnA_C_Num+'"> <p> 내용 : '
-								+ value.qnA_C_Content
-								+ '</p>';
+						a += '<div class="commentInfo float-md-right">'
+						if(m_Id == value.m_Id){
+							a += '<a class="btn btn-sm" onclick="commentUpdate('+ value.qnA_C_Num +',\''+ value.qnA_C_Content +'\');"> 수정 </a>';
+							a += '<a class="btn btn-sm" onclick="commentDelete('+ value.qnA_C_Num +');"> 삭제 </a> </div>';
+						} else if(m_Id == m_Id2){
+							a += '<a class="btn btn-sm" onclick="commentDelete('+ value.qnA_C_Num +');"> 삭제 </a> </div>';
+						} else{
+							a += '</div>';
+						}
+						a += '<div class="commentContent'+value.qnA_C_Num+'"> '+ value.m_Id+ '<p> 내용 : '+ value.qnA_C_Content+ '</p>';
 						a += '</div></div>';
 					}
 				);
@@ -44,13 +44,14 @@
 	function commentInsert() {
 		var c_Content = $("#c_Content").val();
 		var c_Num = "${result.qnA_Num}";
+		var m_Id = "${user.m_Id}";
 		
 		if (!c_Content) {
 			alert("내용 입력은 필수 입니다..");
 			$("#c_Content").focus();
 			return false;
 		} else {
-			insertData(c_Content, c_Num);
+			insertData(c_Content, c_Num, m_Id);
 		}
 	}
 
@@ -61,7 +62,8 @@
 			type : 'post',
 			data : {
 				qnA_C_Content : c_Con,
-				qnA_Num : c_Num
+				qnA_Num : c_Num,
+				m_Id : m_Id
 			},
 			success : function(data) {
 				if (data == 1) {
@@ -79,13 +81,13 @@
 	}
 
 	// 댓글 수정 - 댓글 내용 출력을 input 폼으로 변경 
-	function commentUpdate(qnA_C_Num, qnA_C_Content) {
+	function commentUpdate(qnA_C_Num, qnA_C_Content, m_Id) {
 		var a = '';
 
 		a += '<div class="input-group">';
-		a += '<input type="text" class="form-control" name="content_'+qnA_C_Num+'" value="'+qnA_C_Content+'"/>';
+		a += '<input type="text" class="form-control" maxlength="200" name="content_'+qnA_C_Num+'" value="'+qnA_C_Content+'"/>';
 		a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('
-				+ qnA_C_Num + ');">수정</button> </span>';
+				+ qnA_C_Num +');">수정</button> </span>';
 		a += '</div>';
 
 		$('.commentContent' + qnA_C_Num).html(a);
@@ -103,9 +105,12 @@
 				'qnA_C_Num' : qnA_C_Num
 			},
 			success : function(data) {
-				if (data == 1)
-					commentList(qnA_Num); //댓글 수정후 목록 출력 
-			}
+				if (data == 1){
+					
+				} else{
+					commentList(qnA_Num); 		//댓글 수정후 목록 출력
+				}
+			} 
 		});
 	}
 
@@ -120,9 +125,11 @@
 					'qnA_C_Num' : qnA_C_Num
 				},
 				success : function(data) {
-					if (data == 1)
-						commentList(qnA_Num); //댓글 삭제후 목록 출력 
-						location.reload();
+					if (data == 1){
+						
+					} else{
+						commentList(qnA_Num);   //댓글 삭제후 목록 출력
+					}
 				}
 			});
 		}
