@@ -1,5 +1,6 @@
 package com.project.travel.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -20,5 +21,11 @@ public class FestivalDAO {
 
 	public int festivalwrite(FestivalVO festivalvo) {
 		return sqlSession.insert("festivalwrite", festivalvo);
+	}
+
+	public FestivalVO festivalView(int f_Num) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("f_Num", f_Num);
+		return sqlSession.selectOne("festivalView", map);
 	}
 }

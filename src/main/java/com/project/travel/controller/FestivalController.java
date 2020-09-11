@@ -43,5 +43,11 @@ public class FestivalController {
 		result = festivalService.festivalwrite(festivalvo);
 		return result;
 	}
-
+	@RequestMapping(value="/FestivalView",method = RequestMethod.GET)
+	public ModelAndView festivalView(int f_Num) {
+		FestivalVO fResult = festivalService.festivalView(f_Num);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("fResult",fResult);
+		return mav;
+	}	
 }

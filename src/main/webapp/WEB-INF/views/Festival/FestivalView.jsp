@@ -35,57 +35,34 @@ function QnAUpdate(){
 <body>
 <div class="container">
 
-	 	<jsp:include page="../inc/top.jsp" />
 <form>
 <table class="my-5 table table-bordered">
             <tr>
                 <th class="text-center w-25 p-3">Subject: </th>
-                <td scope="row">${result.qnA_Subject }</td>
+                <td scope="row">${fResult.f_Subject }</td>
             </tr>
              <tr>
-                <th class="text-center">Writer: </th>
-                <td scope="row">${result.qnA_Write }</td>
+                <th class="text-center">Place: </th>
+                <td scope="row">${fResult.f_Place }</td>
             </tr>
             <tr>
                 <th class="text-center">Content: </th>
-                <td scope="row">${result.qnA_Content }</td>
+                <td scope="row">${fResult.f_Content }</td>
             </tr>
             
             <tr>
-                <th class="text-center">Views: </th>
-                <td scope="row">${result.qnA_Views }</td>
+                <th class="text-center">Address: </th>
+                <td scope="row">${fResult.f_Address }</td>
             </tr>
          	
 </table>
 <div class="row justify-content-center my-4">
-                    <input type="button" value="Update" class="btn" onclick="QnAUpdate()"/>
-                     <input type="button" value="Delete" class="btn" onclick="boardDelete()"/>
                      <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='QnABoard'"/>
                 </div>
                 
 </form>
 </div> 
-  <div class="container">
-        <label for="content">comment</label>
-        <form name="commentInsertForm">
-            <div class="input-group">
-               <input type="hidden" name="bno" value="${result.qnA_Num}"/>
-               <input type="text" class="form-control" id="c_Content" name="content" placeholder="내용을 입력하세요.">
-               <span class="input-group-btn">
-                    <input class="btn btn-default" type="button" value="등록" onclick="commentInsert()"/>
-               </span>
-              </div>
-        </form>
-    </div>
-  <div class="container">
-        <div class="commentList"></div>
-    </div>
 
-
-
-
-
- 	<jsp:include page="../inc/bottom.jsp" />
 
 </body>
 </html>

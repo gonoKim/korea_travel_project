@@ -10,4 +10,10 @@ from Festival;
 insert into Festival (F_Num,F_Subject,F_Content,F_Place,F_Address,F_Date) 
 values(#{f_Num},#{f_Subject},#{f_Content},#{f_Place},#{f_Address},now());
 </insert>
+
+<select id="festivalView" resultType="com.project.travel.vo.FestivalVO">
+SELECT 	*
+FROM 	Festival
+where 	F_Num = #{f_Num};
+</select>
 </mapper>
