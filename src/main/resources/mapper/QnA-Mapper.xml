@@ -4,68 +4,68 @@
 
 	<!-- QnA 리스트  -->
 	<select id="getQnAList" resultType="com.project.travel.vo.QnAVO">
-		SELECT * FROM QnA_Border_test ORDER BY QnA_Num DESC LIMIT #{qnastartList}, 10
+		SELECT * FROM QnA_Border ORDER BY QnA_Num DESC LIMIT #{qnastartList}, 10
 		<!--limit 부분 스타트리스트 가0부터 시작하고 10개씩 끊어라 는 말임-->
 	</select>
 	
 	<!-- 총 게시글 개수 확인  -->
 	<select id="getQnAListCnt" resultType="int">
-		SELECT COUNT(*) AS qnalistCnt FROM QnA_Border_test
+		SELECT COUNT(*) AS qnalistCnt FROM QnA_Border
 	</select>
 	
 	<!-- QnA 작성  -->
 	<insert id="QnAWrite">
-		INSERT INTO QnA_Border_test (QnA_Num, M_Id, QnA_Subject, QnA_Content, QnA_Views, QnA_Date) 
+		INSERT INTO QnA_Border (QnA_Num, M_Id, QnA_Subject, QnA_Content, QnA_Views, QnA_Date) 
 		VALUES(#{qnA_Num}, #{M_Id}, #{qnA_Subject}, #{qnA_Content}, #{qnA_Views},now())
 	</insert>
 	
 	<!-- QnA 내용 뷰  -->
 	<select id="getQnAView" resultType="com.project.travel.vo.QnAVO">
-		SELECT * FROM QnA_Border_test WHERE QnA_Num = #{qnA_Num}
+		SELECT * FROM QnA_Border WHERE QnA_Num = #{qnA_Num}
 	</select>
 	
 	<!-- QnA 조회수 업데이트 -->
 	<update id="qnaViewUpdate">
-		UPDATE QnA_Border_test SET QnA_Views = QnA_Views+1 WHERE QnA_Num = #{qnA_Num}
+		UPDATE QnA_Border SET QnA_Views = QnA_Views+1 WHERE QnA_Num = #{qnA_Num}
 	</update>
 	
 	<!-- QnA 수정  -->
 	<update id="QnAUpdate">
-		UPDATE QnA_Border_test SET QnA_Subject = #{qnA_Subject}, QnA_Content = #{qnA_Content},
+		UPDATE QnA_Border SET QnA_Subject = #{qnA_Subject}, QnA_Content = #{qnA_Content},
 		QnA_Date = now() WHERE QnA_Num = #{qnA_Num}
 	</update>
 	
 	<!-- QnA 삭제  -->
 	<delete id="QnADelete">
-		DELETE FROM QnA_Border_test WHERE QnA_Num = #{qnA_Num}
+		DELETE FROM QnA_Border WHERE QnA_Num = #{qnA_Num}
 	</delete>
 	
 	
 	<!-- QnA 댓글 쿼리문 -->
 	<!-- 댓글 개수 -->
   	<select id="qnaCommentCount" resultType="int">
-        SELECT COUNT(*) FROM QnA_Comment_test
+        SELECT COUNT(*) FROM QnA_Comment
     </select>
     
     <!-- 댓글 목록 -->
     <select id="qnaCommentList" resultType="com.project.travel.vo.QnACommentVO">
-        SELECT * FROM QnA_Comment_test WHERE QnA_Num = #{qnA_Num}
+        SELECT * FROM QnA_Comment WHERE QnA_Num = #{qnA_Num}
     </select>
     
    	<!-- 댓글 작성 -->
     <insert id="qnaCommentInsert" parameterType="com.project.travel.vo.QnACommentVO">
-        INSERT INTO QnA_Comment_test (QnA_C_Num, M_Id, QnA_Num, QnA_C_Content, QnA_C_Date)
+        INSERT INTO QnA_Comment (QnA_C_Num, M_Id, QnA_Num, QnA_C_Content, QnA_C_Date)
         VALUES(#{qnA_C_Num}, #{M_Id}, #{qnA_Num}, #{qnA_C_Content}, now()) 
     </insert>
     
     <!-- 댓글 수정 -->
     <update id="qnaCommentUpdate" parameterType="com.project.travel.vo.QnACommentVO">
-        UPDATE QnA_Comment_test SET QnA_C_Content = #{qnA_C_Content} WHERE QnA_C_Num = #{qnA_C_Num}
+        UPDATE QnA_Comment SET QnA_C_Content = #{qnA_C_Content} WHERE QnA_C_Num = #{qnA_C_Num}
     </update>
     
     <!-- 댓글 삭제 -->
     <delete id="qnaCommentDelete" parameterType="int">
-        DELETE FROM QnA_Comment_test WHERE QnA_C_Num = #{qnA_C_Num}
+        DELETE FROM QnA_Comment WHERE QnA_C_Num = #{qnA_C_Num}
     </delete>
     
 </mapper>

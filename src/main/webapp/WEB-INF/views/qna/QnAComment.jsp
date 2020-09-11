@@ -47,16 +47,18 @@
 		var m_Id = "${user.m_Id}";
 		
 		if (!c_Content) {
-			alert("내용 입력은 필수 입니다..");
+			alert("내용 입력은 필수 입니다.");
 			$("#c_Content").focus();
 			return false;
+		} else if(m_Id == ''){
+			alert("로그인 후 댓글입력이 가능합니다.");
 		} else {
 			insertData(c_Content, c_Num, m_Id);
 		}
 	}
 
 	// 댓글 등록
-	function insertData(c_Con, c_Num) {
+	function insertData(c_Con, c_Num, m_Id) {
 		$.ajax({
 			url : '/jquery/QnACWrite',
 			type : 'post',
@@ -81,7 +83,7 @@
 	}
 
 	// 댓글 수정 - 댓글 내용 출력을 input 폼으로 변경 
-	function commentUpdate(qnA_C_Num, qnA_C_Content, m_Id) {
+	function commentUpdate(qnA_C_Num, qnA_C_Content) {
 		var a = '';
 
 		a += '<div class="input-group">';
