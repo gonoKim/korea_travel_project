@@ -41,7 +41,7 @@ function FestivalWrite() {
 			<tr>
 				<td>${b.f_Num }</td>
 				<td>${b.f_Place }</td>
-				<td><a href="/Festival/Festival?f_Num=${b.f_Num}">${b.f_Subject }</a></td>
+				<td><a href="#"　onclick="window.open('/Festival/FestivalView?f_Num=${b.f_Num}', 'choice', 'scrollbars=no, width=600px, height=800px')"  >${b.f_Subject }</a></td>
 				<td>${dateFormat_cr }</td>
 			</tr>
 		</c:forEach>

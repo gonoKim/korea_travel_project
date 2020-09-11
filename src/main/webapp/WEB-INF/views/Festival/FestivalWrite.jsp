@@ -102,11 +102,11 @@ function FestivalWrite(sub,con,pla,add){
            
                       
                     <h4 class="my-3">Place</h4>
-                    <input type="text" class="form-control text-dark" id="place" placeholder="작성자를 입력해 주세요">
+                    <input type="text" class="form-control text-dark" id="place" placeholder="지역를 입력해 주세요">
    
    
                     <h4 class="my-3">Address</h4>
-                    <input type="text" class="form-control text-dark" id="address" placeholder="작성자를 입력해 주세요">
+                    <input type="text" class="form-control text-dark" id="address" placeholder="주소를 입력해 주세요">
    
    <!--              	 <h4 class="my-3">Date</h4>
                     <input type="text" class="form-control text-dark" id="Date" placeholder="작성자를 입력해 주세요">

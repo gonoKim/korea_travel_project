@@ -15,30 +15,33 @@ import com.project.travel.vo.FestivalVO;
 @Controller
 @RequestMapping("Festival/*")
 public class FestivalController {
-	
+
 	@Autowired
 	FestivalService festivalService;
 
+	/* 축제 리스트 */
 	@RequestMapping("/FestivalBoard")
 	public ModelAndView FestivalBoard() {
-		//DB �젒�냽, qna�뒪���듃 由ъ뒪�듃 遺�遺��쓣 媛��졇�샂
 		List fResult = festivalService.festivalList();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("fResult", fResult);
 		return mav;
 	}
-	@RequestMapping(value="/FestivalWrite",method = RequestMethod.GET)
+
+	/* 축제 쓰기 뷰 */
+	@RequestMapping(value = "/FestivalWrite", method = RequestMethod.GET)
 	public ModelAndView FestivalWrite() {
 		ModelAndView mav = new ModelAndView();
-		return mav; 
-		}
-	
+		return mav;
+	}
+
+	/* 축제 쓰기 데이터 가져오기 */
 	@ResponseBody
-	@RequestMapping(value="/FestivalWrite",method =  RequestMethod.POST)
+	@RequestMapping(value = "/FestivalWrite", method = RequestMethod.POST)
 	public int FestivalWrite(FestivalVO festivalvo) {
-		int result = 0; 
-		result = festivalService.festivalwrite(festivalvo); 
+		int result = 0;
+		result = festivalService.festivalwrite(festivalvo);
 		return result;
 	}
-	
+
 }
