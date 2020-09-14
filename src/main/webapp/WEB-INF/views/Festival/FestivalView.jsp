@@ -57,7 +57,7 @@ function QnAUpdate(){
          	
 </table>
 <div class="row justify-content-center my-4">
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='QnABoard'"/>
+                     <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
                 </div>
                 
 </form>
