@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.service.FestivalService;
 import com.project.travel.vo.FestivalVO;
+import com.project.travel.vo.QnAVO;
 
 @Controller
 @RequestMapping("Festival/*")
@@ -47,7 +48,7 @@ public class FestivalController {
 	
 	/* 축제 뷰 */
 	@RequestMapping(value="/FestivalView",method = RequestMethod.GET)
-	public ModelAndView festivalView(int f_Num) {
+	public ModelAndView FestivalView(int f_Num) {
 		FestivalVO fResult = festivalService.festivalView(f_Num);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("fResult",fResult);
@@ -58,7 +59,10 @@ public class FestivalController {
 	@ResponseBody
 	@RequestMapping(value="/FestivalDelete",method = RequestMethod.GET)
 	public void FestivalDelete(
+			/* chbox[]를 list형식으로 chArr에 담는다 */
 			@RequestParam(value = "chbox[]") List<String> chArr, FestivalVO festivalvo) {
+	
+		/* String값을 int형으로 변경하여 값을 담는 그릇 */ 
 		int f_Num = 0;
 		
 		for(String i : chArr) {
@@ -66,5 +70,24 @@ public class FestivalController {
 			festivalvo.setF_Num(f_Num);
 			festivalService.festivalDelete(festivalvo);
 		}
+	}
+	
+	/* 축제 업데이트 뷰 */
+	@RequestMapping(value="/FestivalUpdate",method = RequestMethod.GET)
+	public ModelAndView FestivalUpdate(int f_Num) {
+		/* festivalView 사용 */
+		FestivalVO fResult = festivalService.festivalView(f_Num);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("fResult",fResult);
+		return mav;
+	}
+
+	/* 축제 업데이트 데이터 가져오기 */
+	@ResponseBody
+	@RequestMapping(value="/FestivalUpdate",method = RequestMethod.POST)
+	public int FestivalUpdate(FestivalVO festivalvo) {
+		int result = 0; 
+		result = festivalService.festivalUpdate(festivalvo); 
+		return result;
 	}
 }

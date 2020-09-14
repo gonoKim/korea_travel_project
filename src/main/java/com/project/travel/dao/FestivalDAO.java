@@ -30,6 +30,10 @@ public class FestivalDAO {
 	}
 
 	public int festivalDelete(FestivalVO festivalvo) {
-		return sqlSession.delete("festivaldelete", festivalvo);
+		return sqlSession.delete("festivalDelete", festivalvo);
+	}
+
+	public int festivalUpdate(FestivalVO festivalvo) {
+		return sqlSession.update("festivalUpdate", festivalvo);
 	}
 }

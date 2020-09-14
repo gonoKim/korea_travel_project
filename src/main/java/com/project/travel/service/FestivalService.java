@@ -16,4 +16,7 @@ public interface FestivalService {
 	
 	// Festival 삭제
 	int festivalDelete(FestivalVO festivalvo);
+	
+	// festival 수정
+	int festivalUpdate(FestivalVO festivalvo);
 }

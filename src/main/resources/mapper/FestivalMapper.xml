@@ -23,4 +23,8 @@
 	<delete id="festivalDelete">
 	DELETE FROM Festival WHERE F_Num = #{f_Num}
 	</delete>
+	
+	<update id="festivalUpdate">
+	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, F_Place = #{f_Place}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
+	</update>
 </mapper>

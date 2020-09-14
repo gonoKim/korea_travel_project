@@ -39,4 +39,10 @@ public class FestivalServiceImpl implements FestivalService {
 		return festivalDAO.festivalDelete(festivalvo);
 	}
 
+	//Festival 업데이트
+	@Override
+	public int festivalUpdate(FestivalVO festivalvo) {
+		return festivalDAO.festivalUpdate(festivalvo);
+	}
+
 }

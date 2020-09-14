@@ -38,6 +38,10 @@ function FestivalDelete(){
 		   });
 		  } 
 }	
+
+function FestivalUpdate(){
+	location.href = "/Festival/FestivalUpdate?f_Num=${fResult.f_Num}";
+}
 </script>
 </head>
 <body >
@@ -73,7 +77,7 @@ function FestivalDelete(){
 		      <div class="row justify-content-center my-3 ">
             <input type="button" value="Write" class="btn" onclick="FestivalWrite();"/>
             <input type="button" value="Delete" class="btn" onclick="FestivalDelete();"/>
-            <input type="button" value="Update" class="btn" onclick=""/>
+            <input type="button" value="Update" class="btn" onclick="FestivalUpdate();"/>
         </div>
 	</div>
 	</div>
