@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,7 +29,7 @@ public class FestivalController {
 		return mav;
 	}
 
-	/* 축제 쓰기 뷰 */
+	/* 축제 쓰기 */
 	@RequestMapping(value = "/FestivalWrite", method = RequestMethod.GET)
 	public ModelAndView FestivalWrite() {
 		ModelAndView mav = new ModelAndView();
@@ -43,6 +44,8 @@ public class FestivalController {
 		result = festivalService.festivalwrite(festivalvo);
 		return result;
 	}
+	
+	/* 축제 뷰 */
 	@RequestMapping(value="/FestivalView",method = RequestMethod.GET)
 	public ModelAndView festivalView(int f_Num) {
 		FestivalVO fResult = festivalService.festivalView(f_Num);
@@ -50,4 +53,18 @@ public class FestivalController {
 		mav.addObject("fResult",fResult);
 		return mav;
 	}	
+
+	/* 축제 데이터 삭제 */ 
+	@ResponseBody
+	@RequestMapping(value="/FestivalDelete",method = RequestMethod.GET)
+	public void FestivalDelete(
+			@RequestParam(value = "chbox[]") List<String> chArr, FestivalVO festivalvo) {
+		int f_Num = 0;
+		
+		for(String i : chArr) {
+			f_Num =Integer.parseInt(i);
+			festivalvo.setF_Num(f_Num);
+			festivalService.festivalDelete(festivalvo);
+		}
+	}
 }

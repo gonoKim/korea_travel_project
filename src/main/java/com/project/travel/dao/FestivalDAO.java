@@ -28,4 +28,8 @@ public class FestivalDAO {
 		map.put("f_Num", f_Num);
 		return sqlSession.selectOne("festivalView", map);
 	}
+
+	public int festivalDelete(FestivalVO festivalvo) {
+		return sqlSession.delete("festivaldelete", festivalvo);
+	}
 }

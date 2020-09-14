@@ -14,19 +14,29 @@ public class FestivalServiceImpl implements FestivalService {
 	@Autowired
 	FestivalDAO festivalDAO;
 	
+	//Festival 리스트
 	@Override
 	public List<FestivalVO> festivalList() {
 		return festivalDAO.festivalList();
 	}
 
+	
+	//Festival 쓰기
 	@Override
 	public int festivalwrite(FestivalVO festivalvo) {
 		return festivalDAO.festivalwrite(festivalvo);
 	}
 
+	//Festival 뷰
 	@Override
 	public FestivalVO festivalView(int f_Num) {
 		return festivalDAO.festivalView(f_Num);
+	}
+	
+	//Festival 삭제
+	@Override
+	public int festivalDelete(FestivalVO festivalvo) {
+		return festivalDAO.festivalDelete(festivalvo);
 	}
 
 }
