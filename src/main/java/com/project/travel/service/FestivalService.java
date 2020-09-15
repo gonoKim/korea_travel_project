@@ -2,11 +2,15 @@ package com.project.travel.service;
 
 import java.util.List;
 
+import com.project.travel.common.festivalSearch;
 import com.project.travel.vo.FestivalVO;
 
 public interface FestivalService {
 	//Festival 리스트
-	List <FestivalVO> festivalList(); 
+	List <FestivalVO> festivalList(int festivalstartList); 
+	
+	//festival 게시물 개수
+	int getFestivalListCnt(festivalSearch fSearch);
 	
 	// Festival 쓰기
 	int festivalwrite(FestivalVO festivalvo);

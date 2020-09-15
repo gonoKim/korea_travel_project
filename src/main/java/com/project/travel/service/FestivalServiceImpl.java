@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.project.travel.common.festivalSearch;
 import com.project.travel.dao.FestivalDAO;
 import com.project.travel.vo.FestivalVO;
 
@@ -16,10 +17,15 @@ public class FestivalServiceImpl implements FestivalService {
 	
 	//Festival 리스트
 	@Override
-	public List<FestivalVO> festivalList() {
-		return festivalDAO.festivalList();
+	public List<FestivalVO> festivalList(int festivalstartList) {
+		return festivalDAO.festivalList(festivalstartList);
 	}
 
+	//Festival 게시물 개수
+	@Override
+	public int getFestivalListCnt(festivalSearch fSearch) {
+		return festivalDAO.getFestivalListCnt(fSearch);
+	}
 	
 	//Festival 쓰기
 	@Override
@@ -44,5 +50,8 @@ public class FestivalServiceImpl implements FestivalService {
 	public int festivalUpdate(FestivalVO festivalvo) {
 		return festivalDAO.festivalUpdate(festivalvo);
 	}
+
+
+	
 
 }

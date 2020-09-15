@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.travel.common.festivalPagination;
+import com.project.travel.common.festivalSearch;
 import com.project.travel.service.FestivalService;
 import com.project.travel.vo.FestivalVO;
-import com.project.travel.vo.QnAVO;
 
 @Controller
 @RequestMapping("Festival/*")
@@ -23,9 +24,25 @@ public class FestivalController {
 
 	/* 축제 리스트 */
 	@RequestMapping("/FestivalBoard")
-	public ModelAndView FestivalBoard() {
-		List fResult = festivalService.festivalList();
+	public ModelAndView FestivalBoard(
+			@RequestParam(required = false, defaultValue = "1") int festivalpage
+		,   @RequestParam(required = false, defaultValue = "1") int festivalrange
+		, @RequestParam(required = false, defaultValue = "title") String searchType
+		, @RequestParam(required = false) String keyword
+			) {
+		festivalSearch fSearch = new festivalSearch();
+		fSearch.setSearchType(searchType);
+		fSearch.setKeyword(keyword);
+		
+		//전체 게시글 수
+		int festivallistCnt = festivalService.getFestivalListCnt(fSearch);
+		
+		/* festivalPagination fPagination =new festivalPagination(); */
+		fSearch.pageInfo(festivalpage, festivalrange, festivallistCnt);
+		
+		List fResult = festivalService.festivalList(fSearch.getfestivalstartList());
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("fPagination",fSearch);
 		mav.addObject("fResult", fResult);
 		return mav;
 	}

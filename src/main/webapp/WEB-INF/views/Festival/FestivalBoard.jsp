@@ -38,10 +38,52 @@ function FestivalDelete(){
 		   });
 		  } 
 }	
-
-function FestivalUpdate(){
-	location.href = "/Festival/FestivalUpdate?f_Num=${fResult.f_Num}";
+//이전 버튼 이벤트
+function fn_prev(festivalpage, festivalrange, festivalrangeSize) {
+	var festivalpage = ((festivalrange - 2) * festivalrangeSize) + 1;
+	var festivalrange = festivalrange - 1;
+	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
+	url = url + "?festivalpage=" + festivalpage;
+	url = url + "&festivalrange=" + festivalrange;
+	url = url + "&searchType=" + $('#searchType').val();
+	url = url + "&keyword=" + keyword;
+	location.href = url;
 }
+
+
+
+//페이지 번호 클릭
+function fn_pagination(festivalpage, festivalrange, festivalrangeSize, searchType, keyword) {
+	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
+	url = url + "?festivalpage=" + festivalpage;
+	url = url + "&festivalrange=" + festivalrange;
+	url = url + "&searchType=" + $('#searchType').val();
+	url = url + "&keyword =" + keyword;
+	location.href = url;	
+}
+
+//다음 버튼 이벤트
+function fn_next(festivalpage, festivalrange, festivalrangeSize) {
+	var festivalpage = parseInt((festivalrange * festivalrangeSize)) + 1;
+	var festivalrange = parseInt(festivalrange) + 1;
+	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
+	url = url + "?festivalpage=" + festivalpage;
+	url = url + "&festivalrange=" + festivalrange;
+	url = url + "&searchType=" + $('#searchType').val();
+	url = url + "&keyword=" + keyword;
+	location.href = url;
+}
+
+$(document).on('click', '#btnSearch', function(e){
+
+	e.preventDefault();
+	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
+	url = url + "?searchType=" + $('#searchType').val();
+	url = url + "&keyword=" + $('#keyword').val();
+	location.href = url;
+	console.log(url);
+});	
+
 </script>
 </head>
 <body >
@@ -70,14 +112,57 @@ function FestivalUpdate(){
 			</tr>
 		</c:forEach>
 	</table>
-
-
 		</div>
+		
+			<!-- 페이징 시작 -->
+			<div id="paginationBox">
+				<ul class="pagination row justify-content-center my-4">
+					<c:if test="${fPagination.festivalprev}">
+						<li class="page-item"><a class="page-link" href="#"
+							onClick="fn_prev('${fPagination.festivalpage}', '${fPagination.festivalrange}', '${fPagination.festivalrangeSize}', '${fSearch.searchType}', '${fSearch.keyword}')">Previous</a></li>
+					</c:if>
+
+					<c:forEach begin="${fPagination.festivalstartPage}"
+						end="${fPagination.festivalendPage}" var="idx">
+						<li class="page-item <c:out value="${fPagination.festivalpage == idx ? 'active' : ''}"/> ">
+						<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${fPagination.festivalrange}', '${fPagination.festivalrangeSize}', '${fSearch.searchType}', '${fSearch.keyword}')">
+								${idx} </a>
+						</li>
+					</c:forEach>
+
+					<c:if test="${fPagination.festivalnext}">
+						<li class="page-item">
+						<a class="page-link" href="#" onClick="fn_next('${fPagination.festivalrange}', '${fPagination.festivalrange}', '${fPagination.festivalrangeSize}', '${fSearch.searchType}', '${fSearch.keyword}')">Next</a>
+						</li>
+					</c:if>
+				</ul>
+			</div>
+
+			<!-- 페이징 끝 -->
+			
+			<!-- search{s} -->
+
+		<div class="form-group row justify-content-center">
+			<div class="w100" style="padding-right:10px">
+				<select class="form-control form-control-sm" name="searchType" id="searchType">
+					<option value="title">제목</option>
+					<option value="Content">내용</option>
+					<option value="place">장소</option>
+				</select>
+			</div>
+			<div class="w300" style="padding-right:10px">
+				<input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
+			</div>
+			<div>
+				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
+			</div>
+		</div>
+		<!-- search{e} -->
 	<div>
 		      <div class="row justify-content-center my-3 ">
-            <input type="button" value="Write" class="btn" onclick="FestivalWrite();"/>
+            <input type="button" value="Write" class="btn" onclick="window.open('/Festival/FestivalWrite', 'choice', 'scrollbars=no, width=800px, height=600px')"/>
             <input type="button" value="Delete" class="btn" onclick="FestivalDelete();"/>
-            <input type="button" value="Update" class="btn" onclick="FestivalUpdate();"/>
+            
         </div>
 	</div>
 	</div>

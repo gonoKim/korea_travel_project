@@ -20,16 +20,10 @@
 
 <!-- 삭제할 부분 -->
 <script type="text/javascript">
-function boardDelete(){	
-	var chk = confirm("정말 삭제하시겠습니까?");
-	if (chk) {
-		location.href="/qna/QnADelete?qnA_Num=${result.qnA_Num}";
-			}
-						}	
-function QnAUpdate(){
-	
-	location.href = "/qna/QnAUpdate?qnA_Num=${result.qnA_Num }";
+function FestivalUpdate(){
+	location.href = "/Festival/FestivalUpdate?f_Num=${fResult.f_Num}";
 }
+						
 </script>
 </head>
 <body>
@@ -57,7 +51,9 @@ function QnAUpdate(){
          	
 </table>
 <div class="row justify-content-center my-4">
-                     <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
+					<input type="button" value="Update" class="btn" onclick="FestivalUpdate();"/>
+                    <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
+                     
                 </div>
                 
 </form>

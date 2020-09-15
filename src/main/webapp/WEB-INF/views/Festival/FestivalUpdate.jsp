@@ -17,7 +17,7 @@
 
 
 <!--QnA 커스텀 css, js  -->
-<link rel="stylesheet" href="../../../resources/QnA/css/broad.css">
+<!-- <link rel="stylesheet" href="../../../resources/QnA/css/broad.css"> -->
 <!--로컬 js 오류남  -->
 <!--  <script src="../../../resources/QnA/js/jquery.min.js"></script> -->
 <!-- <script src="../../../resources/QnA/js/QnAwrite.js"></script> -->
@@ -48,17 +48,15 @@ function boardValidation(){
 			$("#address").focus();
 			return false;
 		}else {
-		FestivalWrite(subject,content,place,address,f_num);
+		FestivalUpdate(subject,content,place,address,f_num);
 	}
 	
 	}
 	
-
-
-function FestivalWrite(sub,con,pla,add,fnum){
+function FestivalUpdate(sub,con,pla,add,fnum){
 	
 	$.ajax({
-		url : "/Festival/FestivalWrite",
+		url : "/Festival/FestivalUpdate",
 		type:'POST',
 		data : {
 			f_Subject : sub,
@@ -70,7 +68,7 @@ function FestivalWrite(sub,con,pla,add,fnum){
 		success:function(data){
 			if(data == 1){
 				alert("글 등록이 완료되었습니다.");
-				location.href="/Festival/FestivalBoard";
+				location.href="/Festival/FestivalView?f_Num=${fResult.f_Num}";
 			}else {
 				alert("글 등록 실패");
 			}
@@ -89,25 +87,25 @@ function FestivalWrite(sub,con,pla,add,fnum){
     <article class="container row justify-content-center align-items-center" >
       
           
-        <div class="col-sm-6 col-md-offset-3 " >
+        <div class="col-sm-10 col-md-offset-3 " >
           <form>
                 <div class=" text-center text-dark pt-5 " >
                     <h2 class="my-3">Festival Information</h2>
                     </div>
            	
                     <h4 class="my-3">Subject</h4>
-                    <input type="text" class="form-control text-dark" id="subject" placeholder="제목을 입력해 주세요">
+                    <input type="text" class="form-control text-dark" id="subject" placeholder="${fResult.f_Subject}">
            
                                <h4 class="my-3">Content</h4>
-                    <textarea rows="10" cols="20" class="form-control text-dark" id="content"  placeholder="내용를 입력해 주세요"></textarea>
+                    <textarea rows="10" cols="20" class="form-control text-dark" id="content"  placeholder="${fResult.f_Content}"></textarea>
            
                       
                     <h4 class="my-3">Place</h4>
-                    <input type="text" class="form-control text-dark" id="place" placeholder="지역를 입력해 주세요">
+                    <input type="text" class="form-control text-dark" id="place" placeholder="${fResult.f_Place}">
    
    
                     <h4 class="my-3">Address</h4>
-                    <input type="text" class="form-control text-dark" id="address" placeholder="주소를 입력해 주세요">
+                    <input type="text" class="form-control text-dark" id="address" placeholder="${fResult.f_Address}">
    
    <!--              	 <h4 class="my-3">Date</h4>
                     <input type="text" class="form-control text-dark" id="Date" placeholder="작성자를 입력해 주세요">
@@ -122,13 +120,13 @@ function FestivalWrite(sub,con,pla,add,fnum){
                         Reset<i class="fa fa-check spaceLeft"></i>
                     </button>
                      <input type="button" value="Write" class="btn" onclick="boardValidation()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='FestivalBoard'"/>
+                     <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
                 </div>
 </form>
         </div>
 
     </article>
- 	<jsp:include page="../inc/bottom.jsp" />
+ 	<%-- <jsp:include page="../inc/bottom.jsp" /> --%>
 
 </body>
 </html>

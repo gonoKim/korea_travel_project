@@ -69,7 +69,7 @@ function FestivalWrite(sub,con,pla,add){
 		success:function(data){
 			if(data == 1){
 				alert("글 등록이 완료되었습니다.");
-				location.href="/Festival/FestivalBoard";
+				window.close();
 			}else {
 				alert("글 등록 실패");
 			}
@@ -88,7 +88,7 @@ function FestivalWrite(sub,con,pla,add){
     <article class="container row justify-content-center align-items-center" >
       
           
-        <div class="col-sm-6 col-md-offset-3 " >
+        <div class="col-sm-10 col-md-offset-3 " >
           <form>
                 <div class=" text-center text-dark pt-5 " >
                     <h2 class="my-3">Festival Information</h2>
@@ -121,13 +121,12 @@ function FestivalWrite(sub,con,pla,add){
                         Reset<i class="fa fa-check spaceLeft"></i>
                     </button>
                      <input type="button" value="Write" class="btn" onclick="boardValidation()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="javascript:location.href='FestivalBoard'"/>
+                     <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
                 </div>
 </form>
         </div>
-
     </article>
- 	<jsp:include page="../inc/bottom.jsp" />
+ 	<%-- <jsp:include page="../inc/bottom.jsp" /> --%>
 
 </body>
 </html>
