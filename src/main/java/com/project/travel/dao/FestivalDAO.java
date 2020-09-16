@@ -17,10 +17,9 @@ public class FestivalDAO {
 	public SqlSession sqlSession;
 
 	/* Festival 리스트 & 페이징*/
-	public List<FestivalVO> festivalList(int festivalstartList){
+	public List<FestivalVO> festivalList(festivalSearch fSearch){
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("festivalstartList", festivalstartList);
-		
+		map.put("festivalstartList", fSearch.getfestivalstartList());
 		return sqlSession.selectList("festivalList", map);
 	}
 	

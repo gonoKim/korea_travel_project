@@ -33,17 +33,18 @@ public class FestivalController {
 		festivalSearch fSearch = new festivalSearch();
 		fSearch.setSearchType(searchType);
 		fSearch.setKeyword(keyword);
-		
 		//전체 게시글 수
 		int festivallistCnt = festivalService.getFestivalListCnt(fSearch);
 		
 		/* festivalPagination fPagination =new festivalPagination(); */
 		fSearch.pageInfo(festivalpage, festivalrange, festivallistCnt);
 		
-		List fResult = festivalService.festivalList(fSearch.getfestivalstartList());
+		/*
+		 * List fResult = festivalService.festivalList(fSearch.getfestivalstartList());
+		 */
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("fPagination",fSearch);
-		mav.addObject("fResult", fResult);
+		mav.addObject("fResult", festivalService.festivalList(fSearch));
 		return mav;
 	}
 

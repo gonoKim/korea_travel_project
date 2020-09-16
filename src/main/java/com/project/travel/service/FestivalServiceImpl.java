@@ -17,8 +17,8 @@ public class FestivalServiceImpl implements FestivalService {
 	
 	//Festival 리스트
 	@Override
-	public List<FestivalVO> festivalList(int festivalstartList) {
-		return festivalDAO.festivalList(festivalstartList);
+	public List<FestivalVO> festivalList(festivalSearch fSearch) {
+		return festivalDAO.festivalList(fSearch);
 	}
 
 	//Festival 게시물 개수

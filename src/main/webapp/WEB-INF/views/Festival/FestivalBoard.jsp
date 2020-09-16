@@ -39,7 +39,7 @@ function FestivalDelete(){
 		  } 
 }	
 //이전 버튼 이벤트
-function fn_prev(festivalpage, festivalrange, festivalrangeSize) {
+function fn_prev(festivalpage, festivalrange, festivalrangeSize, searchType, keyword) {
 	var festivalpage = ((festivalrange - 2) * festivalrangeSize) + 1;
 	var festivalrange = festivalrange - 1;
 	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
@@ -63,7 +63,7 @@ function fn_pagination(festivalpage, festivalrange, festivalrangeSize, searchTyp
 }
 
 //다음 버튼 이벤트
-function fn_next(festivalpage, festivalrange, festivalrangeSize) {
+function fn_next(festivalpage, festivalrange, festivalrangeSize, searchType, keyword) {
 	var festivalpage = parseInt((festivalrange * festivalrangeSize)) + 1;
 	var festivalrange = parseInt(festivalrange) + 1;
 	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
@@ -75,7 +75,6 @@ function fn_next(festivalpage, festivalrange, festivalrangeSize) {
 }
 
 $(document).on('click', '#btnSearch', function(e){
-
 	e.preventDefault();
 	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
 	url = url + "?searchType=" + $('#searchType').val();
