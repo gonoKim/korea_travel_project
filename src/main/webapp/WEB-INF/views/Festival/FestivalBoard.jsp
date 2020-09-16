@@ -80,7 +80,7 @@ $(document).on('click', '#btnSearch', function(e){
 	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
 	url = url + "?searchType=" + $('#searchType').val();
 	url = url + "&keyword=" + $('#keyword').val();
-	location.href = url;
+	location.href = encodeURI(url);//encodeURI;
 	console.log(url);
 });	
 
