@@ -74,6 +74,7 @@ function fn_next(festivalpage, festivalrange, festivalrangeSize, searchType, key
 	location.href = url;
 }
 
+//검색 
 $(document).on('click', '#btnSearch', function(e){
 	e.preventDefault();
 	var url = "${pageContext.request.contextPath}/Festival/FestivalBoard";
@@ -144,13 +145,13 @@ $(document).on('click', '#btnSearch', function(e){
 		<div class="form-group row justify-content-center">
 			<div class="w100" style="padding-right:10px">
 				<select class="form-control form-control-sm" name="searchType" id="searchType">
-					<option value="title">제목</option>
-					<option value="Content">내용</option>
-					<option value="place">장소</option>
+					<option value="F_Subject">제목</option>
+					<option value="F_Content">내용</option>
+					<option value="F_Place">장소</option>
 				</select>
 			</div>
 			<div class="w300" style="padding-right:10px">
-				<input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
+				<input type="text" class="form-control form-control-sm" name="keyword" id="keyword" value="${keyword }">
 			</div>
 			<div>
 				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>

@@ -104,6 +104,7 @@ public class festivalPagination {
 		this.festivalnext = festivalnext;
 	}
 
+	/* 순서대로 현재 페이지 , 현재 페이지 범위, 게시물 총 개수 */
 	public void pageInfo(int festivalpage, int festivalrange, int festivallistCnt) {
 
 		this.festivalpage = festivalpage;
