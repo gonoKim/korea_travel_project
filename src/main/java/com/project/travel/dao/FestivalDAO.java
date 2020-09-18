@@ -19,12 +19,16 @@ public class FestivalDAO {
 	/* Festival 리스트 & 페이징*/
 	public List<FestivalVO> festivalList(festivalSearch fSearch){
 		HashMap<String, Object> map = new HashMap<String, Object>();
+		/* 처음 페이지 리스트 */
 		map.put("festivalstartList", fSearch.getfestivalstartList());
+		map.put("searchType", fSearch.getSearchType());
+		map.put("keyword", fSearch.getKeyword());
 		return sqlSession.selectList("festivalList", map);
 	}
 	
 	/* Festival 게시물 갯수 */
 	public int getFestivalListCnt(festivalSearch fSearch) {
+		
 		return sqlSession.selectOne("getFestivalListCnt", fSearch);
 	}
 

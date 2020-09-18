@@ -7,7 +7,7 @@ import com.project.travel.vo.FestivalVO;
 
 public interface FestivalService {
 	//Festival 리스트
-	List <FestivalVO> festivalList(festivalSearch fSearch); 
+	List <FestivalVO> festivalList(festivalSearch fSearch , int festivalpage, int festivalrange,  String searchType, String keyword); 
 	
 	//festival 게시물 개수
 	int getFestivalListCnt(festivalSearch fSearch);
@@ -23,4 +23,6 @@ public interface FestivalService {
 	
 	// festival 수정
 	int festivalUpdate(FestivalVO festivalvo);
+	
+	
 }

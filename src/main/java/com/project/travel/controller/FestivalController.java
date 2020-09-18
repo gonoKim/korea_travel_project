@@ -28,23 +28,19 @@ public class FestivalController {
 			@RequestParam(required = false, defaultValue = "1") int festivalpage
 		,   @RequestParam(required = false, defaultValue = "1") int festivalrange
 		, @RequestParam(required = false, defaultValue = "title") String searchType
-		, @RequestParam(required = false) String keyword
+		, @RequestParam(required = false) String keyword, 
+		festivalSearch fSearch
 			) {
-		festivalSearch fSearch = new festivalSearch();
-		fSearch.setSearchType(searchType);
-		fSearch.setKeyword(keyword);
-		//전체 게시글 수
-		int festivallistCnt = festivalService.getFestivalListCnt(fSearch);
-		
-		/* festivalPagination fPagination =new festivalPagination(); */
-		fSearch.pageInfo(festivalpage, festivalrange, festivallistCnt);
-		
 		/*
-		 * List fResult = festivalService.festivalList(fSearch.getfestivalstartList());
+		 * festivalSearch fSearch = new festivalSearch();
+		 * fSearch.setSearchType(searchType); fSearch.setKeyword(keyword);
 		 */
+		
+		List fResult = festivalService.festivalList(fSearch, festivalrange, festivalrange, searchType, keyword);
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("fPagination",fSearch);
-		mav.addObject("fResult", festivalService.festivalList(fSearch));
+		mav.addObject("fResult", fResult);
 		return mav;
 	}
 
