@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.project.travel.common.festivalSearch;
 import com.project.travel.dao.FestivalDAO;
 import com.project.travel.vo.FestivalVO;
+import com.project.travel.vo.fSearchVO;
 
 @Service
 public class FestivalServiceImpl implements FestivalService {
@@ -17,16 +18,24 @@ public class FestivalServiceImpl implements FestivalService {
 	
 	//Festival 리스트
 	@Override
-	public List<FestivalVO> festivalList(festivalSearch fSearch, int festivalpage, int festivalrange, String searchType, String keyword) {
+	public fSearchVO festivalList(int festivalpage, int festivalrange, String searchType, String keyword) {
 		/* festivalSearch fSearch = new festivalSearch(); */
-
+		festivalSearch fSearch = new festivalSearch();
+		fSearch.setSearchType(searchType);
+		fSearch.setKeyword(keyword);
+		
+		
 		//전체 게시글 수
 		int festivallistCnt = festivalDAO.getFestivalListCnt(fSearch);
 		// 페이징 로직
 		fSearch.pageInfo(festivalpage, festivalrange, festivallistCnt);
-		fSearch.setSearchType(searchType);
-		fSearch.setKeyword(keyword);
-		return festivalDAO.festivalList(fSearch);
+
+		List<FestivalVO> fesivalVO= festivalDAO.festivalList(fSearch);
+		fSearchVO fSearchvo =new fSearchVO();
+		fSearchvo.setfSearch(fSearch);
+		fSearchvo.setfList(fesivalVO);
+		return fSearchvo;
+		
 	}
 
 	//Festival 게시물 개수

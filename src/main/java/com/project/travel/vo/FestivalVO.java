@@ -9,6 +9,8 @@ public class FestivalVO {
 	private	String F_Place;	//축제 장소
 	private	String F_Address;	//축제 주소
 	private	Date F_Date;	//축제 일시
+
+
 	public int getF_Num() {
 		return F_Num;
 	}
@@ -45,11 +47,5 @@ public class FestivalVO {
 	public void setF_Date(Date f_Date) {
 		F_Date = f_Date;
 	}
-	@Override
-	public String toString() {
-		return "Festival [F_Num=" + F_Num + ", F_Subject=" + F_Subject + ", F_Content=" + F_Content + ", F_Place="
-				+ F_Place + ", F_Address=" + F_Address + ", F_Date=" + F_Date + "]";
-	}
-	
-	
+
 }

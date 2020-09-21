@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.project.travel.common.festivalPagination;
-import com.project.travel.common.festivalSearch;
 import com.project.travel.service.FestivalService;
 import com.project.travel.vo.FestivalVO;
+import com.project.travel.vo.fSearchVO;
 
 @Controller
 @RequestMapping("Festival/*")
@@ -28,19 +27,18 @@ public class FestivalController {
 			@RequestParam(required = false, defaultValue = "1") int festivalpage
 		,   @RequestParam(required = false, defaultValue = "1") int festivalrange
 		, @RequestParam(required = false, defaultValue = "title") String searchType
-		, @RequestParam(required = false) String keyword, 
-		festivalSearch fSearch
+		, @RequestParam(required = false) String keyword
 			) {
 		/*
 		 * festivalSearch fSearch = new festivalSearch();
 		 * fSearch.setSearchType(searchType); fSearch.setKeyword(keyword);
 		 */
 		
-		List fResult = festivalService.festivalList(fSearch, festivalrange, festivalrange, searchType, keyword);
+		fSearchVO fSearchvo = festivalService.festivalList(festivalpage, festivalrange, searchType, keyword);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("fPagination",fSearch);
-		mav.addObject("fResult", fResult);
+		mav.addObject("fPagination", fSearchvo.getfSearch());
+		mav.addObject("fResult", fSearchvo.getfList());
 		return mav;
 	}
 

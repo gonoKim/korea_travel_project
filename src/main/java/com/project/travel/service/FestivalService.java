@@ -1,13 +1,12 @@
 package com.project.travel.service;
 
-import java.util.List;
-
 import com.project.travel.common.festivalSearch;
 import com.project.travel.vo.FestivalVO;
+import com.project.travel.vo.fSearchVO;
 
 public interface FestivalService {
 	//Festival 리스트
-	List <FestivalVO> festivalList(festivalSearch fSearch , int festivalpage, int festivalrange,  String searchType, String keyword); 
+	fSearchVO festivalList(int festivalpage, int festivalrange,  String searchType, String keyword); 
 	
 	//festival 게시물 개수
 	int getFestivalListCnt(festivalSearch fSearch);
