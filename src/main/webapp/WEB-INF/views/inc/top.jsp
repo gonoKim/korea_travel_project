@@ -32,7 +32,7 @@
 <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
 	<div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
 		<a class="p-2 text-muted nav-link" href="/main/main">Home</a>
-		<a class="p-2 text-muted nav-link" href="../Menu/Gallery/gallery.html">Gallery</a>
+		<a class="p-2 text-muted nav-link" href="/gallery/PhotoBoard">Gallery</a>
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
 				<a class="nav-link p-2 text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Support </a>

@@ -7,8 +7,7 @@
     <meta charset="utf-8">
     <title>Gallery</title>
 	<link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
-	<link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
-	<link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >
+    <link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
 	<script src="../../../../resources/assets/dist/js/jquery-3.5.1.min.js"></script>
 	<script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
 	<script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
