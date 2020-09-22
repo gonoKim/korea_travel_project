@@ -3,18 +3,18 @@ package com.project.travel.common;
 public class PaginationNotice {
 
 	private int noticelistSize = 10; // 한 페이지당 보여질 리스트의 개수 
-	//초기값으로 목록개수를 10으로 셋팅
-	private int noticerangeSize = 10; // 	한 페이지 범위에 보여질 페이지의 개수
-	 //초기값으로 페이지범위를 10으로 셋팅
-	private int noticepage;	//현재 목록의 페이지 번호 
-	private int noticerange;	//각 페이지 범위 시작 번호 
-	private int noticelistCnt;	//전체 개시물의 개수 
-	private int noticepageCnt;	// 전체 페이지 범위의 개수 
+	// 초기값으로 목록개수를 10으로 셋팅
+	private int noticerangeSize = 5; // 한 페이지 범위에 보여질 페이지의 개수
+	// 초기값으로 페이지범위를 10으로 셋팅
+	private int noticepage;			//현재 목록의 페이지 번호 
+	private int noticerange;		//각 페이지 범위 시작 번호 
+	private int noticelistCnt;		//전체 개시물의 개수 
+	private int noticepageCnt;		// 전체 페이지 범위의 개수 
 	private int noticestartPage;	//각 페이지 범위 시작 번호 
 	private int noticestartList;	//각 페이지 범위 
 	private int noticeendPage;		//각 페이지 범위 끝 번호
-	private boolean noticeprev;	//이전 페이지 여부 
-	private boolean noticenext;	//다음 페이지 여부 
+	private boolean noticeprev;		//이전 페이지 여부 
+	private boolean noticenext;		//다음 페이지 여부 
 	
 	public int getNoticelistSize() {
 		return noticelistSize;
@@ -105,7 +105,6 @@ public class PaginationNotice {
 	}
 
 	public void pageInfo(int noticepage, int noticerange, int noticelistCnt) {
-
 		this.noticepage = noticepage;
 		this.noticerange = noticerange;
 		this.noticelistCnt = noticelistCnt;
@@ -125,8 +124,6 @@ public class PaginationNotice {
 		//이전 버튼 상태
 		this.noticeprev = noticerange == 1 ? false : true;
 
-		//
-		
 		//다음 버튼 상태
 		this.noticenext = noticepageCnt > noticeendPage ? true : false;
 		if (this.noticeendPage > this.noticepageCnt) {

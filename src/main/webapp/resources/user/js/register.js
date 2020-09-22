@@ -103,8 +103,6 @@ function fn_idChk(){
 
 // 전화번호 중복 확인 체크
 function phonChk(){
-	var tel = $("#inputTel").val();
-	
 	$.ajax({
 		url : "/user/phoneChk",
 		type : "POST",

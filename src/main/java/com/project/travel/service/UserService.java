@@ -22,5 +22,17 @@ public interface UserService {
 	public UserVO findPw(UserVO vo) throws Exception;
 	
 	// 비밀번호 찾기 후 변경
-	public void changePwd(UserVO vo) throws Exception;
+	public int changePwd(UserVO vo) throws Exception;
+	
+	// 마이페이지 뷰
+	public UserVO getMyPageView(String M_Id) throws Exception;
+	
+	// 전화번호 중복 체크 (마이페이지)
+	public int myPagePhoneChk(UserVO vo) throws Exception;
+	
+	// 회원정보 수정
+	public void userUpdate(UserVO vo) throws Exception; 
+	
+	// 회원 탈퇴
+	public int delUser(UserVO vo) throws Exception;
 }

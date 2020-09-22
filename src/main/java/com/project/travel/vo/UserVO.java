@@ -3,7 +3,6 @@ package com.project.travel.vo;
 import java.util.Date;
 
 public class UserVO {
-
 	private String M_Id;
 	private String M_Pw;
 	private String M_Fname;
@@ -13,7 +12,7 @@ public class UserVO {
 	private int M_Month;
 	private int M_Day;
 	private Date M_Date;
-	private int M_Grade;
+	private String M_Grade;
 	
 	public String getM_Id() {
 		return M_Id;
@@ -69,10 +68,10 @@ public class UserVO {
 	public void setM_Date(Date m_Date) {
 		M_Date = m_Date;
 	}
-	public int getM_Grade() {
+	public String getM_Grade() {
 		return M_Grade;
 	}
-	public void setM_Grade(int m_Grade) {
+	public void setM_Grade(String m_Grade) {
 		M_Grade = m_Grade;
 	}
 }

@@ -89,9 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #999;
 }
 
-/*
- * Footer
- */
+/* Footer */
 .blog-footer {
   padding: 2.5rem 0;
   color: #999;
@@ -105,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* etc */
 body{
-  height: 150vh;
+  height: 120vh;
   background: url('/resources/main/Images/bg_01.png') no-repeat center/cover;
 }
 #Main{width: 220px;}
@@ -122,32 +120,32 @@ body{
 #Photo_BannerBox{height: 302px;}
 #Photo_carousel .carousel-inner > .carousel-item >img{height: 302px;}
 
-#QnA_Box{height: 302px;}
-#QnA_Box a{
+#NB_Box{height: 302px;}
+#NB_Box a{
   text-decoration:none;
   color: black;
 }
-#QnA_Box table{
+#NB_Box table{
   margin-left: 4%;
   margin-right: 4%;
   margin-top: 2.5%;
 }
-#QnA_Box td{
+#NB_Box td{
   padding: 13px;
-  width: 36.2%;
+  width: 495px;
   display:block;
   overflow: hidden; 
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#QnA_Box h3{
+#NB_Box h3{
   width: 96%;
   overflow: hidden; 
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#QnA_Box #border_Delete{border-top: 0px;}
-#QnA_Box .title_color{color: #47C83E;}
+#NB_Box #border_Delete{border-top: 0px;}
+#NB_Box .title_color{color: #47C83E;}
 
 /* media */
 @media screen and (max-width:1199px){
@@ -155,13 +153,13 @@ body{
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 523px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 252px;}
   #Photo_BannerBox{height: 252px;}
-  #QnA_Box td{width: 410px;}
+  #NB_Box td{width: 410px;}
 }
 @media screen and (max-width:991px){
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 388px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 184px;}
   #Photo_BannerBox{height: 184px;}
-  #QnA_Box td{width: 300px;}
+  #NB_Box td{width: 300px;}
 }
 @media screen and (max-width:767px){
   body{height: 180vh;}
@@ -171,79 +169,82 @@ body{
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 286px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 285px;}
   #Photo_BannerBox{height: 285px;}
-  #QnA_Box td{width: 465px;}
+  #NB_Box td{width: 465px;}
 }
 @media screen and (max-width:575px){
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 306px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 305px;}
   #Photo_BannerBox{height: 305px;}
-  #QnA_Box td{width: 500px;}
+  #NB_Box td{width: 500px;}
 }
-@media screen and (max-width:560px){#QnA_Box td{width: 485px;}}
+@media screen and (max-width:560px){#NB_Box td{width: 485px;}}
 @media screen and (max-width:540px){
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 286px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 285px;}
   #Photo_BannerBox{height: 285px;}
-  #QnA_Box td{width: 470px;}
+  #NB_Box td{width: 470px;}
 }
-@media screen and (max-width:520px){#QnA_Box td{width: 450px;}}
+@media screen and (max-width:520px){#NB_Box td{width: 450px;}}
 @media screen and (max-width:510px){
   body{height: 160vh;}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 270px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 268px;}
   #Photo_BannerBox{height: 268px;}
-  #QnA_Box td{width: 440px;}
+  #NB_Box td{width: 440px;}
 }
-@media screen and (max-width:500px){#QnA_Box td{width: 430px;}}
-@media screen and (max-width:490px){#QnA_Box td{width: 420px;}}
-@media screen and (max-width:480px){#QnA_Box td{width: 410px;}}
+@media screen and (max-width:500px){#NB_Box td{width: 430px;}}
+@media screen and (max-width:490px){#NB_Box td{width: 420px;}}
+@media screen and (max-width:480px){#NB_Box td{width: 410px;}}
 @media screen and (max-width:470px){
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 247px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 246px;}
   #Photo_BannerBox{height: 246px;}
-  #QnA_Box td{width: 400px;}
+  #NB_Box td{width: 400px;}
 }
-@media screen and (max-width:460px){#QnA_Box td{width: 390px;}}
-@media screen and (max-width:450px){#QnA_Box td{width: 380px;}}
+@media screen and (max-width:460px){#NB_Box td{width: 390px;}}
+@media screen and (max-width:450px){#NB_Box td{width: 380px;}}
 @media screen and (max-width:440px){
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 230px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 229px;}
   #Photo_BannerBox{height: 229px;}
-  #QnA_Box td{width: 370px;}
+  #NB_Box td{width: 370px;}
 }
-@media screen and (max-width:430px){#QnA_Box td{width: 360px;}}
-@media screen and (max-width:420px){#QnA_Box td{width: 350px;}}
+@media screen and (max-width:430px){#NB_Box td{width: 360px;}}
+@media screen and (max-width:420px){#NB_Box td{width: 350px;}}
 @media screen and (max-width:414px){
   #Main{width: 100%}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 216px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 214px;}
   #Photo_BannerBox{height: 214px;}
-  #QnA_Box td{width: 344px;}
+  #NB_Box td{width: 344px;}
 }
-@media screen and (max-width:400px){#QnA_Box td{width: 330px;}}
-@media screen and (max-width:390px){#QnA_Box td{width: 320px;}}
+@media screen and (max-width:400px){#NB_Box td{width: 330px;}}
+@media screen and (max-width:390px){#NB_Box td{width: 320px;}}
 @media screen and (max-width:375px){
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 194px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 192px;}
   #Photo_BannerBox{height: 192px;}
-  #QnA_Box td{width: 315px;}
+  #NB_Box td{width: 310px;}
 }
-@media screen and (max-width:360px){#QnA_Box td{width: 300px;}}
-@media screen and (max-width:350px){#QnA_Box td{width: 290px;}}
-@media screen and (max-width:340px){#QnA_Box td{width: 280px;}}
+@media screen and (max-width:360px){#NB_Box td{width: 300px;}}
+@media screen and (max-width:350px){#NB_Box td{width: 290px;}}
+@media screen and (max-width:340px){#NB_Box td{width: 280px;}}
 @media screen and (max-width:334px){
   #myPage_btn1{display: none;}
   #myPage_btn2{display: inline;}
 }
-@media screen and (max-width:340px){#QnA_Box td{width: 270px;}}
+@media screen and (max-width:340px){#NB_Box td{width: 270px;}}
 @media screen and (max-width:320px){
   body{height: 140vh;}
   #Banner_carousel .carousel-inner > .carousel-item >img{height: 163px;}
   #Photo_carousel .carousel-inner > .carousel-item >img{height: 162px;}
   #Photo_BannerBox{height: 162px;}
-  #QnA_Box td{width: 260px;}
+  #NB_Box td{width: 260px;}
 }
+@media screen and (max-width:310px){#NB_Box td{width: 250px;}}
+@media screen and (max-width:300px){#NB_Box td{width: 240px;}}
+@media screen and (max-width:290px){#NB_Box td{width: 230px;}}
 @media screen and (max-width:280px){
-	#navbar_custom{padding: 0;}
-	#QnA_Box td{width: 220px;}
+  #navbar_custom{padding: 0;}
+  #NB_Box td{width: 220px;}
 }

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
 
 <!doctype html>
 <html lang="ko">
@@ -29,62 +28,14 @@
     
     <!-- Custom styles for this template -->
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/font-css.css">
-
-    <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/main/css/area.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/main/css/blog.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
-     <%--  <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-	      <div class="col-4 pt-1">
-	      	<c:if test="${user == null}">
-	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn_left">Sign in</a>
-           	</c:if>
-	      </div>
-	      
-          <div class="col-4 text-center">
-            <a href="/main/main"><img src="${pageContext.request.contextPath}/resources/main/Images/Main.png" id="Main"></a>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-          	<c:if test="${user == null}">
-	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn">Sign in</a>
-	            <a class="btn btn-sm btn-outline-secondary" href="/user/Sign_Up/register">Sign up</a>
-	        </c:if>
-			<c:if test="${user != null }">
-				<div>
-					<button id="nickname" class="btn" disabled>${user.m_Fname} ${user.m_Lname}</button>
-					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">Logout</button>
-				</div>
-			</c:if>
-          </div>
-        </div>
-      </header>
-      
-      <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
-        <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
-          <a class="p-2 text-muted nav-link" href="/main/main">Home</a>
-          <a class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/gallery/PhotoBoard">Gallery</a>
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link p-2 text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Support
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="${pageContext.request.contextPath}/notice/NoticeBoard">Notice</a>
-                <a class="dropdown-item" href="${pageContext.request.contextPath}/qna/QnABoard">QnA</a>
-              </div>
-            </li>
-          </ul>
-          <a id="myPage_btn1" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">My Page</a>
-          <a id="myPage_btn2" class="p-2 text-muted nav-link" href="../Menu/Mypage/my_page.html">Profile</a>
-        </div>
-      </nav> --%>
-      
-    <!-- 네비게이션  -->  
-	<jsp:include page="../inc/top.jsp" />
+    
+      <jsp:include page="../inc/top.jsp"/>
 
       <div id="Banner_carousel" class="carousel slide" data-ride="carousel" data-interval="3000" pause="hover">
         <ol class="carousel-indicators">
@@ -211,20 +162,19 @@
         
         <div class="col-md-6">
           <h5>Notice</h5>
-          <div id="QnA_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div id="NB_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <table class="table table-sm">
-				<tr><td id="border_Delete"><a href="/qna/QnAView?qnaNum=${qnaList[0].qnANum}"><h3><font class="title_color">[공지]</font> ${qnaList[0].qnaSubject}</h3></a></td></tr>
-				<c:forEach items="${qnaList}" var="qnaList" begin="1">
-					<tr><td><a href="/qna/QnAView?qnaNum=${qnaList.qnANum}"><font class="title_color">[공지]</font> ${qnaList.qnaSubject}</a></td></tr>
+				<tr><td id="border_Delete"><a href="/notice/NoticeView?NB_Num=${nbList[0].NB_Num}"><h3><font class="title_color">[공지]</font> ${nbList[0].NB_Subject}</h3></a></td></tr>
+				<c:forEach items="${nbList}" var="nbList" begin="1">
+					<tr><td><a href="/notice/NoticeView?NB_Num=${nbList.NB_Num}"><font class="title_color">[공지]</font> ${nbList.NB_Subject}</a></td></tr>
 				</c:forEach>
 			</table>
           </div>
         </div>
         
       </div>
-      	
-      	<jsp:include page="../inc/bottom.jsp" />
-    
     </div>
+
+  	<jsp:include page="../inc/bottom.jsp"/>
   </body>
 </html>

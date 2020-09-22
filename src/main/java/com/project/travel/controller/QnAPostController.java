@@ -14,17 +14,14 @@ import com.project.travel.vo.QnAVO;
 @Controller
 @RequestMapping("jquery/*")
 public class QnAPostController {
-	/* json을 통한 데이터 통신
-	 *  jQuery ajax를 이용한 POST
-	 *  */
+	/* json을 통한 데이터 통신 jQuery ajax를 이용한 POST */
 	@Autowired
 	QnAService qnaService;
 	
 	@Autowired
 	QnACommentService qnaCService;
 	
-	
-	//QnA쓰기 데이터 받 컨트롤러
+	// QnA 쓰기 데이터 받 컨트롤러
 	@RequestMapping(value="jquery/QnAWrite",method =  RequestMethod.POST)
 	@ResponseBody
 	public int QnAWrite(QnAVO qnavo) {
@@ -32,7 +29,8 @@ public class QnAPostController {
 		result = qnaService.QnAWrite(qnavo); 
 		return result;
 	}
-//	QnA업데이트 데이터 받는컨트롤러
+	
+	// QnA 업데이트 데이터 받는컨트롤러
 	@RequestMapping(value="jquery/QnAUpdate",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnAUpdate(QnAVO qnavo) {
@@ -41,7 +39,7 @@ public class QnAPostController {
 		return result;
 	}
 
-	/* qna댓글 받는 컨트롤러 */
+	// QnA 댓글 받는 컨트롤러
 	@RequestMapping(value="jquery/QnACWrite",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnACWrite(QnACommentVO qnaCvo) {
@@ -50,7 +48,7 @@ public class QnAPostController {
 		return result;
 	}
 
-	/* QnA수정 받는 컨트롤러 */
+	// QnA 수정 받는 컨트롤러
 	@RequestMapping(value="jquery/QnACUpdate",method = RequestMethod.POST)
 	@ResponseBody
 	public int QnACUpdate(QnACommentVO qnaCvo) {

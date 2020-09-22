@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>QnABoard</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap-4.5.0.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/dist/css/area.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/dist/css/blog.css" >
+<link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.5.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/dist/js/popper-1.16.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
