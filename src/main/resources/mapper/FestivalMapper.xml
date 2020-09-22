@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.FestivalMapper">
+	<!-- 축제 데이터 리스트 -->
+	<select id="festivalList" resultType="com.project.travel.vo.FestivalVO">
+		SELECT * FROM Festival 
+		<!-- <trim> : 하위 <if>에서 조건이 맞는 조건절이 있을 경우 WHERE 키워드를 생성합니다. -->
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+		<!-- <if>  : 조건이 맞을 경우 조건절을 생성합니다. -->
+			<!-- 축제 제목 검색-->
+			<if test="searchType=='F_Subject' and keyword != null and keyword != '' ">
+				AND F_Subject LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<!-- 축제 내용 검색 -->
+			<if test="searchType=='F_Content' and keyword != null and keyword != '' ">
+				AND F_Content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			
+			<!-- 축제 장소 검색 -->
+			<if test="searchType=='F_Place' and keyword != null and keyword != '' ">
+				AND F_Place LIKE CONCAT('%', #{keyword}, '%')
+			</if>	
+		</trim>
+		ORDER BY F_Num DESC
+		LIMIT #{festivalstartList}, 10;
+	</select>
+
+	<!-- 게시물 갯수 -->
+	<select id="getFestivalListCnt" resultType="int">
+		SELECT count(*) as festivalListCnt FROM Festival
+			<trim prefix="WHERE" prefixOverrides="AND|OR">
+		<if test="keyword != null and keyword != '' ">
+			<if test="searchType=='F_Subject'">
+				AND F_Subject LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='F_Content'">
+				AND F_Content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='F_Place'">
+				AND F_Place LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+      </if>
+	</trim>		
+	</select>
+	
+	<!-- 축제 작성 -->
+	<insert id="festivalwrite">
+		INSERT INTO Festival (F_Num,F_Subject,F_Content,F_Place,F_Address,F_Date)
+		VALUES(#{f_Num},#{f_Subject},#{f_Content},#{f_Place},#{f_Address},now());
+	</insert>
+	
+	<!-- 축제 뷰 -->
+	<select id="festivalView"
+		resultType="com.project.travel.vo.FestivalVO">
+		SELECT * FROM Festival WHERE F_Num = #{f_Num};
+	</select>
+
+	<!-- 축제 삭제 -->
+	<delete id="festivalDelete">
+	DELETE FROM Festival WHERE F_Num = #{f_Num}
+	</delete>
+	
+	<!-- 축제 업데이트 -->
+	<update id="festivalUpdate">
+	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, F_Place = #{f_Place}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
+	</update>
+</mapper>

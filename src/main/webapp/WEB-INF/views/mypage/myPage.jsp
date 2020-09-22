@@ -50,12 +50,6 @@
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#mInfo">Info</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#myPost">Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#myComment">Comment</a>
-          </li>
         </ul>
       
         <!-- Tab panes -->
@@ -228,78 +222,6 @@
             <!-- //mInfo_container -->
             
           </div>
-          <!-- //mInfo -->
-
-          <div id="myPost" class="container tab-pane fade"><br>
-            <div class="container mt-3 mPost">
-              <table class="table mPosttbl">
-                    <thead>
-                      <tr class="text-center d-flex">
-                          <th class="col-1">번호</th>
-                          <th class="col-8">제목</th>
-                          <th class="col-2">작성일</th>
-                          <th class="col-1">조회</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="d-flex">
-                        <td class="col-1 text-center">2</td>
-                        <td class="col-8"><a href="#">제목입니다. 제목입니다.</a></td>
-                        <td class="col-2 text-center">2020.07.29.</td>
-                        <td class="col-1 text-center">2</td>
-                    </tr>
-                      <tr class="d-flex">
-                          <td class="col-1 text-center">1</td>
-                          <td class="col-8"><a href="#">제목입니다.</a></td>
-                          <td class="col-2 text-center">2020.07.29.</td>
-                          <td class="col-1 text-center">1</td>
-                      </tr>
-                  </tbody>
-              </table>
-              <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </div>
-            <!-- //.mPost -->
-          </div>
-          <!-- //#myPost -->
-
-          <div id="myComment" class="container tab-pane fade"><br>
-            <div class="container mt-3 mComment">
-              <table class="table mCommenttbl">
-                    <thead>
-                      <tr class="text-center d-flex">
-                          <th class="col-9">댓글</th>
-                          <th class="col-3">작성일</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="d-flex">
-                        <td class="col-9"><a href="#">작성한 댓글. 작성한 댓글.</a></td>
-                        <td class="col-3 text-center">2020.07.29.</td>
-                      </tr>
-                      <tr class="d-flex">
-                          <td class="col-9"><a href="#">작성한 댓글.</a></td>
-                          <td class="col-3 text-center">2020.07.29.</td>
-                      </tr>
-                  </tbody>
-              </table>
-              <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </div>
-            <!-- //.mComment -->
-          </div>
-          <!-- //#myComment -->
-
         </div>
         <!-- //tab-content -->
         

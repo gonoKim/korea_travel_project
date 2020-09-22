@@ -43,6 +43,10 @@
 			</li>
 		</ul>
 		
+		<c:if test="${user.m_Grade == 'admin'}">
+			<a id="myPage_btn1" class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/Festival/FestivalBoard">setUp</a>
+		</c:if>
+		
 		<c:if test="${user != null }">
 			<a id="myPage_btn1" class="p-2 text-muted nav-link" href="/mypage/myPage">My Page</a>
 			<a id="myPage_btn2" class="p-2 text-muted nav-link" href="/mypage/myPage">Profile</a>
