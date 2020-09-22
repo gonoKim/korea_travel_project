@@ -69,6 +69,7 @@ function FestivalWrite(sub,con,pla,add){
 		success:function(data){
 			if(data == 1){
 				alert("글 등록이 완료되었습니다.");
+				opener.parent.location.reload();
 				window.close();
 			}else {
 				alert("글 등록 실패");
