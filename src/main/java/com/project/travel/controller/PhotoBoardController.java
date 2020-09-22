@@ -1,10 +1,10 @@
 package com.project.travel.controller;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.project.travel.service.PhotoBoardService;
 import com.project.travel.utils.UploadFileUtils;
 import com.project.travel.vo.PhotoBoardVO;
@@ -47,16 +48,17 @@ public class PhotoBoardController {
 		
 		// 200922s
 		@RequestMapping(value="gallery/PhotoWrite",method = RequestMethod.POST)
-		public String postPhotowrite(PhotoBoardVO vo, MultipartFile file) throws Exception {
+		public String postPhotowrite(PhotoBoardVO vo, MultipartFile file, HttpServletRequest request) throws Exception {
 			
-			String imgUploadPath = uploadPath + File.separator + "imgUpload";
+			String imagePath = request.getServletContext().getRealPath("resources");
+			String imgUploadPath = imagePath + File.separator + "imgUpload";
 			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 			String fileName = null;
 
 			if(file != null) {
 			 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
 			} else {
-			 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+			 fileName = imagePath + File.separator + "images" + File.separator + "none.png";
 			}
 
 			vo.setPhoto_Img(File.separator + "imgUpload" + ymdPath + File.separator + fileName);

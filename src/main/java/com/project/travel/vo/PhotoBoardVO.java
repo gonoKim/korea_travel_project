@@ -12,7 +12,14 @@ public class PhotoBoardVO {
 	// 200922s
 	private String Photo_Img;
 	private String Photo_ThumbImg;
+	private String imgPath;
 
+	public String getImgPath() {
+		return imgPath;
+	}
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
 	public String getPhoto_Img() {
 		return Photo_Img;
 	}
