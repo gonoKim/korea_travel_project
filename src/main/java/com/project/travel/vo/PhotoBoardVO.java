@@ -8,7 +8,25 @@ public class PhotoBoardVO {
 	private	String Photo_Content; //Photo테이블 내용
 	private	int Photo_Views;		//Photo테이블 조회수
 	private Date Photo_Date;		//Photo테이블 작성일
+	
+	// 200922s
+	private String Photo_Img;
+	private String Photo_ThumbImg;
 
+	public String getPhoto_Img() {
+		return Photo_Img;
+	}
+	public void setPhoto_Img(String photo_Img) {
+		Photo_Img = photo_Img;
+	}
+	public String getPhoto_ThumbImg() {
+		return Photo_ThumbImg;
+	}
+	public void setPhoto_ThumbImg(String photo_ThumbImg) {
+		Photo_ThumbImg = photo_ThumbImg;
+	}
+	// 200922e
+	
 	public int getPhoto_Num() {
 		return Photo_Num;
 	}

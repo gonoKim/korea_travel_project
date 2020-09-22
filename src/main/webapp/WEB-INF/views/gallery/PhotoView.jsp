@@ -77,6 +77,7 @@
           </div>
           <!--포토게시판 내용-->
           <div class="mb-5">
+          	<img src="${result.photo_ThumbImg }"><br>
             ${result.photo_Content }
           </div>
 

@@ -1,12 +1,19 @@
 package com.project.travel.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.project.travel.service.PhotoBoardService;
+import com.project.travel.utils.UploadFileUtils;
 import com.project.travel.vo.PhotoBoardVO;
 
 @Controller
@@ -16,6 +23,11 @@ public class PhotoBoardController {
 	/* photo 컨트롤러 */
 	@Autowired
 	PhotoBoardService photoService;
+	
+	// 200922s
+	@Resource(name="uploadPath")
+	private String uploadPath;
+	// 200922e
 	
 //	photo 리스트 맵핑, 컨트롤러
 		@RequestMapping("gallery/PhotoBoard")
@@ -32,6 +44,29 @@ public class PhotoBoardController {
 			ModelAndView mav = new ModelAndView();
 			return mav; 
 		}
+		
+		// 200922s
+		@RequestMapping(value="gallery/PhotoWrite",method = RequestMethod.POST)
+		public String postPhotowrite(PhotoBoardVO vo, MultipartFile file) throws Exception {
+			
+			String imgUploadPath = uploadPath + File.separator + "imgUpload";
+			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+			String fileName = null;
+
+			if(file != null) {
+			 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+			} else {
+			 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+			}
+
+			vo.setPhoto_Img(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+			vo.setPhoto_ThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+			
+			photoService.PhotoWrite(vo);
+			
+			return "redirect:/gallery/PhotoBoard";
+		}
+		// 200922e
 
 //		PhotoView물 보여주는 컨트롤러 & 조회수
 		@RequestMapping(value="gallery/PhotoView",method = RequestMethod.GET)

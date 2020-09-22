@@ -4,12 +4,12 @@
 
     <!-- 메인 배너에 넣을 이미지 찾기 -->
 	<select id="imgBanner" resultType="com.project.travel.vo.MainVO">
-		SELECT Photo_Num FROM Photo_Border_test ORDER BY Photo_Views DESC limit 4
+		SELECT Photo_Num, Photo_ThumbImg FROM Photo_Border ORDER BY Photo_Views DESC limit 4
 	</select>
 	
     <!-- 포토갤러리 배너에 넣을 이미지 찾기 -->
 	<select id="photoBanner" resultType="com.project.travel.vo.MainVO">
-		SELECT Photo_Num FROM Photo_Border_test ORDER BY rand() limit 10
+		SELECT Photo_Num, Photo_ThumbImg FROM Photo_Border ORDER BY rand() limit 10
 	</select>
 	
 	<!-- 공지사항 목록 조회 -->

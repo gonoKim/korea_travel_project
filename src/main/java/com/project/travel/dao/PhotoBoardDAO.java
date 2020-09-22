@@ -21,8 +21,8 @@ public class PhotoBoardDAO {
 	}
 
 	/*PhotoWrite*/
-	public int PhotoWrite(PhotoBoardVO photovo) {
-		return sqlSession.insert("photowrite", photovo);
+	public void PhotoWrite(PhotoBoardVO photovo) {
+		sqlSession.insert("photowrite", photovo);
 	}
 	
 	/* PhotoView */

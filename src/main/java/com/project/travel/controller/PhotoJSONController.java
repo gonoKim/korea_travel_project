@@ -17,12 +17,12 @@ public class PhotoJSONController {
 	PhotoBoardService photoService;
 	
 	//PhotoWrite 데이터 받을 컨트롤러
-	@RequestMapping(value="jquery/PhotoWrite",method = RequestMethod.POST)
-	@ResponseBody
-	public int PhotoWrite(PhotoBoardVO photovo) {
-		int result = 0; 
-		result = photoService.PhotoWrite(photovo); 
-		return result;
-	}
+//	@RequestMapping(value="jquery/PhotoWrite",method = RequestMethod.POST)
+//	@ResponseBody
+//	public int PhotoWrite(PhotoBoardVO photovo) {
+//		int result = 0; 
+//		result = photoService.PhotoWrite(photovo); 
+//		return result;
+//	}
 
 }

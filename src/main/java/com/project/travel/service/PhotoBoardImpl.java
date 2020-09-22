@@ -19,8 +19,8 @@ public class PhotoBoardImpl implements PhotoBoardService {
 	}
 
 	@Override
-	public int PhotoWrite(PhotoBoardVO photovo) {
-		return photoDAO.PhotoWrite(photovo);
+	public void PhotoWrite(PhotoBoardVO photovo) {
+		photoDAO.PhotoWrite(photovo);
 	}
 
 	@Override

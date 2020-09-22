@@ -24,25 +24,50 @@
 
 
       <div class="col-sm-6 col-md-offset-3 " >
-         <form>
+         <form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 			<table>
         		<caption>게시판 글쓰기 </caption>
     			<tbody>
             		<tr>
                 		<th>제목: </th>
-                		<td><input type="text" placeholder="제목을 입력하세요. " id="subject"/></td>
+                		<td><input type="text" placeholder="제목을 입력하세요. " id="subject" name="Photo_Subject"/></td>
             		</tr>
             		<tr>
                 		<th>내용: </th>
-                		<td><textarea cols="30" rows="10" placeholder="내용을 입력하세요. " id="content"></textarea></td>
+                		<td><textarea cols="30" rows="10" placeholder="내용을 입력하세요. " id="content" name="Photo_Content"></textarea></td>
             		</tr>
            	<!--  <tr>
                 	<th>첨부파일: </th>
                 	<td><input type="text" placeholder="파일을 선택하세요. " name="filename"/></td>
             		</tr> -->
+            		
+            		<!-- 200922s -->
+            		<tr class="inputArea">
+					 <th for="gdsImg">이미지</th>
+					 <td><input type="file" id="gdsImg" name="file" />
+					 <div class="select_img"><img src="" /></div>
+					 
+					 <script>
+					  $("#gdsImg").change(function(){
+					   if(this.files && this.files[0]) {
+					    var reader = new FileReader;
+					    reader.onload = function(data) {
+					     $(".select_img img").attr("src", data.target.result).width(500);        
+					    }
+					    reader.readAsDataURL(this.files[0]);
+					   }
+					  });
+					 </script>
+					 
+					 <%=request.getRealPath("/") %>
+					</td>
+					</tr>
+					<!-- 200922e -->
+
             		<tr>
                 		<td colspan="2">
-                    		<input type="button" value="등록" onclick="boardValidation()"/>
+                			<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>
+                    		<!-- <input type="button" value="등록" onclick="boardValidation()"/> -->
                     		<input type="button" value="뒤로" onclick="javascript:location.href='PhotoBoard'"/>
                 		</td>
             		</tr>

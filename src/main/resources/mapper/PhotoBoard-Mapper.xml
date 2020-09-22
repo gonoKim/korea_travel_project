@@ -9,8 +9,8 @@
 </select>
 <!-- insert 쿼리문  -->
 <insert id="photowrite">
-insert into Photo_Border (Photo_Num,Photo_Subject,Photo_Content,Photo_Views,Photo_Date) 
-values(#{Photo_Num},#{Photo_Subject},#{Photo_Content},#{Photo_Views},now());
+insert into Photo_Border (Photo_Num,Photo_Subject,Photo_Content,Photo_Views,Photo_Date,Photo_Img,Photo_ThumbImg) 
+values(#{Photo_Num},#{Photo_Subject},#{Photo_Content},#{Photo_Views},now(),#{Photo_Img},#{Photo_ThumbImg});
 </insert>
 <!-- PhotoView 쿼리문 -->
 <select id="getPhotoView" resultType="com.project.travel.vo.PhotoBoardVO">

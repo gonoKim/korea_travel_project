@@ -7,7 +7,7 @@ import com.project.travel.vo.PhotoBoardVO;
 public interface PhotoBoardService {
 	List<PhotoBoardVO> getPhotoList();
 	
-	int PhotoWrite(PhotoBoardVO photovo);
+	void PhotoWrite(PhotoBoardVO photovo);
 
 	PhotoBoardVO getPhotoView(int Photo_Num);
 	
