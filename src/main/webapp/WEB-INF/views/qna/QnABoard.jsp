@@ -24,6 +24,10 @@
 	<!-- js -->
 	<script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
 
+	<!-- google font --> 
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
+	
+
 	<script type="text/javascript">
 		function QnAwrite() { 
 		    location.href = "/qna/QnAWrite"; 
@@ -69,7 +73,7 @@
 
 		<div class="row justify-content-center mt-4">
 			<table class="table table-hover col-11 text-center">
-				<tr class="text-info">
+				<tr class="bg-primary text-white qnaTh">
 					<td scope="col">No</td>
 					<td scope="col">Subject</td>
 					<td scope="col">Writer</td>
@@ -78,9 +82,9 @@
 				</tr>
 				<c:forEach var="b" items="${result}">
 					<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd " var="dateFormat_cr" />
-					<tr>
+					<tr class="qnaTd">
 						<td scope="row">${b.qnA_Num}</td>
-						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}" class="text-info">${b.qnA_Subject}</a></td>
+						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}"  class="text-primary d-inline-block text-truncate" style="max-width: 150px;">${b.qnA_Subject}</a></td>
 						<td>${b.m_Id}</td>
 						<td>${b.qnA_Views}</td>
 						<td>${dateFormat_cr}</td>
@@ -93,20 +97,20 @@
 		<div id="paginationBox">
 			<ul class="pagination row justify-content-center my-4">
 				<c:if test="${pagination.qnaprev}">
-					<li class="page-item bg-info">
-						<a class="page-link bg-info" href="#" onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a>
+					<li class="page-item ">
+						<a class="page-link " href="#" onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a>
 					</li>
 				</c:if>
 
 				<c:forEach begin="${pagination.qnastartPage}" end="${pagination.qnaendPage}" var="idx">
-					<li class="page-item <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> ">
-						<a class="page-link bg-info" href="#" onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">${idx}</a>
+					<li class="page-item  <c:out value="${pagination.qnapage == idx ? 'active' : ''}"/> ">
+						<a class="page-link " href="#" onClick="fn_pagination('${idx}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">${idx}</a>
 					</li>
 				</c:forEach>
 
 				<c:if test="${pagination.qnanext}">
-					<li class="page-item bg-info">
-						<a class="page-link bg-info" href="#" onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a>
+					<li class="page-item ">
+						<a class="page-link " href="#" onClick="fn_next('${pagination.qnarange}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Next</a>
 					</li>
 				</c:if>
 			</ul>

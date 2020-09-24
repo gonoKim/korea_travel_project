@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+	<!-- google font --> 
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
 <script>
 	var qnA_Num = '${result.qnA_Num}'; // 게시글 번호
 	
@@ -23,14 +24,14 @@
 						a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
 						a += '<div class="commentInfo float-md-right">'
 						if(m_Id == value.m_Id){
-							a += '<a class="btn btn-sm" onclick="commentUpdate('+ value.qnA_C_Num +',\''+ value.qnA_C_Content +'\');"> 수정 </a>';
-							a += '<a class="btn btn-sm" onclick="commentDelete('+ value.qnA_C_Num +');"> 삭제 </a> </div>';
+							a += '<a class="btn btn-sm" onclick="commentUpdate('+ value.qnA_C_Num +',\''+ value.qnA_C_Content +'\');"> Update </a>';
+							a += '<a class="btn btn-sm" onclick="commentDelete('+ value.qnA_C_Num +');"> Delete </a> </div>';
 						} else if(m_Id == m_Id2 || grade == 'admin'){
-							a += '<a class="btn btn-sm" onclick="commentDelete('+ value.qnA_C_Num +');"> 삭제 </a> </div>';
+							a += '<a class="btn btn-sm" onclick="commentDelete('+ value.qnA_C_Num +');"> Delete </a> </div>';
 						} else{
 							a += '</div>';
 						}
-						a += '<div class="commentContent'+value.qnA_C_Num+'"> '+ value.m_Id+ '<p> 내용 : '+ value.qnA_C_Content+ '</p>';
+						a += '<div class="commentContent'+value.qnA_C_Num+'"> '+ value.m_Id+ '<p class="comContent">  '+ value.qnA_C_Content+ '</p>';
 						a += '</div></div>';
 					}
 				);
@@ -90,7 +91,7 @@
 		a += '<div class="input-group">';
 		a += '<input type="text" class="form-control" maxlength="200" name="content_'+qnA_C_Num+'" value="'+qnA_C_Content+'"/>';
 		a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('
-				+ qnA_C_Num +');">수정</button> </span>';
+				+ qnA_C_Num +');">Update</button> </span>';
 		a += '</div>';
 
 		$('.commentContent' + qnA_C_Num).html(a);

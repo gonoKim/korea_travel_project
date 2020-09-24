@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
+	<!-- google font --> 
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
+	
 
 <header class="blog-header py-3">
 	<div class="row flex-nowrap justify-content-between align-items-center">
@@ -31,12 +34,12 @@
 
 <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
 	<div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
-		<a class="p-2 text-muted nav-link" href="/main/main">Home</a>
-		<a class="p-2 text-muted nav-link" href="/gallery/PhotoBoard">Gallery</a>
+		<a class="p-2 text-muted nav-link navTitle" href="/main/main">Home</a>
+		<a class="p-2 text-muted nav-link navTitle" href="/gallery/PhotoBoard">Gallery</a>
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
-				<a class="nav-link p-2 text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Support </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				<a class="nav-link p-2 text-muted navTitle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Support </a>
+				<div class="dropdown-menu navTitle" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="/notice/NoticeBoard">Notice</a>
 					<a class="dropdown-item" href="/qna/QnABoard">QnA</a>
 				</div>
@@ -44,12 +47,12 @@
 		</ul>
 		
 		<c:if test="${user.m_Grade == 'admin'}">
-			<a id="myPage_btn1" class="p-2 text-muted nav-link" href="${pageContext.request.contextPath}/Festival/FestivalBoard">setUp</a>
+			<a id="myPage_btn1" class="p-2 text-muted nav-link navTitle" href="${pageContext.request.contextPath}/Festival/FestivalBoard">setUp</a>
 		</c:if>
 		
 		<c:if test="${user != null }">
-			<a id="myPage_btn1" class="p-2 text-muted nav-link" href="/mypage/myPage">My Page</a>
-			<a id="myPage_btn2" class="p-2 text-muted nav-link" href="/mypage/myPage">Profile</a>
+			<a id="myPage_btn1" class="p-2 text-muted nav-link navTitle" href="/mypage/myPage">My Page</a>
+			<a id="myPage_btn2" class="p-2 text-muted nav-link navTitle" href="/mypage/myPage">Profile</a>
 		</c:if>
 	</div>
 </nav>
