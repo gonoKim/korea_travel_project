@@ -16,9 +16,6 @@
 <script src="../../../resources/QnA/js/QnABoard.js"></script>
 
 <script type="text/javascript">
-function FestivalWrite() { 
-    location.href = "/Festival/FestivalWrite"; 
-}
 function FestivalDelete(){	
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if (chk) {
@@ -106,7 +103,7 @@ $(document).on('click', '#btnSearch', function(e){
 				<td><input type="checkbox" name="chBox" class="chBox" value="${b.f_Num }"></td>
 				<td>${b.f_Num }</td>
 				<td>${b.f_Place }</td>
-				<td><a href="#"onclick="window.open('/Festival/FestivalView?f_Num=${b.f_Num}', 'choice', 'scrollbars=no, width=600px, height=800px')"  >${b.f_Subject }</a></td>
+				<td><a href="/Festival/FestivalView?f_Num=${b.f_Num}" >${b.f_Subject }</a></td>
 				<td>${dateFormat_cr }</td>
 			</tr>
 		</c:forEach>
@@ -159,7 +156,7 @@ $(document).on('click', '#btnSearch', function(e){
 		<!-- search{e} -->
 	<div>
 		      <div class="row justify-content-center my-3 ">
-            <input type="button" value="Write" class="btn" onclick="window.open('/Festival/FestivalWrite', 'choice', 'scrollbars=no, width=800px, height=600px')"/>
+            <input type="button" value="Write" class="btn" onclick="location.href='/Festival/FestivalWrite'"/>
             <input type="button" value="Delete" class="btn" onclick="FestivalDelete();"/>
             
         </div>

@@ -2,6 +2,7 @@ package com.project.travel.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,17 @@ public class FestivalDAO {
 	
 	/* Festival 게시물 갯수 */
 	public int getFestivalListCnt(festivalSearch fSearch) {
-		
 		return sqlSession.selectOne("getFestivalListCnt", fSearch);
 	}
 
 	/* Festival 쓰기 */
-	public int festivalwrite(FestivalVO festivalvo) {
-		return sqlSession.insert("festivalwrite", festivalvo);
+	public void write(FestivalVO festivalvo) {
+		sqlSession.insert("festivalwrite", festivalvo);
+	}
+	
+	/* Festival 업로드 */
+	public void insertFile(Map<String, Object> map) throws Exception {
+		sqlSession.insert("insertFile", map);
 	}
 
 	/* Festival 뷰 */

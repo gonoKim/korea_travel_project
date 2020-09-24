@@ -5,7 +5,8 @@
 <html>
 <head>
 <link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
-<link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
+<link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >
 <script src="../../../../resources/assets/dist/js/jquery-3.5.1.min.js"></script>
 <script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
 <script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
@@ -29,6 +30,8 @@ function FestivalUpdate(){
 <div class="container">
 
 <form>
+<p>aaa ${fResult.F_Subject}</p>
+<p>aaa ${fResult.f_Subject}</p>
 <table class="my-5 table table-bordered">
             <tr>
                 <th class="text-center w-25 p-3">Subject: </th>

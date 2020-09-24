@@ -2,12 +2,15 @@ package com.project.travel.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.service.FestivalService;
@@ -17,6 +20,7 @@ import com.project.travel.vo.fSearchVO;
 @Controller
 @RequestMapping("Festival/*")
 public class FestivalController {
+	private static final Logger logger = LoggerFactory.getLogger(FestivalController.class);
 
 	@Autowired
 	FestivalService festivalService;
@@ -44,22 +48,20 @@ public class FestivalController {
 
 	/* 축제 쓰기 */
 	@RequestMapping(value = "/FestivalWrite", method = RequestMethod.GET)
-	public ModelAndView FestivalWrite() {
-		ModelAndView mav = new ModelAndView();
-		return mav;
+	public void FestivalWrite() {
+		logger.info("FestivalWrite");
 	}
 
-	/* 축제 쓰기 데이터 가져오기 */
-	@ResponseBody
+	/* 축제 쓰기 데이터 가져오기 */	
 	@RequestMapping(value = "/FestivalWrite", method = RequestMethod.POST)
-	public int FestivalWrite(FestivalVO festivalvo) {
-		int result = 0;
-		result = festivalService.festivalwrite(festivalvo);
-		return result;
+	public String write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception{
+		festivalService.write(festivalvo, mpRequest);
+		
+		return "redirect:/Festival/FestivalBoard";
 	}
 	
 	/* 축제 뷰 */
-	@RequestMapping(value="/FestivalView",method = RequestMethod.GET)
+	@RequestMapping(value="/FestivalView", method = RequestMethod.GET)
 	public ModelAndView FestivalView(int f_Num) {
 		FestivalVO fResult = festivalService.festivalView(f_Num);
 		ModelAndView mav = new ModelAndView();

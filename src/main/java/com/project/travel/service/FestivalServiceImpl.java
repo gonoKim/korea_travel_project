@@ -1,17 +1,24 @@
 package com.project.travel.service;
 
 import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.project.travel.common.festivalSearch;
 import com.project.travel.dao.FestivalDAO;
+import com.project.travel.utility.FileUtils;
 import com.project.travel.vo.FestivalVO;
 import com.project.travel.vo.fSearchVO;
 
 @Service
 public class FestivalServiceImpl implements FestivalService {
+	@Resource(name="fileUtils")
+	private FileUtils fileUtils;
 
 	@Autowired
 	FestivalDAO festivalDAO;
@@ -45,9 +52,22 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 	
 	//Festival 쓰기
+	/*
 	@Override
 	public int festivalwrite(FestivalVO festivalvo) {
 		return festivalDAO.festivalwrite(festivalvo);
+	}
+	*/
+	//Festival 업로드
+	@Override
+	public void write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception {
+		festivalDAO.write(festivalvo);
+		
+		List<Map<String,Object>> list = fileUtils.parseInsertFileInfo(festivalvo, mpRequest); 
+		int size = list.size();
+		for(int i=0; i<size; i++){ 
+			festivalDAO.insertFile(list.get(i)); 
+		}
 	}
 
 	//Festival 뷰

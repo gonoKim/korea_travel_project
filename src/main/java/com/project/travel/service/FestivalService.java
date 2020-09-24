@@ -1,5 +1,7 @@
 package com.project.travel.service;
 
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import com.project.travel.common.festivalSearch;
 import com.project.travel.vo.FestivalVO;
 import com.project.travel.vo.fSearchVO;
@@ -12,7 +14,7 @@ public interface FestivalService {
 	int getFestivalListCnt(festivalSearch fSearch);
 	
 	// Festival 쓰기
-	int festivalwrite(FestivalVO festivalvo);
+	public void write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception;
 	
 	// Festival 뷰
 	FestivalVO festivalView(int f_Num);
