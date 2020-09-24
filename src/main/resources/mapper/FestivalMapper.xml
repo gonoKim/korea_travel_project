@@ -46,7 +46,7 @@
 	<!-- 축제 작성 -->
 	<insert id="festivalwrite" parameterType="com.project.travel.vo.FestivalVO">
 		INSERT INTO Festival_Test (F_Num, F_Subject, F_Content, F_Place, F_Address, F_Date)
-			VALUES(#{f_num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now())
+			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now())
 	</insert>
 	
 	<!-- 파일 업로드 -->

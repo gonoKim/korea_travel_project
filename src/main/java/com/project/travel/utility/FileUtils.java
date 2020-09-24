@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -16,10 +18,14 @@ import com.project.travel.vo.FestivalVO;
 
 @Component("fileUtils")
 public class FileUtils {
-	private static final String filePath = "C:\\Users\\KangHC\\git\\korea_travel_project\\src\\main\\webapp\\resources\\imgUpload\\"; // 파일이 저장될 위치
+	
+	//String imgUploadPath = imagePath + File.separator + "imgUpload" + File.separator + "photoImg";
+	//private static final String filePath = "C:\\Users\\KangHC\\git\\korea_travel_project\\src\\main\\webapp\\resources\\imgUpload\\"; // 파일이 저장될 위치
 	
 	public List<Map<String, Object>> parseInsertFileInfo(FestivalVO festivalVO, 
 			MultipartHttpServletRequest mpRequest) throws Exception{
+		
+		String filePath = mpRequest.getServletContext().getRealPath("resources");// 파일이 저장될 위치
 		
 		Iterator<String> iterator = mpRequest.getFileNames();
 		

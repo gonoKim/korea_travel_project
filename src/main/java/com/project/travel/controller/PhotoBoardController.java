@@ -25,11 +25,11 @@ public class PhotoBoardController {
 	@Autowired
 	PhotoBoardService photoService;
 	
-	// 200922s
-	@Resource(name="uploadPath")
-	private String uploadPath;
-	// 200922e
-	
+	/*
+	 * // 200922s
+	 * 
+	 * @Resource(name="uploadPath") private String uploadPath; // 200922e
+	 */	
 //	photo 리스트 맵핑, 컨트롤러
 		@RequestMapping("gallery/PhotoBoard")
 		public ModelAndView PhotoBoard() {
@@ -51,7 +51,7 @@ public class PhotoBoardController {
 		public String postPhotowrite(PhotoBoardVO vo, MultipartFile file, HttpServletRequest request) throws Exception {
 			
 			String imagePath = request.getServletContext().getRealPath("resources");
-			String imgUploadPath = imagePath + File.separator + "imgUpload";
+			String imgUploadPath = imagePath + File.separator + "imgUpload" + File.separator + "photoImg";
 			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 			String fileName = null;
 

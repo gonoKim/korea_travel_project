@@ -61,12 +61,12 @@ public class FestivalServiceImpl implements FestivalService {
 	//Festival 업로드
 	@Override
 	public void write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception {
-		festivalDAO.write(festivalvo);
+		festivalDAO.write(festivalvo); //에러 
 		
 		List<Map<String,Object>> list = fileUtils.parseInsertFileInfo(festivalvo, mpRequest); 
 		int size = list.size();
 		for(int i=0; i<size; i++){ 
-			festivalDAO.insertFile(list.get(i)); 
+			festivalDAO.insertFile(list.get(i)); //에러 터짐
 		}
 	}
 
