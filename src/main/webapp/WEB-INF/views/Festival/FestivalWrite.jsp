@@ -46,6 +46,50 @@
                 <h4 class="my-3">Address</h4>
                 <input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="주소를 입력해 주세요">
                 
+                      <label for="inputBirth">Birth</label>
+                      
+      <div class="form-row" id="form_YMD">
+        <div class="col">
+          <input type="number" class="form-control btn-dark" id="inputYear" name="F_S_Year" placeholder="Year (4)"
+          	min="1900" max="2021" maxlength="4" oninput="maxLengthCheck(this)"  required>
+        </div>
+        <div class="col">
+          <select class="form-control btn btn-dark" id="inputMonth" name="F_S_Month" required>
+            <option value="">Month</option>
+            <option value="1">1</option> <option value="2">2</option> 
+            <option value="2">3</option> <option value="4">4</option>
+            <option value="5">5</option> <option value="6">6</option>
+            <option value="7">7</option> <option value="8">8</option> 
+            <option value="9">9</option> <option value="10">10</option>
+            <option value="11">11</option> <option value="12">12</option>
+          </select>
+        </div>
+        <div class="col">
+          <input type="number" class="form-control btn-dark" id="inputDay" name="F_S_Day" placeholder="Day"
+           	min="1" max="31" maxlength="2" oninput="maxLengthCheck(this)" required>
+        </div>
+          <div class="col">
+          <input type="number" class="form-control btn-dark" id="inputYear" name="F_L_Year" placeholder="Year (4)"
+          	min="1900" max="2021" maxlength="4" oninput="maxLengthCheck(this)"  required>
+        </div>
+        <div class="col">
+          <select class="form-control btn btn-dark" id="inputMonth" name="F_L_Month" required>
+            <option value="">Month</option>
+            <option value="1">1</option> <option value="2">2</option> 
+            <option value="2">3</option> <option value="4">4</option>
+            <option value="5">5</option> <option value="6">6</option>
+            <option value="7">7</option> <option value="8">8</option> 
+            <option value="9">9</option> <option value="10">10</option>
+            <option value="11">11</option> <option value="12">12</option>
+          </select>
+        </div>
+        <div class="col">
+          <input type="number" class="form-control btn-dark" id="inputDay" name="F_L_Day" placeholder="Day"
+           	min="1" max="31" maxlength="2" oninput="maxLengthCheck(this)" required>
+        </div>
+        
+      </div>
+                
                 <h4 class="my-3">File Upload</h4>
 				<input type="file" name="file">					 
                 
@@ -53,7 +97,7 @@
                     <button type="reset" id="join-submit" class="btn">
                         Reset<i class="fa fa-check spaceLeft"></i>
                     </button>
-                     <button type="submit" class="btn">작성</button>
+                     <button type="submit" class="btn" id="submit">작성</button>
                      <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
                 </div>
 			</form>

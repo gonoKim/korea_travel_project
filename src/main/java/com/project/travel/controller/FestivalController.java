@@ -54,10 +54,11 @@ public class FestivalController {
 
 	/* 축제 쓰기 데이터 가져오기 */	
 	@RequestMapping(value = "/FestivalWrite", method = RequestMethod.POST)
-	public String write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception{
+	public void write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception{
+		logger.info("write");
 		festivalService.write(festivalvo, mpRequest);
 		
-		return "redirect:/Festival/FestivalBoard";
+		/* return "redirect:/Festival/FestivalBoard"; */
 	}
 	
 	/* 축제 뷰 */

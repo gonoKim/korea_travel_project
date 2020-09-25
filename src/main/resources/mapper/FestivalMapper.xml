@@ -3,7 +3,7 @@
 <mapper namespace="mapper.FestivalMapper">
 	<!-- 축제 데이터 리스트 -->
 	<select id="festivalList" resultType="com.project.travel.vo.FestivalVO">
-		SELECT * FROM Festival_Test 
+		SELECT * FROM Festival 
 		<!-- <trim> : 하위 <if>에서 조건이 맞는 조건절이 있을 경우 WHERE 키워드를 생성합니다. -->
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 		<!-- <if>  : 조건이 맞을 경우 조건절을 생성합니다. -->
@@ -27,7 +27,7 @@
 
 	<!-- 게시물 갯수 -->
 	<select id="getFestivalListCnt" resultType="int">
-		SELECT count(*) as festivalListCnt FROM Festival_Test
+		SELECT count(*) as festivalListCnt FROM Festival
 			<trim prefix="WHERE" prefixOverrides="AND|OR">
 		<if test="keyword != null and keyword != '' ">
 			<if test="searchType=='F_Subject'">
@@ -44,9 +44,9 @@
 	</select>
 	
 	<!-- 축제 작성 -->
-	<insert id="festivalwrite" parameterType="com.project.travel.vo.FestivalVO">
-		INSERT INTO Festival_Test (F_Num, F_Subject, F_Content, F_Place, F_Address, F_Date)
-			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now())
+	<insert id="festivalwrite" parameterType="com.project.travel.vo.FestivalVO" useGeneratedKeys="true" keyProperty="F_Num">
+		INSERT INTO Festival (F_Num, F_Subject, F_Content, F_Place, F_Address, F_Date, F_S_Year, F_S_Month, F_S_Day, F_L_Year, F_L_Month, F_L_Day)
+			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now() #{F_S_Year}, #{F_S_Month}, #{F_S_Day}, #{F_S_Year}, #{F_L_Month}, #{F_L_Day})
 	</insert>
 	
 	<!-- 파일 업로드 -->
@@ -57,17 +57,17 @@
 	
 	<!-- 축제 뷰 -->
 	<select id="festivalView" resultType="com.project.travel.vo.FestivalVO">
-		SELECT * FROM Festival_Test WHERE F_Num = #{F_Num};
+		SELECT * FROM Festival WHERE F_Num = #{f_Num};
 	</select>
 
 	<!-- 축제 삭제 -->
 	<delete id="festivalDelete">
-	DELETE FROM Festival_Test WHERE F_Num = #{F_Num}
+	DELETE FROM Festival WHERE F_Num = #{f_Num}
 	</delete>
 	
 	<!-- 축제 업데이트 -->
 	<update id="festivalUpdate">
-	UPDATE Festival_Test SET F_Subject = #{F_Subject}, F_Content = #{F_Content}, F_Place = #{F_Place}, F_Address = #{F_Address} WHERE F_Num = #{F_Num}; 
+	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, F_Place = #{f_Place}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
 	</update>
 
 </mapper>

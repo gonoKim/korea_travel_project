@@ -71,8 +71,8 @@ $(function(){
 function maxLengthCheck(object){
 	if (object.value.length > object.maxLength){
     	object.value = object.value.slice(0, object.maxLength);
-	}   
-}  
+	}
+}
 
 // 아이디 중복 확인 체크
 function fn_idChk(){

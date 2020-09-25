@@ -30,8 +30,7 @@ function FestivalUpdate(){
 <div class="container">
 
 <form>
-<p>aaa ${fResult.F_Subject}</p>
-<p>aaa ${fResult.f_Subject}</p>
+
 <table class="my-5 table table-bordered">
             <tr>
                 <th class="text-center w-25 p-3">Subject: </th>
@@ -55,7 +54,6 @@ function FestivalUpdate(){
 <div class="row justify-content-center my-4">
 					<input type="button" value="Update" class="btn" onclick="FestivalUpdate();"/>
                     <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
-                     
                 </div>
                 
 </form>

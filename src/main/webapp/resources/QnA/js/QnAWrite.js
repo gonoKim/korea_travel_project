@@ -40,4 +40,10 @@ function QnAWrite(sub,wri,con){
 			console.log("error");
 		}
 	})
+	
 }
+function maxLengthCheck(object){
+	if (object.value.length > object.maxLength){
+    	object.value = object.value.slice(0, object.maxLength);
+	}   
+}  

@@ -79,6 +79,10 @@ $(document).on('click', '#btnSearch', function(e){
 	location.href = encodeURI(url);//encodeURI;
 	console.log(url);
 });	
+function win()
+{
+window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900");
+}
 
 </script>
 </head>
@@ -103,7 +107,7 @@ $(document).on('click', '#btnSearch', function(e){
 				<td><input type="checkbox" name="chBox" class="chBox" value="${b.f_Num }"></td>
 				<td>${b.f_Num }</td>
 				<td>${b.f_Place }</td>
-				<td><a href="/Festival/FestivalView?f_Num=${b.f_Num}" >${b.f_Subject }</a></td>
+				<td><a href="/Festival/FestivalView?f_Num=${b.f_Num}"  target="_blank">${b.f_Subject }</a></td>
 				<td>${dateFormat_cr }</td>
 			</tr>
 		</c:forEach>
@@ -156,7 +160,7 @@ $(document).on('click', '#btnSearch', function(e){
 		<!-- search{e} -->
 	<div>
 		      <div class="row justify-content-center my-3 ">
-            <input type="button" value="Write" class="btn" onclick="location.href='/Festival/FestivalWrite'"/>
+            <input type="button" value="Write" class="btn" onclick="win();"/>
             <input type="button" value="Delete" class="btn" onclick="FestivalDelete();"/>
             
         </div>

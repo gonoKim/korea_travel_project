@@ -87,8 +87,4 @@ public class FestivalServiceImpl implements FestivalService {
 	public int festivalUpdate(FestivalVO festivalvo) {
 		return festivalDAO.festivalUpdate(festivalvo);
 	}
-	
-	
-	
-
 }
