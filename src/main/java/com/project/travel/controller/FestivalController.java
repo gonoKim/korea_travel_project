@@ -105,4 +105,10 @@ public class FestivalController {
 		result = festivalService.festivalUpdate(festivalvo); 
 		return result;
 	}
+	@RequestMapping(value = "/FestivalPage", method = RequestMethod.GET)
+	public ModelAndView FestivalPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("fResult");
+		return mav;
+	}
 }

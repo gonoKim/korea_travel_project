@@ -25,9 +25,18 @@
 	<script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
 	
 	<script type="text/javascript">
-	function btnOk_Click(){
-	    parent.location.reload();
-	}
+		/* 스크립트 다 옮기기 */
+	
+		/* 파일 미리보기  */
+		function setThumbnail(event) {
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var img = document.createElement("img");
+				img.setAttribute("src", event.target.result);
+				document.querySelector("div#image_container").appendChild(img);
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		}
 	</script>
 </head>
 
@@ -97,9 +106,14 @@
 							oninput="maxLengthCheck(this)" required>
 					</div>
 				</div>
-
+				
+				<!-- 파일 업로드 -->
 				<h4 class="my-3">File Upload</h4>
-				<input type="file" name="file">
+				<input type="file" name="file" accept="image/*" onchange="setThumbnail(event);"/>
+				<!-- 이미지 미리 보기 -->
+					<div id="image_container"></div>
+
+
 
 				<div class="row justify-content-center my-4">
 					<button type="reset" id="join-submit" class="btn">Reset</button>

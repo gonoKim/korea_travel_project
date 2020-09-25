@@ -51,7 +51,7 @@
 	
 	<!-- 파일 업로드 -->
     <insert id="insertFile" parameterType="hashMap">
-		INSERT INTO Kang_Test(F_Num, ORG_FILE_NAME, STORED_FILE_NAME, FILE_SIZE, REGDATE)
+		INSERT INTO FestivalImg(F_Num, ORG_FILE_NAME, STORED_FILE_NAME, FILE_SIZE, REGDATE)
 			VALUES(#{F_Num}, #{ORG_FILE_NAME}, #{STORED_FILE_NAME}, #{FILE_SIZE}, now())
     </insert>
 	

@@ -24,7 +24,7 @@ public class FileUtils {
 			MultipartHttpServletRequest mpRequest) throws Exception{
 		
 		String realPath = mpRequest.getServletContext().getRealPath("resources") ; // path
-		String filePath = realPath+ File.separator + "imgUpload" + File.separator + "festivalImg"; // 파일이 저장될 위치
+		String filePath = realPath+ File.separator + "imgUpload" + File.separator + "festivalImg" + File.separator; // 파일이 저장될 위치
 		
 		Iterator<String> iterator = mpRequest.getFileNames();
 		

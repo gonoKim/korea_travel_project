@@ -35,7 +35,7 @@
 <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
 	<div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
 		<a class="p-2 text-muted nav-link navTitle" href="/main/main">Home</a>
-		<a class="p-2 text-muted nav-link navTitle" href="/gallery/PhotoBoard">Gallery</a>
+		<a class="p-2 text-muted nav-link navTitle" href="/Festival/FestivalPage">Festival</a>
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
 				<a class="nav-link p-2 text-muted navTitle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Support </a>
