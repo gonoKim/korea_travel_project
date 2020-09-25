@@ -46,7 +46,7 @@
 	<!-- 축제 작성 -->
 	<insert id="festivalwrite" parameterType="com.project.travel.vo.FestivalVO" useGeneratedKeys="true" keyProperty="F_Num">
 		INSERT INTO Festival (F_Num, F_Subject, F_Content, F_Place, F_Address, F_Date, F_S_Year, F_S_Month, F_S_Day, F_L_Year, F_L_Month, F_L_Day)
-			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now() #{F_S_Year}, #{F_S_Month}, #{F_S_Day}, #{F_S_Year}, #{F_L_Month}, #{F_L_Day})
+			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now(), #{F_S_Year}, #{F_S_Month}, #{F_S_Day}, #{F_S_Year}, #{F_L_Month}, #{F_L_Day})
 	</insert>
 	
 	<!-- 파일 업로드 -->
