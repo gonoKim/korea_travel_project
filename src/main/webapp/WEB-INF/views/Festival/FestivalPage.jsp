@@ -39,7 +39,8 @@
      <jsp:include page="../inc/top.jsp" />
      
      <!-- 이미지 경로  -->
-<%--  <%=request.getRealPath("/") %> --%>
+ 	<%-- <%=request.getRealPath("/") %>  --%>
+ 	<%=request.getRealPath("/resources/imgUpload/festivalImg") %> 
      
       ​<picture id="picture_group">
         <img src="images/01.jpg" class="rounded-left mx-auto">
@@ -115,6 +116,7 @@
                     <div class="card-body">
                       <h5 class="card-title">festival name</h5>
                       <p class="card-text">Content</p>
+
                     </div>
                   </div>
                 </div>
@@ -131,8 +133,12 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">festival name</h5>
-                      <p class="card-text">Content</p>
+                      <h5 class="card-title">${fResult.f_Subject}</h5>
+                      <p class="card-text">${fResult.f_Address}</p>
+                      <p class="card-text">${fResult.f_Content}</p>
+                      <p class="card-text">${fResult.f_S_Year},-,${fResult.f_S_Month},-,${fResult.f_S_Day}</p>
+                      <p class="card-text">${fResult.f_L_Year},-,${fResult.f_L_Month},-,${fResult.f_L_Day}</p>
+                      
                     </div>
                   </div>
                 </div>

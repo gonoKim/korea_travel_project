@@ -55,9 +55,34 @@
 				<h4 class="my-3">Content</h4>
 				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Content" placeholder="내용를 입력해 주세요"></textarea>
 
-				<h4 class="my-3">Place</h4>
+							
+							<!-- 장소 코드 
+							서울특별시(001)부산광역시(002)대구광역시(003)인천광역시(004)대전광역시(005)광주광역시(006)울산광역시(007)
+							경기도(011)강원도(012)충청남도(013)전라남도(014)전라북도(015)경상남도(016)경상북도(017)
+							세종특별자치시(101)\n제주특별자치도(102) -->
+				<div class="my-3">						
+						<div class="col">
+						<select class="form-control" id="" name="Place_Code" required>
+							<option value="">Place_Code</option>
+							<option value="">특별시 밑 광역시</option>
+							<option value="001">서울특별시(001)</option> 	<option value="002">부산광역시(002)</option>
+							<option value="003">대구광역시(003)</option> 	<option value="004">인천광역시(004)</option>
+							<option value="005">대전광역시(005)</option> 	<option value="006">광주광역시(006)</option>
+							<option value="007">울산광역시(007)</option> 
+							<option value="">도</option>
+							<option value="011">경기도(011)</option>	<option value="012">강원도(012)</option> 
+							<option value="013">충청남도(013)</option>	<option value="014">전라남도(014)</option>
+							<option value="015">전라북도(015)</option>	<option value="016">경상남도(016)</option>
+							<option value="017">경상북도(017)</option> 
+							<option value="">특별 자치도</option>
+							<option value="101">세종특별자치시(101)</option>	
+							<option value="102">제주특별자치도(102) </option> 
+						</select>
+					</div>
+				</div>
+				<!-- <h4 class="my-3">Place</h4>
 				<input type="text" class="form-control text-dark" id="place" name="F_Place" placeholder="지역를 입력해 주세요">
-
+ -->
 				<h4 class="my-3">Address</h4>
 				<input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="주소를 입력해 주세요">
 				

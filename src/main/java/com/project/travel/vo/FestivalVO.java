@@ -6,7 +6,7 @@ public class FestivalVO {
 	private int F_Num; //축제 넘버
 	private	String F_Subject; //축제 제목
 	private String F_Content; //축제 내용
-	private	String F_Place;	//축제 장소
+	private	int Place_Code;	//축제 장소 코드
 	private	String F_Address;	//축제 주소
 	private	Date F_Date;	//작성 일시
 	private int F_S_Year; 	//축제 시작 년도 
@@ -34,11 +34,11 @@ public class FestivalVO {
 	public void setF_Content(String f_Content) {
 		F_Content = f_Content;
 	}
-	public String getF_Place() {
-		return F_Place;
+	public int getPlace_Code() {
+		return Place_Code;
 	}
-	public void setF_Place(String f_Place) {
-		F_Place = f_Place;
+	public void setPlace_Code(int place_Code) {
+		Place_Code = place_Code;
 	}
 	public String getF_Address() {
 		return F_Address;

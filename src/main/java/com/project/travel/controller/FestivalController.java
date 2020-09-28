@@ -105,10 +105,23 @@ public class FestivalController {
 		result = festivalService.festivalUpdate(festivalvo); 
 		return result;
 	}
+	
+	
+	/* 축제 페이지 리스트 */
 	@RequestMapping(value = "/FestivalPage", method = RequestMethod.GET)
-	public ModelAndView FestivalPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("fResult");
-		return mav;
+	public ModelAndView FestivalPage(
+			@RequestParam(required = false, defaultValue = "1") int festivalpage
+			,   @RequestParam(required = false, defaultValue = "1") int festivalrange
+			, @RequestParam(required = false, defaultValue = "title") String searchType
+			, @RequestParam(required = false) String keyword
+				) {
+		
+			
+			fSearchVO fSearchvo = festivalService.festivalList(festivalpage, festivalrange, searchType, keyword);
+			
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("fPagination", fSearchvo.getfSearch());
+			mav.addObject("fResult", fSearchvo.getfList());
+			return mav;
 	}
 }

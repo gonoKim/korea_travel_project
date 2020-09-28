@@ -106,7 +106,7 @@ window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900")
 			<tr>
 				<td><input type="checkbox" name="chBox" class="chBox" value="${b.f_Num }"></td>
 				<td>${b.f_Num }</td>
-				<td>${b.f_Place }</td>
+				<td>${b.place_Code }</td>
 				<td><a href="/Festival/FestivalView?f_Num=${b.f_Num}"  target="_blank">${b.f_Subject }</a></td>
 				<td>${dateFormat_cr }</td>
 			</tr>
@@ -147,7 +147,7 @@ window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900")
 				<select class="form-control form-control-sm" name="searchType" id="searchType">
 					<option value="F_Subject">제목</option>
 					<option value="F_Content">내용</option>
-					<option value="F_Place">장소</option>
+					<option value="F_Address">장소</option>
 				</select>
 			</div>
 			<div class="w300" style="padding-right:10px">

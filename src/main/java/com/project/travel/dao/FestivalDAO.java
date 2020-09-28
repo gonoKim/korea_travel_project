@@ -58,4 +58,13 @@ public class FestivalDAO {
 	public int festivalUpdate(FestivalVO festivalvo) {
 		return sqlSession.update("festivalUpdate", festivalvo);
 	}
+	
+	public List<FestivalVO> festivalPageList(festivalSearch fSearch){
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		/* 처음 페이지 리스트 */
+		map.put("festivalstartList", fSearch.getfestivalstartList());
+		map.put("searchType", fSearch.getSearchType());
+		map.put("keyword", fSearch.getKeyword());
+		return sqlSession.selectList("festivalPage", map);
+	}
 }

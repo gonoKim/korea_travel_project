@@ -17,8 +17,8 @@
 			</if>
 			
 			<!-- 축제 장소 검색 -->
-			<if test="searchType=='F_Place' and keyword != null and keyword != '' ">
-				AND F_Place LIKE CONCAT('%', #{keyword}, '%')
+			<if test="searchType=='F_Address' and keyword != null and keyword != '' ">
+				AND F_Address LIKE CONCAT('%', #{keyword}, '%')
 			</if>	
 		</trim>
 		ORDER BY F_Num DESC
@@ -36,8 +36,8 @@
 			<if test="searchType=='F_Content'">
 				AND F_Content LIKE CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test="searchType=='F_Place'">
-				AND F_Place LIKE CONCAT('%', #{keyword}, '%')
+			<if test="searchType=='F_Address'">
+				AND F_Address LIKE CONCAT('%', #{keyword}, '%')
 			</if>
       </if>
 	</trim>		
@@ -45,8 +45,8 @@
 	
 	<!-- 축제 작성 -->
 	<insert id="festivalwrite" parameterType="com.project.travel.vo.FestivalVO" useGeneratedKeys="true" keyProperty="F_Num">
-		INSERT INTO Festival (F_Num, F_Subject, F_Content, F_Place, F_Address, F_Date, F_S_Year, F_S_Month, F_S_Day, F_L_Year, F_L_Month, F_L_Day)
-			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{F_Place}, #{F_Address}, now(), #{F_S_Year}, #{F_S_Month}, #{F_S_Day}, #{F_S_Year}, #{F_L_Month}, #{F_L_Day})
+		INSERT INTO Festival (F_Num, F_Subject, F_Content, Place_Code, F_Address, F_Date, F_S_Year, F_S_Month, F_S_Day, F_L_Year, F_L_Month, F_L_Day)
+			VALUES(#{F_Num}, #{F_Subject}, #{F_Content}, #{Place_Code}, #{F_Address}, now(), #{F_S_Year}, #{F_S_Month}, #{F_S_Day}, #{F_S_Year}, #{F_L_Month}, #{F_L_Day})
 	</insert>
 	
 	<!-- 파일 업로드 -->
@@ -69,5 +69,10 @@
 	<update id="festivalUpdate">
 	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, F_Place = #{f_Place}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
 	</update>
+
+	<select id="festivalPage" resultType="com.project.travel.vo.FestivalVO">
+	SELECT * FROM Festival 
+	ORDER BY F_Num DESC;
+	</select>
 
 </mapper>
