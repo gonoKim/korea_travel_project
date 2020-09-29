@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+	<!-- google font --> 
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
 <script>
 	var nb_Num = '${result.NB_Num}'; // 게시글 번호
 	

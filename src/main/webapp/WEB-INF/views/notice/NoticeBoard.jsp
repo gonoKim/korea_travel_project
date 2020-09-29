@@ -19,11 +19,14 @@
 	<!-- Custom styles for this template -->
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/no-responsive.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/notice/css/blog.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
 	
 	<!-- js -->
 	<script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
 
+	<!-- google font --> 
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
+	
 	<script type="text/javascript">
 		function NoticeWrite() {
 			location.href = "/notice/NoticeWrite";
@@ -68,8 +71,8 @@
 		<jsp:include page="../inc/top.jsp" />
 
 		<div class="row justify-content-center mt-4">
-			<table class="table col-11 text-center">
-				<tr>
+			<table class="table table-hover col-11 text-center">
+				<tr class="bg-primary text-white qnaTh">
 					<td scope="col">No</td>
 					<td scope="col">Subject</td>
 					<td scope="col">Writer</td>
@@ -78,9 +81,9 @@
 				</tr>
 				<c:forEach var="n" items="${result}">
 					<fmt:formatDate value="${n.NB_Date}" pattern="yyyy-MM-dd" var="dateFormat_n" />
-					<tr>
+					<tr class="qnaTd">
 						<td>${n.NB_Num}</td>
-						<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num}">${n.NB_Subject}</a></td>
+						<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num}" class="text-primary d-inline-block text-truncate" >${n.NB_Subject}</a></td>
 						<td>${n.m_Id}</td>
 						<td>${n.NB_Views}</td>
 						<td>${dateFormat_n}</td>

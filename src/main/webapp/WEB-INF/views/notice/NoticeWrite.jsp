@@ -19,17 +19,17 @@
     
    	<!-- Custom styles for this template -->
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/notice/css/blog.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/notice/css/broad.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/broad.css" rel="stylesheet">
 	
 	<!-- js -->
     <script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/notice/js/NbWrite.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/QnA/js/QnAWrite.js"></script>
 </head>
 
 <body>
 	<div class="container">
-		<form>
+		<form class="form-signin" id="a">
 			<div class=" text-center text-dark pt-5 ">
 				<h2 class="my-3">Notice-write</h2>
 			</div>

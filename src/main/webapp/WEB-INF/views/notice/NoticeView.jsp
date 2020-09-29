@@ -19,8 +19,11 @@
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/no-responsive.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/notice/css/blog.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/notice/css/broad_view.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/broad_view.css" rel="stylesheet">
+	
+	<!-- google font --> 
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
 
 	<script type="text/javascript">
 		function NoticeDelete(){
@@ -50,42 +53,42 @@
 		<form>
 			<table class="my-5 table table-bordered">
 				<tr>
-					<th class="text-center w-25 p-3">Subject:</th>
-					<td scope="row">${result.NB_Subject}</td>
+					<th class="text-center w-25 p-3 qnaTh">Subject:</th>
+					<td scope="row" class="px-4 qnaTd">${result.NB_Subject}</td>
 				</tr>
 				<tr>
-					<th class="text-center">Writer:</th>
-					<td scope="row">${result.m_Id}</td>
+					<th class="text-center qnaTh">Writer:</th>
+					<td scope="row" class="px-4 qnaTd">${result.m_Id}</td>
 				</tr>
 				<tr>
-					<th class="text-center">Content:</th>
-					<td scope="row">${result.NB_Content}</td>
+					<th class="text-center qnaTh">Content:</th>
+					<td scope="row" class="px-4 qnaTd">${result.NB_Content}</td>
 				</tr>
 				<tr>
-					<th class="text-center">Views:</th>
-					<td scope="row">${result.NB_Views}</td>
+					<th class="text-center qnaTh">Views:</th>
+					<td scope="row" class="px-4 qnaTd">${result.NB_Views}</td>
 				</tr>
 			</table>
 
 			<div class="row justify-content-center my-4">
 				<c:if test="${user.m_Grade == 'admin'}">
-					<input type="button" value="Update" class="btn" onclick="NoticeUpdate()" />
-					<input type="button" value="Delete" class="btn" onclick="NoticeDelete()" />
+					<input type="button" value="Update" class="btn qnaBtn" onclick="NoticeUpdate()" />
+					<input type="button" value="Delete" class="btn qnaBtn" onclick="NoticeDelete()" />
 				</c:if>
-				<input type="button" value="List" class="btn" onclick="javascript:location.href='NoticeBoard'" />
+				<input type="button" value="List" class="btn qnaBtn" onclick="javascript:location.href='NoticeBoard'" />
 			</div>
 		</form>
 	</div>
 	
 	<div class="container" id="commentInsert">
-		<label for="content">comment</label>
+		<label for="content" id="comment">comment</label>
 		<form name="commentInsertForm">
 			<div class="input-group">
 				<input type="hidden" name="bno" value="${result.NB_Num}" />
 				<input type="hidden" name="M_Id" value="${user.m_Id}" />
 				<input type="text" class="form-control" id="c_Content" name="content" maxlength="200" placeholder="내용을 입력하세요.">
 				<span class="input-group-btn">
-					<input class="btn btn-outline-secondary" type="button" value="등록" onclick="commentInsert()" />
+					<input class="btn btn-outline-secondary" type="button" value="Write" onclick="commentInsert()" />
 				</span>
 			</div>
 		</form>
