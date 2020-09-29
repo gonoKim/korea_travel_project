@@ -21,14 +21,8 @@
     <link href="${pageContext.request.contextPath}/resources/main/css/area.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/main/css/blog.css" rel="stylesheet">
 
-    <!-- js -->
     
-    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet"> -->
-    <link rel="canonical" href="../../assets/dist/css/font-css.css">
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/area.css" rel="stylesheet">
-    <link href="assets/css/blog.css" rel="stylesheet">
   </head>
   
   <body>
@@ -40,10 +34,11 @@
      
      <!-- 이미지 경로  -->
  	<%-- <%=request.getRealPath("/") %>  --%>
- 	<%=request.getRealPath("/resources/imgUpload/festivalImg") %> 
+ 	<%-- <%=request.getRealPath("/resources/imgUpload/festivalImg") %>  --%>
      
       ​<picture id="picture_group">
-        <img src="images/01.jpg" class="rounded-left mx-auto">
+      <!-- 이미지 경로 -->
+        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult.sTORED_FILE_NAME}" class="rounded-left mx-auto">
         <img src="images/02.jpg" class="mg-fluid mx-auto">
         <img src="images/03.jpg" class="mg-fluid mx-auto">
         <img src="images/04.jpg" class="rounded-right mx-auto">
@@ -55,7 +50,7 @@
           <div class="travel_box">
             <div class="travel_section" id="travel_section_00">
               <div class="travel_left">주요도시</div>
-              <a href="#" class="travel_a_city">서울</a>
+              <a href="/Festival/FestivalPage?place_Code=1" class="travel_a_city">서울</a>
               <a href="#" class="travel_a_city">인천</a>
               <a href="#" class="travel_a_city">부산</a>
               <a href="#" class="travel_a_city">대구</a>
@@ -104,126 +99,32 @@
       </div>
       
       <div id="view_more">
-        <div class="row Interval">
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample">
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="images/05.jpg" class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">festival name</h5>
-                      <p class="card-text">Content</p>
 
-                    </div>
-                  </div>
+                  <div class="containercollapse multi-collapse" id="multiCollapseExample">
+        <table  class="row justify-content-center">
+       	<c:forEach var="P" items="${pageResult}">
+			 	<tbody class="col-4 mx-3">
+            <tr>
+                    <th colspan="2" >${p.f_Subject}</th>
+                  </tr>
+                  <tr>
+                    <td rowspan="3"><img src="images/06.jpg" class="card-img">이미지</td>
+                    <td >${p.f_Content}</td>
+                  </tr>
+                  <tr>
+                    <td>${p.f_Address}</td>
+                  </tr>
+                  <tr>
+                    <td>시작일 : ${p.f_S_Year}-${p.f_S_Month}-${p.f_S_Day}<br>
+                    	끝나는일 : ${p.f_L_Year}${p.f_L_Month}${p.f_L_Day}
+                    </td>
+                  </tr>
+                </tbody>    
+		</c:forEach>
+                </table>
+   				 </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample">
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="images/06.jpg" class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">${fResult.f_Subject}</h5>
-                      <p class="card-text">${fResult.f_Address}</p>
-                      <p class="card-text">${fResult.f_Content}</p>
-                      <p class="card-text">${fResult.f_S_Year},-,${fResult.f_S_Month},-,${fResult.f_S_Day}</p>
-                      <p class="card-text">${fResult.f_L_Year},-,${fResult.f_L_Month},-,${fResult.f_L_Day}</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
-        <div class="row Interval">
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample">
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="images/07.jpg" class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">festival name</h5>
-                      <p class="card-text">Content</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample">
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="images/08.jpg" class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">festival name</h5>
-                      <p class="card-text">Content</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row Interval">
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample">
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="images/09.jpg" class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">festival name</h5>
-                      <p class="card-text">Content</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample">
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="images/10.jpg" class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Content</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- footer -->
 <%-- 	<jsp:include page="../inc/bottom.jsp" /> --%>
   </body>

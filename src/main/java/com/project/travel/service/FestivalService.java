@@ -1,8 +1,11 @@
 package com.project.travel.service;
 
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.project.travel.common.festivalSearch;
+import com.project.travel.vo.FestivalImgVO;
 import com.project.travel.vo.FestivalVO;
 import com.project.travel.vo.fSearchVO;
 
@@ -26,5 +29,7 @@ public interface FestivalService {
 	int festivalUpdate(FestivalVO festivalvo);
 	
 	//festival 페이지 
-	fSearchVO festivalPageList(int festivalpage, int festivalrange,  String searchType, String keyword); 
+	fSearchVO festivalPageList(int festivalpage, int festivalrange,  String searchType, String keyword);
+	
+	List<FestivalImgVO> festivalImg(int place_Code);
 }

@@ -67,7 +67,7 @@
 	
 	<!-- 축제 업데이트 -->
 	<update id="festivalUpdate">
-	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, F_Place = #{f_Place}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
+	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, Place_Code = #{Place_Code}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
 	</update>
 
 	<select id="festivalPage" resultType="com.project.travel.vo.FestivalVO">
@@ -75,4 +75,8 @@
 	ORDER BY F_Num DESC;
 	</select>
 
+	<select id="festivalImg" resultType="com.project.travel.vo.FestivalImgVO" >
+	select STORED_FILE_NAME from FestivalImg where F_Num = 
+	any(select F_Num from Festival where Place_Code=#{place_Code});
+	</select>
 </mapper>

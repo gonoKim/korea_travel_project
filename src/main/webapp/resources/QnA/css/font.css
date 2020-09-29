@@ -5,8 +5,10 @@
 /* qnaview 
 타이틀, 코멘트, 버튼
 */
-.qnaTh, #comment, .qnaBtn{font-family: 'Montserrat', sans-serif;}
+.qnaTh, #comment, .qnaBtn{font-family: 'Montserrat', sans-serif; }
 .qnaTd, .comContent{font-family: 'Noto Sans KR', sans-serif;}
 
 /* 네비게이션 */
-.navTitle{font-family: 'Montserrat', sans-serif;}
+.navTitle{font-family: 'Montserrat', sans-serif; font-weight: bold;}
+
+

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project.travel.common.festivalSearch;
+import com.project.travel.vo.FestivalImgVO;
 import com.project.travel.vo.FestivalVO;
 
 @Repository
@@ -66,5 +67,11 @@ public class FestivalDAO {
 		map.put("searchType", fSearch.getSearchType());
 		map.put("keyword", fSearch.getKeyword());
 		return sqlSession.selectList("festivalPage", map);
+	}
+
+	public List<FestivalImgVO> festivalImg(int place_Code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("place_Code", place_Code);
+		return sqlSession.selectList("festivalImg", map);
 	}
 }

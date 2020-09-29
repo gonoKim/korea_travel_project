@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.project.travel.common.festivalSearch;
 import com.project.travel.dao.FestivalDAO;
 import com.project.travel.utility.FileUtils;
+import com.project.travel.vo.FestivalImgVO;
 import com.project.travel.vo.FestivalVO;
 import com.project.travel.vo.fSearchVO;
 
@@ -99,5 +100,11 @@ public class FestivalServiceImpl implements FestivalService {
 		fSearchvo.setfSearch(fSearch);
 		fSearchvo.setfList(fesivalVO);
 		return fSearchvo;
+	}
+
+	@Override
+	public List<FestivalImgVO> festivalImg(int place_Code) {
+		return festivalDAO.festivalImg(place_Code);
+		
 	}
 }

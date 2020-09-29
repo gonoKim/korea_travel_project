@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.service.FestivalService;
+import com.project.travel.vo.FestivalImgVO;
 import com.project.travel.vo.FestivalVO;
 import com.project.travel.vo.fSearchVO;
 
@@ -114,14 +115,16 @@ public class FestivalController {
 			,   @RequestParam(required = false, defaultValue = "1") int festivalrange
 			, @RequestParam(required = false, defaultValue = "title") String searchType
 			, @RequestParam(required = false) String keyword
+			, @RequestParam(required = false, defaultValue = "1")int place_Code
 				) {
 		
 			
-			fSearchVO fSearchvo = festivalService.festivalList(festivalpage, festivalrange, searchType, keyword);
-			
+	fSearchVO fSearchvo = festivalService.festivalPageList(festivalpage, festivalrange, searchType, keyword);
+	List<FestivalImgVO> fResult = festivalService.festivalImg(place_Code);
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("fPagination", fSearchvo.getfSearch());
-			mav.addObject("fResult", fSearchvo.getfList());
+			mav.addObject("pageResult", fSearchvo.getfList());
+			mav.addObject("fResult",fResult.toString());
 			return mav;
 	}
 }
