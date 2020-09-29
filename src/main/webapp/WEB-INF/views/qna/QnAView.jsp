@@ -5,7 +5,6 @@
 <html>
 	<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>QnaView</title>
 	
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap-4.5.0.min.css">
@@ -19,6 +18,7 @@
     
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/assets/dist/css/no-responsive.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/QnA/css/broad_view.css" rel="stylesheet">
 

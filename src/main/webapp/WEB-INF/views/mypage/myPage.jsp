@@ -5,7 +5,6 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MyPage</title>
 
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap-4.5.0.min.css">
@@ -20,6 +19,7 @@
     <!-- Custom styles for this template -->
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/font-css.css">
     <link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/assets/dist/css/no-responsive.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/myPage/css/mypage.css" rel="stylesheet">
     
     <!-- js -->

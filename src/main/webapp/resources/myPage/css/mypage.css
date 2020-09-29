@@ -30,7 +30,6 @@ th {background: #eee;}
 	#phoneChk{width: 15.2%;}
 }
 @media(max-width: 992px){
-	body{background-size: 900px;}
 	.mPosttbl{font-size: small;}
 }
 @media(max-width: 767px){
