@@ -58,7 +58,7 @@
 							
 							<!-- 장소 코드 
 							서울특별시(001)부산광역시(002)대구광역시(003)인천광역시(004)대전광역시(005)광주광역시(006)울산광역시(007)
-							경기도(011)강원도(012)충청남도(013)전라남도(014)전라북도(015)경상남도(016)경상북도(017)
+							경기도(011)강원도(012)충청남도(013)충청북도(014)전라남도(015)전라북도(016)경상남도(017)경상북도(018)
 							세종특별자치시(101)\n제주특별자치도(102) -->
 				<div class="my-3">						
 						<div class="col">
@@ -70,10 +70,10 @@
 							<option value="005">대전광역시(005)</option> 	<option value="006">광주광역시(006)</option>
 							<option value="007">울산광역시(007)</option> 
 							<option value="">도</option>
-							<option value="011">경기도(011)</option>	<option value="012">강원도(012)</option> 
-							<option value="013">충청남도(013)</option>	<option value="014">전라남도(014)</option>
-							<option value="015">전라북도(015)</option>	<option value="016">경상남도(016)</option>
-							<option value="017">경상북도(017)</option> 
+							<option value="011">경기도(011)</option>	<option value="012">강원도(012)</option>
+							<option value="013">충청남도(013)</option>	<option value="014">충청북도(014)</option>	
+							<option value="015">전라남도(015)</option>	<option value="016">전라북도(016)</option>	
+							<option value="017">경상남도(017)</option>	<option value="018">경상북도(018)</option> 
 							<option value="">특별 자치도</option>
 							<option value="101">세종특별자치시(101)</option>	
 							<option value="102">제주특별자치도(102) </option> 
