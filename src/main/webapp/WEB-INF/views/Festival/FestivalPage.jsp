@@ -93,7 +93,8 @@
                   <div class="containercollapse multi-collapse" id="multiCollapseExample">
         <table  class="row justify-content-center">
        	<c:forEach var="p" items="${fResult}">
-       	 	<c:forEach var="i" items="${fIResult}">
+       	<c:forEach var="i" items="${fIResult}">
+       	
 			 	<tbody class="col-4 mx-3">
             <tr>
                     <th colspan="2" >${p.f_Subject}</th>
@@ -110,8 +111,8 @@
                     	끝나는일 : ${p.f_L_Year}${p.f_L_Month}${p.f_L_Day}
                     </td>
                   </tr>
-                </tbody>  
-                </c:forEach>  
+                </tbody>
+        </c:forEach>  
 		</c:forEach>
                 </table>
    				 </div>

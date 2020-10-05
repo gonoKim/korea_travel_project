@@ -113,11 +113,13 @@ public class FestivalController {
 	public ModelAndView FestivalPage(
 			@RequestParam(required = false, defaultValue = "1")int place_Code
 				) {		
-	List<FestivalImgVO> fIResult = festivalService.festivalImg(place_Code);
-	List<FestivalVO>	fResult	 = festivalService.festivalPage(place_Code);
+		fSearchVO fPageSearchvo = festivalService.festivalPage(place_Code);
+		
+	
 			ModelAndView mav = new ModelAndView();
-			mav.addObject("fIResult",fIResult);
-			mav.addObject("fResult",fResult);
+
+			mav.addObject("fResult",fPageSearchvo.getfList());
+			mav.addObject("fIResult",fPageSearchvo.getfImg());
 			return mav;
 	}
 }

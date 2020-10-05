@@ -34,7 +34,7 @@ public interface FestivalService {
 	 * searchType, String keyword);
 	 */
 	
-	List<FestivalVO> festivalPage(int place_Code);
+	fSearchVO festivalPage(int place_Code);
 	
-	List<FestivalImgVO> festivalImg(int place_Code);
+	/* List<FestivalImgVO> festivalImg(int place_Code); */
 }

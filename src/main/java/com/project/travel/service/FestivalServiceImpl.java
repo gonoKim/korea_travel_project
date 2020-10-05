@@ -83,29 +83,19 @@ public class FestivalServiceImpl implements FestivalService {
 		return festivalDAO.festivalUpdate(festivalvo);
 	}
 
-	/*
-	 * @Override public fSearchVO festivalPageList(int festivalpage, int
-	 * festivalrange, String searchType, String keyword) { festivalSearch fSearch =
-	 * new festivalSearch(); fSearch.setSearchType(searchType);
-	 * fSearch.setKeyword(keyword);
-	 * 
-	 * 
-	 * //전체 게시글 수 int festivallistCnt = festivalDAO.getFestivalListCnt(fSearch); //
-	 * 페이징 로직 fSearch.pageInfo(festivalpage, festivalrange, festivallistCnt);
-	 * 
-	 * List<FestivalVO> fesivalVO= festivalDAO.festivalPageList(fSearch); fSearchVO
-	 * fSearchvo =new fSearchVO(); fSearchvo.setfSearch(fSearch);
-	 * fSearchvo.setfList(fesivalVO); return fSearchvo; }
-	 */
+
 
 	@Override
-	public List<FestivalVO> festivalPage(int place_Code) {
-		return festivalDAO.festivalPage(place_Code);
+	public fSearchVO festivalPage(int place_Code) {
+		List<FestivalVO> fesivalVO= festivalDAO.festivalPage(place_Code);
+		List<FestivalImgVO> festivalImgVO= festivalDAO.festivalImg(place_Code);
+		fSearchVO fPageSearchvo =new fSearchVO();
+		fPageSearchvo.setfList(fesivalVO);
+		fPageSearchvo.setfImg(festivalImgVO);
+		return fPageSearchvo;
+		
+
 		
 	}
-	@Override
-	public List<FestivalImgVO> festivalImg(int place_Code) {
-		return festivalDAO.festivalImg(place_Code);
-		
-	}
+
 }
