@@ -66,13 +66,7 @@ public class FestivalDAO {
 		return sqlSession.selectList("festivalImg", map);
 	}
 
-	/*
-	 * public List<FestivalVO> festivalPageList(festivalSearch fSearch){
-	 * HashMap<String, Object> map = new HashMap<String, Object>(); 처음 페이지 리스트
-	 * map.put("festivalstartList", fSearch.getfestivalstartList());
-	 * map.put("searchType", fSearch.getSearchType()); map.put("keyword",
-	 * fSearch.getKeyword()); return sqlSession.selectList("festivalPage", map); }
-	 */
+
 	public List<FestivalVO> festivalPage(int place_Code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("place_Code", place_Code);

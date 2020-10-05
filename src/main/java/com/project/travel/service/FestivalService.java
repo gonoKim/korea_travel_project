@@ -28,13 +28,9 @@ public interface FestivalService {
 	// festival 수정
 	int festivalUpdate(FestivalVO festivalvo);
 	
-	//festival 페이지 
-	/*
-	 * fSearchVO festivalPageList(int festivalpage, int festivalrange, String
-	 * searchType, String keyword);
-	 */
+
 	
 	fSearchVO festivalPage(int place_Code);
 	
-	/* List<FestivalImgVO> festivalImg(int place_Code); */
+
 }
