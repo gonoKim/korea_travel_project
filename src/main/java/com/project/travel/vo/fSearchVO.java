@@ -7,6 +7,7 @@ import com.project.travel.common.festivalSearch;
 public class fSearchVO {
 	private festivalSearch fSearch;
 	private List<FestivalVO> fList;
+	private List<FestivalImgVO> fImg;
 	public festivalSearch getfSearch() {
 		return fSearch;
 	}
@@ -18,6 +19,12 @@ public class fSearchVO {
 	}
 	public void setfList(List<FestivalVO> fList) {
 		this.fList = fList;
+	}
+	public List<FestivalImgVO> getfImg() {
+		return fImg;
+	}
+	public void setfImg(List<FestivalImgVO> fImg) {
+		this.fImg = fImg;
 	}
 
 	

@@ -38,10 +38,10 @@
 
       ​<picture id="picture_group">
       <!-- 이미지 경로 -->
-        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[0].STORED_FILE_NAME}" class="rounded-left mx-auto">
-        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[1].STORED_FILE_NAME}" class="mg-fluid mx-auto">
-        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[2].STORED_FILE_NAME}" class="mg-fluid mx-auto">
-        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[3].STORED_FILE_NAME}" class="rounded-right mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[0].STORED_FILE_NAME}" class="rounded-left mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[1].STORED_FILE_NAME}" class="mg-fluid mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[2].STORED_FILE_NAME}" class="mg-fluid mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[3].STORED_FILE_NAME}" class="rounded-right mx-auto">
       </picture>
       
     <!-- 장소 코드 
@@ -92,24 +92,26 @@
 
                   <div class="containercollapse multi-collapse" id="multiCollapseExample">
         <table  class="row justify-content-center">
-       	<c:forEach var="P" items="${pageResult}">
+       	<c:forEach var="p" items="${fResult}">
+       	 	<c:forEach var="i" items="${fIResult}">
 			 	<tbody class="col-4 mx-3">
             <tr>
-                    <th colspan="2" >${p.F_Subject}</th>
+                    <th colspan="2" >${p.f_Subject}</th>
                   </tr>
                   <tr>
-                    <td rowspan="3"><img src="images/06.jpg" class="card-img">이미지</td>
-                    <td >${p.F_Content}</td>
+                    <td rowspan="3"><img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${i.STORED_FILE_NAME}" class="card-img"></td>
+                    <td >${p.f_Content}</td>
                   </tr>
                   <tr>
-                    <td>${p.F_Address}</td>
+                    <td>${p.f_Address}</td>
                   </tr>
                   <tr>
-                    <td>시작일 : ${p.F_S_Year}-${p.f_S_Month}-${p.F_S_Day}<br>
-                    	끝나는일 : ${p.f_L_Year}${p.F_L_Month}${p.F_L_Day}
+                    <td>시작일 : ${p.f_S_Year}-${p.f_S_Month}-${p.f_S_Day}<br>
+                    	끝나는일 : ${p.f_L_Year}${p.f_L_Month}${p.f_L_Day}
                     </td>
                   </tr>
-                </tbody>    
+                </tbody>  
+                </c:forEach>  
 		</c:forEach>
                 </table>
    				 </div>

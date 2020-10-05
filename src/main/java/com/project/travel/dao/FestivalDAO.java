@@ -18,8 +18,8 @@ public class FestivalDAO {
 	@Autowired
 	public SqlSession sqlSession;
 
-	/* Festival 리스트 & 페이징*/
-	public List<FestivalVO> festivalList(festivalSearch fSearch){
+	/* Festival 리스트 & 페이징 */
+	public List<FestivalVO> festivalList(festivalSearch fSearch) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		/* 처음 페이지 리스트 */
 		map.put("festivalstartList", fSearch.getfestivalstartList());
@@ -27,7 +27,7 @@ public class FestivalDAO {
 		map.put("keyword", fSearch.getKeyword());
 		return sqlSession.selectList("festivalList", map);
 	}
-	
+
 	/* Festival 게시물 갯수 */
 	public int getFestivalListCnt(festivalSearch fSearch) {
 		return sqlSession.selectOne("getFestivalListCnt", fSearch);
@@ -37,7 +37,7 @@ public class FestivalDAO {
 	public void write(FestivalVO festivalvo) {
 		sqlSession.insert("festivalwrite", festivalvo);
 	}
-	
+
 	/* Festival 업로드 */
 	public void insertFile(Map<String, Object> map) throws Exception {
 		sqlSession.insert("insertFile", map);
@@ -59,19 +59,23 @@ public class FestivalDAO {
 	public int festivalUpdate(FestivalVO festivalvo) {
 		return sqlSession.update("festivalUpdate", festivalvo);
 	}
-	
-	public List<FestivalVO> festivalPageList(festivalSearch fSearch){
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		/* 처음 페이지 리스트 */
-		map.put("festivalstartList", fSearch.getfestivalstartList());
-		map.put("searchType", fSearch.getSearchType());
-		map.put("keyword", fSearch.getKeyword());
-		return sqlSession.selectList("festivalPage", map);
-	}
 
 	public List<FestivalImgVO> festivalImg(int place_Code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("place_Code", place_Code);
 		return sqlSession.selectList("festivalImg", map);
+	}
+
+	/*
+	 * public List<FestivalVO> festivalPageList(festivalSearch fSearch){
+	 * HashMap<String, Object> map = new HashMap<String, Object>(); 처음 페이지 리스트
+	 * map.put("festivalstartList", fSearch.getfestivalstartList());
+	 * map.put("searchType", fSearch.getSearchType()); map.put("keyword",
+	 * fSearch.getKeyword()); return sqlSession.selectList("festivalPage", map); }
+	 */
+	public List<FestivalVO> festivalPage(int place_Code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("place_Code", place_Code);
+		return sqlSession.selectList("festivalPage", map);
 	}
 }

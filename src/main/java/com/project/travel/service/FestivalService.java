@@ -29,7 +29,12 @@ public interface FestivalService {
 	int festivalUpdate(FestivalVO festivalvo);
 	
 	//festival 페이지 
-	fSearchVO festivalPageList(int festivalpage, int festivalrange,  String searchType, String keyword);
+	/*
+	 * fSearchVO festivalPageList(int festivalpage, int festivalrange, String
+	 * searchType, String keyword);
+	 */
+	
+	List<FestivalVO> festivalPage(int place_Code);
 	
 	List<FestivalImgVO> festivalImg(int place_Code);
 }

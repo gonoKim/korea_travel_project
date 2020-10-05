@@ -111,20 +111,12 @@ public class FestivalController {
 	/* 축제 페이지 리스트 */
 	@RequestMapping(value = "/FestivalPage", method = RequestMethod.GET)
 	public ModelAndView FestivalPage(
-			@RequestParam(required = false, defaultValue = "1") int festivalpage
-			,   @RequestParam(required = false, defaultValue = "1") int festivalrange
-			, @RequestParam(required = false, defaultValue = "title") String searchType
-			, @RequestParam(required = false) String keyword
-			, @RequestParam(required = false, defaultValue = "1")int place_Code
-				) {
-		
-			
-	fSearchVO fSearchvo = festivalService.festivalPageList(festivalpage, festivalrange, searchType, keyword);
-	List<FestivalImgVO> fResult = festivalService.festivalImg(place_Code);
+			@RequestParam(required = false, defaultValue = "1")int place_Code
+				) {		
+	List<FestivalImgVO> fIResult = festivalService.festivalImg(place_Code);
+	List<FestivalVO>	fResult	 = festivalService.festivalPage(place_Code);
 			ModelAndView mav = new ModelAndView();
-			mav.addObject("fPagination", fSearchvo.getfSearch());
-			mav.addObject("pageResult", fSearchvo.getfList());
-			 
+			mav.addObject("fIResult",fIResult);
 			mav.addObject("fResult",fResult);
 			return mav;
 	}
