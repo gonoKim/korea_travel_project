@@ -38,10 +38,10 @@
 
       ​<picture id="picture_group">
       <!-- 이미지 경로 -->
-        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[0].STORED_FILE_NAME}" class="rounded-left mx-auto">
-        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[1].STORED_FILE_NAME}" class="mg-fluid mx-auto">
-        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[2].STORED_FILE_NAME}" class="mg-fluid mx-auto">
-        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[3].STORED_FILE_NAME}" class="rounded-right mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[0].STORED_FILE_NAME}" class="rounded-left mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[1].STORED_FILE_NAME}" class="mg-fluid mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[2].STORED_FILE_NAME}" class="mg-fluid mx-auto">
+        <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fResult[3].STORED_FILE_NAME}" class="rounded-right mx-auto">
       </picture>
       
         <div class="area_silver" id="Area_page">
