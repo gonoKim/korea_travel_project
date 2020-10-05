@@ -124,7 +124,7 @@ public class FestivalController {
 			ModelAndView mav = new ModelAndView();
 			mav.addObject("fPagination", fSearchvo.getfSearch());
 			mav.addObject("pageResult", fSearchvo.getfList());
-			mav.addObject("fResult",fResult.toString());
+			mav.addObject("fResult",fResult);
 			return mav;
 	}
 }

@@ -35,13 +35,13 @@
      <!-- 이미지 경로  -->
  	<%-- <%=request.getRealPath("/") %>  --%>
  	<%-- <%=request.getRealPath("/resources/imgUpload/festivalImg") %>  --%>
-     
+
       ​<picture id="picture_group">
       <!-- 이미지 경로 -->
-        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult.sTORED_FILE_NAME}" class="rounded-left mx-auto">
-        <img src="images/02.jpg" class="mg-fluid mx-auto">
-        <img src="images/03.jpg" class="mg-fluid mx-auto">
-        <img src="images/04.jpg" class="rounded-right mx-auto">
+        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[0].STORED_FILE_NAME}" class="rounded-left mx-auto">
+        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[1].STORED_FILE_NAME}" class="mg-fluid mx-auto">
+        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[2].STORED_FILE_NAME}" class="mg-fluid mx-auto">
+        <img src="<%=request.getRealPath("/resources/imgUpload/festivalImg/") %>${fResult[3].STORED_FILE_NAME}" class="rounded-right mx-auto">
       </picture>
       
         <div class="area_silver" id="Area_page">

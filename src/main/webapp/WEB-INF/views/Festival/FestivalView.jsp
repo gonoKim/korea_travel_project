@@ -38,7 +38,7 @@ function FestivalUpdate(){
             </tr>
              <tr>
                 <th class="text-center">Place: </th>
-                <td scope="row">${fResult.f_Place }</td>
+                <td scope="row">${fResult.place_Code }</td>
             </tr>
             <tr>
                 <th class="text-center">Content: </th>
