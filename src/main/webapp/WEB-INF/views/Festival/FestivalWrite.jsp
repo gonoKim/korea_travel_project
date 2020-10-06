@@ -76,7 +76,9 @@
 							<option value="017">경상남도(017)</option>	<option value="018">경상북도(018)</option> 
 							<option value="">특별 자치도</option>
 							<option value="101">세종특별자치시(101)</option>	
-							<option value="102">제주특별자치도(102) </option> 
+							<option value="102">제주특별자치도(102) </option>
+							<option value="">온라인</option>
+							<option value="999">온라인(999) </option> 
 						</select>
 					</div>
 				</div>
