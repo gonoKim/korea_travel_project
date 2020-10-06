@@ -63,53 +63,7 @@
         </a>
       </div>
 
-      <div class="area_silver" id="Area_page">
-        <div class="wrap">
-          <div class="area_title">국내 축제</div>
-          <div class="travel_box">
-            <div class="travel_section" id="travel_section_00">
-              <div class="travel_left">주요도시</div>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">서울</a>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">인천</a>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">부산</a>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">대구</a>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">광주</a>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">대전</a>
-              <a href="../Menu/Festival/festival.html" class="travel_a_city">울산</a>
-            </div>
-
-            <div class="travel_section" id="travel_section_01">
-              <a href="#" class="travel_city"><div><span>경기도</span></div></a>
-              <a href="#" class="travel_city"><div><span>강원도</span></div></a>
-              <a href="#" class="travel_city"><div><span>충청북도</span></div></a>
-              <a href="#" class="travel_city"><div><span>충청남도</span></div></a>
-            </div>
-
-            <div class="travel_section" id="travel_section_02">
-              <a href="#" class="travel_city"><div><span>경상북도</span></div></a>
-              <a href="#" class="travel_city"><div><span>경상남도</span></div></a>
-              <a href="#" class="travel_city"><div><span>전라북도</span></div></a>
-              <a href="#" class="travel_city"><div><span>전라남도</span></div></a>
-              <a href="#" class="travel_city"><div><span>제주도</span></div></a>
-            </div>
-
-            <div class="travel_section" id="travel_section_03">
-              <a href="#" class="travel_city"><div><span>경기도</span></div></a>
-              <a href="#" class="travel_city"><div><span>강원도</span></div></a>
-              <a href="#" class="travel_city"><div><span>충북</span></div></a>
-              <a href="#" class="travel_city"><div><span>충남</span></div></a>
-            </div>
-
-            <div class="travel_section" id="travel_section_04">
-              <a href="#" class="travel_city"><div><span>경북</span></div></a>
-              <a href="#" class="travel_city"><div><span>경남</span></div></a>
-              <a href="#" class="travel_city"><div><span>전북</span></div></a>
-              <a href="#" class="travel_city"><div><span>전남</span></div></a>
-              <a href="#" class="travel_city"><div><span>제주도</span></div></a>
-            </div>
-          </div>
-        </div>
-      </div>
+     <jsp:include page="../inc/festivalnav.jsp" />
 
       <div class="row mb-4">
         <div class="col-md-6">
