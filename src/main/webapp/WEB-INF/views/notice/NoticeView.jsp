@@ -53,29 +53,28 @@
 		<form>
 			<table class="my-5 table table-bordered">
 				<tr>
-					<th class="text-center w-25 p-3 qnaTh">Subject:</th>
-					<td scope="row" class="px-4 qnaTd">${result.NB_Subject}</td>
+					<th class="text-center w-25 p-3 qnaTh bg-secondary text-white">Subject</th>
+					<td scope="row" class="px-4 qnaTd" colspan="3">${result.NB_Subject}</td>
 				</tr>
 				<tr>
-					<th class="text-center qnaTh">Writer:</th>
+					<th class="text-center qnaTh bg-secondary text-white">Writer</th>
 					<td scope="row" class="px-4 qnaTd">${result.m_Id}</td>
-				</tr>
-				<tr>
-					<th class="text-center qnaTh">Content:</th>
-					<td scope="row" class="px-4 qnaTd">${result.NB_Content}</td>
-				</tr>
-				<tr>
-					<th class="text-center qnaTh">Views:</th>
+					<th class="text-center qnaTh bg-secondary text-white">Views</th>
 					<td scope="row" class="px-4 qnaTd">${result.NB_Views}</td>
 				</tr>
+				<tr>
+					<!-- <th class="text-center qnaTh bg-secondary text-white">Content</th> -->
+					<td scope="row" class="px-4 qnaTd" colspan="4">${result.NB_Content}</td>
+				</tr>
+
 			</table>
 
 			<div class="row justify-content-center my-4">
 				<c:if test="${user.m_Grade == 'admin'}">
-					<input type="button" value="Update" class="btn qnaBtn" onclick="NoticeUpdate()" />
-					<input type="button" value="Delete" class="btn qnaBtn  mx-3" onclick="NoticeDelete()" />
+					<input type="button" value="Update" class="btn btn-outline-secondary" onclick="NoticeUpdate()" />
+					<input type="button" value="Delete" class="btn btn-outline-secondary  mx-3" onclick="NoticeDelete()" />
 				</c:if>
-				<input type="button" value="List" class="btn qnaBtn" onclick="javascript:location.href='NoticeBoard'" />
+				<input type="button" value="List" class="btn btn-outline-secondary" onclick="javascript:location.href='NoticeBoard'" />
 			</div>
 		</form>
 	</div>
