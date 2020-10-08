@@ -37,19 +37,29 @@ function FestivalUpdate(){
                 <td scope="row">${fResult.f_Subject }</td>
             </tr>
              <tr>
-                <th class="text-center">Place: </th>
+                <th class="text-center">장소 코드: </th>
                 <td scope="row">${fResult.place_Code }</td>
+            </tr>
+                    <tr>
+                <th class="text-center">Summary: </th>
+                <td scope="row">${fResult.f_Summary}</td>
             </tr>
             <tr>
                 <th class="text-center">Content: </th>
                 <td scope="row">${fResult.f_Content }</td>
             </tr>
-            
+    
             <tr>
                 <th class="text-center">Address: </th>
                 <td scope="row">${fResult.f_Address }</td>
             </tr>
-         	
+            <tr>
+                <th class="text-center">Content: </th>
+                <td scope="row">시작일 : ${fResult.f_S_Year}-${fResult.f_S_Month}-${fResult.f_S_Day}<br>
+				끝나는일 : ${fResult.f_L_Year}-${fResult.f_L_Month}-${fResult.f_L_Day}</td>
+            </tr>
+            
+            
 </table>
 <div class="row justify-content-center my-4">
 					<input type="button" value="Update" class="btn" onclick="FestivalUpdate();"/>
