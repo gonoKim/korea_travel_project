@@ -166,7 +166,5 @@ window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900")
         </div>
 	</div>
 	</div>
-
-	
 </body>
 </html>

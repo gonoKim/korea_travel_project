@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
 	<!-- google font --> 
-	<link href="${pageContext.request.contextPath}/resources/QnA/css/font.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/font.css" rel="stylesheet">
 	
 
 <header class="blog-header py-3 ">

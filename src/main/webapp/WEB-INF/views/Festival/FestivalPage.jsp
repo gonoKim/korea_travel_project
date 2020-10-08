@@ -23,6 +23,9 @@
 	<link href="${pageContext.request.contextPath}/resources/main/css/area.css"	rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/festival/css/page.css"	rel="stylesheet">
 	
+	<!-- 폰트 css -->
+	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/font.css" rel="stylesheet">
+	
 	<script type="text/javascript">
 function win(Num)
 {
@@ -44,7 +47,7 @@ function win(Num)
 		<%-- <%=request.getRealPath("/resources/imgUpload/festivalImg") %>  --%>
 ​	
 		<div id="picture_group" class="my-4 d-block text-center">
-			<h3 class="my-3">국내 축제 이미지</h3>
+			<h3 class="my-3" id="fP-title">국내 축제 이미지</h3>
 			<hr>
 			<!-- 이미지 경로 -->
 			<img
