@@ -5,6 +5,7 @@ import java.util.Date;
 public class FestivalVO {
 	private int F_Num; //축제 넘버
 	private	String F_Subject; //축제 제목
+	private	String F_Summary; //축제 내용 요약본
 	private String F_Content; //축제 내용
 	private	int Place_Code;	//축제 장소 코드
 	private	String F_Address;	//축제 주소
@@ -27,6 +28,12 @@ public class FestivalVO {
 	}
 	public void setF_Subject(String f_Subject) {
 		F_Subject = f_Subject;
+	}
+		public String getF_Summary() {
+		return F_Summary;
+	}
+	public void setF_Summary(String f_Summary) {
+		F_Summary = f_Summary;
 	}
 	public String getF_Content() {
 		return F_Content;

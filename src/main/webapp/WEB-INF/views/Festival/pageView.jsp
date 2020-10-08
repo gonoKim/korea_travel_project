@@ -17,7 +17,7 @@
 
 	
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Festival View Page</title>
 </head>
 <body>
 <div class="container text-center">

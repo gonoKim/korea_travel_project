@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FestivalUpdate</title>
 <link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >

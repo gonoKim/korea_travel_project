@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../../../resources/QnA/css/broad_view.css">
 <!-- <script src="../../../resources/QnA/js/QnAView.js"></script> -->
 <meta charset="UTF-8">
-<title>글 내용</title>
+<title>FestivalView</title>
 
 <!-- 삭제할 부분 -->
 <script type="text/javascript">

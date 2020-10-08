@@ -87,7 +87,7 @@ function win(Num)
 									<td rowspan="3" id="contentImg" class="">
 										<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fImg.STORED_FILE_NAME}" class="card-img mr-2">
 									</td>
-									<td>${fPage.f_Content}</td>
+									<td>${fPage.f_Summary}</td>
 								</tr>
 								<tr>
 									<td>${fPage.f_Address}</td>
