@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 /* etc */
 body{
   height: 120vh;
-  background: url('/resources/main/Images/bg_01.png') no-repeat center/cover;
+  background: url('/resources/main/Images/bg_03.jpg') no-repeat center/cover;
 }
 #Main{width: 220px;}
 

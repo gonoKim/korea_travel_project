@@ -1,2 +1,7 @@
+body{
+  height: 120vh;
+  background: url('/resources/main/Images/bg_03.jpg') no-repeat center/cover;
+}
+
 #picture_group img{width:200px; height:200px;}
 #contentImg img{width:100px; height:100px;}
