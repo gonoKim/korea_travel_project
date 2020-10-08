@@ -7,8 +7,11 @@
 							
 							세종특별자치시(101) 제주특별자치도(102) 온라인(999) -->
 		<div class="area_silver" id="Area_page">
+		<hr>
 			<div class="wrap">
+			
 				<div class="area_title">국내 축제</div>
+				
 				<div class="travel_box">
 					<div class="travel_section" id="travel_section_00">
 						<div class="travel_left">주요도시</div>

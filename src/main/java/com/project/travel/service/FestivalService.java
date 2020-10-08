@@ -1,11 +1,8 @@
 package com.project.travel.service;
 
-import java.util.List;
-
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.project.travel.common.festivalSearch;
-import com.project.travel.vo.FestivalImgVO;
 import com.project.travel.vo.FestivalVO;
 import com.project.travel.vo.fSearchVO;
 
@@ -28,9 +25,7 @@ public interface FestivalService {
 	// festival 수정
 	int festivalUpdate(FestivalVO festivalvo);
 	
-
-	
 	fSearchVO festivalPage(int place_Code);
 	
-
+	fSearchVO fPageView(int f_Num);
 }

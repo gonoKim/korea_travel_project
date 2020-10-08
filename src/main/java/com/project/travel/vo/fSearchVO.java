@@ -8,6 +8,9 @@ public class fSearchVO {
 	private festivalSearch fSearch;
 	private List<FestivalVO> fList;
 	private List<FestivalImgVO> fImg;
+	private FestivalVO fViewList;
+	private FestivalImgVO fViewImg;
+	
 	public festivalSearch getfSearch() {
 		return fSearch;
 	}
@@ -25,6 +28,18 @@ public class fSearchVO {
 	}
 	public void setfImg(List<FestivalImgVO> fImg) {
 		this.fImg = fImg;
+	}
+	public FestivalVO getfViewList() {
+		return fViewList;
+	}
+	public void setfViewList(FestivalVO fViewList) {
+		this.fViewList = fViewList;
+	}
+	public FestivalImgVO getfViewImg() {
+		return fViewImg;
+	}
+	public void setfViewImg(FestivalImgVO fViewImg) {
+		this.fViewImg = fViewImg;
 	}
 
 	

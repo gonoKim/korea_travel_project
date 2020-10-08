@@ -108,7 +108,7 @@ public class FestivalController {
 	}
 	
 	
-	/* 축제 페이지 리스트 */
+	/* 축제 페이지 리스트 장소코드로 분류 */
 	@RequestMapping(value = "/FestivalPage", method = RequestMethod.GET)
 	public ModelAndView FestivalPage(
 			@RequestParam(required = false, defaultValue = "1")int place_Code
@@ -122,4 +122,20 @@ public class FestivalController {
 			mav.addObject("fIResult",fPageSearchvo.getfImg());
 			return mav;
 	}
+	
+	/* 축제 뷰 페이지 리스트 축제 넘버로 분류 */
+	 @RequestMapping(value = "/pageView", method = RequestMethod.GET) 
+	 public ModelAndView pgaeView(
+			 @RequestParam(required = false)
+			 int f_Num) {
+	 fSearchVO fPageSearchvo = festivalService.fPageView(f_Num);
+	 ModelAndView mav = new ModelAndView();
+	 
+	 mav.addObject("fResult",fPageSearchvo.getfViewList());
+	 mav.addObject("fIResult",fPageSearchvo.getfViewImg());
+	 
+	 return mav; 
+	 
+	 }
+	 
 }

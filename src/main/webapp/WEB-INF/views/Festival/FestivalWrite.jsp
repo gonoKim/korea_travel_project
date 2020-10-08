@@ -91,7 +91,7 @@
 				<h4 class="my-3">Start</h4>
 				<div class="form-row" id="form_YMD">
 					<div class="col">
-						<input type="number" class="form-control" id="inputYear" name="F_S_Year" placeholder="Year (4)" min="1900" max="2021"
+						<input type="number" class="form-control" id="inputYear" name="F_S_Year" placeholder="Year (4)" min="1900" max="2030"
 							maxlength="4" oninput="maxLengthCheck(this)" required>
 					</div>
 					<div class="col">
@@ -114,7 +114,7 @@
 				<h4 class="my-3">End</h4>
 				<div class="form-row" id="form_YMD2">
 					<div class="col">
-						<input type="number" class="form-control" id="inputYear" name="F_L_Year" placeholder="Year (4)" min="1900" max="2021"
+						<input type="number" class="form-control" id="inputYear" name="F_L_Year" placeholder="Year (4)" min="1900" max="2030"
 							maxlength="4" oninput="maxLengthCheck(this)" required>
 					</div>
 					<div class="col">

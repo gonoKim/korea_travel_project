@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
 <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
+    <p>WI-FI Team Project<br>
+    Wep Framework : <a href="https://getbootstrap.com/">Bootstrap</a><br>
+    	제작자 : 최한규 강현철 박민정 안성후 <br>
+    	   <a href="#">Back to top</a>
+    	</p>
+   
+   
+   
 </footer>

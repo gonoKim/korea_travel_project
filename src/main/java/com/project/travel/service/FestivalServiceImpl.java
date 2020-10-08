@@ -84,7 +84,7 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 
 
-
+	//축제 페이지 이미지, 축제 데이터값을 장소코드로 받아옴
 	@Override
 	public fSearchVO festivalPage(int place_Code) {
 		List<FestivalVO> fesivalVO= festivalDAO.festivalPage(place_Code);
@@ -93,9 +93,16 @@ public class FestivalServiceImpl implements FestivalService {
 		fPageSearchvo.setfList(fesivalVO);
 		fPageSearchvo.setfImg(festivalImgVO);
 		return fPageSearchvo;
-		
+	}
 
-		
+	@Override
+	public fSearchVO fPageView(int f_Num) {
+		FestivalVO fesivalVO= festivalDAO.fPageView(f_Num);
+		FestivalImgVO festivalImgVO= festivalDAO.fPageImgView(f_Num);
+		fSearchVO fPageSearchvo =new fSearchVO();
+		fPageSearchvo.setfViewList(fesivalVO);
+		fPageSearchvo.setfViewImg(festivalImgVO);
+		return fPageSearchvo;
 	}
 
 }

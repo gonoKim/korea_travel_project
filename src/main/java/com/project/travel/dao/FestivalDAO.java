@@ -59,17 +59,32 @@ public class FestivalDAO {
 	public int festivalUpdate(FestivalVO festivalvo) {
 		return sqlSession.update("festivalUpdate", festivalvo);
 	}
-
+	
+	/* 축제 이미지 가져오기( 장소코드로) */
 	public List<FestivalImgVO> festivalImg(int place_Code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("place_Code", place_Code);
 		return sqlSession.selectList("festivalImg", map);
 	}
 
-
+	/* 축제 데이터 값 가져오기  장소코드*/
 	public List<FestivalVO> festivalPage(int place_Code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("place_Code", place_Code);
 		return sqlSession.selectList("festivalPage", map);
+	}
+	
+	/* 축제 데이터 값 가져오기 (자세히 보기 페이지) 축제 넘버 */ 
+	public FestivalVO fPageView(int f_Num) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+	map.put("f_Num", f_Num);
+	return sqlSession.selectOne("fViewPage", map);
+	}
+	
+	/* 축제 이미지 가져오기 (자세히 보기 페이지) 축제 넘버 */ 
+	public FestivalImgVO fPageImgView(int f_Num) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("f_Num", f_Num);
+		return sqlSession.selectOne("fViewImg", map);
 	}
 }

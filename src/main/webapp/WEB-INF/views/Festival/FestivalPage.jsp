@@ -22,6 +22,15 @@
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/font-css.css" rel="canonical">
 	<link href="${pageContext.request.contextPath}/resources/main/css/area.css"	rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/festival/css/page.css"	rel="stylesheet">
+	
+	<script type="text/javascript">
+function win(Num)
+{
+	var url = "/Festival/pageView";
+	url = url + "?f_Num="+Num;
+	window.open(url,"새창의 제목","width=1200,height=900");
+}
+</script>
 </head>
 
 <body>
@@ -33,9 +42,10 @@
 		<!-- 이미지 경로  -->
 		<%-- <%=request.getRealPath("/") %>  --%>
 		<%-- <%=request.getRealPath("/resources/imgUpload/festivalImg") %>  --%>
-​
+​	
 		<div id="picture_group" class="my-4 d-block text-center">
 			<h3 class="my-3">국내 축제 이미지</h3>
+			<hr>
 			<!-- 이미지 경로 -->
 			<img
 				src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[0].STORED_FILE_NAME}"
@@ -51,7 +61,7 @@
 		<!-- 축제 네비 -->
 		<jsp:include page="../inc/festivalnav.jsp" />
 
-		<div id="btn_view_more" class="text-center">
+		<div id="btn_view_more" class="text-center my-4">
 			<p>
 				<button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample">
 					View More
@@ -63,6 +73,7 @@
 			<div class="collapse multi-collapse" id="multiCollapseExample">
 				<div class="Interval">
 					<table class="row justify-content-center">
+					<hr>
 						<!-- 페이지 변수 -->
 						<c:forEach var="fPage" items="${fResult}" begin="0" end="${fn:length(fResult)}" varStatus="status">
 							<!-- 이미지 변수 -->
@@ -85,8 +96,11 @@
 									<td>
 										<h6>
 											시작일 : ${fPage.f_S_Year}-${fPage.f_S_Month}-${fPage.f_S_Day}<br>
-											끝나는일 : ${fPage.f_L_Year}${fPage.f_L_Month}${fPage.f_L_Day}
+											끝나는일 : ${fPage.f_L_Year}-${fPage.f_L_Month}-${fPage.f_L_Day}
 										</h6>
+										<button class="btn" onclick="win(${fPage.f_Num});">
+											자세히 보기	
+										</button>
 									</td>
 								</tr>
 							</tbody>
