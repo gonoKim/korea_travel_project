@@ -14,7 +14,10 @@
     font-size: 3.5rem;
   }
 }
-
+body{
+	background: url('/resources/myPage/Images/bg_01.png') no-repeat;
+	background-size: 700px;
+	}
 /* stylelint-disable selector-list-comma-newline-after */
 
 .blog-header {
