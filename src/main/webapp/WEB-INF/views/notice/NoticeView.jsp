@@ -73,7 +73,7 @@
 			<div class="row justify-content-center my-4">
 				<c:if test="${user.m_Grade == 'admin'}">
 					<input type="button" value="Update" class="btn qnaBtn" onclick="NoticeUpdate()" />
-					<input type="button" value="Delete" class="btn qnaBtn" onclick="NoticeDelete()" />
+					<input type="button" value="Delete" class="btn qnaBtn  mx-3" onclick="NoticeDelete()" />
 				</c:if>
 				<input type="button" value="List" class="btn qnaBtn" onclick="javascript:location.href='NoticeBoard'" />
 			</div>

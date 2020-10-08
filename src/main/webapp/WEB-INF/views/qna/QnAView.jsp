@@ -79,7 +79,7 @@
 					<c:if test="${result.m_Id == user.m_Id}">
 						<input type="button" value="Update" class="btn btn-outline-secondary" onclick="QnAUpdate()" />
 					</c:if>
-					<input type="button" value="Delete" class="btn btn-outline-secondary" onclick="boardDelete()" />
+					<input type="button" value="Delete" class="btn btn-outline-secondary mx-3" onclick="boardDelete()" />
 				</c:if>
 				<input type="button" value="List" class="btn btn-outline-secondary" onclick="javascript:location.href='QnABoard'" />
 			</div>
