@@ -7,28 +7,29 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.project.travel.dao.MainDAO;
-import com.project.travel.vo.MainVO;
+import com.project.travel.vo.FestivalImgVO;
+import com.project.travel.vo.NoticeVO;
 
 @Service
 public class MainServiceImpl implements MainService {
 	
 	@Inject MainDAO dao;
 	
-	// 메인 배너에 넣을 이미지 찾기
+	// top 배너에 넣을 이미지 찾기
 	@Override
-	public List<MainVO> imgBanner() throws Exception {
-		return dao.imgBanner();
+	public List<FestivalImgVO> topBanner() throws Exception {
+		return dao.topBanner();
 	}
 	
-	// 포토갤러리 배너에 넣을 이미지 찾기
+	// bottom 배너에 넣을 이미지 찾기
 	@Override
-	public List<MainVO> photoBanner() throws Exception {
-		return dao.photoBanner();
+	public List<FestivalImgVO> bottomBanner() throws Exception {
+		return dao.bottomBanner();
 	}
 	
 	// 공지사항 목록 조회
 	@Override
-	public List<MainVO> nbList() throws Exception {
+	public List<NoticeVO> nbList() throws Exception {
 		return dao.nbList();
 	}
 }

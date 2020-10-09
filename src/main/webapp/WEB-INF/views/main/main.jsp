@@ -40,16 +40,16 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[0].photo_Num}.jpg" alt="First slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${topBanner[0].STORED_FILE_NAME}" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[1].photo_Num}.jpg" alt="Second slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${topBanner[1].STORED_FILE_NAME}" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[2].photo_Num}.jpg" alt="Third slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${topBanner[2].STORED_FILE_NAME}" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/main/Images/${imgBanner[3].photo_Num}.jpg" alt="fourth slide">
+            <img class="d-block w-100" src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${topBanner[3].STORED_FILE_NAME}" alt="fourth slide">
           </div>
         </div>
 		        
@@ -72,28 +72,28 @@
             <div id="Photo_carousel" class="carousel slide" data-ride="carousel" data-interval="2000" pause="hover">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[0].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[0].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[1].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[1].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[2].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[2].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[3].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[3].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[4].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[4].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
 				<div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[5].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[5].STORED_FILE_NAME}" class="d-block w-100">
                 </div>                
                 <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[6].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[6].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
 				<div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/main/Images/${photoBanner[7].photo_Num}.jpg" class="d-block w-100">
+                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[7].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#Photo_carousel" role="button" data-slide="prev">

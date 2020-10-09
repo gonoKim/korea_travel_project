@@ -1,27 +1,26 @@
 package com.project.travel.vo;
 
 public class MainVO {
-	// 포토 갤러리
-	private int Photo_Num;
-	private	int Photo_Views;
+	// 배너 이미지
+	private int F_Num;
+	private String STORED_FILE_NAME;
 	// 공지사항 게시판
 	private int NB_Num;
 	private String NB_Subject;
 	private	int NB_Views;
 	
-	// 포토 갤러리
-	public int getPhoto_Num() {
-		return Photo_Num;
+	// 배너 이미지
+	public int getF_Num() {
+		return F_Num;
 	}
-	public void setPhoto_Num(int photo_Num) {
-		Photo_Num = photo_Num;
+	public void setF_Num(int f_Num) {
+		F_Num = f_Num;
 	}
-
-	public int getPhoto_Views() {
-		return Photo_Views;
+	public String getSTORED_FILE_NAME() {
+		return STORED_FILE_NAME;
 	}
-	public void setPhoto_Views(int photo_Views) {
-		Photo_Views = photo_Views;
+	public void setSTORED_FILE_NAME(String sTORED_FILE_NAME) {
+		STORED_FILE_NAME = sTORED_FILE_NAME;
 	}
 
 	// 공지사항 게시판

@@ -3,6 +3,17 @@
 	<!-- google font --> 
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/font.css" rel="stylesheet">
 	
+	<script type="text/javascript">
+	function festival_alert(){
+		var m_Id = "${user.m_Id}";	
+		
+		if(m_Id != ""){
+			location.href = "/Festival/FestivalPage"; 
+		} else{
+			alert("Please log in and use it.");
+		}		
+	}
+	</script>
 
 <header class="blog-header py-3 ">
 	<div class="row flex-nowrap justify-content-between align-items-center">
@@ -35,7 +46,7 @@
 <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
 	<div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
 		<a class="p-2 text-muted nav-link navTitle" href="/main/main">Home</a>
-		<a class="p-2 text-muted nav-link navTitle" href="/Festival/FestivalPage">Festival</a>
+		<a class="p-2 text-muted nav-link navTitle" type="button" onclick="festival_alert()">Festival</a>
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
 				<a class="nav-link p-2 text-muted navTitle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Support </a>
