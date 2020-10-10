@@ -72,7 +72,7 @@
 
 		<div class="row justify-content-center mt-4">
 			<table class="table table-hover col-11 text-center">
-				<tr class="bg-primary text-white qnaTh">
+				<tr class="bg-secondary text-white qnaTh">
 					<td scope="col">No</td>
 					<td scope="col">Subject</td>
 					<td scope="col">Writer</td>
@@ -81,9 +81,9 @@
 				</tr>
 				<c:forEach var="n" items="${result}">
 					<fmt:formatDate value="${n.NB_Date}" pattern="yyyy-MM-dd" var="dateFormat_n" />
-					<tr class="qnaTd">
+					<tr class="qnaTd bg-white">
 						<td>${n.NB_Num}</td>
-						<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num}" class="text-primary d-inline-block text-truncate" >${n.NB_Subject}</a></td>
+						<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num}" class="text-secondary d-inline-block text-truncate" >${n.NB_Subject}</a></td>
 						<td>${n.m_Id}</td>
 						<td>${n.NB_Views}</td>
 						<td>${dateFormat_n}</td>

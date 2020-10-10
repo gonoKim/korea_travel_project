@@ -73,7 +73,7 @@
 
 		<div class="row justify-content-center mt-4">
 			<table class="table table-hover col-11 text-center">
-				<tr class="bg-primary text-white qnaTh">
+				<tr class="bg-secondary text-white qnaTh">
 					<td scope="col">No</td>
 					<td scope="col">Subject</td>
 					<td scope="col">Writer</td>
@@ -82,9 +82,9 @@
 				</tr>
 				<c:forEach var="b" items="${result}">
 					<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd " var="dateFormat_cr" />
-					<tr class="qnaTd">
+					<tr class="qnaTd bg-white">
 						<td scope="row">${b.qnA_Num}</td>
-						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}"  class="text-primary d-inline-block text-truncate" style="max-width: 150px;">${b.qnA_Subject}</a></td>
+						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}"  class="text-secondary d-inline-block text-truncate" style="max-width: 150px;">${b.qnA_Subject}</a></td>
 						<td>${b.m_Id}</td>
 						<td>${b.qnA_Views}</td>
 						<td>${dateFormat_cr}</td>
@@ -95,7 +95,7 @@
 		
 		<!-- pagination{s} -->
 		<div id="paginationBox">
-			<ul class="pagination row justify-content-center my-4">
+			<ul class="pagination row justify-content-center my-4 ">
 				<c:if test="${pagination.qnaprev}">
 					<li class="page-item ">
 						<a class="page-link " href="#" onClick="fn_prev('${pagination.qnapage}', '${pagination.qnarange}', '${pagination.qnarangeSize}')">Previous</a>
