@@ -18,6 +18,8 @@ body{
 	background: url('/resources/myPage/Images/bg_01.png') no-repeat;
 	background-size: 700px;
 	}
+.page-item.active .page-link{background-color: gray; color: white; border-color:gray;}
+.page-link{color: black;}
 /* stylelint-disable selector-list-comma-newline-after */
 
 .blog-header {
