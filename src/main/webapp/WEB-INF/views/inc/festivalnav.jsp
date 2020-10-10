@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
+
 	<!-- 장소 코드 
 							서울특별시(001)부산광역시(002)대구광역시(003)인천광역시(004)대전광역시(005)광주광역시(006)울산광역시(007)
 							

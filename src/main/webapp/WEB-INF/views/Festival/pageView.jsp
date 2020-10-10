@@ -13,7 +13,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=883ba49f0880eb3e3f4631a8be0e962e&libraries=services"></script>
 
 <link href="${pageContext.request.contextPath}/resources/festival/css/pageview.css"	rel="stylesheet">
-
+<link href="${pageContext.request.contextPath}/resources/assets/dist/css/font.css" rel="stylesheet">
 
 	
 <meta charset="UTF-8">
@@ -25,19 +25,19 @@
 <c:set var="img" value="${fIResult}" />
 <div class=" justify-content-center">
 <div class="row">
-<div class="col my-4"><h1>${page.f_Subject}</h1></div>
+<div class="col my-4"><h1 id="festivalviewfont">${page.f_Subject}</h1></div>
 </div>
 <div class="row my-3">
 <div class="col-5"><img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${img.STORED_FILE_NAME}" class="rounded" id="img"></div>
-<div class="col-7 text-left">내용 : ${page.f_Content}</div>
+<div class="col-7 text-left" id="festivalviewfont">내용 : ${page.f_Content}</div>
 </div>
 <div class="row">
-<div class="col my-3">시작일 : ${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
+<div class="col my-3" id="festivalviewfont">시작일 : ${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
 				끝나는일 : ${page.f_L_Year}-${page.f_L_Month}-${page.f_L_Day}
 </div>
 </div>
 <div class="row">
-<div class="col my-3">주소 : ${page.f_Address}</div>
+<div class="col my-3" id="festivalviewfont">주소 : ${page.f_Address}</div>
 </div>
 <div class="row">
 <!-- 카카오 지도 -->

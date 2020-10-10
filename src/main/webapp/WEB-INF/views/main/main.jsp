@@ -22,8 +22,10 @@
     
     <!-- Custom styles for this template -->
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/font-css.css">
+	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/font.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/main/css/area.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/main/css/blog.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -62,9 +64,15 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-
+      <c:if test="${user == null }">
+      <div class="text-center my-4" id="festivalcenter">
+      <h2 class="font-weight-bold" id="festivalcenter">로그인 후 더 다양한 축제를 확인 해 보세요.
+      </h2>
+      </div>
+    </c:if>  
+	<c:if test="${user != null }">
      <jsp:include page="../inc/festivalnav.jsp" />
-
+	</c:if>
       <div class="row mb-4">
         <div class="col-md-6">
           <h5>Photo Gallery</h5>

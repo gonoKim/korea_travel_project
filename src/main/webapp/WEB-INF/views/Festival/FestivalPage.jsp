@@ -75,29 +75,29 @@ function win(Num)
 		<div id="view_more">
 			<div class="collapse multi-collapse" id="multiCollapseExample">
 				<div class="Interval">
-					<table class="row justify-content-center">
+					<table class="row justify-content-center" id="festivalpage">
 					<hr>
 						<!-- 페이지 변수 -->
 						<c:forEach var="fPage" items="${fResult}" begin="0" end="${fn:length(fResult)}" varStatus="status">
 							<!-- 이미지 변수 -->
 							<c:set var="fImg" value="${fIResult[status.index]}" />
 
-							<tbody class="col-5 my-4 ">
+							<tbody class="col-5 my-4">
 								<tr>
-									<th colspan="2" class="text-center">${fPage.f_Subject}</th>
+									<th colspan="2" class="text-center" id="festivalpagefont" >${fPage.f_Subject}</th>
 								</tr>
 								<tr>
-									<td rowspan="3" id="contentImg" class="">
+									<td rowspan="3" id="contentImg" id="festivalpagefont">
 										<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fImg.STORED_FILE_NAME}" class="card-img mr-2">
 									</td>
-									<td>${fPage.f_Summary}</td>
+									<td id="festivalpagefont">${fPage.f_Summary}</td>
 								</tr>
 								<tr>
-									<td>${fPage.f_Address}</td>
+									<td id="festivalpagefont">${fPage.f_Address}</td>
 								</tr>
 								<tr>
 									<td>
-										<h6>
+										<h6 id="festivalpagefont">
 											시작일 : ${fPage.f_S_Year}-${fPage.f_S_Month}-${fPage.f_S_Day}<br>
 											끝나는일 : ${fPage.f_L_Year}-${fPage.f_L_Month}-${fPage.f_L_Day}
 										</h6>

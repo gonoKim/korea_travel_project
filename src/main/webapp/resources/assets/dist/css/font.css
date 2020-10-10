@@ -3,13 +3,19 @@
 
 
 /* qnaview 
-타이틀, 코멘트, 버튼
+���씠��, 肄붾찘�듃, 踰꾪듉
 */
 .qnaTh, #comment, .qnaBtn{font-family: 'Montserrat', sans-serif; }
 .qnaTd, .comContent{font-family: 'Noto Sans KR', sans-serif;}
 
-/* 네비게이션 */
+/* �꽕鍮꾧쾶�씠�뀡 */
 .navTitle{font-family: 'Montserrat', sans-serif; font-weight: bold;}
 
 
 #fP-title{font-family: 'Noto Sans KR', sans-serif; font-weight: bold;}
+
+#festivalcenter{font-family: 'Noto Sans KR', sans-serif; }
+
+#festivalpagefont{font-family: 'Noto Sans KR', sans-serif; }
+
+#festivalviewfont{font-family: 'Noto Sans KR', sans-serif;}

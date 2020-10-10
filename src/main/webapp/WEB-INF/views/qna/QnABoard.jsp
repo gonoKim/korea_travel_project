@@ -20,7 +20,7 @@
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/mainCommon.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/assets/dist/css/no-responsive.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/QnA/css/blog.css" rel="stylesheet">
-	
+	<link href="${pageContext.request.contextPath}/resources/QnA/css/qnaboard.css" rel="stylesheet">
 	<!-- js -->
 	<script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
 
@@ -128,4 +128,5 @@
 	<jsp:include page="../inc/bottom.jsp" />
 	
 </body>
+
 </html>
