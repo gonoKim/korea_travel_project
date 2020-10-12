@@ -29,15 +29,15 @@
 </div>
 <div class="row my-3">
 <div class="col-5"><img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${img.STORED_FILE_NAME}" class="rounded" id="img"></div>
-<div class="col-7 text-left" id="festivalviewfont">내용 : ${page.f_Content}</div>
+<div class="col-7 text-left" id="festivalviewfont"><b>내용 : </b>${page.f_Content}</div>
 </div>
 <div class="row">
-<div class="col my-3" id="festivalviewfont">시작일 : ${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
-				끝나는일 : ${page.f_L_Year}-${page.f_L_Month}-${page.f_L_Day}
+<div class="col my-3" id="festivalviewfont"><b>시작일 : </b>${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
+				<b>끝나는일 : </b>${page.f_L_Year}-${page.f_L_Month}-${page.f_L_Day}
 </div>
 </div>
 <div class="row">
-<div class="col my-3" id="festivalviewfont">주소 : ${page.f_Address}</div>
+<div class="col my-3" id="festivalviewfont"><b>주소 : </b>${page.f_Address}</div>
 </div>
 <div class="row">
 <!-- 카카오 지도 -->
