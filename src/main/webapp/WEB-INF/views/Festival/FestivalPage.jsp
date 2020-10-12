@@ -82,7 +82,7 @@ function win(Num)
 							<!-- 이미지 변수 -->
 							<c:set var="fImg" value="${fIResult[status.index]}" />
 
-							<tbody class="col-5 my-4">
+							<tbody class="col-5 my-4 mx-4 " id="festivalcard">
 								<tr>
 									<th colspan="2" class="text-center" id="festivalpagefont" >${fPage.f_Subject}</th>
 								</tr>
@@ -90,16 +90,16 @@ function win(Num)
 									<td rowspan="3" id="contentImg" id="festivalpagefont">
 										<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fImg.STORED_FILE_NAME}" class="card-img mr-2">
 									</td>
-									<td id="festivalpagefont">${fPage.f_Summary}</td>
+									<td id="festivalpagefont">${fPage.f_Summary} </td>
 								</tr>
 								<tr>
-									<td id="festivalpagefont">${fPage.f_Address}</td>
+									<td id="festivalpagefont"><b>주소 : </b>${fPage.f_Address} </td>
 								</tr>
 								<tr>
 									<td>
 										<h6 id="festivalpagefont">
-											시작일 : ${fPage.f_S_Year}-${fPage.f_S_Month}-${fPage.f_S_Day}<br>
-											끝나는일 : ${fPage.f_L_Year}-${fPage.f_L_Month}-${fPage.f_L_Day}
+											<b>시작일 : </b>${fPage.f_S_Year}-${fPage.f_S_Month}-${fPage.f_S_Day}<br>
+											<b>끝나는일 : </b>${fPage.f_L_Year}-${fPage.f_L_Month}-${fPage.f_L_Day}
 										</h6>
 										<button class="btn" onclick="win(${fPage.f_Num});">
 											자세히 보기	

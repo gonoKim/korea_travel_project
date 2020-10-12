@@ -53,7 +53,7 @@
 				<input type="text" class="form-control text-dark" id="subject" name="F_Subject" placeholder="제목을 입력해 주세요">
 
 				<h4 class="my-3">Summary</h4>
-				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Summary" placeholder="내용 요약본을 입력해 주세요"></textarea>
+				<textarea rows="5" cols="20" class="form-control text-dark" id="content" name="F_Summary" placeholder="내용 요약본을 입력해 주세요"></textarea>
 
 				<h4 class="my-3">Content</h4>
 				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Content" placeholder="내용를 입력해 주세요"></textarea>

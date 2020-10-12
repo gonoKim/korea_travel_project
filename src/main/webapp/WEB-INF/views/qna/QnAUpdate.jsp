@@ -73,7 +73,7 @@
 		<div class="col-sm-6 col-md-offset-3">
 			<form>
 				<div class=" text-center text-dark pt-5">
-					<h2 class="my-3">QnA-write</h2>
+					<h2 class="my-3">QnA-Update</h2>
 				</div>
 
 				<h4 class="my-3">Subject</h4>
