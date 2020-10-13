@@ -9,7 +9,7 @@
 	
     <!-- bottom 배너에 넣을 이미지 찾기 -->
 	<select id="bottomBanner" resultType="com.project.travel.vo.MainVO">
-		SELECT STORED_FILE_NAME FROM FestivalImg ORDER BY rand() limit 10
+		SELECT STORED_FILE_NAME FROM FestivalImg ORDER BY rand() limit 5
 	</select>
 	
 	<!-- 공지사항 목록 조회 -->

@@ -94,15 +94,6 @@
                 <div class="carousel-item">
                   <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[4].STORED_FILE_NAME}" class="d-block w-100">
                 </div>
-				<div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[5].STORED_FILE_NAME}" class="d-block w-100">
-                </div>                
-                <div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[6].STORED_FILE_NAME}" class="d-block w-100">
-                </div>
-				<div class="carousel-item">
-                  <img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${bottomBanner[7].STORED_FILE_NAME}" class="d-block w-100">
-                </div>
               </div>
               <a class="carousel-control-prev" href="#Photo_carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
