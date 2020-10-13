@@ -80,7 +80,7 @@
 				<input type="text" class="form-control text-dark" id="u_subject" maxlength="30" value="${result.NB_Subject}">
 				
 				<h4 class="my-3">Writer</h4>
-				<input type="hidden" class="form-control text-dark" id="writer" maxlength="12" placeholder="${result.m_Id}" readonly>
+				<input type="text" class="form-control text-dark" id="writer" maxlength="12" placeholder="${result.m_Id}" readonly>
 				
 				<h4 class="my-3">Content</h4>
 				<textarea rows="10" cols="20" class="form-control text-dark" id="u_content" maxlength="200" placeholder="">${result.NB_Content}</textarea>

@@ -24,7 +24,7 @@
 	
 	<!-- js -->
     <script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.4.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/QnA/js/QnAWrite.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/notice/js/NbWrite.js"></script>
 </head>
 
 <body>
