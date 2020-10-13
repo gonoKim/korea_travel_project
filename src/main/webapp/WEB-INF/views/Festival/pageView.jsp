@@ -28,8 +28,8 @@
 <div class="col my-4"><h1 id="festivalviewfont">${page.f_Subject}</h1></div>
 </div>
 <div class="row my-3">
-<div class="col-5"><img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${img.STORED_FILE_NAME}" class="rounded" id="img"></div>
-<div class="col-7 text-left" id="festivalviewfont"><b>내용 : </b>${page.f_Content}</div>
+<div class="col-xl-5"><img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${img.STORED_FILE_NAME}" class="rounded" id="img"></div>
+<div class="col-xl-7 text-left" id="festivalviewfont"><b>내용 : </b>${page.f_Content}</div>
 </div>
 <div class="row">
 <div class="col my-3" id="festivalviewfont"><b>시작일 : </b>${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
