@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/jstlHeader.jsp"%>
 
+<%
+	pageContext.setAttribute("br", "<br/>");
+	pageContext.setAttribute("cn", "\n");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -66,7 +70,7 @@
 				</tr>
 				<tr>
 					<!-- <th class="text-center qnaTh bg-primary">Content:</th> -->
-					<td scope="row" class="px-4 qnaTd " colspan="4">${result.qnA_Content}</td>
+					<td scope="row" class="px-4 qnaTd " colspan="4">${fn:replace(result.qnA_Content, cn, br)}</td>
 				</tr>
 
 				<tr>
