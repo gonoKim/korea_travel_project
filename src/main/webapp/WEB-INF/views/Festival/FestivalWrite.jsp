@@ -94,8 +94,7 @@
 				<h4 class="my-3">Start</h4>
 				<div class="form-row" id="form_YMD">
 					<div class="col">
-						<input type="number" class="form-control" id="inputYear" name="F_S_Year" placeholder="Year (4)" min="1900" max="2030"
-							maxlength="4" oninput="maxLengthCheck(this)" required>
+						<input type="number" class="form-control" id="inputYear" name="F_S_Year" placeholder="Year (4)" required>
 					</div>
 					<div class="col">
 						<select class="form-control" id="inputMonth" name="F_S_Month" required>
@@ -109,16 +108,14 @@
 						</select>
 					</div>
 					<div class="col">
-						<input type="number" class="form-control" id="inputDay" name="F_S_Day" placeholder="Day" min="1" max="31" maxlength="2"
-							oninput="maxLengthCheck(this)" required>
+						<input type="number" class="form-control" id="inputDay" name="F_S_Day" placeholder="Day" required>
 					</div>
 				</div>
 				
 				<h4 class="my-3">End</h4>
 				<div class="form-row" id="form_YMD2">
 					<div class="col">
-						<input type="number" class="form-control" id="inputYear" name="F_L_Year" placeholder="Year (4)" min="1900" max="2030"
-							maxlength="4" oninput="maxLengthCheck(this)" required>
+						<input type="number" class="form-control" id="inputYear" name="F_L_Year" placeholder="Year (4)" required>
 					</div>
 					<div class="col">
 						<select class="form-control" id="inputMonth" name="F_L_Month" required>
@@ -132,8 +129,7 @@
 						</select>
 					</div>
 					<div class="col">
-						<input type="number" class="form-control" id="inputDay" name="F_L_Day" placeholder="Day" min="1" max="31" maxlength="2"
-							oninput="maxLengthCheck(this)" required>
+						<input type="number" class="form-control" id="inputDay" name="F_L_Day" placeholder="Day" required>
 					</div>
 				</div>
 				
