@@ -101,7 +101,3 @@
 	#travel_section_00 .travel_left{display: none;}
 	#travel_section_00 .travel_a_city{width:14%;}
 }
-@media screen and (max-width:400px){
-	#travel_section_01, #travel_section_02{display:none;}
-	#travel_section_03, #travel_section_04{display:flex;}
-}

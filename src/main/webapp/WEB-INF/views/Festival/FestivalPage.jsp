@@ -48,17 +48,12 @@ function win(Num)
 ​	
 		<div id="picture_group" class="my-4 d-block text-center">
 			<h3 class="my-3" id="fP-title">국내 축제 이미지</h3>
-			<hr>
+			<hr id="hr1">
 			<!-- 이미지 경로 -->
-			<img
-				src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[0].STORED_FILE_NAME}"
-				class="rounded  rounded-left mx-auto "> <img
-				src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[1].STORED_FILE_NAME}"
-				class="rounded  mg-fluid mx-3 "> <img
-				src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[2].STORED_FILE_NAME}"
-				class="rounded  mg-fluid mx-3 "> <img
-				src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[3].STORED_FILE_NAME}"
-				class="rounded  rounded-right mx-auto ">
+			<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[0].STORED_FILE_NAME}" class="rounded  rounded-left mx-auto " id="picture1"> 
+			<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[1].STORED_FILE_NAME}" class="rounded  mg-fluid mx-3" id="picture2"> 
+			<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[2].STORED_FILE_NAME}" class="rounded  mg-fluid mx-3 " id="picture3"> 
+			<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[3].STORED_FILE_NAME}" class="rounded  rounded-right mx-auto " id="picture4">
 		</div>
 
 		<!-- 축제 네비 -->
@@ -82,7 +77,7 @@ function win(Num)
 							<!-- 이미지 변수 -->
 							<c:set var="fImg" value="${fIResult[status.index]}" />
 
-							<tbody class="col-5 my-4 mx-4 " id="festivalcard">
+							<tbody class="col-sm-5 my-4 mx-4 " id="festivalcard">
 								<tr>
 									<th colspan="2" class="text-center" id="festivalpagefont" >${fPage.f_Subject}</th>
 								</tr>
