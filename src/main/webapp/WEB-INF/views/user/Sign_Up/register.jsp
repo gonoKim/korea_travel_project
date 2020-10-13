@@ -47,6 +47,7 @@
       <div class="form-group">
         <label for="inputPassword">Password</label>
         <input type="password" class="form-control btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
+        <small style="color: red;">Use 8 to 20 letters of English, numbers, and special characters.</small>
       </div>
 
       <div class="form-group">
