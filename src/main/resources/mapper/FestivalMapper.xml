@@ -67,7 +67,9 @@
 	
 	<!-- 축제 업데이트 -->
 	<update id="festivalUpdate">
-	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, Place_Code = #{Place_Code}, F_Address = #{f_Address} WHERE F_Num = #{f_Num}; 
+	UPDATE Festival SET F_Subject = #{f_Subject}, F_Content = #{f_Content}, Place_Code = #{Place_Code}, F_Address = #{f_Address}, 
+	F_S_Year = #{F_S_Year}, F_S_Month = #{F_S_Month}, F_S_Day = #{F_S_Day}, F_L_Year = #{F_S_Year}, F_L_Month = #{F_L_Month}, F_L_Day = #{F_L_Day}
+	 WHERE F_Num = #{f_Num}; 
 	</update>
 	
 	<!-- 축제 이미지 -->

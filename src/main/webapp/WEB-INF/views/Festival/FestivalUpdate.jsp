@@ -30,6 +30,12 @@ function boardValidation(){
 	var content = $("#content").val();
 	var place 	= $("#place").val();
 	var address	= $("#address").val();
+	var s_Year	= $("#f_S_Year").val();
+	var s_Month = $("#f_S_Month").val();
+	var s_Day	= $("#f_S_Day").val();
+	var l_Year	= $("#f_L_Year").val();
+	var l_Month	= $("#f_L_Month").val();
+	var l_Day	= $("#f_L_Day").val();
 	var f_num	= ${fResult.f_Num};
 	if(!subject){
 		alert("축제 제목 입력");
@@ -43,17 +49,37 @@ function boardValidation(){
 		alert("지역 입력");
 		$("#place").focus();
 		return false;
-	}else if(!address){
-			alert("주소 입력");
-			$("#address").focus();
-			return false;
-		}else {
-		FestivalUpdate(subject,content,place,address,f_num);
+	}else if(!s_Year){
+		alert("시작 년도 입력");
+		$("#f_S_Year").focus();
+		return false;
+	}else if(!s_Month){
+		alert("시작 월 입력");
+		$("#f_S_Month").focus();
+		return false;
+	}else if(!s_Day){
+		alert("시작 일 입력");
+		$("#f_S_Day").focus();
+		return false;
+	}else if(!l_Year){
+		alert("끝나는 년도 입력");
+		$("#f_L_Year").focus();
+		return false;
+	}else if(!l_Month){
+		alert("끝나는 월 입력");
+		$("#f_L_Month").focus();
+		return false;
+	}else if(!l_Day){
+		alert("끝나는 일 입력");
+		$("#f_L_Day").focus();
+		return false;
+	}else {
+		FestivalUpdate(subject,content,place,address,s_Year,s_Month,s_Day,l_Year,l_Month,l_Day,f_num);
 	}
 	
 	}
 	
-function FestivalUpdate(sub,con,pla,add,fnum){
+function FestivalUpdate(sub,con,pla,add,s_y,s_m,s_d,l_y,l_m,l_d,fnum){
 	
 	$.ajax({
 		url : "/Festival/FestivalUpdate",
@@ -61,8 +87,14 @@ function FestivalUpdate(sub,con,pla,add,fnum){
 		data : {
 			f_Subject : sub,
 			f_Content : con,
-			f_Place	  : pla,
+			place_Code: pla,
 			f_Address : add,
+			f_S_Year  : s_y,
+			f_S_Month : s_m,
+			f_S_Day	  : s_d,
+			f_L_Year  : l_y,
+			f_L_Month : l_m,
+			f_L_Day   : l_d,
 			f_Num	  : fnum
 		},
 		success:function(data){
@@ -94,23 +126,28 @@ function FestivalUpdate(sub,con,pla,add,fnum){
                     </div>
            	
                     <h4 class="my-3">Subject</h4>
-                    <input type="text" class="form-control text-dark" id="subject" placeholder="${fResult.f_Subject}">
+                    <input type="text" class="form-control text-dark" id="subject" value="${fResult.f_Subject}">
            
                                <h4 class="my-3">Content</h4>
-                    <textarea rows="10" cols="20" class="form-control text-dark" id="content"  placeholder="${fResult.f_Content}"></textarea>
+                    <textarea rows="10" cols="20" class="form-control text-dark" id="content" >${fResult.f_Content}</textarea>
            
                       
                     <h4 class="my-3">Place</h4>
-                    <input type="text" class="form-control text-dark" id="place" placeholder="${fResult.f_Place}">
+                    <input type="text" class="form-control text-dark" id="place" value="${fResult.place_Code}">
+   
    
    
                     <h4 class="my-3">Address</h4>
-                    <input type="text" class="form-control text-dark" id="address" placeholder="${fResult.f_Address}">
+                    <input type="text" class="form-control text-dark" id="address" value="${fResult.f_Address}">
    
-   <!--              	 <h4 class="my-3">Date</h4>
-                    <input type="text" class="form-control text-dark" id="Date" placeholder="작성자를 입력해 주세요">
-    -->
-           
+                 	 <h4 class="my-3">Date</h4>
+                    <input type="text" class="form-control text-dark" id="f_S_Year" value="${fResult.f_S_Year}">
+                    <input type="text" class="form-control text-dark" id="f_S_Month" value="${fResult.f_S_Month}">
+                    <input type="text" class="form-control text-dark" id="f_S_Day" value="${fResult.f_S_Day}">
+                    <input type="text" class="form-control text-dark" id="f_L_Year" value="${fResult.f_L_Year}">
+                    <input type="text" class="form-control text-dark" id="f_L_Month" value="${fResult.f_L_Month}">
+                    <input type="text" class="form-control text-dark" id="f_L_Day" value="${fResult.f_L_Day}">
+
 
 					
 					 

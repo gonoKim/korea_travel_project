@@ -54,7 +54,7 @@ function FestivalUpdate(){
                 <td scope="row">${fResult.f_Address }</td>
             </tr>
             <tr>
-                <th class="text-center">Content: </th>
+                <th class="text-center">DATE: </th>
                 <td scope="row">시작일 : ${fResult.f_S_Year}-${fResult.f_S_Month}-${fResult.f_S_Day}<br>
 				끝나는일 : ${fResult.f_L_Year}-${fResult.f_L_Month}-${fResult.f_L_Day}</td>
             </tr>

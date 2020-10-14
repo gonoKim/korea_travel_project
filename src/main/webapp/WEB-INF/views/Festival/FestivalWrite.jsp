@@ -85,9 +85,7 @@
 						</select>
 					</div>
 				</div>
-				<!-- <h4 class="my-3">Place</h4>
-				<input type="text" class="form-control text-dark" id="place" name="F_Place" placeholder="지역를 입력해 주세요">
- -->
+
 				<h4 class="my-3">Address</h4>
 				<input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="주소를 입력해 주세요">
 				

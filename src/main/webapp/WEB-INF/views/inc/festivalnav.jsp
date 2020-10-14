@@ -29,9 +29,10 @@
 					<div class="travel_section" id="travel_section_01">
 							<a href="/Festival/FestivalPage?place_Code=11" class="travel_city"><div><span>경기도</span></div></a>
 							<a href="/Festival/FestivalPage?place_Code=12" class="travel_city"><div><span>강원도</span></div></a>
-							<a href="/Festival/FestivalPage?place_Code=14" class="travel_city"><div><span>충청남도</span></div></a>
-							<a href="/Festival/FestivalPage?place_Code=13" class="travel_city"><div><span>충청북도</span></div></a>
-							<a href="/Festival/FestivalPage?place_Code=102" class="travel_a_city"><div><span>제주도</span></div></a>
+							<a href="/Festival/FestivalPage?place_Code=13" class="travel_city"><div><span>충청남도</span></div></a>
+							<a href="/Festival/FestivalPage?place_Code=14" class="travel_city"><div><span>충청북도</span></div></a>
+							<a href="/Festival/FestivalPage?place_Code=999" class="travel_a_city"><div><span>온라인</span></div></a>
+							
 					</div>
 
 					<div class="travel_section" id="travel_section_02">
@@ -39,7 +40,7 @@
 						<a href="/Festival/FestivalPage?place_Code=16" class="travel_city"><div><span>전라북도</span></div></a>
 						<a href="/Festival/FestivalPage?place_Code=17" class="travel_city"><div><span>경상남도</span></div></a>
 						<a href="/Festival/FestivalPage?place_Code=18" class="travel_city"><div><span>경상북도</span></div></a> 
-						<a href="/Festival/FestivalPage?place_Code=999" class="travel_a_city"><div><span>온라인</span></div></a>
+						<a href="/Festival/FestivalPage?place_Code=102" class="travel_a_city"><div><span>제주도</span></div></a>
 					</div>
 				</div>
 			</div>
