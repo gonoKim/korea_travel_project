@@ -83,7 +83,7 @@
 					<fmt:formatDate value="${n.NB_Date}" pattern="yyyy-MM-dd" var="dateFormat_n" />
 					<tr class="qnaTd bg-white">
 						<td>${n.NB_Num}</td>
-						<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num}" class="text-secondary d-inline-block text-truncate" >${n.NB_Subject}</a></td>
+						<td><a href="/notice/NoticeView?NB_Num=${n.NB_Num}" class="text-secondary d-inline-block text-truncate" style="max-width: 250px;" >${n.NB_Subject}</a></td>
 						<td>${n.m_Id}</td>
 						<td>${n.NB_Views}</td>
 						<td>${dateFormat_n}</td>

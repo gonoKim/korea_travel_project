@@ -36,7 +36,7 @@
 				<b>끝나는일 : </b>${page.f_L_Year}-${page.f_L_Month}-${page.f_L_Day}
 </div>
 </div>
-<c:if test="${f_Address != null }">
+<c:if test="${page.f_Address != '' }">
 <div class="row">
 <div class="col my-3" id="festivalviewfont"><b>주소 : </b>${page.f_Address}</div>
 </div>
@@ -84,7 +84,7 @@ geocoder.addressSearch("${page.f_Address}", function(result, status) {
 	</script>
 </div> 
 </c:if>
-<c:if test="${f_Address == null }">
+<c:if test="${page.f_Address == '' }">
 <div class="row">
 <div class="col my-3" id="festivalviewfont"><b>온라인 축제</b></div>
 </div>

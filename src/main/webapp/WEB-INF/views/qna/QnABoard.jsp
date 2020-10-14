@@ -84,7 +84,7 @@
 					<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd " var="dateFormat_cr" />
 					<tr class="qnaTd bg-white">
 						<td scope="row">${b.qnA_Num}</td>
-						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}"  class="text-secondary d-inline-block text-truncate" style="max-width: 150px;">${b.qnA_Subject}</a></td>
+						<td><a href="/qna/QnAView?qnA_Num=${b.qnA_Num}"  class="text-secondary d-inline-block text-truncate" style="max-width: 250px;">${b.qnA_Subject}</a></td>
 						<td>${b.m_Id}</td>
 						<td>${b.qnA_Views}</td>
 						<td>${dateFormat_cr}</td>
@@ -118,7 +118,7 @@
 		<!-- pagination{e} -->
 		
 		<c:if test="${user != null}">
-			<div class="row justify-content-end my-4">
+			<div class="row justify-content-around my-4">
 				<a></a><a></a><a></a><a></a><a></a> 										<!-- 칸채우기용 -->
 				<button type="submit" onclick="QnAwrite();" class="btn btn-outline-secondary">Write</button>
 			</div>
