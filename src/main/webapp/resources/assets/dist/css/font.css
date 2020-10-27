@@ -1,0 +1,21 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+KR&display=swap');
+
+
+/* qnaview 
+���씠��, 肄붾찘�듃, 踰꾪듉
+*/
+.qnaTh, #comment, .qnaBtn{font-family: 'Montserrat', sans-serif; }
+.qnaTd, .comContent{font-family: 'Noto Sans KR', sans-serif;}
+
+/* �꽕鍮꾧쾶�씠�뀡 */
+.navTitle{font-family: 'Montserrat', sans-serif; font-weight: bold;}
+
+
+#fP-title{font-family: 'Noto Sans KR', sans-serif; font-weight: bold;}
+
+#festivalcenter{font-family: 'Noto Sans KR', sans-serif; }
+
+#festivalpagefont{font-family: 'Noto Sans KR', sans-serif; }
+
+#festivalviewfont{font-family: 'Noto Sans KR', sans-serif;}

@@ -1,6 +1,15 @@
+
+
 .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:13px 20px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:13px 20px;word-break:normal;}
 .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+
+#commentInsert{margin-bottom: 40px;}
+#commentList{margin-bottom: 245px;}
+#c_Content{
+	width:80%;
+	margin-right: 10px;
+}

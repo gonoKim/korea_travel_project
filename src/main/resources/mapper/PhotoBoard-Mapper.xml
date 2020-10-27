@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.PhotoBoard-Mapper">
+
+<select id="getPhotoList" resultType="com.project.travel.vo.PhotoBoardVO">
+<!-- <![CDATA[[ -->
+	select * from Photo_Border order by Photo_Num DESC;
+<!-- ]]> -->
+</select>
+<!-- insert 쿼리문  -->
+<insert id="photowrite">
+insert into Photo_Border (Photo_Num,Photo_Subject,Photo_Content,Photo_Views,Photo_Date,Photo_Img,Photo_ThumbImg) 
+values(#{Photo_Num},#{Photo_Subject},#{Photo_Content},#{Photo_Views},now(),#{Photo_Img},#{Photo_ThumbImg});
+</insert>
+<!-- PhotoView 쿼리문 -->
+<select id="getPhotoView" resultType="com.project.travel.vo.PhotoBoardVO">
+SELECT 	*
+FROM 	Photo_Border
+where 	Photo_Num = #{Photo_Num};
+</select>
+
+<!-- PhotoBoard view count 쿼리문 -->
+<update id="viewUpdate">
+UPDATE  Photo_Border
+SET 	Photo_Views = Photo_Views+1
+WHERE 	Photo_Num   = #{Photo_Num};
+</update>
+
+</mapper>

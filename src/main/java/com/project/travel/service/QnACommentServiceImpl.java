@@ -12,25 +12,29 @@ import com.project.travel.vo.QnACommentVO;
 public class QnACommentServiceImpl implements QnACommentService {
 
 	@Autowired
-	QnACommentDAO CommentDAO;
+	QnACommentDAO commentDAO;
 	
+	 // 댓글 목록
 	@Override
-	public List<QnACommentVO> qnaCommentList() {
-		return CommentDAO.qnaCommentList();
+	public List<QnACommentVO> qnaCommentList(int qnA_Num) {
+		return commentDAO.qnaCommentList(qnA_Num);
 	}
-
+	
+	// 댓글 작성
 	@Override
 	public int qnaCommentWrite(QnACommentVO qnaCvo) {
-		return CommentDAO.qnaCommentWrite(qnaCvo);
+		return commentDAO.qnaCommentWrite(qnaCvo);
 	}
-
+	
+	// 댓글 수정
 	@Override
 	public int qnaCommentUpdate(QnACommentVO qnaCvo) {
-		return CommentDAO.qnaCommentUpdate(qnaCvo);
+		return commentDAO.qnaCommentUpdate(qnaCvo);
 	}
-
+	
+	// 댓글 삭제
 	@Override
-	public int qnaCommentDelete(int qnaCNum) {
-		return CommentDAO.qnaCommentDelete(qnaCNum);
+	public int qnaCommentDelete(int qnA_C_Num) {
+		return commentDAO.qnaCommentDelete(qnA_C_Num);
 	}
 }

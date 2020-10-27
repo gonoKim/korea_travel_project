@@ -1,0 +1,17 @@
+body{
+  height: 120vh;
+  background: url('/resources/main/Images/bg_03.jpg') no-repeat center/cover;
+}
+
+#picture_group img{width:200px; height:200px;}
+#contentImg img{width:100px; height:100px;}
+#festivalcard{ background-color: rgba( 255, 255, 255, 0.8 );}
+
+
+@media screen and (max-width:1000px){
+	#picture3, #picture4{display: none;}
+}
+
+@media screen and (max-width:470px){
+	#picture1, #picture2, #fP-title ,#hr1{display: none;}
+}

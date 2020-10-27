@@ -1,0 +1,11 @@
+.container {
+  width: 1140px;
+  max-width: none !important;
+}
+
+@media screen and (max-width:1140px){
+	.blog-footer {
+		width: 1140px;
+		max-width: none !important;
+	}
+}
