@@ -16,13 +16,8 @@ public class QnACommentServiceImpl implements QnACommentService {
 	
 	 // 댓글 목록
 	@Override
-<<<<<<< HEAD
 	public List<QnACommentVO> qnaCommentList(int qnA_Num) {
 		return commentDAO.qnaCommentList(qnA_Num);
-=======
-	public List<QnACommentVO> qnaCommentList(int qnaNum) {
-		return commentDAO.qnaCommentList(qnaNum);
->>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 	}
 	
 	// 댓글 작성
@@ -39,12 +34,7 @@ public class QnACommentServiceImpl implements QnACommentService {
 	
 	// 댓글 삭제
 	@Override
-<<<<<<< HEAD
 	public int qnaCommentDelete(int qnA_C_Num) {
 		return commentDAO.qnaCommentDelete(qnA_C_Num);
-=======
-	public int qnaCommentDelete(int qnaCNum) {
-		return commentDAO.qnaCommentDelete(qnaCNum);
->>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 	}
 }
