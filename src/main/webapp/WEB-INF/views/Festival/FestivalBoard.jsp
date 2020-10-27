@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
 function FestivalDelete(){	
-	var chk = confirm("정말 삭제하시겠습니까?");
+	var chk = confirm("本当に削除しますか?");
 	if (chk) {
 		   var checkArr = new Array();
 		   $("input[class='chBox']:checked").each(function(){
@@ -81,7 +81,7 @@ $(document).on('click', '#btnSearch', function(e){
 });	
 function win()
 {
-window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900");
+window.open("/Festival/FestivalWrite","","width=600,height=900");
 }
 
 </script>
@@ -95,10 +95,10 @@ window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900")
 	<table class="table col-11 text-center">
 		<tr>
 			<td scope="col"></td>
-			<td scope="col">F_No</td>
-			<td scope="col">Place</td>
-			<td scope="col">Subject</td>
-			<td scope="col">Date</td>
+			<td scope="col">祭り番号</td>
+			<td scope="col">場所</td>
+			<td scope="col">テーマ</td>
+			<td scope="col">日</td>
 		</tr>
 		<c:forEach var="b" items="${fResult}">
 			<fmt:formatDate value="${b.f_Date}" pattern="yyyy-MM-dd "
@@ -145,9 +145,9 @@ window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900")
 		<div class="form-group row justify-content-center">
 			<div class="w100" style="padding-right:10px">
 				<select class="form-control form-control-sm" name="searchType" id="searchType">
-					<option value="F_Subject">제목</option>
-					<option value="F_Content">내용</option>
-					<option value="F_Address">장소</option>
+					<option value="F_Subject">テーマ</option>
+					<option value="F_Content">内容</option>
+					<option value="F_Address">場所</option>
 				</select>
 			</div>
 			<div class="w300" style="padding-right:10px">
@@ -160,8 +160,8 @@ window.open("/Festival/FestivalWrite","새창의 제목","width=600,height=900")
 		<!-- search{e} -->
 	<div>
 		      <div class="row justify-content-center my-3 ">
-            <input type="button" value="Write" class="btn" onclick="win();"/>
-            <input type="button" value="Delete" class="btn" onclick="FestivalDelete();"/>
+            <input type="button" value="書く" class="btn" onclick="win();"/>
+            <input type="button" value="削除" class="btn" onclick="FestivalDelete();"/>
             
         </div>
 	</div>

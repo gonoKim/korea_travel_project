@@ -66,7 +66,7 @@
       </div>
       <c:if test="${user == null }">
       <div class="text-center my-4" id="festivalcenter">
-      <h2 class="font-weight-bold" id="festivalcenter">로그인 후 더 다양한 축제를 확인 해 보세요.
+      <h2 class="font-weight-bold" id="festivalcenter">ログイン後、<br>さらに多彩なイベントをご確認ください。
       </h2>
       </div>
     </c:if>  
@@ -75,7 +75,7 @@
 	</c:if>
       <div class="row mb-4">
         <div class="col-md-6">
-          <h5>Photo Gallery</h5>
+          <h4 id="festivalcenter">お祭りの写真</h4>
           <div id="Photo_BannerBox" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div id="Photo_carousel" class="carousel slide" data-ride="carousel" data-interval="2000" pause="hover">
               <div class="carousel-inner">
@@ -108,7 +108,7 @@
         </div>
         
         <div class="col-md-6">
-          <h5>Notice</h5>
+          <h4 id="festivalcenter">お知らせ</h4>
           <div id="NB_Box" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <table class="table table-sm">
 				<tr><td id="border_Delete"><a href="/notice/NoticeView?NB_Num=${nbList[0].NB_Num}"><h3><font class="title_color">[공지]</font> ${nbList[0].NB_Subject}</h3></a></td></tr>

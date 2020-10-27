@@ -33,16 +33,16 @@
 </div>
 <div class="row my-3">
 <div class="col-xl-5"><img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${img.STORED_FILE_NAME}" class="rounded" id="img"></div>
-<div class="col-xl-7 my-4 festivalviewContent" id="festivalviewfont"><b>내용 : </b>${fn:replace(page.f_Content, cn, br)}</div>
+<div class="col-xl-7 my-4 festivalviewContent" id="festivalviewfont"><b>内容 : </b>${fn:replace(page.f_Content, cn, br)}</div>
 </div>
 <div class="row">
-<div class="col my-3" id="festivalviewfont"><b>시작일 : </b>${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
-				<b>끝나는일 : </b>${page.f_L_Year}-${page.f_L_Month}-${page.f_L_Day}
+<div class="col my-3" id="festivalviewfont"><b>開始日 : </b>${page.f_S_Year}-${page.f_S_Month}-${page.f_S_Day}<br>
+				<b>終わる日 : </b>${page.f_L_Year}-${page.f_L_Month}-${page.f_L_Day}
 </div>
 </div>
 <c:if test="${page.f_Address != '' }">
 <div class="row">
-<div class="col my-3" id="festivalviewfont"><b>주소 : </b>${page.f_Address}</div>
+<div class="col my-3" id="festivalviewfont"><b>住所 : </b>${page.f_Address}</div>
 </div>
 
 <div class="row">
@@ -90,7 +90,7 @@ geocoder.addressSearch("${page.f_Address}", function(result, status) {
 </c:if>
 <c:if test="${page.f_Address == '' }">
 <div class="row">
-<div class="col my-3" id="festivalviewfont"><b>온라인 축제</b></div>
+<div class="col my-3" id="festivalviewfont"><b>オンライン祭り</b></div>
 </div>
 </c:if>
 	<input type="button" value="Cancel" class="btn my-5" onclick="window.close();" />

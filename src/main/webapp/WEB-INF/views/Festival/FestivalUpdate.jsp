@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FestivalUpdate</title>
+    <title>祭り修正</title>
 <link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
 <link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >
@@ -38,39 +38,39 @@ function boardValidation(){
 	var l_Day	= $("#f_L_Day").val();
 	var f_num	= ${fResult.f_Num};
 	if(!subject){
-		alert("축제 제목 입력");
+		alert("祭りのタイトル入力");
 		$("#subject").focus();
 		return false;
 	}else if(!content){
-		alert("내용 입력");
+		alert("内容入力");
 		$("#content").focus();
 		return false;
 	}else if(!place){
-		alert("지역 입력");
+		alert("地域コード入力");
 		$("#place").focus();
 		return false;
 	}else if(!s_Year){
-		alert("시작 년도 입력");
+		alert("開始年度入力");
 		$("#f_S_Year").focus();
 		return false;
 	}else if(!s_Month){
-		alert("시작 월 입력");
+		alert("開始月入力");
 		$("#f_S_Month").focus();
 		return false;
 	}else if(!s_Day){
-		alert("시작 일 입력");
+		alert("開始日入力");
 		$("#f_S_Day").focus();
 		return false;
 	}else if(!l_Year){
-		alert("끝나는 년도 입력");
+		alert("終わる年度入力");
 		$("#f_L_Year").focus();
 		return false;
 	}else if(!l_Month){
-		alert("끝나는 월 입력");
+		alert("終わる月入力");
 		$("#f_L_Month").focus();
 		return false;
 	}else if(!l_Day){
-		alert("끝나는 일 입력");
+		alert("終わる日入力");
 		$("#f_L_Day").focus();
 		return false;
 	}else {
@@ -99,10 +99,10 @@ function FestivalUpdate(sub,con,pla,add,s_y,s_m,s_d,l_y,l_m,l_d,fnum){
 		},
 		success:function(data){
 			if(data == 1){
-				alert("글 등록이 완료되었습니다.");
+				alert("投稿登録が完了しました。");
 				location.href="/Festival/FestivalView?f_Num=${fResult.f_Num}";
 			}else {
-				alert("글 등록 실패");
+				alert("書き込み登録失敗");
 			}
 		},error:function(){
 			console.log("error");
@@ -122,25 +122,25 @@ function FestivalUpdate(sub,con,pla,add,s_y,s_m,s_d,l_y,l_m,l_d,fnum){
         <div class="col-sm-10 col-md-offset-3 " >
           <form>
                 <div class=" text-center text-dark pt-5 " >
-                    <h2 class="my-3">Festival Information</h2>
+                    <h2 class="my-3">お祭り情報入力</h2>
                     </div>
            	
-                    <h4 class="my-3">Subject</h4>
+                    <h4 class="my-3">テーマ</h4>
                     <input type="text" class="form-control text-dark" id="subject" value="${fResult.f_Subject}">
            
-                               <h4 class="my-3">Content</h4>
+                               <h4 class="my-3">内容</h4>
                     <textarea rows="10" cols="20" class="form-control text-dark" id="content" >${fResult.f_Content}</textarea>
            
                       
-                    <h4 class="my-3">Place</h4>
+                    <h4 class="my-3">地域コード</h4>
                     <input type="text" class="form-control text-dark" id="place" value="${fResult.place_Code}">
    
    
    
-                    <h4 class="my-3">Address</h4>
+                    <h4 class="my-3">住所</h4>
                     <input type="text" class="form-control text-dark" id="address" value="${fResult.f_Address}">
    
-                 	 <h4 class="my-3">Date</h4>
+                 	 <h4 class="my-3">日</h4>
                     <input type="text" class="form-control text-dark" id="f_S_Year" value="${fResult.f_S_Year}">
                     <input type="text" class="form-control text-dark" id="f_S_Month" value="${fResult.f_S_Month}">
                     <input type="text" class="form-control text-dark" id="f_S_Day" value="${fResult.f_S_Day}">
@@ -154,10 +154,10 @@ function FestivalUpdate(sub,con,pla,add,s_y,s_m,s_d,l_y,l_m,l_d,fnum){
                 
                 <div class="row justify-content-center my-4">
                     <button type="reset" id="join-submit" class="btn">
-                        Reset<i class="fa fa-check spaceLeft"></i>
+                   	     リセット<i class="fa fa-check spaceLeft"></i>
                     </button>
-                     <input type="button" value="Write" class="btn" onclick="boardValidation()"/>
-                     <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
+                     <input type="button" value="書く" class="btn" onclick="boardValidation()"/>
+                     <input type="button" value="キャンセル" class="btn" onclick="window.close();"/>
                 </div>
 </form>
         </div>

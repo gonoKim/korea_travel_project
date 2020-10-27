@@ -29,8 +29,8 @@
 		
 		<div class="col-4 d-flex justify-content-end align-items-center">
 			<c:if test="${user == null}">
-				<a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn">Sign in</a>
-				<a class="btn btn-sm btn-outline-secondary" href="/user/Sign_Up/register">Sign up</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/user/Sign_In/login" id="sign_in_btn">ログイン</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/user/Sign_Up/register">会員加入</a>
 			</c:if>
 			
 			<c:if test="${user != null }">
@@ -45,24 +45,24 @@
 
 <nav class="navbar navbar-expand navbar-light" id="navbar_custom">
 	<div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
-		<a class="p-2 text-muted nav-link navTitle" href="/main/main">Home</a>
-		<a class="p-2 text-muted nav-link navTitle" style="cursor:pointer;" onclick="festival_alert()">Festival</a>
+		<a class="p-2 text-muted nav-link navTitle" href="/main/main">ホーム</a>
+		<a class="p-2 text-muted nav-link navTitle" style="cursor:pointer;" onclick="festival_alert()">祭り</a>
 		<ul class="navbar-nav">
 			<li class="nav-item dropdown">
-				<a class="nav-link p-2 text-muted navTitle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Support </a>
+				<a class="nav-link p-2 text-muted navTitle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> サポート </a>
 				<div class="dropdown-menu navTitle" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="/notice/NoticeBoard">Notice</a>
+					<a class="dropdown-item" href="/notice/NoticeBoard">お知らせ</a>
 					<a class="dropdown-item" href="/qna/QnABoard">QnA</a>
 				</div>
 			</li>
 		</ul>
 		
 		<c:if test="${user.m_Grade == 'admin'}">
-			<a id="myPage_btn1" class="p-2 text-muted nav-link navTitle" href="${pageContext.request.contextPath}/Festival/FestivalBoard">setUp</a>
+			<a id="myPage_btn1" class="p-2 text-muted nav-link navTitle" href="${pageContext.request.contextPath}/Festival/FestivalBoard">設定</a>
 		</c:if>
 		
 		<c:if test="${user != null }">
-			<a id="myPage_btn1" class="p-2 text-muted nav-link navTitle" href="/mypage/myPage">My Page</a>
+			<a id="myPage_btn1" class="p-2 text-muted nav-link navTitle" href="/mypage/myPage">情報修正</a>
 			<a id="myPage_btn2" class="p-2 text-muted nav-link navTitle" href="/mypage/myPage">Profile</a>
 		</c:if>
 	</div>

@@ -61,29 +61,29 @@
                     <div class="col-lg-9">
                       <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="list-mInfo" role="tabpanel" aria-labelledby="list-mInfo-list">
-                            <h3>회원정보 보기</h3> <hr>
+                            <h3>会員情報を見る</h3> <hr>
                             <table class="table table-bordered mInfotbl" id="infoTable">
                                 <tbody>
                                     <tr>
-                                        <th>아이디<span class="text-danger">*</span></th>
+                                        <th>アイディ<span class="text-danger">*</span></th>
                                         <td colspan="3">${user.m_Id}</td>
                                     </tr>
                                     <tr>
-                                        <th>이름</th>
+                                        <th>名前</th>
                                         <td>${user.m_Fname}</td>
-                                        <th id="thlname">성</th>
+                                        <th id="thlname">名字</th>
                                         <td>${user.m_Lname}</td>
                                     </tr>
                                     <tr>
-                                        <th>생년월일</th>
+                                        <th>生年月日</th>
                                         <td colspan="3">${user.m_Year}. ${user.m_Month}. ${user.m_Day}</td>
                                     </tr>
                                     <tr>
-                                        <th>휴대전화</th>
+                                        <th>携帯電話</th>
                                         <td colspan="3">${user.m_Phone}</td>
                                     </tr>
                                     <tr>
-	                                    <th>가입일</th>
+	                                    <th>加入日</th>
 	                                    <td colspan="3">
 	                                    	<fmt:formatDate pattern="yyyy-MM-dd" value="${user.m_Date}" />
 	                                    </td>
@@ -94,28 +94,28 @@
                         <!-- //회원정보 보기 -->
 
                         <div class="tab-pane fade" id="list-modifyInfo" role="tabpanel" aria-labelledby="list-modifyInfo-list">
-                            <h3>회원정보 수정</h3> <hr>
+                            <h3>会員情報修正</h3> <hr>
                             <form action="userUpdate" method="POST">
                                 <div class="form-group">
-                                	<label>Email address<span class="text-danger">*</span></label>
+                                	<label>イーメール<span class="text-danger">*</span></label>
                                 	<input type="text" class="form-control" id="inputEmail" name="M_Id" value="${user.m_Id}" readonly>
                                 </div>
                                 
                                 <div class="form-row">
 							        <div class="col-md-6 mb-3">
-							          <label for="inputFirstName">First name</label>
+							          <label for="inputFirstName">ファミリネーム</label>
 							          <input type="text" class="form-control" id="inputFirstName" name="M_Fname" maxlength="10"
 							          	value="${user.m_Fname}" onFocus="this.value='${user.m_Fname}'; return true;" required>
 							        </div>
 							        <div class="col-md-6 mb-3">
-							          <label for="inputLastName">Last name</label>
+							          <label for="inputLastName">ファーストネーム</label>
 							          <input type="text" class="form-control" id="inputLastName" name="M_Lname" maxlength="10"
 							          	value="${user.m_Lname}" onFocus="this.value='${user.m_Lname}'; return true;" required>
 							        </div>
 						        </div>
       
                                 <div class="form-group">
-                                  <label for="inputTel">Phone number</label>
+                                  <label for="inputTel">携帯電話</label>
                                   	<div class="form-group">
 	                                  	<input type="tel" class="form-control" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
 		        	 						maxlength="13" value="${user.m_Phone}" onFocus="this.value='${user.m_Phone}'; return true;" required>
@@ -123,7 +123,7 @@
 		        	 				</div>
                                 </div>
                                 
-	                  			<label for="inputBirth">Birth</label>
+	                  			<label for="inputBirth">生年月日</label>
 								<div class="form-row" id="form_YMD">
 								  <div class="col">
 								    <input type="number" class="form-control" id="inputYear" name="M_Year" placeholder="Year (4)"
@@ -143,7 +143,7 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="inputPassword">Password</label>
+                                    <label for="inputPassword">パスワード</label>
                                     <input type="password" class="form-control" id="inputPassword" name="M_Pw" maxlength="20">
                                 </div>
                                 <button class="btn btn-primary float-right" type="submit" id="submit">modify</button>
@@ -152,11 +152,11 @@
                         <!-- //회원정보 수정 -->
 
                         <div class="tab-pane fade" id="list-modifyPwd" role="tabpanel" aria-labelledby="list-modifyPwd-list">
-                            <h3>비밀번호 변경</h3> <hr>
+                            <h3>パスワード変更</h3> <hr>
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-	                                    <label>Email address<span class="text-danger">*</span></label>
+	                                    <label>イーメール<span class="text-danger">*</span></label>
 	                                    <input type="text" class="form-control" id="inputEmail2" name="M_Id" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
@@ -167,7 +167,7 @@
                                     <input type="password" class="form-control" id="newPwd" placeholder="New Password" maxlength="20" onFocus="this.value=''; return true;" required>
                                 </div>
                                 <div class="alert alert-warning" role="alert">
-                                   	You must have at least one number and a special character within the first 8 characters of your password.
+                             		     パスワードの最初の  8  文字には、少なくとも  1  つの数字と特殊文字が必要です。
                                 </div>
                                 <div class="form-group">
                                 	<input type="password" class="form-control" id="newRePwd" placeholder="Confirm new password" maxlength="20">
@@ -178,15 +178,15 @@
                         <!-- //비밀번호 변경 -->
 
                         <div class="tab-pane fade" id="list-delInfo" role="tabpanel" aria-labelledby="list-delInfo-list">
-                            <h3>회원 탈퇴</h3> <hr>
+                            <h3>会員脱退</h3> <hr>
                             <div class="alert alert-danger" role="alert">
-                             	If you leave the membership, you will not be able to restore it, so please make a careful decision.
+                             	退会されると復旧できませんので、ご注意ください。
                             </div>
                             <hr>
                             <form>
                                 <fieldset disabled>
                                     <div class="form-group">
-	                                    <label>Email address<span class="text-danger">*</span></label>
+	                                    <label>イーメール<span class="text-danger">*</span></label>
 	                                    <input type="text" class="form-control" id="inputEmail3" value="${user.m_Id}" readonly>
                                     </div>
                                 </fieldset>
@@ -204,13 +204,13 @@
                     <!-- //col-lg-9 -->
 
                     <div class="col-lg-3">
-                        <h3>My Page</h3>
+                        <h3>情報修正</h3>
                         <hr>
                         <div class="list-group" id="list-tab" role="tablist">
-                          <a class="list-group-item list-group-item-action active" id="list-mInfo-list" data-toggle="list" href="#list-mInfo" role="tab" aria-controls="mInfo">회원정보 보기</a>
-                          <a class="list-group-item list-group-item-action" id="list-modifyInfo-list" data-toggle="list" href="#list-modifyInfo" role="tab" aria-controls="modifyInfo">회원정보 수정</a>
-                          <a class="list-group-item list-group-item-action" id="list-modifyPwd-list" data-toggle="list" href="#list-modifyPwd" role="tab" aria-controls="modifyPwd">비밀번호 변경</a>
-                          <a class="list-group-item list-group-item-action" id="list-delInfo-list" data-toggle="list" href="#list-delInfo" role="tab" aria-controls="delInfo">탈퇴</a>
+                          <a class="list-group-item list-group-item-action active" id="list-mInfo-list" data-toggle="list" href="#list-mInfo" role="tab" aria-controls="mInfo">会員情報を見る</a>
+                          <a class="list-group-item list-group-item-action" id="list-modifyInfo-list" data-toggle="list" href="#list-modifyInfo" role="tab" aria-controls="modifyInfo">会員情報修正</a>
+                          <a class="list-group-item list-group-item-action" id="list-modifyPwd-list" data-toggle="list" href="#list-modifyPwd" role="tab" aria-controls="modifyPwd">パスワード変更</a>
+                          <a class="list-group-item list-group-item-action" id="list-delInfo-list" data-toggle="list" href="#list-delInfo" role="tab" aria-controls="delInfo">会員脱退</a>
                         </div>
                         <!-- //list-group -->
                       </div>

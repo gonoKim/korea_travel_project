@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../../../resources/QnA/css/broad_view.css">
 <!-- <script src="../../../resources/QnA/js/QnAView.js"></script> -->
 <meta charset="UTF-8">
-<title>FestivalView</title>
+<title>祭りを見ること</title>
 
 <!-- 삭제할 부분 -->
 <script type="text/javascript">
@@ -33,37 +33,37 @@ function FestivalUpdate(){
 
 <table class="my-5 table table-bordered">
             <tr>
-                <th class="text-center w-25 p-3">Subject: </th>
+                <th class="text-center w-25 p-3">テーマ: </th>
                 <td scope="row">${fResult.f_Subject }</td>
             </tr>
              <tr>
-                <th class="text-center">장소 코드: </th>
+                <th class="text-center">地域コード: </th>
                 <td scope="row">${fResult.place_Code }</td>
             </tr>
                     <tr>
-                <th class="text-center">Summary: </th>
+                <th class="text-center">要約: </th>
                 <td scope="row">${fResult.f_Summary}</td>
             </tr>
             <tr>
-                <th class="text-center">Content: </th>
+                <th class="text-center">内容: </th>
                 <td scope="row">${fResult.f_Content }</td>
             </tr>
     
             <tr>
-                <th class="text-center">Address: </th>
+                <th class="text-center">住所: </th>
                 <td scope="row">${fResult.f_Address }</td>
             </tr>
             <tr>
-                <th class="text-center">DATE: </th>
-                <td scope="row">시작일 : ${fResult.f_S_Year}-${fResult.f_S_Month}-${fResult.f_S_Day}<br>
-				끝나는일 : ${fResult.f_L_Year}-${fResult.f_L_Month}-${fResult.f_L_Day}</td>
+                <th class="text-center">日: </th>
+                <td scope="row">開始日 : ${fResult.f_S_Year}-${fResult.f_S_Month}-${fResult.f_S_Day}<br>
+				終わる日 : ${fResult.f_L_Year}-${fResult.f_L_Month}-${fResult.f_L_Day}</td>
             </tr>
             
             
 </table>
 <div class="row justify-content-center my-4">
-					<input type="button" value="Update" class="btn" onclick="FestivalUpdate();"/>
-                    <input type="button" value="Cancel" class="btn" onclick="window.close();"/>
+					<input type="button" value="修整" class="btn" onclick="FestivalUpdate();"/>
+                    <input type="button" value="キャンセル" class="btn" onclick="window.close();"/>
                 </div>
                 
 </form>
