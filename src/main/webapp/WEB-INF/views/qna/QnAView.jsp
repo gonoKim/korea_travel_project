@@ -7,9 +7,36 @@
 %>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 	<head>
     <meta charset="UTF-8">
 	<title>QnaView</title>
+=======
+<head>
+<link rel="stylesheet" href="../../../resources/assets/dist/css/bootstrap-4.5.0.min.css">
+<link rel="stylesheet" href="../../../resources/assets/dist/css/area.css">
+<link rel="stylesheet" href="../../../resources/assets/dist/css/blog.css" >
+<script src="../../../../resources/assets/dist/js/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/assets/dist/js/popper-1.16.0.min.js"></script>
+<script src="../../../resources/assets/dist/js/bootstrap-4.5.0.min.js"></script>
+<script src="../../../resources/assets/dist/js/jquery-1.11.3.min.js"></script>
+   
+   <!--QnA 커스텀 css, js  -->
+<link rel="stylesheet" href="../../../resources/QnA/css/broad_view.css">
+<!-- <script src="../../../resources/QnA/js/QnAView.js"></script> -->
+<meta charset="UTF-8">
+<title>글 내용</title>
+
+<!-- 삭제할 부분 -->
+<script type="text/javascript">
+function boardDelete(){	
+	var chk = confirm("정말 삭제하시겠습니까?");
+	if (chk) {
+		location.href="/qna/QnADelete?qnaNum=${result.qnaNum}";
+			}
+						}	
+function QnAUpdate(){
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 	
     <link rel="canonical" href="${pageContext.request.contextPath}/resources/assets/dist/css/bootstrap-4.5.0.min.css">
     <script src="${pageContext.request.contextPath}/resources/assets/dist/js/jquery-3.5.1.min.js"></script>

@@ -20,12 +20,33 @@ public class QnACommentController {
 	@Autowired
 	QnACommentService qnaCService;
 	
+<<<<<<< HEAD
 	// 댓글 리스트
 	@RequestMapping(value="/clist", method = RequestMethod.GET)
 	public List<QnACommentVO> qnaCList(int qnA_Num){ 
 		logger.info("get qnaCList");
 		
 		return  qnaCService.qnaCommentList(qnA_Num);
+=======
+	 // 댓글 리스트
+//		@RequestMapping(value="/clist", method = RequestMethod.GET)
+//		public String qnaCList(int qnaNum){ 
+//		List<QnACommentVO> cResult = qnaCService.qnaCommentList(qnaNum);
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("cResult", cResult);
+//		return  "redirect: ../qna/QnAView";
+//		}
+	
+		@RequestMapping(value="/clist", method = RequestMethod.GET)
+		public List<QnACommentVO> qnaCList(int qnaNum){ 
+		return  qnaCService.qnaCommentList(qnaNum);
+		}
+		//댓글 삭제
+		@RequestMapping(value="/QnACDelete",method = RequestMethod.GET)
+		public void qnaCDelete(int qnaCNum) {
+			qnaCService.qnaCommentDelete(qnaCNum);
+		}
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 	}
 	
 	//댓글 삭제

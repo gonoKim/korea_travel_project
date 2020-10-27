@@ -17,7 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.travel.common.Pagination;
 import com.project.travel.service.QnAService;
+<<<<<<< HEAD
 import com.project.travel.service.UserService;
+=======
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 import com.project.travel.vo.QnACommentVO;
 import com.project.travel.vo.QnAVO;
 import com.project.travel.vo.UserVO;
@@ -51,6 +54,7 @@ public class QnAController {
 		mav.addObject("pagination",pagination);
 		mav.addObject("result", result);
 		
+<<<<<<< HEAD
 		return mav;
 	}
 	
@@ -111,4 +115,30 @@ public class QnAController {
 		qnaService.QnADelete(qnA_Num);
 		return "redirect: QnABoard";
 	}
+=======
+//		QnA 내용물 보여주는 컨트롤러 & 조회수 
+		@RequestMapping(value="qna/QnAView",method = RequestMethod.GET)
+		public ModelAndView QnAView(int qnaNum) {
+			QnAVO result = qnaService.getQnAView(qnaNum);
+			qnaService.viewsUpdate(qnaNum);
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("result",result);
+			mav.addObject("cResult", new QnACommentVO());
+			return mav;
+		}	
+//		QnA 업데이트 내용물 보여주는 컨트롤러 뷰 데이터 끌어다씀
+		@RequestMapping(value="qna/QnAUpdate",method = RequestMethod.GET)
+		public ModelAndView QnAUpdate(int qnaNum) {
+			QnAVO result = qnaService.getQnAView(qnaNum);
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("result",result);
+			return mav;
+		}
+//		QnA 삭제 
+		@RequestMapping(value="qna/QnADelete",method = RequestMethod.GET)
+		public String QnADelete(int qnaNum) {
+			qnaService.QnADelete(qnaNum);
+			return "redirect: QnABoard";
+		}
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 }

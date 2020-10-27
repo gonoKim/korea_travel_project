@@ -15,8 +15,13 @@ public class QnACommentDAO {
 	public SqlSession sqlSession;
 		
     // 댓글 목록
+<<<<<<< HEAD
     public List<QnACommentVO> qnaCommentList(int qnA_Num){
     	return sqlSession.selectList("qnaCommentList", qnA_Num);
+=======
+    public List<QnACommentVO> qnaCommentList(int qnaNum){
+    	return sqlSession.selectList("qnaCommentList", qnaNum);
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
     }
       
     // 댓글 작성

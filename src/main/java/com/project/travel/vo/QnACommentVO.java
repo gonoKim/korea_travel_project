@@ -3,11 +3,19 @@ package com.project.travel.vo;
 import java.util.Date;
 
 public class QnACommentVO {
+<<<<<<< HEAD
 	private int QnA_C_Num;
 	private String M_Id;
 	private int QnA_Num;
 	private String QnA_C_Content;
 	private Date QnA_C_Date;
+=======
+	
+	private int	qnaCNum; //qna댓글 번호
+	private int qnaNum;	//qna 넘버
+	private String qnaCContent;	//qna댓글 내용
+	private	Date qnaCDate;	//qna 날짜
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
 	
 	public int getQnA_C_Num() {
 		return QnA_C_Num;
@@ -33,6 +41,7 @@ public class QnACommentVO {
 	public void setQnA_C_Content(String qnA_C_Content) {
 		QnA_C_Content = qnA_C_Content;
 	}
+<<<<<<< HEAD
 	public Date getQnA_C_Date() {
 		return QnA_C_Date;
 	}
@@ -46,3 +55,9 @@ public class QnACommentVO {
 				+ ", QnA_C_Date=" + QnA_C_Date + "]";
 	}
 }
+=======
+	
+
+	
+}
+>>>>>>> branch 'Choi' of https://github.com/gonoKim/korea_travel_project.git
