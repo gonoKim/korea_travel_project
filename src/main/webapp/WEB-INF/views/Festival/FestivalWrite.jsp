@@ -50,13 +50,13 @@
 				</div>
 
 				<h4 class="my-3">テーマ</h4>
-				<input type="text" class="form-control text-dark" id="subject" name="F_Subject" placeholder="제목을 입력해 주세요">
+				<input type="text" class="form-control text-dark" id="subject" name="F_Subject" placeholder="タイトルを入力してください">
 
 				<h4 class="my-3">要約</h4>
-				<textarea rows="5" cols="20" class="form-control text-dark" id="content" name="F_Summary" placeholder="내용 요약본을 입력해 주세요"></textarea>
+				<textarea rows="5" cols="20" class="form-control text-dark" id="content" name="F_Summary" placeholder="内容の要約を入力してください"></textarea>
 
 				<h4 class="my-3">内容</h4>
-				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Content" placeholder="내용를 입력해 주세요"></textarea>
+				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Content" placeholder="内容を入力してください"></textarea>
 
 							
 							<!-- 장소 코드 
@@ -87,7 +87,7 @@
 				</div>
 
 				<h4 class="my-3">住所</h4>
-				<input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="주소를 입력해 주세요">
+				<input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="住所を入力してください">
 				
 				<h4 class="my-3">開始日</h4>
 				<div class="form-row" id="form_YMD">

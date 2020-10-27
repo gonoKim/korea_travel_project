@@ -36,7 +36,7 @@
 			<c:if test="${user != null }">
 				<div>
 					<button id="nickname" class="btn" disabled>${user.m_Fname} ${user.m_Lname}</button>
-					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">Logout</button>
+					<button id="logoutBtn" type="button" onClick="location.href='/user/logout'" class="btn btn-sm btn-outline-secondary">ログアウト</button>
 				</div>
 			</c:if>
 		</div>
