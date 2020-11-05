@@ -65,7 +65,7 @@
 				<tr>
 					<th class="text-center qnaTh bg-secondary text-white">著者</th>
 					<td scope="row" class="px-4 qnaTd">${result.m_Id}</td>
-					<th class="text-center qnaTh bg-secondary text-white">アクセス数</th>
+					<th class="text-center qnaTh bg-secondary text-white">ヒット数</th>
 					<td scope="row" class="px-4 qnaTd">${result.qnA_Views}</td>
 				</tr>
 				<tr>

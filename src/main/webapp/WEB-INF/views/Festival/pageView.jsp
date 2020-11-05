@@ -93,7 +93,7 @@ geocoder.addressSearch("${page.f_Address}", function(result, status) {
 <div class="col my-3" id="festivalviewfont"><b>オンライン祭り</b></div>
 </div>
 </c:if>
-	<input type="button" value="Cancel" class="btn my-5" onclick="window.close();" />
+	<input type="button" value="キャンセル" class="btn my-5" onclick="window.close();" />
 	</div>
 </div>
 </body>

@@ -76,7 +76,7 @@
 					<td scope="col">ナンバー </td>
 					<td scope="col">テーマ</td>
 					<td scope="col">著者</td>
-					<td scope="col">アクセス数</td>
+					<td scope="col">ヒット数</td>
 					<td scope="col">日</td>
 				</tr>
 				<c:forEach var="n" items="${result}">
