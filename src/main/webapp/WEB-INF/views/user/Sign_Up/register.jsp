@@ -47,7 +47,7 @@
       <div class="form-group">
         <label for="inputPassword">Password</label>
         <input type="password" class="form-control btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
-        <small style="color: red;">Use 8 to 20 letters of English, numbers, and special characters.</small>
+        <small style="color: red;">8  ~  20  文字の英語、数字、特殊文字を使用します。</small>
       </div>
 
       <div class="form-group">
