@@ -34,17 +34,17 @@
 
       <div class="form-row">
         <div class="col-md-6 mb-3">
-          <label for="inputFirstName">First name</label>
+          <label for="inputFirstName">名跡</label>
           <input type="text" class="form-control btn-dark" id="inputFirstName" name="M_Fname"  maxlength="10" required>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="inputLastName">Last name</label>
+          <label for="inputLastName">名前</label>
           <input type="text" class="form-control btn-dark" id="inputLastName" name="M_Lname"  maxlength="10" required>
         </div>
       </div>
       
       <div class="form-group" id="form_inputTel">
-        <label for="inputTel">Phone number</label>
+        <label for="inputTel">電話番号</label>
         <input type="tel" class="form-control btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
       
@@ -67,20 +67,20 @@
 	  </c:if>  
 	  
   	  <c:if test="${msg == false}">
-		<p style="color: red;" class="text-center">Failed to find! Please check your Name and phone.</p>
+		<p style="color: red;" class="text-center">見つかりませんでした。 お名前と電話番号をご確認ください。</p>
 	  </c:if>
 	    
       <div class="form-row">
       	<div class="col-md-6 mb-3">
       	  <c:if test="${user == null}">
-		  	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
+		  	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">ホーム</button>
 		  </c:if>
 		  <c:if test="${user != null}">
-		    <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/user/Sign_In/login'">Sign in</button>
+		    <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/user/Sign_In/login'">ログイン</button>
 		  </c:if>
 		</div>
 		<div class="col-md-6 mb-3">
-	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">確認</button>
 	    </div>
 	  </div>
 	  

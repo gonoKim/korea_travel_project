@@ -57,7 +57,7 @@
 		<form>
 			<table class="my-5 table table-bordered">
 				<tr>
-					<th class="text-center w-25 p-3 qnaTh bg-secondary text-white">テーマ	</th>
+					<th class="text-center w-25 p-3 qnaTh bg-secondary text-white">タイトル	</th>
 					<td scope="row" class="px-4 qnaTd" colspan="3">${result.NB_Subject}</td>
 				</tr>
 				<tr>

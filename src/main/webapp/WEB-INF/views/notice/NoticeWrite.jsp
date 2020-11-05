@@ -34,7 +34,7 @@
 				<h2 class="my-3">お知らせを書く</h2>
 			</div>
 			
-			<h4 class="my-3">テーマ</h4>
+			<h4 class="my-3">タイトル</h4>
 			<input type="text" class="form-control text-dark" id="subject" maxlength="30" placeholder="タイトルを入力してください">
 			
 			<h4 class="my-3">著者</h4>

@@ -48,7 +48,7 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#mInfo">Info</a>
+            <a class="nav-link active" data-toggle="tab" href="#mInfo">情報</a>
           </li>
         </ul>
       
@@ -61,7 +61,7 @@
                     <div class="col-lg-9">
                       <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="list-mInfo" role="tabpanel" aria-labelledby="list-mInfo-list">
-                            <h3>会員情報を見る</h3> <hr>
+                            <h3>会員情報</h3> <hr>
                             <table class="table table-bordered mInfotbl" id="infoTable">
                                 <tbody>
                                     <tr>
@@ -119,7 +119,7 @@
                                   	<div class="form-group">
 	                                  	<input type="tel" class="form-control" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
 		        	 						maxlength="13" value="${user.m_Phone}" onFocus="this.value='${user.m_Phone}'; return true;" required>
-		        	 					<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">Check</button>
+		        	 					<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">チェック</button>
 		        	 				</div>
                                 </div>
                                 
@@ -146,7 +146,7 @@
                                     <label for="inputPassword">パスワード</label>
                                     <input type="password" class="form-control" id="inputPassword" name="M_Pw" maxlength="20">
                                 </div>
-                                <button class="btn btn-primary float-right" type="submit" id="submit">modify</button>
+                                <button class="btn btn-primary float-right" type="submit" id="submit">修整</button>
                             </form>
                         </div>
                         <!-- //회원정보 수정 -->
@@ -161,18 +161,18 @@
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                	<input type="password" class="form-control" id="inputPassword2" name="M_Pw" placeholder="Current Password"  maxlength="20">
+                                	<input type="password" class="form-control" id="inputPassword2" name="M_Pw" placeholder="現在のパスワードです。"  maxlength="20">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="newPwd" placeholder="New Password" maxlength="20" onFocus="this.value=''; return true;" required>
+                                    <input type="password" class="form-control" id="newPwd" placeholder="新しいパスワードです" maxlength="20" onFocus="this.value=''; return true;" required>
                                 </div>
                                 <div class="alert alert-warning" role="alert">
                              		     パスワードの最初の  8  文字には、少なくとも  1  つの数字と特殊文字が必要です。
                                 </div>
                                 <div class="form-group">
-                                	<input type="password" class="form-control" id="newRePwd" placeholder="Confirm new password" maxlength="20">
+                                	<input type="password" class="form-control" id="newRePwd" placeholder="新しいパスワードを確認します。" maxlength="20">
                                 </div>
-                                <button type="button" class="btn btn-primary float-right" onclick="modPwdValidation()">Change</button>
+                                <button type="button" class="btn btn-primary float-right" onclick="modPwdValidation()">変更</button>
                             </form>
                         </div>
                         <!-- //비밀번호 변경 -->
@@ -191,9 +191,9 @@
                                     </div>
                                 </fieldset>
                                 <div class="form-group">
-                                	<input type="password" class="form-control" id="inputPassword3" placeholder="Password" maxlength="20">
+                                	<input type="password" class="form-control" id="inputPassword3" placeholder="パスワード" maxlength="20">
                                 </div>
-                                <button type="button" class="btn btn-primary float-right" onclick="delUserValidation()">Delete</button>
+                                <button type="button" class="btn btn-primary float-right" onclick="delUserValidation()">脱退</button>
                             </form>
                         </div>
                         <!-- //회원 탈퇴 -->

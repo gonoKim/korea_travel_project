@@ -36,21 +36,21 @@
       </div>
 
       <div class="form-group">
-        <label for="inputPassword">Password</label>
+        <label for="inputPassword">パスワード</label>
         <input type="password" class="form-control btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
       </div>
 
       <div class="form-group">
-        <label for="inputRepassword">Retype password</label>
+        <label for="inputRepassword">パスワード確認</label>
         <input type="password" class="form-control btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 
       <div class="form-row">
       	<div class="col-md-6 mb-3">
-		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">Home</button>
+		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/main/main'">ホーム</button>
 		</div>
 		<div class="col-md-6 mb-3">
-	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit" id="submit">Confirm</button>
+	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit" id="submit">確認</button>
 	    </div>
 	  </div>
 	  

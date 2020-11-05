@@ -4,7 +4,7 @@ function noticeValidation() {
 	var writer 	= $("#writer").val();
 
 	if (!subject) {
-		alert("제목 입력은 필수입니다.");
+		alert("タイトルの入力は必須です。");
 		$("#subject").focus();
 		return false;
 	} else if(!writer){
@@ -12,7 +12,7 @@ function noticeValidation() {
 		$("#writer").focus();
 		return false;
 	} else if (!content) {
-		alert("내용 입력은 필수 입니다.");
+		alert("内容の入力は必須です。");
 		$("#content").focus();
 		return false;
 	} else {
@@ -31,10 +31,10 @@ function NoticeWrite(sub, wri, con) {
 		},
 		success : function(data) {
 			if (data == 1){
-				alert("글 등록이 완료되었습니다.");
+				alert("掲示物登録が完了しました。");
 				location.href = "/notice/NoticeBoard";
 			} else{
-				alert("글 등록 실패");
+				alert("掲示物登録に失敗しました。");
 			}
 		}, error:function() {
 			console.log("error");

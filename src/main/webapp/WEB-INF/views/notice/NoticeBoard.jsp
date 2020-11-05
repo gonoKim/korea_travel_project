@@ -74,7 +74,7 @@
 			<table class="table table-hover col-11 text-center">
 				<tr class="bg-secondary text-white qnaTh">
 					<td scope="col">ナンバー </td>
-					<td scope="col">テーマ</td>
+					<td scope="col">タイトル</td>
 					<td scope="col">著者</td>
 					<td scope="col">ヒット数</td>
 					<td scope="col">日</td>

@@ -37,31 +37,31 @@
 
       <div class="form-label-group">
         <input type="email" id="inputEmail" name="M_Id" class="form-control btn-dark" placeholder="Email address" maxlength="30" required autofocus>
-        <label for="inputEmail">Email address</label>
+        <label for="inputEmail">イーメール</label>
       </div>
 
       <div class="form-label-group">
         <input type="password" id="inputPassword" name="M_Pw" class="form-control btn-dark" placeholder="Password" maxlength="20" required>
-        <label for="inputPassword">Password</label>
+        <label for="inputPassword">パスワード</label>
       </div>
 
       <div class="checkbox mb-3">
         <input type="checkbox" id="remember" value="remember-me"> 
-        <label id="remember_label" for="remember"></label> <label for="remember">Remember Email</label>
+        <label id="remember_label" for="remember"></label> <label for="remember">イーメールの保存</label>
       </div>
 
-      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">ログイン</button>
       <div class="btn-group btn-group-lg" role="group" aria-label="..."></div>   
       
 	  <c:if test="${msg == false}">
-		<p style="color: red;" class="text-center">Login failed! Please check your ID and password.</p>
+		<p style="color: red;" class="text-center">ログインに失敗しました。 IDとパスワードをご確認ください。</p>
 	  </c:if>  
        
-      <div class="modal-footer">
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Id/findId'" id="FI_btn">Find ID</button>
-        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Pw/findPw'" id="FP_btn">Find Password</button>
+      <div class="modal-footer">	
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Id/findId'" id="FI_btn">イーメールを探す</button>
+        <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Find_Pw/findPw'" id="FP_btn">パスワードを探す</button>
       </div>
-      <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Sign_Up/register'" id="sign_up_btn">Sign Up</button>
+      <button type="button" class="btn btn btn-outline-secondary" onclick="location.href='/user/Sign_Up/register'" id="sign_up_btn">会員加入</button>
       
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </form>

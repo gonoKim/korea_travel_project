@@ -76,7 +76,7 @@
 					<h2 class="my-3">QnA-修正</h2>
 				</div>
 
-				<h4 class="my-3">テーマ</h4>
+				<h4 class="my-3">タイトル</h4>
 				<input type="text" class="form-control text-dark" id="u_subject" maxlength="30" value="${result.qnA_Subject}">
 
 				<h4 class="my-3">著者</h4>

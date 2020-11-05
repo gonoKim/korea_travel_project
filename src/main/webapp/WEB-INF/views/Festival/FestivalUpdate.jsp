@@ -125,7 +125,7 @@ function FestivalUpdate(sub,con,pla,add,s_y,s_m,s_d,l_y,l_m,l_d,fnum){
                     <h2 class="my-3">お祭り情報入力</h2>
                     </div>
            	
-                    <h4 class="my-3">テーマ</h4>
+                    <h4 class="my-3">タイトル</h4>
                     <input type="text" class="form-control text-dark" id="subject" value="${fResult.f_Subject}">
            
                                <h4 class="my-3">内容</h4>

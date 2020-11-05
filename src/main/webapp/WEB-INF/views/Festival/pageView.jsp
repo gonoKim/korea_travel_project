@@ -77,7 +77,7 @@ geocoder.addressSearch("${page.f_Address}", function(result, status) {
 
     // 인포윈도우로 장소에 대한 설명을 표시합니다
     var infowindow = new kakao.maps.InfoWindow({
-        content: '<div style="width:150px;text-align:center;padding:6px 0;">축제 지역</div>'
+        content: '<div style="width:150px;text-align:center;padding:6px 0;">お祭りの地域です。</div>'
     });
     infowindow.open(map, marker);
 

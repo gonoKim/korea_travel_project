@@ -154,7 +154,7 @@ window.open("/Festival/FestivalWrite","","width=600,height=900");
 				<input type="text" class="form-control form-control-sm" name="keyword" id="keyword" value="${keyword }">
 			</div>
 			<div>
-				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>
+				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">検索</button>
 			</div>
 		</div>
 		<!-- search{e} -->

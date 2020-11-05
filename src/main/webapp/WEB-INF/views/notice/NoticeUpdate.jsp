@@ -76,7 +76,7 @@
 					<h2 class="my-3">お知らせ修正</h2>
 				</div>
 				
-				<h4 class="my-3">テーマ</h4>
+				<h4 class="my-3">タイトル</h4>
 				<input type="text" class="form-control text-dark" id="u_subject" maxlength="30" value="${result.NB_Subject}">
 				
 				<h4 class="my-3">著者</h4>

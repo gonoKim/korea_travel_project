@@ -34,14 +34,14 @@
 				<h2 class="my-3">QnA-書く</h2>
 			</div>
 						
-			<h4 class="my-3">テーマ</h4>
-			<input type="text" class="form-control text-dark" id="subject" maxlength="30" placeholder="제목을 입력해 주세요">
+			<h4 class="my-3">タイトル</h4>
+			<input type="text" class="form-control text-dark" id="subject" maxlength="30" placeholder="タイトルを入力してください">
 
 			<h4 class="my-3">著者</h4>
 			<input type="text" class="form-control text-dark" id="writer" maxlength="12" value="${user.m_Id}" readonly>
 
 			<h4 class="my-3">内容</h4>
-			<textarea rows="10" cols="20" class="form-control text-dark" id="content" maxlength="200" placeholder="내용를 입력해 주세요"></textarea>
+			<textarea rows="10" cols="20" class="form-control text-dark" id="content" maxlength="200" placeholder="内容を入力してください。"></textarea>
 
 			<div class="row justify-content-center my-4">
 				<button type="reset" id="join-submit" class="btn">リセット</button>

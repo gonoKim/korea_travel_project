@@ -24,35 +24,35 @@ $(function(){
 		var phoneChkVal = $("#phoneChk").val();
 		
 		if(!inputTelVal){
-			alert("Please enter your phone number.");
+			alert("電話番号を入力してください。");
 			$("#inputTel").focus();
 			return false;
 		} else if(!inputFirstNameVal){
-			alert("Enter First name.");
+			alert("名を入力してください。");
 			$("#inputFirstName").focus();
 			return false;
 		} else if(!inputLastNameVal){
-			alert("Enter Last name.");
+			alert("姓を入力してください。");
 			$("#inputLastName").focus();
 			return false;
 		} else if(!inputYearVal){
-			alert("Enter Year.");
+			alert("年を入力してください。");
 			$("#inputYear").focus();
 			return false;
 		} else if(!inputMonthVal){
-			alert("Enter Month.");
+			alert("月を入力してください。");
 			$("#inputMonth").focus();
 			return false;
 		} else if(!inputDayVal){
-			alert("Enter Day.");
+			alert("日を入力してください。");
 			$("#inputDay").focus();
 			return false;
 		} else if(!inputPasswordVal){
-			alert("Enter password.");
+			alert("パスワードを入力してください。");
 			$("#inputPassword").focus();
 			return false;
 		} else if(phoneChkVal == "N"){
-			alert("Please press the Phone number check button.");
+			alert("電話番号確認ボタンを押してください。");
 			return false;
 		}
 		
@@ -73,7 +73,7 @@ $(function(){
 						},
 						success : function(data){
 							if(data == 0){
-								alert("Failed! The phone number is already in use.");
+								alert("失敗しました。電話番号はすでに使用中です。");
 							}
 						}
 					})
@@ -103,15 +103,15 @@ function phonChk(){
 					success : function(data){
 						if(data == 1){
 							$("#phoneChk").attr("value", "Y");
-							alert("This is the phone number that you are currently using.");
+							alert("これは、現在使用している電話番号です。");
 						} else if(data == 0){
-							alert("The phone number is already in use.");
+							alert("電話番号は既に使用中です。");
 						}
 					}
 				})
 			} else if(data == 0){
 				$("#phoneChk").attr("value", "Y");
-				alert("This phone numbers is available.");
+				alert("この電話番号は利用可能です。");
 			}
 		}
 	})
@@ -135,16 +135,16 @@ function modPwdValidation(){
     var spe = newPwd.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);	
 	
 	if(newPwd.length < 8 || newPwd.length > 20){
-    	alert("The password must be a minimum of 8 characters.");
+    	alert("パスワードは  8  文字以上にする必要があります。");
     	return false;
     } else if(newPwd.search(/\s/) != -1){
-        alert("Please enter your password without spaces.");
+        alert("パスワードをスペースなしで入力してください。");
         return false;
 	} else if(num < 0 || eng < 0 || spe < 0){
-        alert("You must have at least one number and a special character within the first 8 characters of your password.");
+        alert("パスワードの最初の  8  文字以内に、数字と特殊文字が少なくとも  1  つ必要です。");
         return false;
 	} else if(newPwd != newRePwd){
-		alert("Passwords do not match.");
+		alert("パスワードが一致しません。");
 		return false;
 	} else {
 		modPwd(id, pw, newPwd, newRePwd);
@@ -166,7 +166,7 @@ function modPwdValidation(){
 					alert("Password change complete.");
 					location.href="/mypage/myPage";
 				} else {
-					alert("The current password does not match.");
+					alert("現在のパスワードが一致しません。");
 				}
 			}
 		})
@@ -182,7 +182,7 @@ function delUserValidation(){
 		$("#inputPassword3").focus();
 		return false;
 	} else {
-		chk=confirm("Are you sure you want to withdraw your membership?");
+		chk=confirm("退会してよろしいですか？");
 		if(chk==true){
 			delUser(id, pw);
 		} else{
@@ -204,7 +204,7 @@ function delUserValidation(){
 					alert("Membership withdrawal completed.");
 					location.href="../main/main";
 				} else {
-					alert("Wrong password.");
+					alert("パスワードが間違っています。");
 				}
 			}
 		})

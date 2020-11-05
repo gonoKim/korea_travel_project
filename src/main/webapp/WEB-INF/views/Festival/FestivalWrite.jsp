@@ -49,7 +49,7 @@
 					<h2 class="my-3">祭り情報</h2>
 				</div>
 
-				<h4 class="my-3">テーマ</h4>
+				<h4 class="my-3">タイトル</h4>
 				<input type="text" class="form-control text-dark" id="subject" name="F_Subject" placeholder="タイトルを入力してください">
 
 				<h4 class="my-3">要約</h4>
