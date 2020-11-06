@@ -31,7 +31,7 @@
 
 	<script type="text/javascript">
 		function NoticeDelete(){
-			var chk = confirm("정말 삭제하시겠습니까?");
+			var chk = confirm("本当に削除しますか？");
 			if (chk) {
 				location.href = "/notice/NoticeDelete?NB_Num=${result.NB_Num}";
 			}
@@ -57,13 +57,13 @@
 		<form>
 			<table class="my-5 table table-bordered">
 				<tr>
-					<th class="text-center w-25 p-3 qnaTh bg-secondary text-white">Subject</th>
+					<th class="text-center w-25 p-3 qnaTh bg-secondary text-white">タイトル	</th>
 					<td scope="row" class="px-4 qnaTd" colspan="3">${result.NB_Subject}</td>
 				</tr>
 				<tr>
-					<th class="text-center qnaTh bg-secondary text-white">Writer</th>
+					<th class="text-center qnaTh bg-secondary text-white">著者</th>
 					<td scope="row" class="px-4 qnaTd">${result.m_Id}</td>
-					<th class="text-center qnaTh bg-secondary text-white">Views</th>
+					<th class="text-center qnaTh bg-secondary text-white">ヒット数</th>
 					<td scope="row" class="px-4 qnaTd">${result.NB_Views}</td>
 				</tr>
 				<tr>
@@ -75,23 +75,23 @@
 
 			<div class="row justify-content-center my-4">
 				<c:if test="${user.m_Grade == 'admin'}">
-					<input type="button" value="Update" class="btn btn-outline-secondary" onclick="NoticeUpdate()" />
-					<input type="button" value="Delete" class="btn btn-outline-secondary  mx-3" onclick="NoticeDelete()" />
+					<input type="button" value="修正" class="btn btn-outline-secondary" onclick="NoticeUpdate()" />
+					<input type="button" value="削除" class="btn btn-outline-secondary  mx-3" onclick="NoticeDelete()" />
 				</c:if>
-				<input type="button" value="List" class="btn btn-outline-secondary" onclick="javascript:location.href='NoticeBoard'" />
+				<input type="button" value="リスト" class="btn btn-outline-secondary" onclick="javascript:location.href='NoticeBoard'" />
 			</div>
 		</form>
 	</div>
 	
 	<div class="container" id="commentInsert">
-		<label for="content" id="comment">comment</label>
+		<label for="content" id="comment">コメント</label>
 		<form name="commentInsertForm">
 			<div class="input-group">
 				<input type="hidden" name="bno" value="${result.NB_Num}" />
 				<input type="hidden" name="M_Id" value="${user.m_Id}" />
-				<input type="text" class="form-control" id="c_Content" name="content" maxlength="200" placeholder="내용을 입력하세요.">
+				<input type="text" class="form-control" id="c_Content" name="content" maxlength="200" placeholder="内容を入力してください">
 				<span class="input-group-btn">
-					<input class="btn btn-outline-secondary" type="button" value="Write" onclick="commentInsert()" />
+					<input class="btn btn-outline-secondary" type="button" value="書く" onclick="commentInsert()" />
 				</span>
 			</div>
 		</form>

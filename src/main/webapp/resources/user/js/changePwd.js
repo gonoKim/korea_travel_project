@@ -19,16 +19,16 @@ $(function(){
 	    var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 	
 		if(pw.length < 8 || pw.length > 20){
-        	alert("The password must be a minimum of 8 characters.");
+        	alert("パスワードは  8  文字以上にする必要があります。");
         	return false;
 	    } else if(pw.search(/\s/) != -1){
-	        alert("Please enter your password without spaces.");
+	        alert("パスワードをスペースなしで入力してください。");
 	        return false;
     	} else if(num < 0 || eng < 0 || spe < 0){
-	        alert("You must have at least one number and a special character within the first 8 characters of your password.");
+	        alert("パスワードの最初の  8  文字以内に、数字と特殊文字が少なくとも  1  つ必要です。");
 	        return false;
     	} else if(pw != pw2){
-			alert("Passwords do not match.");
+			alert("パスワードが一致しません。");
 			return false;
 		}
 		

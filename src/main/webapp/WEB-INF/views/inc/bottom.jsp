@@ -3,10 +3,10 @@
     
     
 <footer class="blog-footer text-dark">
-    <p>WI-FI Team Project<br>
+    <p>WI-FI チームプロジェクト<br>
     Wep Framework : <a href="https://getbootstrap.com/">Bootstrap</a><br>
     	제작자 : 최한규 강현철 박민정 안성후 <br>
-    	   <a href="#">Back to top</a>
+    	   <a href="#">一番上</a>
     	</p>
    
    

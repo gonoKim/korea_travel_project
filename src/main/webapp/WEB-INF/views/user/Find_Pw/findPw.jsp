@@ -32,25 +32,25 @@
       </div>
 
       <div class="form-group">
-        <label for="inputEmail">Email address</label>
+        <label for="inputEmail">イーメール</label>
         <input type="email" class="form-control btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com" required autofocus>
       </div>
       
       <div class="form-group" id="form_inputTel">
-        <label for="inputTel">Phone number</label>
+        <label for="inputTel">電話番号</label>
         <input type="tel" class="form-control btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="000-0000-0000" maxlength="13" required>
       </div>
       
    	  <c:if test="${msg == false}">
-		<p style="color: red;" class="text-center">Failed to find! Please check your ID and phone.</p>
+		<p style="color: red;" class="text-center">見つかりませんでした。 身分証明書と電話番号をご確認ください。</p>
 	  </c:if>
 
       <div class="form-row">
       	<div class="col-md-6 mb-3">
-		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/user/Sign_In/login'">Sign in</button>
+		  <button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="location.href='/user/Sign_In/login'">ログイン</button>
 		</div>
 		<div class="col-md-6 mb-3">
-	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">Confirm</button>
+	      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit">確認</button>
 	    </div>
 	  </div>
 	  

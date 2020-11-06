@@ -32,11 +32,11 @@
 			var u_num = ${result.NB_Num};
 			
 			if(!u_subject){
-				alert("제목 입력은 필수입니다.");
+				alert("タイトルの入力は必須です。");
 				$("#u_subject").focus();
 				return false;
 			} else if(!u_content){
-				alert("내용 입력은 필수 입니다.");
+				alert("情報の入力は必須です。");
 				$("#u_content").focus();
 				return false;
 			} else{
@@ -55,10 +55,10 @@
 				},
 				success:function(data){
 					if(data == 1){
-						alert("글 수정이 완료되었습니다.");
+						alert("文章修正が完了しました。");
 						location.href = "/notice/NoticeView?NB_Num=${result.NB_Num}";
 					} else{
-						alert("글 수정 실패");
+						alert("修正失敗");
 					}
 				}, error:function(){
 					console.log("error");
@@ -73,21 +73,21 @@
 		<div class="col-sm-6 col-md-offset-3">
 			<form>
 				<div class=" text-center text-dark pt-5">
-					<h2 class="my-3">Notice-update</h2>
+					<h2 class="my-3">お知らせ修正</h2>
 				</div>
 				
-				<h4 class="my-3">Subject</h4>
+				<h4 class="my-3">タイトル</h4>
 				<input type="text" class="form-control text-dark" id="u_subject" maxlength="30" value="${result.NB_Subject}">
 				
-				<h4 class="my-3">Writer</h4>
+				<h4 class="my-3">著者</h4>
 				<input type="text" class="form-control text-dark" id="writer" maxlength="12" placeholder="${result.m_Id}" readonly>
 				
-				<h4 class="my-3">Content</h4>
+				<h4 class="my-3">内容</h4>
 				<textarea rows="10" cols="20" class="form-control text-dark" id="u_content" maxlength="200" placeholder="">${result.NB_Content}</textarea>
 
 				<div class="row justify-content-center my-4">
-					<input type="button" value="Update" class="btn" onclick="updateValidation()" />
-					<input type="button" value="Cancel" class="btn" onclick="javascript:location.href='/qna/NoticeView?NB_Num=${result.NB_Num}'" />
+					<input type="button" value="修正" class="btn" onclick="updateValidation()" />
+					<input type="button" value="キャンセル" class="btn" onclick="javascript:location.href='/qna/NoticeView?NB_Num=${result.NB_Num}'" />
 				</div>
 			</form>
 		</div>

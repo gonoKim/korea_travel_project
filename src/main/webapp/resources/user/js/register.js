@@ -21,22 +21,22 @@ $(function(){
 	    var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 	
 		if(idChkVal == "N" ){
-			alert("Please press the Email check button.");
+			alert("メールチェックボタンを押してください。");
 			return false;
 		} else if(phoneChkVal == "N"){
-			alert("Please press the Phone number check button.");
+			alert("電話番号確認ボタンを押してください。");
 			return false;
 		} else if(pw.length < 8 || pw.length > 20){
-        	alert("The password must be a minimum of 8 characters.");
+        	alert("パスワードは 8 文字以上にする必要があります。");
         	return false;
 	    } else if(pw.search(/\s/) != -1){
-	        alert("Please enter your password without spaces.");
+	        alert("パスワードをスペースなしで入力してください。");
 	        return false;
     	} else if(num < 0 || eng < 0 || spe < 0){
-	        alert("You must have at least one number and a special character within the first 8 characters of your password.");
+	        alert("パスワードの最初の 8 文字には、少なくとも 1 つの数字と特殊文字が必要です。");
 	        return false;
     	} else if(pw != pw2){
-			alert("Passwords do not match.");
+			alert("パスワードが一致しません。");
 			return false;
 		}
 		
@@ -47,7 +47,7 @@ $(function(){
 			data : {"m_Id" : $("#inputEmail").val()},
 			success : function(data){
 				if(data == 1){
-					alert("Duplicate ID, please re-enter.");
+					alert("重複IDです。 もう一度入力してください。");
 				}
 			}
 		})
@@ -59,7 +59,7 @@ $(function(){
 			data : {"m_Phone" : $("#inputTel").val()},
 			success : function(data){
 				if(data == 1){
-					alert("The phone number is already in use.");
+					alert("電話番号は既に使用中です。");
 				}
 			}
 		})
@@ -81,7 +81,7 @@ function fn_idChk(){
 	
 	// 이메일 주소 형식 확인
  	if(!reg_email.test(id)) {
-		alert("Please fill out the correct email.");
+		alert("正しいメールアドレスを入力してください。");
   		return false;
     }
 
@@ -92,10 +92,10 @@ function fn_idChk(){
 		data : {"m_Id" : $("#inputEmail").val()},
 		success : function(data){
 			if(data == 1){
-				alert("Duplicate ID, please re-enter.");
+				alert("重複IDです。 もう一度入力してください。");
 			}else if(data == 0){
 				$("#idChk").attr("value", "Y");
-				alert("This ID is available.");
+				alert("この  ID  は利用可能です。");
 			}
 		}
 	})
@@ -110,10 +110,10 @@ function phonChk(){
 		data : {"m_Phone" : $("#inputTel").val()},
 		success : function(data){
 			if(data == 1){
-				alert("The phone number is already in use.");
+				alert("この電話番号は既に使用中です。");
 			}else if(data == 0){
 				$("#phoneChk").attr("value", "Y");
-				alert("This phone numbers is available.");
+				alert("この電話番号は利用可能です。");
 			}
 		}
 	})
@@ -123,7 +123,7 @@ function phonChk(){
 function noSpaceForm(obj) {
     var str_space = /\s/;
     if(str_space.exec(obj.value)) {
-        alert("This entry cannot contain spaces.");
+        alert("この項目には空白は使用できません。");
         obj.focus();
         obj.value = obj.value.replace(' ','');
         return false;

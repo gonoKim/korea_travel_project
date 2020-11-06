@@ -34,10 +34,6 @@ public class FestivalController {
 		, @RequestParam(required = false, defaultValue = "title") String searchType
 		, @RequestParam(required = false) String keyword
 			) {
-		/*
-		 * festivalSearch fSearch = new festivalSearch();
-		 * fSearch.setSearchType(searchType); fSearch.setKeyword(keyword);
-		 */
 		
 		fSearchVO fSearchvo = festivalService.festivalList(festivalpage, festivalrange, searchType, keyword);
 		
@@ -58,8 +54,6 @@ public class FestivalController {
 	public void write(FestivalVO festivalvo, MultipartHttpServletRequest mpRequest) throws Exception{
 		logger.info("write");
 		festivalService.write(festivalvo, mpRequest);
-		
-		/* return "redirect:/Festival/FestivalBoard"; */
 	}
 	
 	/* 축제 뷰 */

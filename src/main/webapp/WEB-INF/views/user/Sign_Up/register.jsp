@@ -36,54 +36,54 @@
       </div>
 
       <div class="form-group">
-        <label for="inputEmail">Email address</label>
+        <label for="inputEmail">イーメール</label>
           <div class="form-group" class="btnArray">
             <input type="email" class="form-control btn-dark" id="inputEmail" name="M_Id" placeholder="name@example.com"
             	 maxlength="30" onFocus="this.value=''; return true;" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);" required autofocus>
-            <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">Check</button>
+            <button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="idChk" onClick="fn_idChk()" value="N">チェック</button>
           </div>
       </div>
 
       <div class="form-group">
-        <label for="inputPassword">Password</label>
+        <label for="inputPassword">パスワード</label>
         <input type="password" class="form-control btn-dark" id="inputPassword" name="M_Pw" maxlength="20" onFocus="this.value=''; return true;" required>
-        <small style="color: red;">Use 8 to 20 letters of English, numbers, and special characters.</small>
+        <small style="color: red;">8 ~ 20 文字の英語、数字、特殊文字を使用します。</small>
       </div>
 
       <div class="form-group">
-        <label for="inputRepassword">Retype password</label>
+        <label for="inputRepassword">パスワード確認</label>
         <input type="password" class="form-control btn-dark" id="inputRepassword" name="M_Pw2" maxlength="20" required>
       </div>
 
       <div class="form-row">
         <div class="col-md-6 mb-3">
-          <label for="inputFirstName">First name</label>
+          <label for="inputFirstName">First name　名跡</label>
           <input type="text" class="form-control btn-dark" id="inputFirstName" name="M_Fname" maxlength="10" required>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="inputLastName">Last name</label>
+          <label for="inputLastName">Last name　名前</label>
           <input type="text" class="form-control btn-dark" id="inputLastName" name="M_Lname" maxlength="10" required>
         </div>
       </div>
       
       <div class="form-group">
-        <label for="inputTel">Phone number</label>
+        <label for="inputTel">電話番号</label>
           <div class="form-group" class="btnArray">
 	        <input type="tel" class="form-control btn-dark" id="inputTel" name="M_Phone" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
 	        	 placeholder="000-0000-0000" maxlength="13" onFocus="this.value=''; return true;" required>
-        	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">Check</button>
+        	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" id="phoneChk" onClick="phonChk()" value="N">チェック</button>
        	  </div>
       </div>
       
-      <label for="inputBirth">Birth</label>
+      <label for="inputBirth">誕生</label>
       <div class="form-row" id="form_YMD">
         <div class="col">
-          <input type="number" class="form-control btn-dark" id="inputYear" name="M_Year" placeholder="Year (4)"
+          <input type="number" class="form-control btn-dark" id="inputYear" name="M_Year" placeholder="年度 (4)"
           	min="1900" max="2021" maxlength="4" oninput="maxLengthCheck(this)"  required>
         </div>
         <div class="col">
           <select class="form-control btn btn-dark" id="inputMonth" name="M_Month" required>
-            <option value="">Month</option>
+            <option value="">月</option>
             <option value="1">1</option> <option value="2">2</option> 
             <option value="2">3</option> <option value="4">4</option>
             <option value="5">5</option> <option value="6">6</option>
@@ -93,12 +93,12 @@
           </select>
         </div>
         <div class="col">
-          <input type="number" class="form-control btn-dark" id="inputDay" name="M_Day" placeholder="Day"
+          <input type="number" class="form-control btn-dark" id="inputDay" name="M_Day" placeholder="日"
            	min="1" max="31" maxlength="2" oninput="maxLengthCheck(this)" required>
         </div>
       </div>
  
-      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit" id="submit">Sign Up</button>
+      <button class="btn btn-lg btn-outline-secondary btn-block" type="submit" id="submit">会員加入</button>
       
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
     </form>

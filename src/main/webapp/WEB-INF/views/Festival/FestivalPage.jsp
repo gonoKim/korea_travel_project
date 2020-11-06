@@ -47,7 +47,7 @@ function win(Num)
 		<%-- <%=request.getRealPath("/resources/imgUpload/festivalImg") %>  --%>
 ​	
 		<div id="picture_group" class="my-4 d-block text-center">
-			<h3 class="my-3" id="fP-title">국내 축제 이미지</h3>
+			<h3 class="my-3" id="fP-title">韓国祭りのイメージ</h3>
 			<hr id="hr1">
 			<!-- 이미지 경로 -->
 			<img src="${pageContext.request.contextPath}/resources/imgUpload/festivalImg/${fIResult[0].STORED_FILE_NAME}" class="rounded  rounded-left mx-auto " id="picture1"> 
@@ -62,7 +62,7 @@ function win(Num)
 		<div id="btn_view_more" class="text-center my-4">
 			<p>
 				<button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample">
-					View More
+					見る
 				</button>
 			</p>
 		</div>
@@ -88,16 +88,16 @@ function win(Num)
 									<td id="festivalpagefont">${fPage.f_Summary} </td>
 								</tr>
 								<tr>
-									<td id="festivalpagefont"><b>주소 : </b>${fPage.f_Address} </td>
+									<td id="festivalpagefont"><b>住所 : </b>${fPage.f_Address} </td>
 								</tr>
 								<tr>
 									<td>
 										<h6 id="festivalpagefont">
-											<b>시작일 : </b>${fPage.f_S_Year}-${fPage.f_S_Month}-${fPage.f_S_Day}<br>
-											<b>끝나는일 : </b>${fPage.f_L_Year}-${fPage.f_L_Month}-${fPage.f_L_Day}
+											<b>開始日 : </b>${fPage.f_S_Year}-${fPage.f_S_Month}-${fPage.f_S_Day}<br>
+											<b>終わる日 : </b>${fPage.f_L_Year}-${fPage.f_L_Month}-${fPage.f_L_Day}
 										</h6>
 										<button class="btn" onclick="win(${fPage.f_Num});">
-											자세히 보기	
+											詳細を見る
 										</button>
 									</td>
 								</tr>

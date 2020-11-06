@@ -74,11 +74,11 @@
 		<div class="row justify-content-center mt-4">
 			<table class="table table-hover col-11 text-center">
 				<tr class="bg-secondary text-white qnaTh">
-					<td scope="col">No</td>
-					<td scope="col">Subject</td>
-					<td scope="col">Writer</td>
-					<td scope="col">Views</td>
-					<td scope="col">Date</td>
+					<td scope="col">ナンバー</td>
+					<td scope="col">タイトル</td>
+					<td scope="col">著者</td>
+					<td scope="col">ヒット数</td>
+					<td scope="col">日</td>
 				</tr>
 				<c:forEach var="b" items="${result}">
 					<fmt:formatDate value="${b.qnA_Date}" pattern="yyyy-MM-dd " var="dateFormat_cr" />
@@ -120,7 +120,7 @@
 		<c:if test="${user != null}">
 			<div class="row justify-content-around my-4">
 				<a></a><a></a><a></a><a></a><a></a> 										<!-- 칸채우기용 -->
-				<button type="submit" onclick="QnAwrite();" class="btn btn-outline-secondary">Write</button>
+				<button type="submit" onclick="QnAwrite();" class="btn btn-outline-secondary">書く</button>
 			</div>
 		</c:if>
 	</div>

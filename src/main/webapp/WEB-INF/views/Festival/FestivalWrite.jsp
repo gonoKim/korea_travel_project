@@ -46,17 +46,17 @@
 			<form method="post" action="FestivalWrite"
 				enctype="multipart/form-data">
 				<div class=" text-center text-dark pt-5 ">
-					<h2 class="my-3">Festival Information</h2>
+					<h2 class="my-3">祭り情報</h2>
 				</div>
 
-				<h4 class="my-3">Subject</h4>
-				<input type="text" class="form-control text-dark" id="subject" name="F_Subject" placeholder="제목을 입력해 주세요">
+				<h4 class="my-3">タイトル</h4>
+				<input type="text" class="form-control text-dark" id="subject" name="F_Subject" placeholder="タイトルを入力してください">
 
-				<h4 class="my-3">Summary</h4>
-				<textarea rows="5" cols="20" class="form-control text-dark" id="content" name="F_Summary" placeholder="내용 요약본을 입력해 주세요"></textarea>
+				<h4 class="my-3">要約</h4>
+				<textarea rows="5" cols="20" class="form-control text-dark" id="content" name="F_Summary" placeholder="内容の要約を入力してください"></textarea>
 
-				<h4 class="my-3">Content</h4>
-				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Content" placeholder="내용를 입력해 주세요"></textarea>
+				<h4 class="my-3">内容</h4>
+				<textarea rows="10" cols="20" class="form-control text-dark" id="content" name="F_Content" placeholder="内容を入力してください"></textarea>
 
 							
 							<!-- 장소 코드 
@@ -66,37 +66,37 @@
 				<div class="my-3">						
 						<div class="col">
 						<select class="form-control" id="" name="Place_Code" required>
-							<option value="">Place_Code</option>
-							<option value="">특별시 밑 광역시</option>
-							<option value="001">서울특별시(001)</option> 	<option value="002">부산광역시(002)</option>
-							<option value="003">대구광역시(003)</option> 	<option value="004">인천광역시(004)</option>
-							<option value="005">대전광역시(005)</option> 	<option value="006">광주광역시(006)</option>
-							<option value="007">울산광역시(007)</option> 
-							<option value="">도</option>
-							<option value="011">경기도(011)</option>	<option value="012">강원도(012)</option>
-							<option value="013">충청남도(013)</option>	<option value="014">충청북도(014)</option>	
-							<option value="015">전라남도(015)</option>	<option value="016">전라북도(016)</option>	
-							<option value="017">경상남도(017)</option>	<option value="018">경상북도(018)</option> 
-							<option value="">특별 자치도</option>
-							<option value="101">세종특별자치시(101)</option>	
-							<option value="102">제주특별자치도(102) </option>
-							<option value="">온라인</option>
-							<option value="999">온라인(999) </option> 
+							<option value="">地域コード</option>
+							<option value="">広域市</option>
+							<option value="001">ソウル(001)</option> 	<option value="002">プサン(002)</option>
+							<option value="003">テグ(003)</option> 	<option value="004">インチョン(004)</option>
+							<option value="005">テジョン(005)</option> 	<option value="006">クァンジュ(006)</option>
+							<option value="007">ウルサン(007)</option> 
+							<option value="">道</option>
+							<option value="011">キョンギどう(011)</option>	<option value="012">カンウォン・ド(012)</option>
+							<option value="013">チュンチョンナムド(013)</option>	<option value="014">チュンチョンブクド(014)</option>	
+							<option value="015">チョルラナムド(015)</option>	<option value="016">チョルラブクド(016)</option>	
+							<option value="017">キョンサンナムド(017)</option>	<option value="018">キョンサンブクド(018)</option> 
+							<option value="">特別自治道</option>
+							<option value="101">世宗特別自治市(101)</option>	
+							<option value="102">チェジュ(102) </option>
+							<option value="">オンライン</option>
+							<option value="999">オンライン(999) </option> 
 						</select>
 					</div>
 				</div>
 
-				<h4 class="my-3">Address</h4>
-				<input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="주소를 입력해 주세요">
+				<h4 class="my-3">住所</h4>
+				<input type="text" class="form-control text-dark" id="address" name="F_Address" placeholder="住所を入力してください">
 				
-				<h4 class="my-3">Start</h4>
+				<h4 class="my-3">開始日</h4>
 				<div class="form-row" id="form_YMD">
 					<div class="col">
-						<input type="number" class="form-control" id="inputYear" name="F_S_Year" placeholder="Year (4)" required>
+						<input type="number" class="form-control" id="inputYear" name="F_S_Year" placeholder="年 (4)" required>
 					</div>
 					<div class="col">
 						<select class="form-control" id="inputMonth" name="F_S_Month" required>
-							<option value="">Month</option>
+							<option value="">月</option>
 							<option value="1">1</option> <option value="2">2</option>
 							<option value="2">3</option> <option value="4">4</option>
 							<option value="5">5</option> <option value="6">6</option>
@@ -106,18 +106,18 @@
 						</select>
 					</div>
 					<div class="col">
-						<input type="number" class="form-control" id="inputDay" name="F_S_Day" placeholder="Day" required>
+						<input type="number" class="form-control" id="inputDay" name="F_S_Day" placeholder="日" required>
 					</div>
 				</div>
 				
-				<h4 class="my-3">End</h4>
+				<h4 class="my-3">終わる日</h4>
 				<div class="form-row" id="form_YMD2">
 					<div class="col">
-						<input type="number" class="form-control" id="inputYear" name="F_L_Year" placeholder="Year (4)" required>
+						<input type="number" class="form-control" id="inputYear" name="F_L_Year" placeholder="年 (4)" required>
 					</div>
 					<div class="col">
 						<select class="form-control" id="inputMonth" name="F_L_Month" required>
-							<option value="">Month</option>
+							<option value="">月</option>
 							<option value="1">1</option> <option value="2">2</option>
 							<option value="2">3</option> <option value="4">4</option>
 							<option value="5">5</option> <option value="6">6</option>
@@ -127,12 +127,12 @@
 						</select>
 					</div>
 					<div class="col">
-						<input type="number" class="form-control" id="inputDay" name="F_L_Day" placeholder="Day" required>
+						<input type="number" class="form-control" id="inputDay" name="F_L_Day" placeholder="日" required>
 					</div>
 				</div>
 				
 				<!-- 파일 업로드 -->
-				<h4 class="my-3">File Upload</h4>
+				<h4 class="my-3">イメージ·アップロード</h4>
 				<input type="file" name="file" accept="image/*" onchange="setThumbnail(event);"/>
 				<!-- 이미지 미리 보기 -->
 					<div id="image_container"></div>
@@ -140,9 +140,9 @@
 
 
 				<div class="row justify-content-center my-4">
-					<button type="reset" id="join-submit" class="btn">Reset</button>
-					<button type="submit" class="btn" id="submit" onClick="opener.parent.location.reload();">write</button>
-					<input type="button" value="Cancel" class="btn" onclick="window.close();" />
+					<button type="reset" id="join-submit" class="btn">リセット</button>
+					<button type="submit" class="btn" id="submit" onClick="opener.parent.location.reload();">書く</button>
+					<input type="button" value="キャンセル" class="btn" onclick="window.close();" />
 				</div>
 			</form>
 		</div>
